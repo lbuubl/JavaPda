@@ -1,0 +1,311 @@
+
+.ul_alarm {
+	background-color: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 0 0 2px 0;
+    vertical-align: middle;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.ul_alarm li {
+	float:left;
+	list-style: none;
+	margin: 2px 0 0 2px;
+	border: 1px solid #ddd; 
+    border-radius: 2px;
+    padding: 5px 5px;
+}
+
+.ul_alarm{
+	min-height:100px;
+}
+
+#frmWorkEventEdit .bootstrap-tagsinput,
+#modal_workEventEdit .bootstrap-tagsinput
+{
+	min-height:100px;
+}
+
+
+/*
+@media screen and (min-width: 1025px){
+	#modal_workEventEdit .modal-lg{
+		width:1400px;
+	}
+}
+*/
+
+/* 모달 사이즈 관련 */
+@media screen and (min-width: 1280px){
+	#modal_workEventEdit .modal-lg{
+		width:1200px
+	}
+
+	#modal_workEventEdit .div_startPlanDt,
+	#modal_workEventEdit .div_endPlanDt,
+	#modal_workEventEdit .div_startActionDt,
+	#modal_workEventEdit .div_endActionDt{
+		width:120px;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1279px) {	
+	#modal_workEventEdit .modal-lg{
+		width:900px
+	}
+
+	#modal_workEventEdit .col-md-1.col-120{
+		width:120px !important;
+	}
+
+	#modal_workEventEdit .col-md-1.col-100{
+		width:100px !important;
+	}
+	
+	/*
+	#modal_workEventEdit .div_startActionDt{
+		clear:left;
+		margin-left:224px;
+	}
+	*/
+
+	#modal_workEventEdit .div_startPlanDt{
+		margin-bottom:10px;
+	}
+}
+
+
+
+.list_actionInfoTable {
+	--width:100%; 
+	--height:56px;
+	--width:450px;
+}
+
+.list_actionInfoTable td{
+	border: 1px solid #ddd;
+}
+
+.list_actionInfoTable td:first-child{
+	border-left:0;
+}
+
+.list_actionInfoTable td:last-child{
+	border-right:0;
+}
+
+.list_actionInfoTable tr:last-child td,
+.list_actionInfoTable tr td:first-child
+{
+	border-bottom:0;
+}
+
+.bb1{
+	border-bottom:1px solid #ddd;
+}
+
+.bb1-blue{
+	border-bottom:1px solid #03A9F4;
+}
+
+/*헤더 css 시작*/	
+#dataList_header{
+	display:none;
+	position: relative;
+	--background: #f2f9ff;	    
+	--background-color: #39567e;
+	background-color: #FFFFFF;
+	--color: white;
+}
+#fixDiv{
+	position: fixed;
+	--height: 111px;
+	z-index: 2;
+	overflow: hidden;
+	display:none;
+}
+/*헤더 css 종료*/	
+
+
+@media screen and (min-width: 1025px) and (max-width: 1448px) {	
+	#frmWorkEventDetail .div_StartDt{
+		clear:left;
+	}
+
+	#frmWorkEventDetail .div-cols-1 .col-md-1{
+		width:150px;
+		padding-top:20px;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1478px) {	
+	#frmWorkEventEdit .div_StartDt{
+		clear:left;
+	}
+
+	#frmWorkEventEdit .div-cols-1 .col-md-1{
+		min-width:110px;
+		padding-top:20px;		
+	}
+
+	#frmWorkEventEdit .div-cols-1 .col-md-1 label{
+		display: inherit !important;
+	}
+}
+
+/* 스크린 크기에 따른 검색부분 */
+@media screen and (min-width: 1025px) and (max-width: 1540px) {	
+	#frmEvalList .search-div .company input[name='sch_keyword']{
+		width:100px !important;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1240px) {	
+	#frmEvalList .search-div .company .checkbox-switchery{
+		display: block;
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 1024px){	
+	#frmEvalList .search-div .grp-1{
+		margin-top:10px;
+	}	
+}
+
+@media screen and (max-width: 768px){	
+	#frmEvalList .form-control{
+		display:inline;
+	}
+}
+/* //스크린 크기에 따른 검색부분 */
+
+.btn_deleteAlarm, .btn_editAlarm{
+	padding:3px;
+}
+
+/* 후속자업 > 작업항목 2줄 말줄임표 */
+/*
+#table_workEvalList .list_actionInfoTable a{
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    height: 3em;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+*/
+
+
+#uploadEvent_fieldWorkEvent_filelist .plupload_droptext::before{
+    font-size: 30px;
+    margin-left: -30px;
+	padding-top: 20px;
+}
+
+#uploadEvent_fieldWorkEvent_filelist .plupload_droptext::after{
+	--margin: -140px 0 0 -150px;
+    height: 100px;
+	padding-top:100px;
+}
+
+#uploadEvent_fieldWorkEvent .plupload_filelist,
+#uploadEvent_fieldWorkEvent .plupload_droptext{
+	max-height:100px;
+}
+
+
+#uploadEvent_fieldWorkAction .plupload_droptext::before{
+    font-size: 30px;
+    margin-left: -30px;
+	padding-top: 20px;
+}
+
+#uploadEvent_fieldWorkAction .plupload_droptext::after{
+	--margin: -140px 0 0 -150px;
+    height: 100px;
+	padding-top:100px;
+}
+
+#uploadEvent_fieldWorkAction .plupload_filelist,
+#uploadEvent_fieldWorkAction .plupload_droptext{
+	max-height:100px;
+}
+
+
+
+#frmWorkEventEdit .Filelist_UI,
+#frmWorkActionEdit .Filelist_UI{
+	margin-bottom:10px;
+}
+
+#table_workEvalList .btn_evaluation button{
+	padding-bottom: 0px;
+	padding-top: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.dataTable thead .sorting:before, .dataTable thead .sorting:after, .dataTable thead .sorting_asc:after, .dataTable thead .sorting_desc:after, .dataTable thead .sorting_asc_disabled:after, .dataTable thead .sorting_desc_disabled:after {
+    right: 3px;
+
+}
+
+.dataTable thead .sorting, .dataTable thead .sorting_asc, .dataTable thead .sorting_desc, .dataTable thead .sorting_asc_disabled, .dataTable thead .sorting_desc_disabled {
+    padding-right: 10px;
+}
+
+
+@media screen and (max-width: 768px){
+	#resizeDiv.table-responsive > .table > thead > tr > th, 
+	#resizeDiv.table-responsive > .table > tbody > tr > th, 
+	#resizeDiv.table-responsive > .table > tfoot > tr > th, 
+	#resizeDiv.table-responsive > .table > thead > tr > td, 
+	#resizeDiv.table-responsive > .table > tbody > tr > td, 
+	#resizeDiv.table-responsive > .table > tfoot > tr > td {
+		white-space: normal;
+	}
+}
+
+
+@media screen and (max-width: 768px){
+	#resizeDiv.table-responsive {
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid #ddd;
+	}
+}
+
+@media screen and (min-width: 1025px){	
+	#modal_workEventEdit .div_startActionDt,
+	#modal_workEventEdit .div_restDay{
+		margin-left:40px;
+	}
+}
+
+#frmAlarm .div-msgType input[type="checkbox"]{
+	margin-top:2px !important;
+}
+
+#frmAlarm .div-msgType .checkbox-inline{
+	padding-top:0;
+}
+
+.list_actionInfoTable > tbody > tr > td{
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+#table_workEvalList > tbody > tr > td,
+#table_workEvalList > thead > tr > th,
+#dataList_header > thead > tr > th{
+	padding-top:3px;
+	padding-bottom:3px;
+}

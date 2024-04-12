@@ -1,0 +1,37 @@
+{
+	"label" : {
+		"survey":"Survey",
+		"detail":"Detail info",
+		"title":"Title",
+		"startDt":"The start date",
+		"endDt":"The end date",
+		"regNm":"Writer",
+		"question":"Question",
+		"result":"Result of vote",
+		"multiYn":"Multi select",
+		"anser":"Anser",
+		"completeYn":"Complete",
+		"mainShowYn":"Main show",
+		"grpShowYn":"Graph show",
+		"total":"A total of",
+		"total_end":"" 
+	}
+	,"btn" : {
+		"addQs":"Question add ",
+		"addItem":"Anser add ",
+		"vote":"Vote",
+		"end":"Survey close",
+		"mainHide":"Main hide"
+	}
+	,"msg" : {
+		"delete":"Do you want delete?",
+		"end":"Do you want survey close?",
+		"success":"Success",
+		"inSurvey":"The survey has already involved",
+		"notSelect":"Please Select an answer",
+		"addQuestion":"Please add a question",
+		"addAnser":"Please add a anser",
+		"maxAnser":"Anser add fail\n you can add is max {{max}} "
+	}
+	
+}

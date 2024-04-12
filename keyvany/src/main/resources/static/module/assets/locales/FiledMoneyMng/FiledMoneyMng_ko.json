@@ -1,0 +1,104 @@
+{
+	"datatable": {
+		"col": {
+            "contrNm" : "계약명",
+            "state" : "상태",
+            "contrPeriod" : "계약기간",
+            "contrDate" : "계약일",
+            "contrAmount" : "계약금액",
+            "advance" : "선급금액",
+            "totalReqProgressAmt" : "총 기성신청금",
+            "totalCollectAmt" : "총 입금액",
+            "progressAmtRate" : "기성율",
+            "leftAmount" : "남은금액",
+            "memo" : "메모",
+			"contrSDate" : "계약시작",
+			"contrEDate" : "계약종료",
+
+			"ordNum" : "차수",
+			"contrChangedDate" : "변경<br>계약일",
+			"preAmount" : "변경전 <br>계약금액",
+			"changedAmount" : "변경후 <br>계약금액",
+			"calcAmount" : "증감액",
+			"reason" : "변경사유",
+
+			"projectNm" : "프로젝트명",
+			"choice" : "선택"
+		},
+
+		"option" : { 
+			"filter" : "검색어",
+			"contractNm" : "계약명"
+		}
+	},
+
+	"btn": {
+		"addContrace": "계약등록",
+		"changeContrace" : "계약변경",
+		"chooseProject": "프로젝트 선택"
+	},
+
+	"title":{
+		"contractWrite": "계약등록/수정",
+		"contractInfomation": "계약정보",
+		"chooseProject": "프로젝트 선택",
+		"contractChange": "계약변경"
+	},
+
+	"label": {
+		"contract_Nm" : "계약명",
+		"project" : "프로젝트",
+		"contract_No" : "계약번호",
+		"company_Nm" : "계약처",
+		"contract_Gubun" : "계약구분",
+		"contract_Method" : "계약방식",
+		"pay_Cycle" : "기성신청주기",
+		"contract_Type" : "계약형태",
+		"joint_Contract" : "공동도급계약",
+		"afterAmtReview" : "사후원가 검토부 계약",
+		"shareRate" : "지분율",
+		"contract_Amount" : "계약금액",
+		"deposit" : "계약보증금",
+		"advance_Fee" : "선급금",
+		"contract_Dt" : "계약일",
+		"contract_Period" : "계약기간",
+		"state" : "계약상태",
+		"manager" : "담당자",
+		"department" : "부서",
+		"managerTel" : "연락처",
+		"memo" : "메모",
+		"attach" : "첨부파일",
+		"fileList" : "파일목록",
+		"etc" : "기타",
+		"design_Amount" : "설계금액",
+		"contract_Guarantee_Dt" : "계약보증일",
+		"contract_Guarantee_Period" : "계약보증기간",
+		"warranty_Deposit_Rate" : "하자보증금율",
+		"tax_Rate" : "부가세율",
+		"safety_Mgr_Amount" : "안전관리비",
+		"warranty" : "하자담보기간",
+		"delay_Amount_Rate" : "지체보상금율",
+		"nomal_Mgr_Amount" : "일반관리비",
+		"state_" : "- 계약상태 -",		
+		"state_R" : "진행",
+		"state_S" : "중지",
+		"state_E" : "종료",
+		"sum" : "합계",
+		"gongguState_" : "- 진행상태 -",
+		"mainInfo" : "주요정보",
+		"changedHistory" : "변경정보",
+		"contractChangedDt": "계약변경일",
+		"contractStartDt": "계약시작일",
+		"contractEndDt": "계약종료일",
+		"beforAmount": "변경전 계약금액",
+		"afterAmount": "변경후 계약금액",
+		"changeReason": "변경사유",
+		"month": "개월",
+		"day": "일"
+	},
+
+	"msg" : {
+		"changedPayCycel" : "기성신청 주기가 변경되었습니다.<br>기성예상 데이타를 재 생성하시겠습니까?",
+		"reMakePayPlan" : "기성예상 데이타를 재 생성하시겠습니까?"
+	}
+}

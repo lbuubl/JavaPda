@@ -1,0 +1,708 @@
+
+#external-events .ui-draggable-handle{
+	cursor:move;
+}
+
+#external-events{
+    -webkit-touch-callout:none;
+    -webkit-touch-select:none;
+    -ms-user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -user-select:none;
+}
+
+.pt8{
+	padding-top:8px !important;
+}
+
+.pt10{
+	padding-top:10px !important;
+}
+
+.pt15{
+	padding-top:15px !important;
+}
+
+.pt20{
+	padding-top:20px !important;
+}
+
+.pb0{
+	padding-bottom:0 !important;
+}
+
+.pb8{
+	padding-bottom:8px !important;
+}
+
+.pb7{
+	padding-bottom:7px !important;
+}
+
+.pl0{
+	padding-left:0 !important;
+}
+
+.pl10{
+	padding-left:10px !important;
+}
+
+.ml10{
+	margin-left:10px !important;
+}
+
+.ml5{
+	margin-left:5px !important;
+}
+
+.pr0{
+	padding-right:0 !important;
+}
+
+.mb0{
+	margin-bottom:0 !important;
+}
+
+
+.ui-selectmenu-menu {
+	z-index:999999999;
+}
+
+.schdKindColorBox{
+	height:16px;
+	width:16px;
+	float:left;
+	margin-top:2px
+}
+
+
+#newKindSeqNo-menu{
+	width:80px !important;
+	min-width: 80px !important;
+}
+
+#newKindSeqNo-menu li{
+	width:80px !important;
+}
+
+.sp-container{
+	z-index:9999  !important;
+}
+
+/* 泥댄겕諛뺤뒪 醫뚯륫�뙣�뵫議곗젙 */
+.checkbox-inline, .radio-inline {
+    padding-left: 20px;
+	padding-top: 0 !important;
+}
+
+
+
+
+
+/* ��罹섎┛�뜑 �씠�쟾, �떎�쓬 踰꾪듉 */
+.fc-icon:after {
+    position: relative !important;
+}
+.fc-icon-left-single-arrow:after {
+    content: "\e9c0" !important;
+}
+.fc-icon:after {
+    display: inline-block !important;
+    font-family: "icomoon" !important;
+    line-height: 1 !important;
+    font-size: 16px !important;
+    vertical-align: middle !important;
+    position: relative !important;
+    top: -1px !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fc-icon-right-single-arrow:after {
+    content: "\e9c3" !important;
+}
+/* // ��罹섎┛�뜑 �씠�쟾, �떎�쓬 踰꾪듉 */
+
+
+
+.schedule .form-group{
+	margin-bottom:10px !important;
+}
+
+@media screen and  (max-width: 1025px){
+	/* 二쇱슂�씪�젙 遺�遺� �닲源� */
+    .div_externalEvents{
+		display:none;
+	}
+
+	.col-offset-180{
+		padding-left:10px  !important;
+	}
+
+	/* 醫뚯슦�뿬諛� �뾾�븷湲� */
+	.mainPanelBody{
+		padding-top:10px !important;
+		padding-left:0 !important;
+		padding-right:0 !important;
+		padding-bottom:0 !important;
+	}
+
+	/* �긽�떒 醫뚯슦�뿬諛� */
+	.fc-header-toolbar{
+		padding-left:10px !important;
+		padding-right:10px !important;
+	}
+
+	.fc-view-container{
+		border-left:0 !important;
+		border-right:0 !important;
+		border-bottom:0 !important;
+	}
+
+	.fc-list-view{
+		border-left:0 !important;
+		border-right:0 !important;
+		border-bottom:0 !important;
+	}
+
+	.fc-widget-content{
+		border-bottom:0 !important;
+	}
+
+	.schedule .content{
+		padding-bottom:0 !important;
+	}
+
+	.mainPanel{
+		margin-bottom:0 !important;
+	}
+
+	/* �씪�젙醫낅쪟 異붽�踰꾪듉 */
+	.btn_addSchdKind{
+		margin-top:0  !important;
+	}
+
+	#btn_userChoose_wrapper{
+		margin-top:0 !important;
+	}
+}
+
+
+/*
+@media screen and (min-width: 1418px){
+	.div_externalEvents{
+		width:180px
+	}
+}
+*/
+
+.col-fixed-180{
+    width:180px;
+	padding-left:10px;
+    position:absolute;
+    height:100%;
+    z-index:1;
+}
+
+.col-offset-180{
+    padding-left:195px;
+    z-index:0;
+}
+
+
+@media screen and (max-width: 1200px){
+	.schedule .form-horizontal .control-label:not(.chkLabel) {
+		padding-bottom: 0 !important;
+		padding-top: 0;
+	}
+
+	.schedule label:not(.chkLabel){
+		margin-bottom: 0 !important;
+	}
+
+	.schedule .row:not(.pb0_row) {
+		padding-bottom:10px !important;
+	}
+
+	.max_1200_pt10{
+		padding-top:10px !important;
+	}
+
+	.schedule .form-group div[class*="col-lg-"]:not(.control-label) + div[class*="col-lg-"] {
+		margin-top: 5px !important;
+		padding-left:10px !important;
+	}
+	#btn_userChoose_wrapper, #btn_pubReserv_wrapper{
+		margin-top: 5px !important;
+		padding-left:0 !important;
+	}
+
+	#modal_publicObject .div_timeTable{
+		padding-top:20px
+	}
+}
+
+@media screen and (mam-width: 1201px){
+	.min_1201_pt8{
+		padding-top:8px !important;
+	}
+}
+
+
+/* 紐⑤컮�씪 紐⑤뱶�뿉�꽌 媛꾧꺽議곗젙 */
+@media screen and  (max-width: 414px){
+	/* �씪�젙醫낅쪟異붽�, 李멸��옄異붽� 踰꾪듉 padding-left:0 */
+	#btn_userChoose_wrapper , .btn_addSchdKind {
+		padding-left:0 !important;
+	}
+}
+
+
+/* 紐⑤컮�씪 -- �씪�젙�벑濡� UI �꽕�젙 */
+/* @media screen and  (max-width: 321px){ */
+/* @media screen and  (max-width: 376px){ */
+/* @media screen and  (max-width: 415px){ */
+/* @media screen and  (max-width: 769px){ */
+@media screen and  (max-width: 1200px){
+	/* �씪�젙醫낅쪟 */
+	#modal_scheduleEdit .div_kindCd{
+		width:70% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit .btn_addSchdKind{
+		width:30% !important;
+		float:left !important;
+	}
+
+	/* �떆媛� */
+	#modal_scheduleEdit #edit_sDateTime_obj{
+		width:auto !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #edit_eDateTime_wave_obj{
+		width:30px !important;
+		text-align:center !important;
+		padding-top:8px !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #edit_eDateTime_obj{
+		width:auto !important;
+		float:left !important;
+	}
+
+	/* 醫낆씪, 諛섎났, �솗�옣/異뺤냼 */
+	#div_chkAllDay{
+		width:20% !important;
+		float:left !important;
+	}
+	#div_chkRepeat{
+		width:30% !important;
+		float:left !important;
+	}
+	#div_btn_moreDetail{
+		width:50% !important;
+		float:left !important;
+	}
+
+	/* 怨듭슜�꽕鍮� */
+	#modal_scheduleEdit .div_pubObjTag{
+		width:80% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #btn_pubReserv_wrapper{
+		width:20% !important;
+		float:left !important;
+	}
+
+	/* 李멸��옄 */
+	#modal_scheduleEdit .div_attendUsers{
+		width:80% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #btn_userChoose_wrapper{
+		width:20% !important;
+		float:left !important;
+	}
+}
+
+
+@media screen and  (max-width: 425px){
+	/* �씪�젙醫낅쪟 */
+	#modal_scheduleEdit .div_kindCd{
+		width:100% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit .btn_addSchdKind{
+		width:50% !important;
+		float:left !important;
+	}
+
+	/* �떆媛� */
+	#modal_scheduleEdit #edit_sDateTime_obj{
+		width:auto !important;
+		clear:both;
+	}
+	#modal_scheduleEdit #edit_eDateTime_wave_obj{
+		width:30px !important;
+		text-align:center !important;
+		padding-top:8px !important;
+		clear:both;
+	}
+	#modal_scheduleEdit #edit_eDateTime_obj{
+		width:auto !important;
+		clear:both;
+	}
+
+	/* 醫낆씪, 諛섎났, �솗�옣/異뺤냼 */
+	#div_chkAllDay{
+		width:25% !important;
+		float:left !important;
+	}
+	#div_chkRepeat{
+		width:45% !important;
+		float:left !important;
+	}
+	#div_btn_moreDetail{
+		width:30% !important;
+		float:left !important;
+	}
+
+	/* 怨듭슜�꽕鍮� */
+	#modal_scheduleEdit .div_pubObjTag{
+		width:70% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #btn_pubReserv_wrapper{
+		width:30% !important;
+		float:left !important;
+	}
+
+	/* 李멸��옄 */
+	#modal_scheduleEdit .div_attendUsers{
+		width:70% !important;
+		float:left !important;
+	}
+	#modal_scheduleEdit #btn_userChoose_wrapper{
+		width:30% !important;
+		float:left !important;
+	}
+}
+
+
+@media screen and  (max-width: 376px){
+	/* 醫낆씪, 諛섎났, �솗�옣/異뺤냼 */
+	#div_chkAllDay{
+		width:40% !important;
+		float:left !important;
+	}
+	#div_chkRepeat{
+		width:60% !important;
+		float:left !important;
+	}
+	#div_btn_moreDetail{
+		width:100% !important;
+		clear:both !important;
+	}
+}
+
+@media (max-width: 376px){
+	#frmDetail > .modal-body > .row > .col-xs-2{
+			padding-left: 5px !important;
+	}
+}
+@media (max-width: 360px){
+	#frmDetail > .modal-body > .row > .col-xs-2{
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+	}
+}
+#frmDetail > .modal-body > .row{
+	border-bottom: 1px solid #efefef;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+}
+
+.schedule .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+#div_addSchdKind .control-label {
+	padding-top:8px;
+	padding-bottom:7px;
+}
+
+/* �씪�젙醫낅쪟 異붽��쁺�뿭 �쐞�븘�옒 border */
+#div_addSchdKind{
+	margin-top:10px;
+	padding-bottom:10px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	background-color: #dde2f1;
+}
+
+
+.schedule .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+/* �떖�젰 listView 遺�臾몄뿉 �꽣移� �뒪�겕濡ㅺ컯�젣 �쟻�슜 */
+.fc-scroller{
+	touch-action: pan-x pan-y !important;
+}
+
+/* �떖�젰 二쇰쭚而щ윭 蹂�寃� */
+.fc-sat {
+	color:blue;
+	background-color: #E8EAFF;
+}
+.fc-sun {
+	color:red;
+	background-color: #fff5f5;
+}
+.fc-future.fc-other-month, .fc-past.fc-other-month  {
+    background-color: #fff;
+}
+/* //�떖�젰 二쇰쭚而щ윭 蹂�寃� */
+
+
+div.scheduleHint {
+    font-size: .9em;
+    position: absolute;
+    max-width: 300px;
+    line-height: 1.8em;
+    padding: 5px 8px 7px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 10001;
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.schedule h3, .scheduleHint h3{
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    /*line-height: 1.1;*/
+}
+
+.text-point, a.text-point {
+    color: #f05050 !important;
+}
+
+#external-events h6{
+	margin-top:7px !important;
+}
+
+.fc-event{
+	cursor:pointer
+}
+
+#external-events .on{
+	/* border: 5px double #FFFFFF !important; */
+	/*border: double red !important;*/
+	text-align:right;
+}
+
+
+.multiselect-container > li > a .checker, .multiselect-container > li > a .choice {
+    margin-top: 0 !important;
+}
+
+
+
+/* 怨듭슜�꽕鍮� tag */
+.publicObjectTag{
+	padding-right:11px !important;
+}
+
+.publicObjectTag > span {
+	display:none;
+}
+
+
+.bootstrap-tagsinput input{
+	width:0 !important;
+	min-width: 0 !important;
+}
+
+
+
+
+
+
+/********************************************************************/
+/************************ 怨듭슜�꽕鍮� �삁�빟�럹�씠吏� ***********************/
+/********************************************************************/
+.pubTable thead th{
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+
+.pubTable {
+	border-spacing: 0;
+	width: 100%;
+	max-width: 100%;
+	min-width: 550px;
+	table-layout: fixed;
+	border-collapse: collapse;
+	background-color: #fff;
+
+	display: table;
+	border-color: grey;
+}
+
+.pubTable thead {
+	background: #f9f9f9;
+}
+
+.fc-widget-header {
+	height: 30px;
+	vertical-align: middle;
+	border-top: none;
+}
+
+.room-planner th {
+	border-top: 1px solid #eee;
+	background-image: url(/resources/module/assets/images/backgrounds/bg_dotted.png);
+	background-repeat: no-repeat;
+}
+
+.room-planner th.fc-first {
+	background-image: none;
+}
+
+.room-planner .targetInfo {
+	height: 32px;
+	min-height: 32px!important;
+	padding: 4px 10px 4px;
+	background-image: none;
+	text-align: left!important;
+}
+
+.room-planner td{
+	height: auto;
+	border-top: 1px solid #eee;
+	background-image: url(/resources/module/assets/images/backgrounds/bg_dotted.png);
+	background-repeat: no-repeat;
+}
+
+.pubTable tbody tr:last-child th {
+	border-bottom: 1px solid #eee;
+}
+
+.pubTable tbody tr:last-child td {
+	border-bottom: 1px solid #eee;
+}
+
+.room-planner {
+	height: 250px;
+	border: 1px solid #ddd;
+}
+
+#divPubObjCategory {
+    height: 250px;
+    overflow: auto;
+}
+
+.pubTable tbody td span.ui-selected {
+	background: #F39814;
+}
+
+.pubTable tbody td span.ui-selecting {
+	background: #FECA40;
+}
+
+.pubTable tbody td span.used {
+	background: blue;
+	opacity: 0.3;
+}
+.pubTable tbody td span {
+	width: 100%;
+	height: 60%;
+	display: block;
+	cursor: no-drop;
+}
+
+.pubTable tbody td span.timeUse {
+	cursor: cell;
+	position: relative;
+}
+
+.pubTable tbody td {
+	padding:1px 1px 1px 1px
+}
+
+.pubTable tbody td {
+	padding:1px 1px 1px 1px
+}
+
+#divPubObjCategory {
+	border: 1px solid #eee;
+}
+
+#divPubObjCategory h3 {
+	padding: 6px 10px;
+	border-bottom: 1px solid #eee;
+	background-color: #f9f9f9;
+}
+
+#divPubObjCategory ul {
+	padding: 4px 0;
+}
+
+#divPubObjCategory li {
+	line-height: 26px;
+	padding: 0 6px;
+	margin-top: 1px;
+}
+
+li:not(.itemContentLi) {
+	list-style: none;
+}
+
+#divPubObjCategory a, #divPubObjCategory a:visited, #divPubObjCategory a:focus {
+	text-decoration: none;
+	color: #111;
+}
+
+#modal_publicObject .daterangepicker .calendar{
+	padding:9px;
+}
+
+#divPubObjCategory li.selected {
+	background-color: orange;
+}
+
+#modal_publicObject .calendar.left, #modal_publicObject .daterangepicker {
+	margin-top:0 !important;
+}
+
+#calendarPicker div{
+	-webkit-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+
+#divPubObjCategory ul li{
+	border-bottom:1px solid #eee
+}
+/********************************************************************/
+/************************ // 怨듭슜�꽕鍮� �삁�빟�럹�씠吏� ***********************/
+/********************************************************************/
+
+.iconLock{
+	font-size:13px !important;
+}

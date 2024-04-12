@@ -1,0 +1,19 @@
+{
+	"label" : {
+		"viewType" : "게시타입"
+		,"editor" : "에디터"
+		,"file" : "파일"
+		,"fixedDate" : "기준일" 
+		,"fieldNm" : "현장명"
+		,"detailInfo" : "상세정보"
+	}
+
+	,"msg" : {
+		"success" : "성공"
+		,"error" : "오류발생!\n관리자에게 문의해주세요"
+		,"delYn" : "정말 삭제하시겠습니까?"
+		,"fileChoose" : "파일을 선택해주세요!"
+		,"insertContent" : "내용을 입력해주세요!"
+	}
+
+}

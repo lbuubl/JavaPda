@@ -1,0 +1,36 @@
+{ 
+	"label" : {
+		"projectList" : "Project list",
+		"section" : "Section",
+		"projectNm" : "Project name",
+		"manager" : "Manager",
+		"startDt" : "Start date",
+		"endDt" : "End date",
+		"status" : "Status",
+		"projectInfo" : "Project info",
+		"close" : "Close",
+		"stop" : "Stop",
+		"progress" : "Progress",
+		"days" : "Days",
+		"location" : "Location",
+		"choice" : "Choice",
+		"etc" : "Etc",
+		"project" : "Project",
+		"memberInput" : "Member input",
+		"obs" : "OBS",
+		"auth" : "Auth",
+		"nonSelect" : "Stand by user",
+		"select" : "Inserted user" ,
+		"area" : "Area" ,
+		"total" : "Total"
+	},
+
+	"msg" : { 
+		"insertProjectNm" : "Insert to project name.",
+		"fail" : "Fail",
+		"success" : "Success",
+		"gUpdate" : "Edit?",
+		"selectObs" : "Please, select to OBS",
+		"selectAuthGroup" : "Please, select to auth group" 
+	}
+}

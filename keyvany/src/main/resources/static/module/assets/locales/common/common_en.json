@@ -1,0 +1,273 @@
+{
+    
+    "F": {
+        "FileNm": "File name", 
+        "action": "", 
+        "Status": "Status", 
+        "size": "Size", 
+        "download": "Selected Download",
+        "Down" : "down",
+        "Preview" : "view",
+        "Del" : "Del",
+        "Delete" : "Selected Delete",
+        "DelsuccessMsg" : "Delete the selected file.",
+        "DelYnMsg" : "Are you sure you want to delete selected files?",
+        "UnSelectMsg": "No file selected.",
+        "NoFile" : "There is no registered file.",
+	"NoChoiceFile":"No file selected",
+	"ChoiceFile":"Choose File",
+	"fPreview" : "Preview",
+	"noPreview" : "No preview available"
+    },
+   "UserInfo":{
+		"Title":"User info",
+		"Name":"Name",
+		"license" : "License",
+		"pw" : "Now PW",
+		"pw1" : "Change PW",
+		"pw2" : "PW Check",
+		"oAddr" : "Home addr",
+		"photo":"Photo",
+		"oTel":"Telephone",
+		"mTel":"cell phone",
+		"eMail":"Mail",
+		"Postion":"Position",
+		"bDay":"Birthday",
+		"photoDescript":"Please select photos as gif, jpg, png, bmp.",
+		"Sign":"Sign",
+		"signDescript":"Select a file (size:100x67) or type your signature.",
+		"signWrite":"Sign write",
+		"reSign":"Rewrite",
+		"SignUse":"SignUse",
+		"NoSign":"Not used",
+		"part":"Part",
+		"Career":"Career",
+		"auth":"authority",
+		"authSelect":"Please select permissions.",
+		"inOBS":"Organization",
+		"ObsChoice":"choice",
+		"companyNum" : "Employee number",
+		"msg":{
+				"cellP":"Mobile phone is required.",
+				"umail":"Email is required.",
+				"Postion":"Postion is required",
+				"part":"Part is required.",
+				"noSingnWrite":"You have not signed.",
+				"checkPWSame" : "Change PW is not same\nCheck Please",
+				"checkPW" : "Now PW Check please"
+
+				
+			}
+    },
+    "datatable": {
+		"option" : { 		
+			"show" : "Show :",
+			"total" : "Tital ",
+			"previous" : "Prev",
+			"next" : "Next",
+			"emptyTable" : "No data available in table",
+			"filter" : "Filter"
+		}
+	},
+   "btn":{
+	"save": "Save",
+	"edit": "Edit",
+	"delete": "Delete",
+	"deleteAll": "Delete all",
+	"move": "Move",
+	"cancel": "Cancle",
+	"close": "Close",
+	"open": "Open",
+	"insert": "Insert",
+	"append": "Append",
+	"reset" : "Reset",
+	"yes" : "Yes" ,
+	"no" : "No",
+	"ok" : "Ok",
+	"setting" : "Setting",
+	"write" : "write",
+	"search" : "Search",
+	"back" : "Back",
+	"Sort" : "Sort",
+	"choice" : "Choice",
+	"newWindow" : "New window",
+	"approval" : "Approval",
+	"excelDown" : "Excel",
+	"list" : "List",
+	"print" : "Print",
+	"extend" : "확장",
+	"reduce" : "축소"
+   },
+   "msg":{
+	"delOk" : "Deleted ",
+	"editOk" : "Modified",
+	"saveOk" : "Saved",
+	"approvalOk" : "Approvaled",
+	"approvalCancel" : "Approval Canceld",
+	"DbError" : "An internal error occurred.\nCheck with your system administrator. ",
+	"delYn" : "Are you sure you want to delete?",
+	"sessionError" : "Session time out \n please page reload.",
+	"wrongSubmit" : "Invalid transfer.",
+	"success" : "Success",
+	"fail" : "Fail",
+	"insertContent" : "Please enter the content",
+	"attachFile" : "Please attach file."
+
+   },
+   "validation" : {
+		"required" : "This field is required.",
+		"remote" : "Please fix this field.",
+		"email" : "Please enter a valid email address.",
+		"url" : "Please enter a valid URL.",
+		"date" : "Please enter a valid date.",
+		"dateISO" : "Please enter a valid date (ISO).",
+		"number" : "Please enter a valid number.",
+		"digits" : "Please enter only digits.",
+		"creditcard" : "Please enter a valid credit card number.",
+		"equalTo" : "Please enter the same value again.",
+		"accept" : "Please enter a value with a valid extension.",
+		"maxlength" : "Please enter no more than {0} characters.",
+		"minlength" : "Please enter at least {0} characters.",
+		"rangelength" : "Please enter a value between {0} and {1} characters long.",
+		"range" : "Please enter a value between {0} and {1}.",
+		"max" : "Please enter a value less than or equal to {0}.",
+		"min" : "Please enter a value greater than or equal to {0}.",
+		"chkEndDate" : "The end date can not be smaller than the start date."
+	},
+	
+	"daterangepicker" : {
+		"day" : { 
+			"Su" : "Su"
+			,"Mo" : "Mo"
+			,"Tu" : "Tu"
+			,"We" : "We"
+			,"Th" : "Th"
+			,"Fr" : "Fr"
+			,"Sa" : "Sa"
+		},
+		"label" : { 
+			"apply" : "Apply",
+			"cancel" : "Cancel",
+			"start" : "Start date",
+			"end" : "End date",
+			"manchoice" : "Select User",
+			"day" : "Day",
+			"month" : "Month",
+			"year" : "Year"
+		},
+		"range" : {
+			"toDay" : "Today",
+			"tomorrow" : "Tomorrow",
+			"after7Days" : "After 7 Days",
+			"after30Days" : "After 30 Days",
+			"thisMonth" : "This Month",
+			"custom" : "Custom"
+		},
+		"month" : {
+			"m1" : "1월",
+			"m2" : "2월",
+			"m3" : "3월",
+			"m4" : "4월",
+			"m5" : "5월",
+			"m6" : "6월",
+			"m7" : "7월",
+			"m8" : "8월",
+			"m9" : "9월",
+			"m10" : "10월",
+			"m11" : "11월",
+			"m12" : "12월"
+		}
+	},
+	"manChoice" : { 
+		"label" : { 
+			"manChoice" : "User select",
+			"affiliation" : "Affiliation",	
+			"name" : "Name",
+			"field" : "Field",
+			"addGroup" : "Group add",
+			"groupNm" : "Group name",
+			"groupMemo" : "Memo",
+			"memCnt" : "Total",
+			"member" : "Member"
+			,"fieldMember" : "Field member"
+			,"companyMember" : "Company member"
+			,"privateGrp" : "Private group"
+			,
+			"delYn" : "Delete group?\n(Selected member info reset)"
+
+		},
+		"msg" :{ 
+			"noSelect" : "Please, select to user.",
+			"success" : "Success",
+			"used" : "Group name is used.\n Retry plase.",
+			"systemError" : "Error.\n ask for administrator.",
+			"insertGroupNm" : "Please, Insert group name",
+			"oneSelect" : "You can choice to only one"
+		}
+	},
+	"obsChoice" : {
+		"label" : { 
+			"obsChoice" : "OBS Select",
+			"schNm" : "Keyword"
+		},
+		"msg" :{
+			"noSelect" : "Please, select to OBS."
+		}
+	},
+	"attendance" : {	
+		"btn" : { 
+			"in" : "Do you want to work?",
+			"out" : "Do you want go home?"
+		},
+		"label" :{
+			"come" : "Attendance",
+			"late" : "Late",
+			"early" : "Early leave",
+			"overtime" : "Overtime" ,
+			"inTime" : "Arrival time",
+			"outTime" : "Leave time",
+			"inDescript" : "Arrival memo",
+			"outDescript" : "Leave memo"
+		},
+		"msg" : {
+			"overnight" : "Worked all night??"
+		}
+		
+	},
+	"workspace" : {	
+		"info1" : "Only image files less than ",
+		"info2" : "10MB",
+		"info3" : " can be registered.",
+		"title" : "Attach Image",
+		"submit" : "submit",
+		"cancel" : "cancel"
+		,"info1msg"		: "width(w)"
+		,"info2msg"		: "If 0 is entered, it is inserted at the original image size."
+	},
+	"multiselect" : {
+		"selectAllText" : "Select all",
+		"allSelectedText" : "All selected",
+		"nSelectedText" : "selected"
+	},
+	"Project_Choice" : {
+		"Run" : "Run",
+		"Stop" : "Stop",
+		"End" : "End",
+		"all" : "All"
+	},
+	"gongguStat" : {
+		"stat_0":"End",
+		"stat_1":"Run",
+		"stat_2":"Stop",
+		"stat_9":"to be"
+	},
+	"ContactKind":{
+		"inside":"inside",
+		"outside":"outside",
+		"Seachtxt":"keyWord"
+	},
+	"ContactView":{
+		"list":"List View",
+		"tree":"Tree View"
+	}
+}

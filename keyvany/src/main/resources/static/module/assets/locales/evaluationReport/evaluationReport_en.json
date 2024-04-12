@@ -1,0 +1,31 @@
+{
+	"label":{
+		"evaltype": "Evaluation type",
+		"cUser": "Registerer",
+		"cDate": "Write date",
+		"uUser": "Editor",
+		"uDate": "Edit date",
+		"checkClass": "Check classification",
+		"evalMethod": "Assessment methods",
+		"checkListCnt": "Checklist count",
+		"checkList": "Checklist",
+		"processingPeriod": "Processing period",
+		"select": "Select",
+		"successiveWork": "Successive work",
+		"evalMethod_1": "term",
+		"evalMethod_2": "Processing status",
+		"evalMethod_3": "Occurrence",
+		"evalMethod_4": "Execution%",
+		"evalClass" : "Check classification",
+		"immediately" : "immediately",
+		"day" : "day"
+	},
+	"btn":{
+		"successiveWorkSelSave" : "Action mapping save"
+	},
+	"msg":{
+		"selectEvaltypePlz": "Please select a rating type.",
+		"selectEvalClassPlz": "Please select inspection category.",
+		"input_0_now": "Enter 0 to run immediately"
+	}
+}

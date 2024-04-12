@@ -1,0 +1,158 @@
+/*
+모바일 datatable 버튼 재정렬
+*/
+ 
+@media screen and (max-width: 1630px) { 
+  .dt-buttons {
+    float: none;
+    text-align: center;
+    margin-right : 10px;
+	display : inline !important;
+  }
+  .dt-buttons .btn {
+    float: none;
+  } 
+}
+@media screen and (max-width: 767px) {
+  .dt-buttons {
+    float: none;
+    text-align: center;
+    margin-right : 10px;
+	display : inline !important;
+  }
+  .dt-buttons .btn {
+    float: none;
+  } 
+}
+
+
+@media screen and (max-width: 414px) {
+	.btn-xs, .btn-group-xs > .btn{
+		--padding: 3px 5px;
+	}
+	.panel-body{
+		padding: 3px 5px;
+	}
+	#workSpace Div{
+		word-break:break-all;
+	}
+
+	#modal_FormMng  .modal-body, #obsChoiceModal .modal-body{
+		padding: 10px;
+	}
+}
+
+.choice span {
+	border : 2px solid #797979;
+}
+
+.content-group {
+	margin-bottom : 20px !important;
+}
+  
+
+.fancytree-ext-table tbody tr td:first-child {
+	text-align : left;
+} 
+
+#dataList {
+	word-break:break-all;
+}
+
+.btn-hide ,
+.custom-hide {
+	display: none !important;
+}
+ 
+
+@media screen and (max-width: 1200px) { 
+	.custom-icon {
+		margin-right : 0px;
+	} 
+	.btn-span {
+		display:none;
+	} 
+}
+@media screen and (max-width: 1024px) { 
+	.btn-span {
+		display:inline;
+	} 
+	.custom-icon {
+		margin-right : 7px;
+	}
+} 
+
+@media screen and (max-width: 814px) {
+	.btn-custom,
+	.btn-xs, 
+	.btn-group-xs > .btn{
+		padding: 3px 5px;
+	}  
+}
+
+@media screen and (max-width: 414px) {
+	.btn-custom,
+	.btn-xs, 
+	.btn-group-xs > .btn{
+		padding: 3px 5px;
+	} 
+
+	.btn-span {
+		display:none;
+	} 
+	.panel-body{
+		padding: 3px 5px;
+	}
+	 
+	.custom-icon {
+		margin-right : 0px;
+	}
+}
+
+
+
+ 
+/* 글자 밀림 방지 */
+.dataTable > thead > tr > th,
+.dataTable > tbody > tr > th,
+.dataTable > tfoot > tr > th,
+.dataTable > thead > tr > td,
+.dataTable > tbody > tr > td,
+.dataTable > tfoot > tr > td {
+  vertical-align: middle;
+  word-break:break-all;
+}
+
+.paging_simple .paginate_button:hover, .paging_simple .paginate_button:focus{
+	background-color : transparent;
+}
+.dataTables_paginate .paginate_button:hover, .dataTables_paginate .paginate_button:focus{
+	background-color : transparent;
+}
+
+.text-skip { 
+	overflow : hidden;
+	text-overflow : ellipsis;
+} 
+ 
+.table-layout-fixed { 
+	table-layout : fixed;
+}
+ 
+/* dual list Move/Remove all 버튼 히든처리 */
+ .btn.removeall ,
+ .btn.moveall {
+	display : none; 
+}
+
+button.btn.remove , 
+button.btn.move {
+	border : 1px solid #ddd !important; 
+	width: 100%;
+}
+
+.box1.col-md-6 ,
+.box2.col-md-6 { 
+	border-top : 1px solid #ddd !important;
+	padding-top : 10px;
+}

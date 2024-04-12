@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FileDAO">
+    <!-- 새로운 파일아이디  찾기 -->
+    <select id="selectNewFileId" resultType="int">
+        SELECT IFNULL(MAX(FILE_ID) + 1, 1) AS FILE_ID FROM tb_file
+    </select>
+
+    <!-- 파일 등록 -->
+    <insert id="insertFile" parameterType="java.util.Map">
+        <selectKey keyProperty="fileId" resultType="int" order="BEFORE">
+            SELECT IFNULL(MAX(FILE_ID) + 1, 1) FROM tb_file A
+        </selectKey>
+        INSERT INTO tb_file /*FileDAO.insertFile*/
+               (
+                     FILE_ID         /*파일아이디*/
+                   , FILE_SN         /*파일순번*/
+                   , FILE_NM         /*원본파일명*/
+                   , RE_FILE_NM      /*저장 시 변경되는 파일명*/
+                   , FILE_TYPE       /*파일확장자*/
+                   , PATH            /*파일경로*/
+                   , SIZE            /*파일사이즈*/
+                   , CREAT_DTTM      /*등록자*/
+                   , CRTR_ID         /*등록날짜*/
+                   , UPDT_DTTM       /*수정자*/
+                   , UPDUSR_ID       /*수정날짜*/
+               )
+        VALUES
+               (
+                     #{fileId}
+                   , (SELECT IFNULL(MAX(B.FILE_SN) + 1, 1) FROM tb_file B WHERE FILE_ID = #{fileId})
+                   , #{orgFileNm}
+                   , #{reFileNm}
+                   , #{fileType}
+                   , #{filePath}
+                   , #{fileSize}
+                   , now()
+                   , #{crtrId}
+                   , now()
+                   , #{crtrId}
+                )
+    </insert>
+
+    <!-- 파일 등록(파라미터로 넘겨 받은 파일아이디가 있을경우) -->
+    <insert id="insertFileByParam" parameterType="java.util.Map">
+        INSERT INTO tb_file /*FileDAO.insertFileByParam*/
+               (
+                     FILE_ID         /*파일아이디*/
+                   , FILE_SN         /*파일순번*/
+                   , FILE_NM         /*원본파일명*/
+                   , RE_FILE_NM      /*저장 시 변경되는 파일명*/
+                   , FILE_TYPE       /*파일확장자*/
+                   , PATH            /*파일경로*/
+                   , SIZE            /*파일사이즈*/
+                   , CREAT_DTTM      /*등록자*/
+                   , CRTR_ID         /*등록날짜*/
+                   , UPDT_DTTM       /*수정자*/
+                   , UPDUSR_ID       /*수정날짜*/
+               )
+        VALUES
+               (
+                     #{fileId}
+                   , (SELECT IFNULL(MAX(B.FILE_SN) + 1, 1) FROM tb_file B WHERE FILE_ID = #{fileId})
+                   , #{orgFileNm}
+                   , #{reFileNm}
+                   , #{fileType}
+                   , #{filePath}
+                   , #{fileSize}
+                   , now()
+                   , #{crtrId}
+                   , now()
+                   , #{crtrId}
+                )
+    </insert>
+
+    <!-- 파일 수정 -->
+    <update id="updateFile" parameterType="java.util.Map">
+        UPDATE tb_file /*FileDAO.updateFile*/
+           SET FILE_NM       = #{orgFileNm}
+             , RE_FILE_NM    = #{reFileNm}
+             , FILE_TYPE     = #{fileType}
+             , PATH          = #{filePath}
+             , SIZE          = #{fileSize}
+             , UPDT_DTTM     = now()
+             , UPDUSR_ID     = #{crtrId}
+         WHERE FILE_ID       = #{fileId}
+           AND FILE_SN       = #{fileSn}
+    </update>
+
+    <!-- 파일 삭제 -->
+    <delete id="deleteFile" parameterType="int">
+        DELETE /*FileDAO.deleteFile*/
+          FROM tb_file
+         WHERE FILE_ID = #{value}
+    </delete>
+
+    <!-- 파일 삭제 -->
+    <delete id="deleteFileParmMap" parameterType="java.util.Map">
+        DELETE /*FileDAO.deleteFileParmMap*/
+          FROM tb_file
+         WHERE FILE_ID = #{fileId}
+           AND FILE_SN = #{fileSn}
+    </delete>
+</mapper>

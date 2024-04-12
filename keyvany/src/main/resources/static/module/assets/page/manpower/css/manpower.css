@@ -1,0 +1,559 @@
+.stick{
+	padding: 5px 5px 5px 5px;
+}
+
+.content {
+    padding: 0 20px 0px 20px;
+}
+
+.tx-4{
+	font-size:12px !important;
+}
+
+#dataList_allWorker_wrapper .datatable-header{
+	--background-color: ghostwhite;
+}
+
+#frmManpower .content-group.form-inline {
+    text-align: right;
+}
+.multiselect-container{
+	max-height: 280px;
+}
+
+
+.multiselect-container label{
+	width:100%;
+}
+
+
+#planTable tbody td {
+	text-align:center;
+	padding: 4px 2px;
+}
+
+#planTable .p, #planTable .r {
+	text-align:center;
+	font-size:11px;
+}
+
+#calHeaderTable{
+    position: relative;
+    left: -1px;
+}
+
+#tmplView1{
+    --position: relative;
+    position: inherit;
+    top: -1px;
+}
+
+#tmplView1 > tbody > tr > td:not(.PRdt){
+	border:1px solid #c0c0c0;
+}
+
+
+#tmplView1 > tbody > tr > td, #tmplView1_top > thead > tr > th
+{
+   border-bottom: 1px solid #383838 !important;
+}
+
+#calHeaderTable  > thead > tr > th{
+	border-bottom: 1px solid #383838 !important;
+}
+
+#tmplView1_top, #calHeaderTable{
+	    background-color: ghostwhite;
+}
+#btn_corpWorkerMgr{
+	margin-top:6px;
+}
+
+.PRdt{
+	text-align:center;
+}
+
+.curP{
+	cursor: pointer !important;
+}
+
+.i-row{
+	height:60px;
+}
+
+.i-row td{
+	text-align:center;
+}
+
+.PRdt[gb=P]{
+	border-bottom:1px solid #c0c0c0;
+}
+
+
+.sbt{
+	width:100%;
+	height:58px;
+}
+
+.sbt tr:first-child{
+	height:29px;
+}
+
+#frmManpower .multiselect-container{
+	z-index:1001;
+}
+
+#frmManpower .multiselect-container input[type="checkbox"]{
+	position: absolute !important;
+	margin-left: 16px !important;
+}
+
+/*
+.i-row:first-child td{
+	border-top:0 !important;
+}
+*/
+
+.table {
+	display: table;
+}
+.r{
+	display:table;
+	--display:table-row;
+	margin-bottom:0px;
+	--height:30px;
+	vertical-align: middle;
+}
+.c{
+	display:table-cell;
+	border:1px solid #bbb;
+    vertical-align: middle;
+	border-top: 0;
+	word-break: break-all;
+}
+
+.rowspan{
+	padding-left:0;
+}
+
+.rowspan li{
+	width: 100%;
+    line-height: 29px;
+}
+
+.rowspan li:first-child{
+    border-bottom: 1px solid #bbb;
+	--line-height:29px !important;
+}
+
+.monCell{
+	width:50px;
+}
+
+/*
+.monRow{
+	height:30px;
+}
+*/
+
+.handsontable tr:first-child th, .handsontable tr:first-child td {
+    border-top: 0px !important;
+}
+
+/*
+#tmplView1{
+	box-sizing: border-box !important;
+}
+*/
+
+.ofh{
+	overflow:hidden !important;
+}
+
+/* 怨듦뎄紐� 留먯쨪�씠湲� */
+.ggNm{
+	/* �븳 以� �옄瑜닿린 */
+	/*
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	*/
+
+
+	/* �뿬�윭以� 以� �옄瑜닿린 異붽� �뒪���씪 */
+
+	white-space: normal;
+	line-height: 1.2;
+	--height: 3.6em;
+
+
+	overflow:hidden;
+
+}
+
+
+
+#calHeaderTable{
+	border-left: 0px;
+}
+
+#calHeaderTable thead tr th:first-child{
+	border-left: 0px;
+}
+
+
+.ui-draggable-dragging{
+	color : red;
+	z-index:9999;
+	width:auto;
+	height:30px;
+	border:1px solid #bbb;
+}
+
+
+.ui-autocomplete{
+	z-index:1051 !important;
+}
+
+
+.manpower_left{
+	width:680px;
+	float:left;
+}
+
+
+.manpower_right.editMode{
+	width:calc(100% - 690px);
+	float:left;
+}
+
+
+.col-inline .form-control{
+	display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.plr-6{
+	padding-left:6px;
+	padding-right:6px;
+}
+
+/******************* �씤�썝紐⑸줉 寃��깋 �샃�뀡 愿��젴 **********************/
+/*----------------------------------------------------------------*/
+#dataList_allWorker_filter > label{
+	float: left;
+}
+#dataList_allWorker_filter > label > input[type="search"]{
+    width: 150px;
+}
+#sch_w_level{
+    width: auto;
+    margin-left: 10px;
+    float: left;
+}
+#sch_w_part{
+	width: auto;
+    float: left;
+    margin-left: 10px;
+}
+#sch_w_comGubun{
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+}
+#sch_w_date{
+    float: left;
+    margin-top: 10px;
+}
+#sch_w_sDate, #sch_w_eDate{
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#dataList_allWorker_wrapper > div.datatable-header > div.dt-buttons{
+	margin-bottom:0px;
+}
+/*----------------------------------------------------------------*/
+/******************* �씤�썝紐⑸줉 寃��깋 �샃�뀡 愿��젴 **********************/
+
+
+
+/******************* �닾�엯�씤�젰蹂�寃� �샃�뀡 愿��젴 **********************/
+/*----------------------------------------------------------------*/
+#dataList_changeUser_filter > label{
+	float: left;
+}
+#dataList_changeUser_filter > label > input[type="search"]{
+    width: 150px;
+}
+#sch_change_level{
+    width: auto;
+    margin-left: 10px;
+    float: left;
+}
+#sch_change_part{
+	width: auto;
+    float: left;
+    margin-left: 10px;
+}
+#sch_change_comGubun{
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+}
+
+#sch_change_corpNm{
+    float: left;
+    margin-left: 10px;
+}
+
+#dataList_changeUser_wrapper .datatable-header{
+	padding:0;
+}
+/*----------------------------------------------------------------*/
+/******************* �닾�엯�씤�젰蹂�寃� �샃�뀡 愿��젴 **********************/
+
+
+
+.manpower_left .panel-body{
+	padding-bottom:0px;
+}
+
+#dataList_allWorker_info{
+	display:none
+}
+
+#dataList_allWorker_wrapper > div.datatable-footer{
+	display:none
+}
+
+.new-row{
+	background-color: khaki;
+}
+
+
+
+
+
+
+
+.panel > .dataTables_wrapper .table-bordered > tbody > tr:last-child > th, .panel > .dataTables_wrapper .table-bordered > tbody > tr:last-child > td {
+    border-bottom: 1px solid #ddd !important;
+}
+
+
+
+#BLeft_Inner{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+	overflow-y: scroll;
+	overflow-x: hidden;
+	----width:680px;
+	width:740px;
+
+}
+
+.memo{
+	background-image: url("/resources/module/assets/page/manpower/images/bg_memo.gif");
+	z-index:1000;
+}
+
+.dataTables_scrollHeadInner{
+	background-color: ghostwhite;
+}
+
+#dataList_allWorker_wrapper > div.datatable-scroll > div > div.dataTables_scrollHead > div > table{
+	background-color: ghostwhite;
+}
+
+
+.panel-heading .close {
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    margin-top: 0;
+}
+
+.panel-body .close {
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    margin-top: 0;
+}
+
+.dragStart{
+	background-color:lemonchiffon;
+}
+
+.bg-corpWorker{
+	background-color:lightblue !important;
+}
+
+.bg-notFixedMan{
+	background-color:#fcf0cc !important;
+}
+
+#dataList_allWorker_wrapper .datatable-scroll td, #dataList_allWorker_wrapper .datatable-scroll th {
+    cursor: auto;
+}
+
+#dataList_allWorker .dragUser, .dragDummyUser {
+	cursor:move !important;
+}
+
+.swal-wide{
+    width:850px !important;
+	margin-left:-425px !important;
+	/*
+	margin: auto;
+	transform: translateX(-50%);
+	*/
+}
+
+#table_notFixedMan td{
+    border-bottom: 1px solid #dddddd;
+}
+
+#table_notFixedMan td:not(:last-child){
+	border-right: 1px solid #dddddd;
+}
+
+.dataTables_scrollHeadInner{
+	border-bottom: 1px solid #dddddd;
+}
+
+.dataTables_scrollHeadInner th{
+	border:0 !important;
+}
+
+#btn_colorInfo{
+	margin-top:6px;
+}
+
+
+.colBox {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+#tmplView1_top th, #calHeaderTable th{
+	padding:3px 10px !important;
+}
+
+/*
+#modal_changeUser_List{
+	z-index:99999999 !important;
+}
+*/
+
+#form_inputAdd .radio label{
+	padding-left:18px;
+}
+
+#form_inputAdd .btn-copy, #form_inputAdd .btn-paste{
+	padding:1px 5px 1px 5px
+}
+
+#modal_changeSort #accordion-Sort ul{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+#modal_changeSort #accordion-Sort ul li a{
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+#modal_changeSort #sortable li:not(:last-child) {
+    border-bottom: 1px solid lightblue;
+}
+
+
+#colorInfo-table1 td, #colorInfo-table2 td{
+	border: 1px solid #dddddd;
+}
+
+.sp-dd{
+	line-height: 1.5384616 !important;
+}
+.sp-replacer{
+	border:none !important;
+    padding: 5px 10px !important;
+}
+.sp-container{
+	z-index: 9999999;
+}
+.sp-dd {
+    display: none;
+}
+.sp-preview{
+	margin-right:0px !important;
+}
+
+#calHeader .thisMon{
+	background-color:#f9ffc5 !important;
+}
+
+.cp{
+	cursor:pointer;
+}
+
+.remain table{
+	width:100%
+}
+.remain td{
+	height:29px;
+}
+.remain tr:first-child td{
+	border-bottom:1px solid #c0c0c0;
+}
+
+.remain-hd table{
+	width:100%
+}
+.remain-hd tr:first-child td{
+	border-bottom:#0c0c0c solid 1px;
+	padding-bottom: 4px  !important;
+	height:50%  !important;
+}
+.remain-hd tr:last-child td{
+	height:50%;
+	padding-top:4px;
+}
+
+
+
+
+
+
+.manpower-search.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+
+
+.manpower-search.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+
+.manpower-search.form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+
+
+.manpower-search.form-inline .input-group .input-group-addon, .manpower-search.form-inline .input-group .input-group-btn, .manpower-search.form-inline .input-group .form-control {
+    width: auto;
+}

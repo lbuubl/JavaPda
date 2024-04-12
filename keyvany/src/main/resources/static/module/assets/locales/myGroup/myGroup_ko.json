@@ -1,0 +1,18 @@
+{
+	"label" : {
+		"groupList" : "그룹목록",
+		"groupInfo" : "그룹정보",
+		"groupName" : "그룹명",
+		"user" : "사용자",
+		"memo" : "설명",
+		"memberCnt" : "인원수"
+	
+	},"msg" : {
+		"selectedMember" : "그룹 멤버를 선택해주세요"
+		,"usedGrpNm" : "이미 사용중인 그룹명입니다"
+		,"notSelectData" : "선택된 데이터가 없습니다"
+		,"insertGrpNm" : "그룹명을 입력해주세요"
+
+	}
+	 
+}

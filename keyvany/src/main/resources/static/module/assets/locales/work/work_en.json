@@ -1,0 +1,134 @@
+{
+	"btn": {
+		"projectMgr": "Project Mgr",
+		"activityAdd": "Activity add",
+		"checkCode": "Check code",
+		"activityProgressAdd": "Add work content",
+		"scheduleAdd": "Add Schedule",
+		"scheduleDel": "Delete Schedule"
+	},
+	"title": {
+		"projectMgr": "Project Mgr",
+		"taskProgress": "Work content",
+		"taskProgressHistory": "Work history",
+		"activityProgress": "Details of work by detail item",
+		"comment" : "Comment"
+	},
+	"label" : {
+		"projectMgr" : {
+			"projectNm" : "Project Name",
+			"mmPlan" : "Input plan MM",
+			"sDate" : "Start date",
+			"eDate" : "End date"
+		},
+		"taskEdit" : {
+			"project" : "Project",
+			"editDate" : "Updated date",
+			"writeDate" : "Writed date",
+			"sDate" : "Start date",
+			"eDate" : "End date",
+			"taskCd" : "Task Code",
+			"autoApproval_Yn" : "Auto approval",
+			"auto" : "Auto",
+			"manual" : "Manual",
+			"taskNm" : "Task Name",
+			"progressRate" : "Progress rate",
+			"taskContents" : "Contents",
+			"subItem" : "Sub item",
+			"attachFile" : "Attach file",
+			"fileList" : "File list",
+			"progressRateMgr" : "Progress rate mgr",
+			"priority" : "Priority",
+			"state" : "State",
+			"stateChangeDt" : "State change date",
+			"sel_progressRateMgrMethod" : {
+				"M" : "Direct input",
+				"A" : "Auto Input"
+			},
+			"sel_priority" : {
+				"1" : "highest",
+				"2" : "high",
+				"3" : "nomal",
+				"4" : "low"
+			},
+			"sel_progressCd" : {
+				"1" : "stand by",
+				"2" : "open",
+				"3" : "on hold",
+				"4" : "close"
+			},
+			"writer" : "writer"
+		},
+		"taskDetail" : {
+			"taskTimer" : "Task timer",
+			"taskDetails" : "Task details",
+			"assignedUsers" : "Assigned users",
+			"makeACall" : "Make a call",
+			"sendMessage" : "Send message",
+			"sendMail" : "Send mail"
+		},
+		"activityEdit" : {
+			"subItem" : "Sub item",
+			"doDate" : "Do date",
+			"progressRate" : "Progress rate",
+			"operator" : "Operator",
+			"contents" : "Contents",
+			"weight" : "weight"
+		},
+		"activityDetail" : {
+			"updated" : "Updated date",
+			"progressRate" : "Progress rate",
+			"worker" : "Worker",
+			"workContents" : "Work content",
+			"approval" : "Approval",
+			"attachFiles" : "Attach files",
+			"lastUpdated" : "Last updated"
+		},
+		"progressEdit" : {
+			"workStartDate" : "Start date of the first task",
+			"workContents" : "Work contents"
+		},
+		"timer" : {
+			"days" : "days",
+			"hours" : "hours",
+			"minutes" : "minutes",
+			"seconds" : "seconds"
+		}
+	},
+	"datatable" : {
+		"project":{
+			"no": "No",
+			"projectNm": "Project name",
+			"sDate": "Start date",
+			"eDate": "End date",
+			"regDt": "Reg date",
+			"regNm": "Reg Name"
+		},
+		"task":{
+			"no" : "No",
+			"projectNm" : "Project name",
+			"taskNm" : "Task name",
+			"progressRate" : "Progress rate",
+			"priority" : "priority",
+			"sDate" : "Start date",
+			"eDate" : "End date",
+			"uDate" : "updated",
+			"status" : "status",
+			"taskUser" : "taskUser"
+		},
+		"filter" : "Keyword"
+	},
+	"validation" : {
+		"chkEndDate" : "The end date can not be smaller than the start date.",
+		"chkWeightSum" : "The sum of the weights should be 100.",
+		"validCode" : "This code is available.",
+		"unValidCode" : "It is already used code.",
+		"chkTaskCdPlz" : "Duplicate confirmation is necessary.",
+		"insertContent" : "Please enter the content."
+
+	},
+	"msg" : {
+		"noComment" : "No comments.",
+		"commentCloseIsOk" : "There is content under construction. Cancel?"
+	}
+}

@@ -1,0 +1,36 @@
+{	
+	"label" : {
+		"authGroup" : "권한그룹",
+		"groupNm" : "그룹명",
+		"groupMemo" : "그룹설명",
+		"allSelect" : "일괄선택",
+		"menuList" : "권한설정",
+		"menuNm" : "메뉴명",
+		"memberCnt" : "인원수",
+		"memberChange" : "인원조정",
+		"group" : "그룹",
+		"member" : "인원",
+		"selectAll" : "전체선택",
+		"unselectAll" : "전체해제"
+
+		
+	},
+	"btn" : {
+		"groupCopy" : "그룹복사" 
+	}
+	,"msg" : {
+		"memberInsert" : "{{memLength}}명을 등록하시겠습니까?",
+		"noSelect" : "선택된 인원이 없습니다.",
+		"groupDelete" : "그룹을 삭제하겠습니까?",
+		"success" : "성공"	,
+		"selectGroup" : "그룹을 선택해주세요",
+		"insertGroupNm" : "그룹명을 입력해주세요",
+		"maxLengthMemo" : "설명은 100글자까지 입력이 가능합니다.",
+		"groupCopy" : "그룹을 복사하시겠습니까?",
+		"updateGroup" : "수정하시겠습니까?",
+		"memChangeAfter" : "그룹에 속한 인원을 재배치 후 삭제해주세요"
+
+
+
+	}
+}

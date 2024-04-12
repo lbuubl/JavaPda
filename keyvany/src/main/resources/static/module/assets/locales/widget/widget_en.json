@@ -1,0 +1,144 @@
+{
+	"work" : {
+		"title" : "Project progress",
+		"summary" : {
+			"workState" : "Work state",
+			"all" : "All",
+			"planMember" : "Involved member",
+			"plan" : "Plan",
+			"ea" : "EA"
+		},
+		"taskList" : {
+			"workName" : "Work name",
+			"operator" : "Operator",
+			"progressRate" : "Progress rate",
+			"RemainingTime" : "Remaining time",
+			"priority" : "Priority",
+			"weight" : "weight",
+			"state" : "State",
+			"label_priority" : {
+				"1" : "highest",
+				"2" : "high",
+				"3" : "nomal",
+				"4" : "low"
+			},
+			"label_state" : {
+				"1" : "Stand by",
+				"2" : "Open",
+				"3" : "On hold",
+				"4" : "Close"
+			},
+			"days" : "days",
+			"hours" : "hours"
+		}
+	},
+
+	"comment" : {
+		"title" : "Comment", 
+		"work" : "Works Management",
+		"bbs" : "Bbs"
+	},
+
+	"approval" : {
+		"title" : {
+			"mainTitle" : "Document to process",
+			"Due" : "Due",
+			"Form" : "Form",
+			"DocTitle" : "Doc Title",
+			"Date" : "Date",
+			"Writer" : "Writer",
+			"ApprovalList" : "Approval list",
+			"ReceiveList" : "Receive list",
+			"WorkDoc" : "You need to process the document",
+			"CompleteDoc" : "Complete document",
+			"SendList" : "Outgoing document"
+		},
+		"msg" : {
+			"nodata" : "There is no registered data."
+		}
+	},
+
+	"schedule" : {
+		"title" : "Schedule information",
+		"list" : {
+			"title" : "Title",
+			"date" : "Date",
+			"time" : "Time", 
+			"scheduleType" : {
+				"my" : "My",
+				"attend" : "Attend",
+				"all" : "Public"
+			}
+		}
+	},
+
+	"pds_latest" : {
+		"title" : "Latest posts data",
+		"config" : "Setting",
+		"dates" : "Dates",
+		"column" : "Column count",
+		"maxCount" : "Max count",
+		"dateSelect" : {
+			"1d" : "Today",
+			"7d" : "7 days ago",
+			"30d" : "30 days ago",
+			"100d" : "100 days ago"
+		},
+		"fileAuthority" : "File authority",
+		"allFiles" : "All files",
+		"authorityFiles" : "Authority files"
+	}
+
+	,"bbs" : {
+		"label":{
+			"big_title" : "communication",
+			"notice" : "Notice",
+			"bbs" : "Board",
+			"title" : "Title",
+			"writer" : "Writer",
+			"date" : "Date",
+			"noShow" : "Today is no more show"
+		}
+	}
+
+	,"survey" : {
+		"label" : {
+			"survey" : "Survey"
+			,"result" : "Result of vote"
+			,"total" : "A total of"
+			,"total_end" : ""
+			
+		}
+		,"btn" : {
+			"vote" : "Vote"
+		}
+		,"msg" : {
+			"delete" : "Do you want delete?",
+			"end" : "Do you want survey close?",
+			"success" : "Success",
+			"inSurvey" : "The survey has already involved",
+			"notSelect" : "Please Select an answer",
+			"addQuestion" : "Please add a question",
+			"addAnser" : "Please add a anser",
+			"maxAnser" : "Anser add fail\n you can add is max {{max}} "
+		}
+	}
+	,"progrees":{
+		"label" : {
+			"bastDt" : "Base date"
+			,"plan" : "plan"
+			,"exec" : "exec"
+			,"RunRate" : "Progress" 
+		}
+	}
+	,"Dday":{
+		"label" : {
+			"startDt" : "Start date",
+			"endDt" : "End date"
+		}
+	}
+	,"Weather":{
+		"linkinfo" : "[source]",
+		"title" : "Weather information"
+	}
+}

@@ -1,0 +1,134 @@
+{
+	"btn": {
+		"projectMgr": "프로젝트 관리",
+		"activityAdd": "세부항목 추가",
+		"checkCode": "중복확인", 
+		"activityProgressAdd": "작업내용 추가",
+		"scheduleAdd": "일정등록",
+		"scheduleDel": "일정삭제"
+	},
+	"title": {
+		"projectMgr": "프로젝트 관리",
+		"taskProgress": "작업내용",
+		"taskProgressHistory": "작업이력",
+		"activityProgress": "세부항목별 작업내용",
+		"comment" : "댓글"
+	},
+	"label" : {
+		"projectMgr" : {
+			"projectNm" : "프로젝트명",
+			"mmPlan" : "예상투입MM",
+			"sDate" : "시작일",
+			"eDate" : "종료일"
+		},
+		"taskEdit" : {
+			"project" : "프로젝트",
+			"editDate" : "업데이트",
+			"writeDate" : "작성일",
+			"sDate" : "시작일",
+			"eDate" : "처리기한",
+			"taskCd" : "업무코드",
+			"autoApproval_Yn" : "작업내용 자동승인",
+			"auto" : "자동",
+			"manual" : "수동",
+			"taskNm" : "업무명",
+			"progressRate" : "진척율",
+			"taskContents" : "내용",
+			"subItem" : "세부항목",
+			"attachFile" : "첨부파일",
+			"fileList" : "파일목록",
+			"progressRateMgr" : "진척율 관리",
+			"priority" : "우선순위",
+			"state" : "진행상태",
+			"stateChangeDt" : "상태변경일",
+			"sel_progressRateMgrMethod" : {
+				"M" : "직접입력",
+				"A" : "자동계산"
+			},
+			"sel_priority" : {
+				"1" : "가장높음",
+				"2" : "높음",
+				"3" : "보통",
+				"4" : "낮음"
+			},
+			"sel_progressCd" : {
+				"1" : "대기",
+				"2" : "진행",
+				"3" : "보류",
+				"4" : "종료"
+			},
+			"writer" : "작성자"
+		},
+		"taskDetail" : {
+			"taskTimer" : "남은시간",
+			"taskDetails" : "상세정보",
+			"assignedUsers" : "작업자",
+			"makeACall" : "전화걸기",
+			"sendMessage" : "문자발송",
+			"sendMail" : "메일발송"
+		},
+		"activityEdit" : {
+			"subItem" : "세부항목",
+			"doDate" : "기한",
+			"progressRate" : "진척율",
+			"operator" : "담당자",
+			"contents" : "내용",
+			"weight" : "가중치"			
+		},
+		"activityDetail" : {
+			"updated" : "업데이트",
+			"progressRate" : "진척율",
+			"worker" : "작업자",
+			"workContents" : "작업내용",
+			"approval" : "승인",
+			"attachFiles" : "첨부",
+			"lastUpdated" : "최종수정일"
+		},
+		"progressEdit" : {
+			"workStartDate" : "작업시작일",
+			"workContents" : "작업내용"
+		},
+		"timer" : {
+			"days" : "일",
+			"hours" : "시간",
+			"minutes" : "분",
+			"seconds" : "초"
+		}
+	},
+	"datatable" : {
+		"project":{
+			"no": "No",
+			"projectNm": "프로젝트명",
+			"sDate": "시작일",
+			"eDate": "종료일",
+			"regDt": "작성일",
+			"regNm": "작성자"
+		},
+		"task":{
+			"no" : "No",
+			"projectNm" : "프로젝트명",
+			"taskNm" : "업무명",
+			"progressRate" : "진척율",
+			"priority" : "우선순위",
+			"sDate" : "시작일",
+			"eDate" : "처리기한",
+			"uDate" : "최종수정일",
+			"status" : "진행상태",
+			"taskUser" : "참여인원"
+		},
+		"filter" : "검색어"
+	},
+	"validation" : {
+		"chkEndDate" : "종료일은 시작일보다 작을수 없습니다.",
+		"chkWeightSum" : "가중치의 합은 100 이 되어야 합니다.",
+		"validCode" : "사용할 수 있는 코드입니다.",
+		"unValidCode" : "이미 사용중인 코드입니다.",
+		"chkTaskCdPlz" : "중복확인이 필요합니다.",
+		"insertContent" : "내용을 입력해 주세요"
+
+	},
+	"msg" : {
+		"noComment" : "댓글이 없습니다.",
+		"commentCloseIsOk" : "작성중이 내용이 있습니다. 취소하겠습니까?"
+	}
+}

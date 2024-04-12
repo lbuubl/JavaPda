@@ -1,0 +1,24 @@
+/*
+html, body, .mce-content-body{ 
+     height: 100% !important;
+     min-width:100% !important;
+     width: 100% !important; 
+     overflow: scroll !important;
+     -webkit-overflow-scrolling: touch !important;
+     -webkit-transform: translate3d(0, 0, 0);
+}
+*/
+
+.mce-edit-area.mce-container {
+     width: 100% !important; height: 100% !important; overflow:auto !important; -webkit-overflow-scrolling:touch !important;
+}
+
+/*
+.mce-content-body { 
+
+     min-width: 100% !important;
+     overflow: scroll !important;
+     -webkit-overflow-scrolling: touch !important;
+}*/
+
+/*html { width: 100% !important; height: 100% !important; overflow: scroll !important; }*/

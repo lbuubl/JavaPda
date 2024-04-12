@@ -1,0 +1,116 @@
+
+/* 코멘트 CSS 정의 */
+@media (max-width: 768px){
+
+	.stack-media-on-mobile {
+		text-align: left;
+	}
+
+
+	.stack-media-on-mobile .media-left,
+	.stack-media-on-mobile .media-right,
+	.stack-media-on-mobile .media-body {
+		display: table-cell;  
+		width: auto;
+		padding-left: 0;
+		padding-right: 0;
+		text-align: left;
+	}	
+	 
+
+	.media-body>.stack-media-on-mobile .media-left,
+	.stack-media-on-mobile .media-right,
+	.stack-media-on-mobile .media-body {
+		display: table-cell;  
+		width: auto;
+		padding-left: 10px;
+		padding-right: 0;
+		text-align: left;
+	}	 
+
+	.custom-date{
+		display: block !improtant;
+	}
+	
+	.stack-media-on-mobile .media-annotation {
+		display: inline;
+	  }
+}
+
+#bbs-comentList{
+	    background: #fafafa;
+}
+.custom-span{
+	float:right;
+}
+
+.custom-hide{
+	display:none;
+}
+ 
+.custom-name{
+	color: #000;
+	margin-left: 0px !important; 
+}
+
+
+.bbs-media{
+	border-bottom: 1px solid #ddd;
+    background: #fff;
+    padding: 5px;
+	margin-top:0;
+}
+
+
+#bbs-comentList .media-heading {
+    margin-left: -5px;
+    margin-top: 3px;
+}
+
+
+.board-box-line-dashed{
+	border-color : #666666;
+	border-bottom-style	: dashed;
+	border-bottom-width : 1px;
+
+}
+.editor-validation{
+	display:none;
+}
+
+.commentReplyContent { 
+	border-top : 1px dotted #ddd; 
+	padding-top : 10px; 
+	padding-bottom : 10px;
+	padding-right : 10px;
+}
+
+.word-break {
+    word-break: break-all;
+}
+
+
+/* label 수정 */
+@media (min-width: 1200px){
+ .form-horizontal .control-label[class*=col-lg-] {
+    padding-top: 0px  ;
+  }
+}
+
+@media (min-width: 1025px){
+ .form-horizontal .control-label[class*=col-lg-] {
+    padding-top: 0px  ;
+  }
+}
+
+@media (min-width: 769px){
+ .form-horizontal .control-label[class*=col-lg-] {
+    padding-top: 0px  ;
+  }
+}
+
+@media (min-width: 480px){
+ .form-horizontal .control-label[class*=col-lg-] {
+    padding-top: 0px  ;
+  }
+}

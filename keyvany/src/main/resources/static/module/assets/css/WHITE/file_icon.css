@@ -1,0 +1,107 @@
+.f_icons {
+    background-image: url(/resources/module/assets/images/file_icon.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.file_alzip {
+    width: 14px;
+    height: 16px;
+    background-position: -5px -5px;
+}
+
+.file_bmp {
+    width: 16px;
+    height: 16px;
+    background-position: -29px -5px;
+}
+
+.file_dwg {
+    width: 16px;
+    height: 16px;
+    background-position: -55px -5px;
+}
+
+.file_excel {
+    width: 16px;
+    height: 16px;
+    background-position: -81px -5px;
+}
+
+.file_file {
+    width: 14px;
+    height: 16px;
+    background-position: -5px -31px;
+}
+
+.file_flash {
+    width: 16px;
+    height: 16px;
+    background-position: -29px -31px;
+}
+
+.file_folder {
+    width: 16px;
+    height: 16px;
+    background-position: -55px -31px;
+}
+
+.file_gif {
+    width: 16px;
+    height: 16px;
+    background-position: -81px -31px;
+}
+
+.file_hwp {
+    width: 16px;
+    height: 16px;
+    background-position: -5px -57px;
+}
+
+.file_jpg {
+    width: 16px;
+    height: 16px;
+    background-position: -31px -57px;
+}
+
+.file_media {
+    width: 15px;
+    height: 15px;
+    background-position: -57px -57px;
+}
+
+.file_pdf {
+    width: 16px;
+    height: 16px;
+    background-position: -82px -57px;
+}
+
+.file_png {
+    width: 16px;
+    height: 16px;
+    background-position: -5px -83px;
+}
+
+.file_ppt {
+    width: 16px;
+    height: 16px;
+    background-position: -31px -83px;
+}
+
+.file_txt {
+    width: 13px;
+    height: 15px;
+    background-position: -57px -83px;
+}
+
+.file_word {
+    width: 16px;
+    height: 16px;
+    background-position: -80px -83px;
+}
+
+.file_zip {
+    width: 15px;
+    height: 16px;
+    background-position: -107px -5px;
+}

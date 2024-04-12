@@ -1,0 +1,338 @@
+.ectBar{
+	text-align:center !important;
+	background-color: #fcfcfc;
+	border: 1px solid #ddd;
+	height:27px;
+	padding-top:4px !important;
+	padding-bottom:0px !important;
+}
+
+.radio-inline{
+	padding-left:18px !important;
+}
+
+.col-date{
+	padding-left:0 !important;
+	padding-right:0 !important;
+	text-align:center !important;
+}
+
+#contractWriteForm .control-label.col-md-1{
+	padding-right:0 !important;
+}
+
+.tr-sum{
+	background-color:#37474f !important;
+	color: aqua;
+}
+
+#changedWriteForm .form-group, #contractWriteForm .form-group, #contractDetailForm .form-group {
+	margin-bottom:2px !important;
+}
+
+#tableFilter_contractState{
+	float: left;
+}
+
+#tableFilter_contractDate{
+	float: left;
+    padding-left: 20px;	
+}
+
+#datatable_contractList_filter > label{
+	padding-left: 20px;
+}
+
+#sch_contractSDate, #sch_contractEDate{
+	padding-right: 0px !important;
+}
+
+
+
+
+.td-1{
+	width:100px;
+	background-color:ghostwhite;
+}
+.td-2 input{
+	width:100% !important;
+}
+
+.auto-width{
+	width:auto !important;
+}
+
+
+.conTypeTD-2, .conTypeTD-3, .conTypeTD-4, .conTypeTD-5{
+	padding-left:10px;
+}
+
+#tableFilter_gongguState{
+	float:left;
+}
+#datatable_gongguList_filter > label{
+	padding-left:10px;
+}
+
+#contractDetailForm label, #contractWriteForm label{
+	margin-bottom:0 !important;
+}
+
+
+/*
+@media (min-width: 1025px)
+.form-horizontal .control-label[class*=col-md-] {
+    padding-top: 8px;
+}
+*/
+
+
+/* 계약목록 계약일 조건 */
+#tableFilter_contractDate input{
+	display: inline-block;
+}
+
+
+.conTypeDIV-1{
+	float: left;
+}
+.conTypeDIV-2{
+	float: left;
+	padding-left:10px;
+	padding-right:10px;
+}
+.conTypeDIV-3{
+
+}
+.conTypeDIV-4{
+	float: left;
+}
+.conTypeDIV-5{
+	float: left;
+	padding-left:10px;
+}
+
+
+#contractDetailForm .form-group div:not(.plupload_filelist_header):not(.plupload_filelist_footer){
+	padding-left:0px !important;
+	padding-right:0px !important;
+	padding-top:0px !important;
+}
+
+
+@media screen and (min-width: 1025px) {
+
+	#contractDetailForm .form-group div:not(:last-child) td:last-child{
+		border-right:0 !important;
+	}
+
+	#contractDetailForm .form-group .col-md-4.col3, #contractDetailForm .form-group .col-md-4.col3_cb{
+		width:286px !important;
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+	#contractWriteForm .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+		margin-top: 0 !important;
+	}
+
+	#contractDetailForm .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+		margin-top: 0 !important;
+	}
+
+	.col-contract_Amount{
+		padding-right:0 !important;
+	}
+
+	.col3_cb{
+		clear:both;
+		padding-top:10px;
+	}
+
+	.col3{
+		padding-top:10px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width:426px) {
+	#contractDetailForm .col-sm-6:nth-child(2) td:first-child{
+		border-left:0 !important;
+	}
+
+	#contractDetailForm  .col-md-4:nth-child(2) td{
+		border-bottom: 1px #bbb solid;
+	}
+}
+
+/* 768(ipad에서도 col-sm 으로 사용) */
+@media screen and (max-width: 768px) and (min-width:760px) {
+	.col-sm-6 {
+		width: 50%;
+		float: left;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.dt-buttons{
+		text-align:right !important;
+	}
+
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+}
+
+.td-1 > .control-label{
+	padding-bottom: 0px; 
+	padding-left: 10px; 
+}
+
+@media screen and (max-width: 425px) {
+	#contractWriteForm > .modal-content > .modal-body{
+		padding: 10px;
+	}
+
+	#tableFilter_contractDate{
+		padding-left:0;
+	}
+	.col2{
+		padding-top:2px;
+	}
+	.col3{
+		padding-top:2px;
+	}
+	.conTypeDIV-1{
+		clear:both;
+	}
+	.conTypeDIV-2{
+		clear:both;
+		padding-top:10px;
+		padding-left:0;
+	}
+	.conTypeDIV-3{
+		clear:both;
+		padding-top:10px;
+	}
+	
+	.conTypeDIV-5{
+		clear: both;
+		padding-left:0;
+	}
+
+	#contractDetailForm .divFileList td:first-child{
+		display: block;
+		width: 100% !important;
+		padding-bottom: 0 !important;
+	}
+
+	#contractDetailForm .divFileList td:last-child{
+		display: block;
+		border-top: 0;
+	}
+
+	/* 프로젝트선택 버튼 다음줄로 내림 */
+	.selGonggu-td td{
+		display:block !important;
+		padding-left:0 !important;
+	}
+	.selGonggu-td td:last-child{
+		padding-top:5px;
+	}
+	.selGonggu-td input{
+		display:block !important;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	#datatable_contractList_filter > label > input[type="search"]{
+		width:170px !important;
+	}
+	#datatable_changedList_filter > label > input[type="search"]{
+		width:160px !important;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	#datatable_contractList_filter > label > input[type="search"]{
+		width:160px !important;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	#tableFilter_contractDate input{
+		width:80px !important;
+		padding-left:2px !important;
+	}
+	#datatable_contractList_filter > label > input[type="search"]{
+		width:120px !important;
+	}
+
+	#datatable_changedList_wrapper > div.datatable-header{
+		padding-left:5px;
+		padding-right:5px;
+	}
+	#datatable_changedList_filter > label > input[type="search"]{
+		width:145px !important;
+	}
+}
+
+
+
+#contractDetailForm .form-group table td{
+	border-top: 1px #bbb solid;
+    border-left: 1px #bbb solid;
+    border-right: 1px #bbb solid;
+	padding-left:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#contractDetailForm .form-group{
+	margin:0 !important;
+}
+
+#datatable_contractList_filter{
+	margin-bottom:0 !important;
+}
+
+#contractDetailForm .last-group {
+	border-bottom: 1px #bbb solid;
+}
+
+/*
+.col1{
+	padding-right:0 !important;
+}
+.col2{
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+.col3{
+	padding-left:0 !important;
+}
+*/
+
+/*
+.form-group div:first-child:not(.col-md-12){
+	padding-right:0 !important;
+	border-right:0 !important;
+}
+
+.form-group div:not(:first-child):not(:last-child){
+	padding-left:0 !important;
+	padding-right:0 !important;
+	border-right:0 !important;
+}
+
+.form-group div:last-child:not(.col-md-12){
+	padding-left:0 !important;
+}
+*/
+
+
+#datatable_contractList tbody tr:not(:first-child) td:nth-child(2) {
+    text-align: left;
+}

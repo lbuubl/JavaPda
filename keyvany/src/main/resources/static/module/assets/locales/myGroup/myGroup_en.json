@@ -1,0 +1,17 @@
+{
+	"label" : {
+		"groupList" : "Group list",
+		"groupInfo" : "Group info",
+		"groupName" : "Group name",
+		"user" : "Users",
+		"memo" : "Memo",
+		"memberCnt" : "Count"
+	
+	},"msg" : {
+		"selectedMember" : "Please, select member"
+		,"usedGrpNm" : "Group name is used"
+		,"notSelectData" : "Not seelected data"
+		,"insertGrpNm" : "Please, insert to group name"
+	}
+	 
+}

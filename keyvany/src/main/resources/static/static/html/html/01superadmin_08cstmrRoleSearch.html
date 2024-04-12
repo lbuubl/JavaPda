@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>웹사이트 관리자</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, minimum-scale=0.7, maximum-scale=1.4, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="../../css/shake.css">
+    <script src="../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../js/jquery.placeholder.enhanced-1.5.js"></script>
+    <script src="../../js/jquery.bxslider.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" media="all" href="css/ie.css">
+        <script src="js/html5.js"></script>
+        <script src="js/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="viewport">
+        <!-- 헤더 -->
+        <div id="header">
+            <h1><img src="../../../img/common/logo.png" alt="웹사이트 관리자"><br>일신건영 웹사이트 관리자</h1>
+            <div class="gnb_scroll">
+                <ul id="gnb">
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_dashboard.png" alt="" class="icon">슈퍼어드민<span class="arrow"></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="#">사업등록/관리</a></li>
+                            <li><a href="#">사용자 관리</a></li>
+                            <li><a href="#">사업권한설정</a></li>
+                            <li><a href="#">메뉴권한설정</a></li>
+                            <li><a href="#">권한조회</a></li>
+                            <li><a href="#">고객문의부서관리</a></li>
+                            <li><a href="#">담당부서관리</a></li>
+                            <li><a href="#">고객문의권한조회</a></li>
+                            <li><a href="#">방문현황</a></li>
+                            <li><a href="#">광고효과</a></li>
+                            <li><a href="#">관리자로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_02.png" alt="" class="icon">사업선택<span class="arrow"></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="#">사업선택</a></li>
+                            <li><a href="#">사업기본정보</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">사업기초정보관리</a></li>
+                                    <li><a href="#">사업서비스메뉴관리</a></li>
+                                </ul>                            
+                            </li>
+                            <li><a href="#">분양안내</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">사업개요</a></li>
+                                    <li><a href="#">사업지안내</a></li>
+                                    <li><a href="#">분양방법/일정</a></li>
+                                    <li><a href="#">분양가안내</a></li>
+                                    <li><a href="#">입주자모집공고</a></li>
+                                    <li><a href="#">모델하우스안내</a></li>
+                                </ul>                            
+                            </li>                            
+                            <li><a href="#">입지환경</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">지역위치도</a></li>
+                                    <li><a href="#">주변환경</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">단지정보</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">조감도</a></li>
+                                    <li><a href="#">투시도</a></li>
+                                    <li><a href="#">배치도</a></li>
+                                    <li><a href="#">단지계획</a></li>
+                                    <li><a href="#">조경시설</a></li>
+                                    <li><a href="#">부대시설</a></li>
+                                    <li><a href="#">동ㆍ호수 배치도</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">특장점관리</a></li>
+                            <li><a href="#">실별면적안내</a></li>
+                            <li><a href="#">인테리어</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">거실</a></li>
+                                    <li><a href="#">침실</a></li>
+                                    <li><a href="#">주방</a></li>
+                                    <li><a href="#">욕실</a></li>
+                                    <li><a href="#">오피스텔</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">e-카탈로그</a></li>  
+                            <li><a href="#">VR</a></li> 
+                            <li><a href="#">사이버인테리어관</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">마감재목록</a></li>
+                                    <li><a href="#">옵션품목</a></li>
+                                    <li><a href="#">전시품목</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">공사현장</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">현장소장인사말</a></li>
+                                    <li><a href="#">전체공정현황</a></li>
+                                    <li><a href="#">동별조망사진</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">입주완료단지</a></li>
+                            <li><a href="#">분양당첨자관리</a></li>
+                            <li><a href="#">관심고객등록관리</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_03.png" alt="" class="icon">고객상담<span class="arrow"></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="#">개인상담</a></li>
+                            <li><a href="#">A/S문의</a></li>
+                            <li><a href="#">기업고객문의</a></li>
+                            <li><a href="#">고객센터FAQ</a></li>
+                            <li><a href="#">문의이관</a></li>
+                            <li><a href="#">윤리경영접수내역</a></li>
+                            <li><a href="#">통계현황</a></li>
+                        </ul>
+                    </li>
+                    
+                                        
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_04.png" alt="" class="icon">사이트 메뉴<span class="arrow"></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="#">회원관리</a></li>
+                            <li><a href="#">회원가입추이</a></li>
+                            <li><a href="#">회원통계</a></li>
+                            <li><a href="#">주소변경요청</a></li>
+                            <li><a href="#">휴먼빌소식</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">설문조사</a></li>
+                            <li><a href="#">광고자료</a></li>
+                            <li><a href="#">사업실적</a></li>
+                            <li><a href="#">E-mail발송</a></li>
+                            <li><a href="#">E-mail폼관리</a></li>
+                            <li><a href="#">프로젝트 우선순위 관리</a></li>
+                            <li><a href="#">현장별연락처</a></li>
+                            <li><a href="#">모델하우스체크 현장설정</a></li>                                                        
+                        </ul>
+                    </li>      
+                    
+                    
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_05.png" alt="" class="icon">오피셜 메뉴<span class="arrow"></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="#">협력업체등록</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">협력업체오픈관리</a></li>
+                                    <li><a href="#">협력업체등록현황</a></li>
+                                </ul>                            
+                            </li>
+                            <li><a href="#">사이트메뉴</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">주요연혁관리</a></li>
+                                    <li><a href="#">수상대표사례</a></li>
+                                    <li><a href="#">입주민감사패</a></li>
+                                    <li><a href="#">활동내역</a></li>
+                                    <li><a href="#">부서연락처관리</a></li>
+                                    <li><a href="#">사랑나눔캠페인</a></li>
+                                </ul>                            
+                            </li>                            
+                            <li><a href="#">수시채용</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">수시채용오픈관리</a></li>
+                                    <li><a href="#">수시채용지원현황</a></li>
+                                </ul>                            
+                            </li> 
+                            <li><a href="#">공개채용</a>
+                                <ul class="sub_menu2">
+                                    <li><a href="#">공채공고</a></li>
+                                    <li><a href="#">공채지원현황</a></li>
+                                    <li><a href="#">단계별합격자관리</a></li>
+                                    <li><a href="#">합격자발표</a></li>
+                                </ul>                            
+                            </li> 
+                        </ul>
+                    </li>                    
+                    
+                                  
+                    <li class="gnb_menu">
+                        <a href="#" class="btn_menu"><img src="../../../img/gnb/icon_user.png" alt="" class="icon">자기정보수정</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="header_mask"></div>
+        
+        <!-- 컨텐츠 -->
+        <div id="contents">
+            <div class="contitle">
+                <div class="wrap">
+                    <a href="#" title="메뉴 보기" id="btn_gnb_menu" class="btn_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    <h2>슈퍼어드민</h2>
+                    <button type="submit" class="btn btn-logout">로그아웃</button>
+                </div>
+            </div>
+            <div class="content_wrap">
+
+
+
+
+                <h3>고객문의권한조회</h3>
+                <p class="desc1">
+
+
+
+
+- '현장 담당자별 사업명 리스트'는 분양문의, 현장문의, 입주문의만 보여준다. 
+ 
+
+ 
+
+ 
+
+
+                </p>
+                
+                
+                <h4>문의구분 : 
+                    <select class="w20">
+                      <option selected="selected">전체</option>
+                    </select> 
+                    <button type="submit" class="btn">고객문의 권한조회(사업별현장담당자리스트)</button>
+                </h4>
+
+
+                <h4>부서 담당자 리스트</h4>
+                
+
+				<div class="list">
+					<table>
+						<colgroup>
+                            <col width="30%" />
+						    <col width="*" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">문의구분</th>
+                            <th scope="col">관리자 이름(계정, E-Mail)</th>                        
+						  </tr>
+						</thead>
+						<tbody>
+						<tr>
+                            <td>분양문의</td>
+                            <td>관리자(admin, ilshinc@ilshinc.com)</td>  
+						</tr>  
+						<tr>
+                            <td>입주문의</td>
+                            <td>관리자(admin, ilshinc@ilshinc.com)</td>  
+						</tr>
+						<tr>
+                            <td>일반문의</td>
+                            <td>관리자(admin, ilshinc@ilshinc.com)</td>  
+						</tr>
+						<tr>
+                            <td>기업고객문의</td>
+                            <td></td>  
+						</tr>
+						<tr>
+                            <td>A/S문의</td>
+                            <td></td>  
+						</tr>                                                                                                                                                                                          
+                     </tbody>
+                   </table>                      
+				</div>  
+                
+                
+                
+                
+
+
+
+                <h4 style="margin-top:30px;">현장 담당자별 사업명 리스트</h4>
+				<div class="list">
+					<table>
+						<colgroup>
+						    <col width="*" />
+							<col width="25%" /> 
+                            <col width="50%" />
+						</colgroup>
+						<thead>
+						  <tr>
+							<th scope="col">문의구분</th>
+                            <th scope="col">관리자 이름(계정, E-Mail)</th>
+                            <th scope="col">사업명</th>                                                     
+						  </tr>
+						</thead>
+						<tbody>
+
+
+
+
+						<tr>
+							<td class="title_c th2">분양문의</td>
+							<td>관리자(root, ojkwon@midasit.com) </td>   
+                            <td class="t_l2">
+가양동휴먼빌<br>가양동휴먼빌오피스텔<br>거제 소동 휴먼빌 지역주택조합<br>공군 원주 관사 및 병영시설 신축공사(BTL)<br>공군 충주 병영시설 신축공사(BTL)<br>교동고교 사업<br>교하운정 휴먼빌<br>남산공원 휴먼빌<br>다산초교 사업<br>당하중교 사업<br>대장초교 사업<br>대화마을휴먼빌<br>덕성여자대학교 기숙사 신축공사<br>돈암동휴먼빌<br>동두천지행동 휴먼빌<br>망원동휴먼빌<br>북가좌동휴먼빌<br>북면신도시 창원 무동3차<br>삼평2중교 사업<br>석촌동 서이무역(주)사옥 신축공사<br>성수동 일신건영 휴먼테코<br>성수문화복지회관<br>수원 신영통휴먼빌<br>신곡동휴먼씨티<br>안산 신길온천역2차 휴먼빌<br>안산선부동휴먼빌<br>안산신길온천역1차휴먼빌<br>안산신길온천역2차상가<br>양산신도시휴먼빌<br>양평 휴먼빌 2차<br>양평 휴먼빌 2차<br>양평휴먼빌<br>언주초교 사업<br>염창동휴먼빌<br>오산세교지구 A-1BL 6공구<br>용수초교 사업<br>용인 죽전 휴먼빌<br>우장산휴먼빌<br>울산신선산 휴먼빌<br>의정부가능동휴먼빌<br>인천 동양지구 휴먼빌<br>인천동양지구 휴먼빌상가<br>인천주안휴먼빌<br>일산2차휴먼빌<br>일산동휴먼빌<br>전주하가지구 휴먼빌<br>진접2중교 사업<br>진주남강 휴먼빌<br>창원 감계지구 휴먼빌<br>창원 북면신도시 휴먼빌    17BL (1단지)<br>창원 북면신도시 휴먼빌 15BL (2단지)<br>채운공원 휴먼빌<br>파주문산휴먼빌<br>하산고교 사업<br>하산중교 사업<br>학동 1초교 사업<br>한빛초교 증축공사<br>합정동휴먼빌<br>화성 봉담 휴먼빌<br>화성매송아파트 건설공사 1공구<br>흥삼초교 사업<br>					
+                            </td>
+						</tr>                       
+                        
+                        
+						<tr>
+							<td class="title_c th2">입주문의</td>
+							<td>관리자(root, ojkwon@midasit.com) </td>   
+                            <td class="t_l2">
+가양동휴먼빌<br>가양동휴먼빌오피스텔<br>거제 소동 휴먼빌 지역주택조합<br>공군 원주 관사 및 병영시설 신축공사(BTL)<br>공군 충주 병영시설 신축공사(BTL)<br>교동고교 사업<br>교하운정 휴먼빌<br>남산공원 휴먼빌<br>다산초교 사업<br>당하중교 사업<br>대장초교 사업<br>대화마을휴먼빌<br>덕성여자대학교 기숙사 신축공사<br>돈암동휴먼빌<br>동두천지행동 휴먼빌<br>망원동휴먼빌<br>북가좌동휴먼빌<br>북면신도시 창원 무동3차<br>삼평2중교 사업<br>석촌동 서이무역(주)사옥 신축공사<br>성수동 일신건영 휴먼테코<br>성수문화복지회관<br>수원 신영통휴먼빌<br>신곡동휴먼씨티<br>안산 신길온천역2차 휴먼빌<br>안산선부동휴먼빌<br>안산신길온천역1차휴먼빌<br>안산신길온천역2차상가<br>양산신도시휴먼빌<br>양평 휴먼빌 2차<br>양평 휴먼빌 2차<br>양평휴먼빌<br>언주초교 사업<br>염창동휴먼빌<br>오산세교지구 A-1BL 6공구<br>용수초교 사업<br>용인 죽전 휴먼빌<br>우장산휴먼빌<br>울산신선산 휴먼빌<br>의정부가능동휴먼빌<br>인천 동양지구 휴먼빌<br>인천동양지구 휴먼빌상가<br>인천주안휴먼빌<br>일산2차휴먼빌<br>일산동휴먼빌<br>전주하가지구 휴먼빌<br>진접2중교 사업<br>진주남강 휴먼빌<br>창원 감계지구 휴먼빌<br>창원 북면신도시 휴먼빌    17BL (1단지)<br>창원 북면신도시 휴먼빌 15BL (2단지)<br>채운공원 휴먼빌<br>파주문산휴먼빌<br>하산고교 사업<br>하산중교 사업<br>학동 1초교 사업<br>한빛초교 증축공사<br>합정동휴먼빌<br>화성 봉담 휴먼빌<br>화성매송아파트 건설공사 1공구<br>흥삼초교 사업<br>					
+                            </td>
+						</tr>
+                        
+						<tr>
+							<td class="title_c th2">일반문의</td>
+							<td>관리자(root, ojkwon@midasit.com) </td>   
+                            <td class="t_l2">
+가양동휴먼빌<br>가양동휴먼빌오피스텔<br>거제 소동 휴먼빌 지역주택조합<br>공군 원주 관사 및 병영시설 신축공사(BTL)<br>공군 충주 병영시설 신축공사(BTL)<br>교동고교 사업<br>교하운정 휴먼빌<br>남산공원 휴먼빌<br>다산초교 사업<br>당하중교 사업<br>대장초교 사업<br>대화마을휴먼빌<br>덕성여자대학교 기숙사 신축공사<br>돈암동휴먼빌<br>동두천지행동 휴먼빌<br>망원동휴먼빌<br>북가좌동휴먼빌<br>북면신도시 창원 무동3차<br>삼평2중교 사업<br>석촌동 서이무역(주)사옥 신축공사<br>성수동 일신건영 휴먼테코<br>성수문화복지회관<br>수원 신영통휴먼빌<br>신곡동휴먼씨티<br>안산 신길온천역2차 휴먼빌<br>안산선부동휴먼빌<br>안산신길온천역1차휴먼빌<br>안산신길온천역2차상가<br>양산신도시휴먼빌<br>양평 휴먼빌 2차<br>양평 휴먼빌 2차<br>양평휴먼빌<br>언주초교 사업<br>염창동휴먼빌<br>오산세교지구 A-1BL 6공구<br>용수초교 사업<br>용인 죽전 휴먼빌<br>우장산휴먼빌<br>울산신선산 휴먼빌<br>의정부가능동휴먼빌<br>인천 동양지구 휴먼빌<br>인천동양지구 휴먼빌상가<br>인천주안휴먼빌<br>일산2차휴먼빌<br>일산동휴먼빌<br>전주하가지구 휴먼빌<br>진접2중교 사업<br>진주남강 휴먼빌<br>창원 감계지구 휴먼빌<br>창원 북면신도시 휴먼빌    17BL (1단지)<br>창원 북면신도시 휴먼빌 15BL (2단지)<br>채운공원 휴먼빌<br>파주문산휴먼빌<br>하산고교 사업<br>하산중교 사업<br>학동 1초교 사업<br>한빛초교 증축공사<br>합정동휴먼빌<br>화성 봉담 휴먼빌<br>화성매송아파트 건설공사 1공구<br>흥삼초교 사업<br>					
+                            </td>
+						</tr>
+                        
+                        
+						<tr>
+							<td class="title_c th2">기업고객문의</td>
+							<td>관리자(root, ojkwon@midasit.com) </td>   
+                            <td class="t_l2">
+가양동휴먼빌<br>가양동휴먼빌오피스텔<br>거제 소동 휴먼빌 지역주택조합<br>공군 원주 관사 및 병영시설 신축공사(BTL)<br>공군 충주 병영시설 신축공사(BTL)<br>교동고교 사업<br>교하운정 휴먼빌<br>남산공원 휴먼빌<br>다산초교 사업<br>당하중교 사업<br>대장초교 사업<br>대화마을휴먼빌<br>덕성여자대학교 기숙사 신축공사<br>돈암동휴먼빌<br>동두천지행동 휴먼빌<br>망원동휴먼빌<br>북가좌동휴먼빌<br>북면신도시 창원 무동3차<br>삼평2중교 사업<br>석촌동 서이무역(주)사옥 신축공사<br>성수동 일신건영 휴먼테코<br>성수문화복지회관<br>수원 신영통휴먼빌<br>신곡동휴먼씨티<br>안산 신길온천역2차 휴먼빌<br>안산선부동휴먼빌<br>안산신길온천역1차휴먼빌<br>안산신길온천역2차상가<br>양산신도시휴먼빌<br>양평 휴먼빌 2차<br>양평 휴먼빌 2차<br>양평휴먼빌<br>언주초교 사업<br>염창동휴먼빌<br>오산세교지구 A-1BL 6공구<br>용수초교 사업<br>용인 죽전 휴먼빌<br>우장산휴먼빌<br>울산신선산 휴먼빌<br>의정부가능동휴먼빌<br>인천 동양지구 휴먼빌<br>인천동양지구 휴먼빌상가<br>인천주안휴먼빌<br>일산2차휴먼빌<br>일산동휴먼빌<br>전주하가지구 휴먼빌<br>진접2중교 사업<br>진주남강 휴먼빌<br>창원 감계지구 휴먼빌<br>창원 북면신도시 휴먼빌    17BL (1단지)<br>창원 북면신도시 휴먼빌 15BL (2단지)<br>채운공원 휴먼빌<br>파주문산휴먼빌<br>하산고교 사업<br>하산중교 사업<br>학동 1초교 사업<br>한빛초교 증축공사<br>합정동휴먼빌<br>화성 봉담 휴먼빌<br>화성매송아파트 건설공사 1공구<br>흥삼초교 사업<br>					
+                            </td>
+						</tr>
+                        
+                        
+                        
+						<tr>
+							<td class="title_c th2">A/S문의</td>
+							<td>관리자(root, ojkwon@midasit.com) </td>   
+                            <td class="t_l2">
+가양동휴먼빌<br>가양동휴먼빌오피스텔<br>거제 소동 휴먼빌 지역주택조합<br>공군 원주 관사 및 병영시설 신축공사(BTL)<br>공군 충주 병영시설 신축공사(BTL)<br>교동고교 사업<br>교하운정 휴먼빌<br>남산공원 휴먼빌<br>다산초교 사업<br>당하중교 사업<br>대장초교 사업<br>대화마을휴먼빌<br>덕성여자대학교 기숙사 신축공사<br>돈암동휴먼빌<br>동두천지행동 휴먼빌<br>망원동휴먼빌<br>북가좌동휴먼빌<br>북면신도시 창원 무동3차<br>삼평2중교 사업<br>석촌동 서이무역(주)사옥 신축공사<br>성수동 일신건영 휴먼테코<br>성수문화복지회관<br>수원 신영통휴먼빌<br>신곡동휴먼씨티<br>안산 신길온천역2차 휴먼빌<br>안산선부동휴먼빌<br>안산신길온천역1차휴먼빌<br>안산신길온천역2차상가<br>양산신도시휴먼빌<br>양평 휴먼빌 2차<br>양평 휴먼빌 2차<br>양평휴먼빌<br>언주초교 사업<br>염창동휴먼빌<br>오산세교지구 A-1BL 6공구<br>용수초교 사업<br>용인 죽전 휴먼빌<br>우장산휴먼빌<br>울산신선산 휴먼빌<br>의정부가능동휴먼빌<br>인천 동양지구 휴먼빌<br>인천동양지구 휴먼빌상가<br>인천주안휴먼빌<br>일산2차휴먼빌<br>일산동휴먼빌<br>전주하가지구 휴먼빌<br>진접2중교 사업<br>진주남강 휴먼빌<br>창원 감계지구 휴먼빌<br>창원 북면신도시 휴먼빌    17BL (1단지)<br>창원 북면신도시 휴먼빌 15BL (2단지)<br>채운공원 휴먼빌<br>파주문산휴먼빌<br>하산고교 사업<br>하산중교 사업<br>학동 1초교 사업<br>한빛초교 증축공사<br>합정동휴먼빌<br>화성 봉담 휴먼빌<br>화성매송아파트 건설공사 1공구<br>흥삼초교 사업<br>					
+                            </td>
+						</tr>                                                
+                                                                                                                                                                         
+                     </tbody>
+                   </table>                      
+                   
+                   
+                  
+				</div>  
+
+
+
+              <div class="content_bottom">
+              </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+{
+	"work" : {
+		"title" : "프로젝트 진행현황",
+		"summary" : {
+			"workState" : "작업현황",
+			"all" : "전체",
+			"planMember" : "투입인원",
+			"plan" : "계획",
+			"ea" : "개"
+		},
+		"taskList" : {
+			"workName" : "업무명",
+			"operator" : "담당자",
+			"progressRate" : "진척율",
+			"RemainingTime" : "남은시간",
+			"priority" : "우선순위",
+			"weight" : "가중치",
+			"state" : "진행상황",
+			"label_priority" : {
+				"1" : "가장높음",
+				"2" : "높음",
+				"3" : "보통",
+				"4" : "낮음"
+			},
+			"label_state" : {
+				"1" : "대기",
+				"2" : "진행",
+				"3" : "보류",
+				"4" : "종료"
+			},
+			"days" : "일",
+			"hours" : "시간"
+		}
+	},
+
+	"comment" : {
+		"title" : "댓글", 
+		"work" : "업무관리",
+		"bbs" : "게시판"
+	},
+
+	"approval" : {
+		"title" : {
+			"mainTitle" : "처리할 문서",
+			"Due" : "시간",
+			"Form" : "양식명",
+			"DocTitle" : "문서제목",
+			"Date" : "작성일",
+			"Writer" : "작성자",
+			"ApprovalList" : "결재할 문서",
+			"ReceiveList" : "수신할 문서",
+			"WorkDoc" : "처리할 문서",
+			"CompleteDoc" : "완료된 문서",
+			"SendList" : "발신할 문서"
+		},
+		"msg" : {
+			"nodata" : "데이터가 없습니다."
+		}
+	},
+
+	"schedule" : {
+		"title" : "일정정보",
+		"list" : {
+			"title" : "제목",
+			"date" : "날짜",
+			"time" : "시간", 
+			"scheduleType" : {
+				"my" : "내일정",
+				"attend" : "참석일정",
+				"all" : "공개일정"
+			}
+		}
+	},
+
+	"pds_latest" : {
+		"title" : "최근 등록 자료",
+		"config" : "설정",
+		"dates" : "기간",
+		"column" : "가로줄수",
+		"maxCount" : "최대갯수",
+		"dateSelect" : {
+			"1d" : "오늘",
+			"7d" : "7일전",
+			"30d" : "30일전",
+			"100d" : "100일전"
+		}, 
+		"fileAuthority" : "파일권한",
+		"allFiles" : "모든파일",
+		"authorityFiles" : "권한파일"
+	},
+	"pds_knowledge_latest" : {
+		"title" : "최근 등록 지식",
+		"config" : "설정",
+		"dates" : "기간",
+		"column" : "가로줄수",
+		"maxCount" : "최대갯수",
+		"dateSelect" : {
+			"1d" : "오늘",
+			"7d" : "7일전",
+			"30d" : "30일전",
+			"100d" : "100일전"
+		}, 
+		"fileAuthority" : "파일권한",
+		"allFiles" : "모든파일",
+		"authorityFiles" : "권한파일"
+	}
+
+	,"bbs" : {
+		"label":{
+			"big_title" : "커뮤니케이션",
+			"notice" : "공지사항",
+			"bbs" : "게시판",
+			"title" : "제목",
+			"writer" : "작성자",
+			"date" : "날짜",
+			"noShow" : "오늘 하루 이 창을 보지 않음" 
+		}
+	}
+
+	,"survey" : {
+		"label" : {
+			"survey" : "설문조사"
+			,"result" : "설문 결과"
+			,"total" : "총"
+			,"total_end" : "명 참여" 
+		}
+		,"btn" : {
+			"vote" : "참여하기"
+		},"msg" : {
+			"delete" : "정말 삭제하시겠습니까?",
+			"end" : "설문을 종료하시겠습니까?",
+			"success" : "성공",
+			"inSurvey" : "이미 참여한 설문입니다",
+			"notSelect" : "답변을 선택해주세요",
+			"addQuestion" : "질문을 추가해주세요",
+			"addAnser" : "답변을 추가해주세요",
+			"maxAnser" : "최대 {{max}}개의 답변만 등록할 수 있습니다"
+		}
+	}
+	,"progrees":{
+		"label" : {
+			"bastDt" : "공정기준일",
+			"plan" : "계획",
+			"exec" : "실행",
+			"RunRate" : "진척율" 
+		}
+	}
+	,"Dday":{
+		"label" : {
+			"startDt" : "착공일",
+			"endDt" : "준공예정일"
+		}
+	}
+	,"Weather":{
+		"linkinfo" : "[출처]",
+		"title" : "날씨정보"
+	}
+}

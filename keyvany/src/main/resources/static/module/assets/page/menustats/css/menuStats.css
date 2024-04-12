@@ -1,0 +1,91 @@
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.custom-hide{
+    /*
+    display:none;
+    */
+    color:blue;
+}
+
+.custom-float{
+    float:left;
+    border-right : 1px solid #ddd;
+}
+
+.dropdown-menu{
+    padding-top : 0px;
+    padding-bottom : 0px;
+}
+
+.custom-tbClick{
+    background-color : #E8F5E9 !important;
+}
+
+.custom-subsum{
+    background-color : #fff6f9 ;
+}
+.custom-totalsum{
+    background-color : #d3daff ;
+}
+
+.custom-margin-top {
+    margin-top : 20px;
+}
+
+.custom-header{
+    background-color:rgb(229, 244, 234);
+}
+
+.pb25{
+    padding-bottom:25px !important;
+}
+
+.pt30{
+    padding-top:30px;
+}
+
+@media screen and (max-width: 450px) {
+    .dropdown-menu > li > a {
+        padding : 8px 5px !important;
+    }
+}
+
+.searchKey{
+    float:left !important;
+    padding-right:10px;
+}
+
+
+/* datatable 버튼, 검색 숨기기 */
+.dataTables_filter, .dt-buttons {
+    display: none !important;
+}
+/* //datatable 버튼, 검색 숨기기 */
+
+
+@media screen and (max-width: 1200px) {
+    .searchHeader label:not(.firstLabel) {
+        padding-top : 10px !important;
+    }
+
+    .searchBtnWrap {
+        padding-top: 15px !important;
+    }
+
+    .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+        margin-top: 0 !important;
+        padding-top: 20px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #sortDiv0, #sortDiv1, #sortDiv2, #sortDiv3{
+        padding-left:0  !important;
+        padding-right:0 !important;
+    }
+}

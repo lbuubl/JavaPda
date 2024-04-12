@@ -1,0 +1,35 @@
+{	
+	"label" : {
+		"authGroup" : "Auth group",
+		"groupNm" : "Group name",
+		"groupMemo" : "Group info",
+		"allSelect" : "Row lank menu select",
+		"menuList" : "Auth setting",
+		"menuNm" : "Menu name",
+		"memberCnt" : "Member count",
+		"memberChange" : "Choice",
+		"group" : "Group",
+		"member" : "Member",
+		"selectAll" : "Select all",
+		"unselectAll" : "Unselect all"
+
+		
+		
+	},
+	"btn" : {
+		"groupCopy" : "Group copy" 
+	}
+	,"msg" : {
+		"memberInsert" : "{{memLength}}member insert?",
+		"noSelect" : "No selected member.",
+		"groupDelete" : "Do you want delete group??",
+		"success" : "Success"	,
+		"selectGroup" : "Please, select group",
+		"insertGroupNm" : "Please, insert to Group Name",
+		"maxLengthMemo" : "설명은 100글자까지 입력이 가능합니다.",
+		"groupCopy" : "Do you want group copy?",
+		"updateGroup" : "Do you want group info update?",
+		"memChangeAfter" : "Please remove the personnel belonging to the group and delete them."
+
+	}
+}

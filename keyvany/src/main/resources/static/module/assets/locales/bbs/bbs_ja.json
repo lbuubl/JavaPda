@@ -1,0 +1,83 @@
+{
+	"datatable": {
+		"col" : {
+			 "title":"タイトル"
+			,"date":"日付"
+			,"writer":"ライター"
+		}
+		,"option" : { 
+			"filter":"キーワード"
+			,"show":"表示"
+			,"total":"合計"
+			,"previous":"前"
+			,"next":"次"
+		}
+	    } ,
+	"workspace" : {
+		"label" : { 
+			"title":"タイトル"
+			,"writer":"ライター"
+			,"date":"日付"
+			,"cont":"コンテンツ"
+			,"fileList":"ファイル一覧"
+			,"fileUploader":"ファイル"
+			,"popupYn":"現れる"  
+			,"popupDate":"期間"
+			,"tags":"タグ"
+			,"projectList":"プロジェクトリスト"
+		}  
+	}
+	,"panel" : {
+		"list":"リスト"
+		,"write":"作家"
+		,"edit":"編集"
+		,"view":"ビュー"
+		,"comment":"コメント"
+		,"fileList" :"ファイル一覧"
+	}
+	,"button" : { 
+		"back":"バック"
+		,"cancel":"キャンセル"
+		,"yes":"はい"
+		,"delete":"削除"
+		,"reply":"応答"
+		,"edit":"編集"
+		,"submit":"提出する"
+		,"new":"新しい" 
+		,"add":"追加する" 
+	}
+	,"placeholder" : {
+		"title":"タイトル" 
+		,"comment":"コメント"
+	}
+	,"msg" : {
+		"success":"成功"
+		,"delete":"削除完了"
+		,"error":"エラー"
+		,"noData":"データなし"
+		,"delYn":"削除？"
+		,"insertContent":"コンテンツを挿入してください"
+		,"insertTitle":"タイトルを挿入してください"
+		,"sessionError":"セッションのタイムアウトは\nページをリロードしてください."
+	}
+	,"validation" : {
+		"success":"成功"
+		,"agree":"私たちのポリシーに同意してください"
+		,"required":"これはカスタムエラーメッセージです"
+	}
+	,"setting" : {
+		"label" :{
+			"bbsType":"BBS タイプ"
+			,"setting":"設定"
+			,"newCommentOption":"最新のコメントオプション"
+		}
+		,"select" : {
+			"board":"ボード"
+			,"notice":"通知"
+		}
+		,"button" : {
+			"close":"閉じる"
+			,"save":"セーブ"
+		} 
+	} 
+} 

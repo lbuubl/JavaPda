@@ -1,0 +1,38 @@
+{
+	"label" : {
+		"survey" : "설문조사",
+		"detail" : "상세내용",
+		"title" : "제목",
+		"startDt" : "시작일",
+		"endDt" : "종료일",
+		"regNm" : "작성자",
+		"question" : "질문",
+		"result" : "설문 결과",
+		"multiYn" : "다중선택",
+		"anser" : "답변",
+		"completeYn" : "종료",
+		"mainShowYn" : "메인표시여부",
+		"grpShowYn" : "그래프표시여부",
+		"total" : "총",
+		"total_end" : "명 참여",
+		"participant" : "참여자설정"
+	}
+	,"btn" : {
+		"addQs" : "질문추가",
+		"addItem" : "답변추가",
+		"vote" : "참여하기",
+		"end" : "설문종료",
+		"mainHide" : "메인숨김"
+	}
+	,"msg" : {
+		"delete" : "정말 삭제하시겠습니까?",
+		"end" : "설문을 종료하시겠습니까?",
+		"success" : "성공",
+		"inSurvey" : "이미 참여한 설문입니다",
+		"notSelect" : "답변을 선택해주세요",
+		"addQuestion" : "질문을 추가해주세요",
+		"addAnser" : "답변을 추가해주세요",
+		"maxAnser" : "최대 {{max}}개의 답변만 등록할 수 있습니다"
+	}
+	
+}

@@ -1,0 +1,167 @@
+.f_lg_icons {
+    background-image: url(/resources/module/assets/page/pds/images/file_lg_icon.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.file_lg_doc {
+    width: 73px;
+    height: 84px;
+    background-position: -5px -5px;
+}
+
+.file_lg_dwg {
+    width: 73px;
+    height: 84px;
+    background-position: -88px -5px;
+}
+
+.file_lg_etc {
+    width: 73px;
+    height: 84px;
+    background-position: -171px -5px;
+}
+
+.file_lg_excel {
+    width: 73px;
+    height: 84px;
+    background-position: -5px -99px;
+}
+
+.file_lg_hwp {
+    width: 73px;
+    height: 84px;
+    background-position: -88px -99px;
+}
+
+.file_lg_pdf {
+    width: 73px;
+    height: 84px;
+    background-position: -171px -99px;
+}
+
+.file_lg_ppt {
+    width: 73px;
+    height: 84px;
+    background-position: -254px -5px;
+}
+
+.file_lg_txt {
+    width: 73px;
+    height: 84px;
+    background-position: -254px -99px;
+}
+
+.file_lg_zip {
+    width: 73px;
+    height: 84px;
+    background-position: -5px -193px;
+}
+
+.file_lg_img {
+    width: 73px;
+    height: 84px;
+    background-position: -88px -193px;
+}
+
+
+.no-thumbnail{
+	padding-top:150px;
+
+}
+
+.thumbnail-size, .thumbnail-size span, .thumbnail-size*{
+	vertical-align:middle;
+}
+
+#banner-slide-div, .bjqs, .thumbnail-size, .bjqs-slide{
+	width:400px;
+	height:300px;
+
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-size{
+	cursor:pointer;
+}
+
+p.bjqs-caption,.bjqs-caption{
+	width:100%;
+}
+
+.extWrap{
+	padding-top : 75px;
+}
+
+
+.margin-bottom50{
+	margin-bottom : 50px;
+}
+
+#imgTag{
+	width:100%;
+}
+
+.slider-container{
+   height:350px;
+   margin-bottom:10px;
+
+}
+
+@media (max-width: 500px) {
+	#banner-slide-div, .bjqs, .bjqs-slide, .bjqs-slide img, .bjqs-slide center{
+		width:100% !important;
+	}
+}
+
+@media (max-width: 400px) {
+	#banner-slide-div, .bjqs, .bjqs-slide, .bjqs-slide img, .bjqs-slide center, .slider-container{
+		height:250px !important;
+	}
+	.slider-container{
+		height:300px !important;
+	}
+}
+
+
+.bjqs{
+	  margin: 0 auto;
+}
+
+.summary-container{
+	min-height:150px;
+	max-height:230px;
+	overflow:auto;
+}
+.cursor-pointer{
+	cursor:pointer;
+}
+.summaryWrap{
+	padding: 10px;
+}
+/**************************************************************/
+/* 에디터 아닌곳에서 보여줄 때 필요한 CSS
+.mce-item-table{
+	border-collapse: collapse;
+	border: currentColor;
+	--border-color: #000000;
+
+}
+.mce-item-table>tbody>tr>td,.mce-item-table th,.mce-item-table caption{
+	border:1px solid #383838;
+}*/
+/**************************************************************/
+
+
+.center-box {
+	margin: 0px 10px 0px 10px;
+    border: 1px solid #ddd;
+    height: 100%;
+}
+.center-summary-box {
+    height: 220px;
+	margin: 10px;
+    border: 1px solid #ddd;
+}

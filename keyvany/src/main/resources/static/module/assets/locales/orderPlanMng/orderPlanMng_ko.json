@@ -1,0 +1,30 @@
+{
+	"label" : {
+		"year" : "년도",
+		"plan" : "목표",
+		"result" : "실적",
+		"resultRate" : "달성율(%)",
+		"balance" : "잔여",
+		"gubun" : "구분",
+		"subSum" : "합",
+		"totalSum" : "계"
+	},
+
+	"title" : {
+		"yearPlan" : "년도 별 수주목표 관리",
+		"kindPlan" : "년도 구분 별 수주목표",
+		"monthPlan" : "년도 구분 별 월 수주목표",
+		"unit" : "단위: 백만원"
+	},
+
+	"btn" : {
+		
+	},
+
+	"msg" : {
+		"plsInputYear" : "연도를 입력하세요.",
+		"alreadyRegisteredYear" : "이미 등록된 연도입니다.",
+		"inputPlanHelp" : "목표 값이 월 단위로 계획되지 않는 경우는 임의 특정월에 목표를 입력하면 됩니다."
+	}
+
+}

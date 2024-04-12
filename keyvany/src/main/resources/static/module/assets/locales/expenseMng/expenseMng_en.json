@@ -1,0 +1,54 @@
+{
+	"label" : {
+		 "claimList" : "Bill List"
+		,"claimYYYYMM" : "Bill date"
+		,"claimMoney" : "Bill amount"
+		,"claimRegDt" : "Write date"
+		,"claimRegNm" : "Writer"
+		
+		,"gongguNm" : "Project name"
+		,"gongguAll" : "All projects"
+		
+		,"detail" : "Detail"
+		,"gubun" : "Tax"
+		,"usedDt" : "Used date"
+		,"usedNm" : "Used name"
+		,"amount" : "Amount"
+		,"category" : "Category"
+		,"note" : "Note"
+		,"mng" : "Mng"
+		,"edit" : "Edit"
+
+		,"subtotal" : "Subsum"
+		,"total" : "Total"
+		
+		,"submit" : "Submit"
+		,"tmpSave" : "Tmp save"
+		,"files": "Files"
+		,"defaultYYYYMM" : "Bill date"
+
+		,"TAX" : "TAX"
+		,"DEFAULT" : "DEFAULT"
+
+		,"new" : "New"		
+		
+		,"open" : "Open"
+		,"close" : "Close"
+		,"search" : "Search"
+
+		,"stat" : "Stat"
+		,"progress" : "Progress"
+		,"end" : "End"
+
+	}
+
+	,"msg":{
+		"canNotEdit" : "Registration(modify) can nat be registered with applicable claim year/month."
+		,"noDataInsertData" : "Data is not found.\nEnter more than one data."
+		,"delAll" : "All data will be deleted.\nAre you sure you want to delete it??"
+		,"delete" : "Are you sure you want to delete it??"
+		,"success" : "Success"
+		,"fail" : "Fail"
+		,"maxLength" : "Enter less than {0} characters."
+	}
+}

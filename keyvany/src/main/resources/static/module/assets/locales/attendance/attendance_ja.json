@@ -1,0 +1,41 @@
+{
+	"label" : {
+		"reason" : "Reason"
+		,"late" : "Reason for late"
+		,"early" : "Reason for early leave"
+		,"overtime" : "Reason for overtime" 
+		,"title" : "Attendance management"
+		,"sDate" : "Start date"
+		,"eDate" : "End date"
+		,"inTime" : "Arrival time"
+		,"outTime" : "Leave time"
+		,"inDescript" : "Arrival memo"
+		,"outDescript" : "Leave memo"
+		
+		,"note" : "Note"
+		,"name" : "Name"
+	}
+	,"title" : {
+		"come" : "Attendance"
+		,"late" : "Late"
+		,"early" : "Early leave"
+		,"overtime" : "Overtime" 
+		,"note" : "Note"
+		,"name" : "Name"
+		
+	}
+	,"btn" : {
+		"in" : "Do you want to work?",
+		"out" : "Do you want go home?",
+		"save" : "Save",
+		"close" : "Close",
+		"yes" : "Yes",
+		"no" : "No" 
+	}
+	,"msg" : {
+		"success" : "Success"
+		,"fail" : "Fail"
+		,"overnight" : "Worked all night??"
+	
+	} 
+}

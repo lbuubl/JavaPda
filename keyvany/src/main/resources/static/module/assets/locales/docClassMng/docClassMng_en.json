@@ -1,0 +1,25 @@
+{
+	"label" : {
+		"docNo" : "Doc number"
+		,"docTitle" : "Doc title"
+		,"regDt" : "Write date"
+		,"writer" : "Writer"		
+		,"docList" : "Document list"
+		,"category" : "Category"
+		,"allCat" : "All"
+		,"selected" : "Selected"
+		,"changeCat" : "Change"
+		,"delCat" : "Delete"
+	}
+	,"msg" : {
+		"success" : "Success"
+		,"fail" : "Fail"
+		,"selectCategory" : "Please select a category to change."
+		,"change" : "Are you sure you want to change it?"
+		,"delete" : "Are you sure you want to category delete it?"
+		,"changeAll" : "Are you sure you want to all change it?"
+		,"deleteAll" : "Are you sure you want to all category delete it?" 
+		,"noSelected" : "No selected item."
+
+	}
+} 

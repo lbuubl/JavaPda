@@ -1,0 +1,220 @@
+
+#BRight .active{
+	--cursor:pointer;
+	--background-color:#f7f2f9;
+}
+
+#BLeft .exe{
+	border-bottom:1px solid #565454;
+}
+
+#BRight .exe{
+	border-bottom:1px solid #565454;
+}
+
+
+ul{
+	margin:0px;
+	padding:0px;
+}
+
+/* 테이블 상단 */
+.lst_type{
+	width:100%;
+	padding:0 0 0 0;
+	list-style:none;
+	border:0px solid #c2c2c2;
+}
+.lst_type li{
+	padding:0 3px 0 3px;
+	--margin-bottom:2px;
+	font-size:12px;
+	font-weight:normal;
+	float:left;
+}
+.lst_type li a{
+	color:#2d2c2d;
+	text-decoration:none
+}
+.lst_type li a:hover{
+	text-decoration:underline
+}
+
+
+/* 진도관리 */
+/* 1. 상단 왼쪽 테이블*/
+.tbl_TL,.tbl_TL th,.tbl_TL td{
+	border:0
+}
+.tbl_TL{
+	table-layout:fixed;
+	border-bottom:1px solid #b9b8b8;
+	font-family:'돋움',dotum;
+	font-size:12px;
+	text-align:center;
+	border-collapse:collapse;
+	text-align:center;
+}
+.tbl_TL caption{
+	display:none
+}
+.tbl_TL td{
+	padding:0px 3px 0px 3px;
+	border:1px solid #b9b8b8;
+	color:#ffffff;
+	background-color:#2196F3;
+	font-weight:bold
+}
+
+/* 2. 하단 왼쪽 테이블*/
+.tbl_BL,.tbl_BL th,.tbl_BL td{
+	border:0
+}
+.tbl_BL{
+	table-layout:fixed;
+	border-bottom:1px solid #b9b8b8;
+	font-family:'돋움',dotum;
+	font-size:12px;
+	border-collapse:collapse;
+	text-align:center;
+}
+.tbl_BL caption{
+	display:none
+}
+.tbl_BL td{
+	padding:2px 3px 4px 3px;
+	border:1px solid #b9b8b8;
+	color:#4c4c4c;
+}
+
+
+/* 3. 상단 오른쪽 테이블*/
+.tbl_TR,.tbl_TR th,.tbl_TR td{border:0}
+.tbl_TR{
+	table-layout:fixed;
+	border-bottom:1px solid #b9b8b8;
+	font-family:'돋움',dotum;
+	font-size:12px;
+	text-align:center;
+	border-collapse:collapse
+}
+.tbl_TR caption{
+	display:none
+}
+.tbl_TR th{
+	width:80px;
+	padding:1px 3px 1px 3px; 
+	border-top:1px solid #b9b8b8;
+	border-right:1px solid #b9b8b8;
+	border-left:1px solid #b9b8b8;
+	--background-color:#e7e7e7;
+	background-color:#2196F3;
+	--color:#666;
+	color:#ffffff;
+	font-family:'돋움',dotum;
+	font-size:12px;
+	font-weight:bold;
+	text-align: center;
+}
+.tbl_TR td{
+	width:80px;
+	padding:2px 3px 1px 3px;
+	border-top:1px solid #b9b8b8;
+	border-right:1px solid #b9b8b8;
+	border-left:1px solid #b9b8b8;
+	--background-color:#e7e7e7;
+	background-color:#2196F3;
+	--color:#666;
+	color:#ffffff;
+	font-family:'돋움',dotum;
+	font-size:12px;
+}
+
+
+/* 4. 하단 오른쪽 테이블*/
+.tbl_BR,.tbl_BR th,.tbl_BR td{
+	border:0
+}
+.tbl_BR{
+	table-layout:fixed;
+	border-bottom:1px solid #b9b8b8;
+	font-family:'돋움',dotum;
+	font-size:12px;
+	border-collapse:collapse
+}
+.tbl_BR caption{
+	display:none
+}
+.tbl_BR td{
+	width:80px;
+	padding:2px 3px 4px 3px;
+	border:1px solid #b9b8b8;
+	color:#4c4c4c;
+	text-align:right;
+}
+
+/* Td 마우스 커서 */
+.TdBtn {
+	cursor:hand;
+	border:1px solid #b9b8b8;
+}
+
+.Right {
+	text-align:right
+}
+
+
+#BLeft_Inner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: -17px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	--width: 680px;
+	/* width: 740px; */
+}
+
+.Left{
+	text-align:Left;
+}
+
+
+.top-table{
+	width:calc(100% - 15px)
+}
+
+#modal_wbsValueEdit .form-group, #frmWbsConfig .form-group{
+	margin-bottom:10px;
+}
+
+#frmWbsConfig .rado label:not(:first-child){
+	padding-left:15px
+}
+
+#frmWbsConfig .rado input[type="radio"]{
+	margin-right:5px !important;
+	margin-top:0 !important;
+}
+
+.TdBtn{
+	cursor:pointer
+}
+
+.mgrDate{
+	cursor:pointer
+}
+
+#modal_wbsValueEdit_date .table td{
+	padding-top:4px !important;
+	padding-bottom:4px !important;
+}
+
+.bold{
+	font-weight:bold
+}
+
+.icon_pm{
+	font-size:12px;
+}

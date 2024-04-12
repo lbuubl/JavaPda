@@ -1,0 +1,138 @@
+{
+	"datatable": {
+		"col": {
+            "no" : "no",
+            "fileNm" : "file name",
+            "type" : "type",
+            "size" : "size",
+            "writer" : "writer",
+            "regDt" : "date",
+            "rev" : "rev",
+            "down" : "down",
+            "location" : "move",
+            "show" : "show"
+		},
+
+		"option" : { 
+			"filter" : "file name"
+		},
+
+        "button" : {
+            "upload" : "upload",
+            "download" : "download",
+            "deleteFile" : "delete file",
+            "editFileNm" : "edit name"
+        }
+
+    },   
+
+    "label" : {
+        "tab" : {
+            "lastFolderDoc" : "Latest data",
+			"all" : "All"
+        },
+        "folderNm" : "folder name",
+		"pdsMode" : {
+			"title" : "mode",
+			"file" : "file mode",
+			"group" : "board mode"
+		},
+		"title" : {
+			"fileInfo" : "file info",
+			"fileInfo_group" : "file info(board type)",
+			"addRevFile" : "register Rev file",
+			"dataUpload" : "data upload",
+			"changeFileName" : "change file name",
+			"organizationChoice" : "Organization choice",
+			"documentClass" : "Document class",
+			"moveFile" : "Move file"
+		},
+		"lTitle" : "title",
+		"tag" : "tag",
+		"thumbnailSwitch" : "thumbnail",
+		"rootDocClass" : "Root folder",
+		"docClass" : "Doc class",
+		"defaultViewAuth" : "Default auth user",
+		"department" : "Department",
+		"name" : "Name",
+		"part" : "Part",
+		"viewAuth" : "Viewing authority",
+		"ext" : "Extension",
+		"contents" : "Contents",
+		"useYn" : "사용여부",
+		"targetRev" : "대상 리비전",
+		"allRev" : "All rev",
+		"lastRev" : "Last rev",
+		"targetFolder" : "Root folder",
+		"admin" : "Admin",
+		"editor" : "Edit authority"
+    },
+    
+    
+	"button" : { 
+        "addSubFolder" : "add folder",
+        "save" : "save",
+        "removeFolder" : "remove folder",
+        "remove" : "remove",
+        "addRev" : "Rev +",
+        "downLoad" : "download",
+        "close" : "close",
+        "cancel" : "cancel",
+		"moveFile" : "Move file"
+	},
+
+	"placeholder" : {
+        "schFolderNm" : "search folder name"
+	},
+
+	"msg" : {
+        "revAutoPlusInfo" : "Revisions increase automatically by 1.",
+		"successRevAdd" : "Revision file added.",
+		"wrongSubmit" : "Invalid transfer.",
+		"cantUseSpecialCharacter" : "Can not use special characters._",
+		"insertedFolder" : "Folder is registered.",
+		"cantEditRootFolder" : "Top-level folders can not be edited.",
+		"editedFolder" : "Folder modified.",
+		"deleteFileFirst" : "Please delete the file first.",
+		"deleteSubFolderFirst" : "Please delete the subfolder first.",
+		"cantDeleteRootFolder" : "Top-level folders can not be deleted.",
+		"deletedFolder" : "Folder deleted.",
+		"selectFolderPlz" : "Please select a folder.",
+		"inputFolderNmPlz" : "Please enter a folder name.",
+		"selectUploadFolderPlz" : "Please select the folder to upload first.",
+		"selectDownloadFilePlz" : "Please select the file to be downloaded.",
+		"selectDeleteFilePlz" : "Please select the file to be deleted.",
+		"selectEidtFilePlz" : "Please select the file to be edited.",
+		"selectMoveFilePlz" : "Please select the file to be moved.",
+		"deleted" : "deleted",
+		"updated" : "updated",
+		"cantDeleteOthers" : "You can not delete posts that you did not create.",	
+		"cantEditOthers" : "You can not modify posts that you did not create.",	
+		"cantMoveOthers" : "You can not move posts that you did not create.",	
+		"attachFile" : "Please attach file.",
+		"emptyRootFolder" : "Root folder is not specified. <br>Please specify the root folder in Settings.",
+		"cantSelectRootFolder" : "You can not select the root node",
+		"noViewAuth" : "You do not have permission to browse.",
+		"cantMoveSameFolder" : "동일한 폴더로 이동 할 수 없습니다. <br>다른 폴더를 선택하세요.",
+		"movedOk" : "자료가 이동되었습니다.",
+		"selectMoveRoot" : "자료이동 루트폴더를 선택해주세요."
+	},
+
+	"confirm" : {
+		"editFoloerNm" : "Do you want to edit the folder name?",
+		"deleteFolder" : "Are you sure you want to delete the selected folder?",
+		"selectedDeleteFile" : "Are you sure you want to delete the selected file?",
+		"selectedMoveFile" : "Are you sure you want to move the selected file?",
+		"cantDeleteWidthOthers" : "You can not delete posts that you did not create. <br>Are you sure you want to delete selected files?",
+		"cantMoveWidthOthers" : "You can not move posts that you did not create. <br>Are you sure you want to move selected files?",
+		"fileDelete" : "Are you sure you want to delete the file?",
+		"createFolderAt" : "Do you want to subscribe to '{{targetFolder}}'?",
+		"editOk" : "Do you want to modify?",
+		"moveFile" : "자료를 이동하시겠습니까?"
+	},
+
+	"validation" : {
+     
+	}
+
+} 

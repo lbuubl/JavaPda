@@ -1,0 +1,402 @@
+
+.work .form-group{
+	margin-bottom:10px !important;
+}
+
+.pt0{
+	padding-top:0 !important;
+}
+
+.pt5{
+	padding-top:5px !important;
+}
+
+.pt6{
+	padding-top:6px !important;
+}
+
+.pt8{
+	padding-top:8px !important;
+}
+
+.pt10{
+	padding-top:10px !important;
+}
+
+.pt15{
+	padding-top:15px !important;
+}
+
+.pt20{
+	padding-top:20px !important;
+}
+
+.pt25{
+	padding-top:25px !important;
+}
+
+.pr0{
+	padding-right:0 !important;
+}
+
+.pb0{
+	padding-bottom:0 !important;
+}
+
+.pb7{
+	padding-bottom:7px !important;
+}
+
+.pb10{
+	padding-bottom:10px !important;
+}
+
+.pb15{
+	padding-bottom:15px !important;
+}
+
+.pl0{
+	padding-left:0 !important;
+}
+
+.pl10{
+	padding-left:10px !important;
+}
+
+.pl20{
+	padding-left:20px !important;
+}
+
+.mt8{
+	margin-top:8px !important;
+}
+
+.mb0{
+	margin-bottom:0 !important;
+}
+
+.mb5{
+	margin-bottom:5px !important;
+}
+
+.ml5{
+	margin-left:5px !important;
+}
+
+.ml10{
+	margin-left:10px !important;
+}
+
+.ml20{
+	margin-left:20px !important;
+}
+
+/* 테그 한줄밀려내여오는 현상 제거 */
+.work .bootstrap-tagsinput input {
+    width: 0px !important;
+    min-width: 0px !important;
+    padding: 0px !important;
+}
+
+
+
+.work label:not(.chkLabel){
+	margin-bottom: 0 !important;
+}
+
+.work .form-horizontal .control-label:not(.chkLabel) {
+	padding-bottom: 0 !important;
+	--padding-top: 0;
+}
+
+/* 일반 데이터 테이블 좌우 붙히기 */
+.stickTable > thead > tr > td:first-child, 
+.stickTable > tbody > tr > td:first-child, 
+.stickTable > tfoot > tr > td:first-child, 
+.stickTable,
+.stickTable > thead > tr > th:first-child, 
+.stickTable > tbody > tr > th:first-child, 
+.stickTable > tfoot > tr > th:first-child {
+    border-left: 0 !important;
+}
+
+/* 일반 데이터 테이블 좌우 붙히기 */
+.stickTable > thead > tr > td:last-child, 
+.stickTable > tbody > tr > td:last-child, 
+.stickTable > tfoot > tr > td:last-child, 
+.stickTable,
+.stickTable > thead > tr > th:last-child, 
+.stickTable > tbody > tr > th:last-child, 
+.stickTable > tfoot > tr > th:last-child {
+    border-right: 0 !important;
+}
+
+#bbs-comentList .media-heading{
+	margin-left:-5px;
+	margin-top:3px;
+}
+#bbs-comentList .media-left{
+	padding-right:5px;
+}
+
+/* 코멘트 CSS 정의 */
+@media (max-width: 768px){
+
+	.stack-media-on-mobile {
+		text-align: left;
+	}
+
+
+	.stack-media-on-mobile .media-left,
+	.stack-media-on-mobile .media-right,
+	.stack-media-on-mobile .media-body {
+		display: table-cell;  
+		width: auto;
+		padding-left: 0;
+		padding-right: 0;
+		text-align: left;
+	}	
+	 
+
+	.work .media-body>.stack-media-on-mobile .media-left,
+	.stack-media-on-mobile .media-right,
+	.stack-media-on-mobile .media-body {
+		display: table-cell;  
+		width: auto;
+		padding-left: 5px;
+		padding-right: 0;
+		text-align: left;
+	}	 
+
+	.work .custom-date{
+		display: block !improtant;
+	}
+	
+	.stack-media-on-mobile .media-annotation {
+		display: inline;
+	  }
+	  /*//--------------------------------------------------- */
+	 .dt-buttons {
+		float: right;
+	 }
+	.dataTables_filter{
+		float: left!important;
+	}
+}
+/*index부분 상단 모바일 조정 부분 시작*/
+@media screen and (max-width: 376px) {
+	.work .datatable-header{
+		padding: 10px 10px 0 10px !important
+	}
+	#datatable_task_filter span{
+		display:none;
+	}
+	.dt-buttons {
+		float: right;
+	}
+	.dataTables_filter{
+		float: left !important;
+	}
+	.comment-body{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.work .form-horizontal .control-label:not(.chkLabel) {
+		padding-top: 6px;
+	}
+}
+
+@media (max-width: 768px){
+	#datatable_task_filter span{
+		display:none;
+	}
+	.datatable-header{
+		padding: 10px 10px 0 10px !important
+	}
+}
+
+@media (min-width: 769px){
+	#viewContent	{
+		padding-left:30px;
+	}
+	
+	/*
+	#taskFileListWrap{
+		 margin-left: 30px !important;
+		 margin-right: 10px !important;
+	}
+	*/
+
+	.ActiveList{
+		 margin-left: 30px !important;
+		 margin-right: 10px !important;
+	}
+}
+
+#bbs-comentList{
+	background:#fafafa;
+}
+.work .bbs-media{
+	background:#fff;
+	padding:5px;
+}
+
+/*index부분 상단 모바일 조정 부분 끝 */
+
+.work .custom-span{
+	float:right;
+}
+
+.work .bbs-media{
+	margin-top:1px !important;
+}
+
+
+.work .form-horizontal .form-group {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.timeOver{
+	color:red !important;
+}
+
+
+.work .bbs-media {
+    border-bottom: 1px solid #ddd;
+	--border-left: 1px solid #ddd;
+}
+
+.work .label {
+    font-size:12px !important;
+}
+
+
+.work .dtableSelectBox{
+	display:inline !important;
+    width:auto !important;
+	padding-top:2px;
+	margin-left:5px;
+}
+
+.work .heading-elements{
+    display: inline !important;
+    position: absolute  !important;
+    margin-top: -18px !important;
+}
+
+.word-break{
+	word-break:break-all;
+}
+
+.min-width-date{
+	min-width:100px !important;
+}
+
+.min-width-contents{
+	min-width:200px !important;
+}
+
+.min-width-actWeight{
+	min-width:63px !important;
+}
+
+.min-width-activityNm{
+	min-width:130px !important;
+}
+
+/*
+.bootstrap-tagsinput{
+	padding:7px 11px 7px 12px !important;
+}*/
+
+/* 모바일UI */
+@media screen and (max-width: 1024px){
+	.mt5_1024{
+		margin-top:5px !important;
+	}
+
+	.work .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+		margin-top: 10px;
+	}
+
+	.th_operator{
+		min-width:100px !important;
+	}
+}
+
+@media screen and (min-width: 1025px){
+	.btn_taskCdCheck_wrapper{
+		padding-left:0 !important;
+	}
+}
+
+/* 중복체크 버튼 브라우져가 중간크기 인경우 레이블 hide */
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+	#btn_taskCdCheck span{
+		display:none;
+	}
+}
+
+/* task edit > activity list scroll 처리 */
+@media screen and (max-width: 1479px){
+	.datatable-scroll-activityList {
+		width: 100% !important;
+		overflow-x: scroll !important;
+	}
+}
+
+@media screen and (max-width: 320px){
+	/* Task List 검색필더 넓이 조정 */
+	#datatable_task_filter input{
+		width:150px !important;
+	}
+}
+
+@media screen and (max-width: 375px){
+	/* TaskDetail 버튼 아이콘 숨김 */
+	.work .btnTaskDetail_full i{
+		display:none !important;
+	}
+
+	.work .btnTaskDetail_full {
+		padding-right:10px !important;
+	}
+}
+
+@media screen and (max-width: 412px){
+	.work .btnTaskDetail_full {
+		padding-right:10px !important;
+	}
+}
+
+.panel {
+    margin-bottom: 7px  !important;
+}
+
+.commentReplyDiv{
+	/*padding-bottom:10px; */
+}
+
+
+.nowrap{white-space:nowrap}
+
+.activeInfo .form-control{
+	border-top: 0px solid #ddd  !important;
+	border-left: 0px solid #ddd  !important;
+	border-right: 0px solid #ddd  !important;
+	border-bottom: 1px solid #ddd  !important;
+	background-color: #fff !important;
+}
+
+.worksAll .panel-white > .panel-heading{
+	background-color:#f9f7ef   !important;
+}
+
+@media (max-width: 768px){
+	#activityDetail_Wapper .panel-body{
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+	}
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+   <!-- common -->
+   <definition name="common-layout" template="/WEB-INF/views/common/layout/main-layout.jsp">
+       <put-attribute name="header" value="/WEB-INF/views/common/layout/header.jsp" />
+       <put-attribute name="body" value="" />
+       <put-attribute name="footer" value="/WEB-INF/views/common/layout/footer.jsp" />
+   </definition>
+
+   <!-- login admin  -->
+   <definition name="admin-layout" template="/WEB-INF/views/common/layout/admin-layout.jsp">
+       <put-attribute name="body" value="" />
+       <put-attribute name="footer" value="/WEB-INF/views/common/layout/footer.jsp" />
+   </definition>
+
+   <definition name="admin/*" extends="admin-layout">
+       <put-attribute name="body" value="/WEB-INF/views/admin/{1}.jsp" />
+   </definition>
+   <!-- //login  admin  -->
+
+   <!-- admin  -->
+   <definition name="admin-layout2" template="/WEB-INF/views/common/layout/admin-layout-main.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/common/layout/header.jsp" />
+       <put-attribute name="gnb" value="/WEB-INF/views/common/layout/admin-layout-gnb.jsp" />
+       <put-attribute name="aside" value="/WEB-INF/views/common/layout/admin-layout-aside.jsp" />
+       <put-attribute name="content-header" value="/WEB-INF/views/common/layout/admin-layout-content-header.jsp" />
+       <put-attribute name="body" value="" />
+       <put-attribute name="footer" value="/WEB-INF/views/common/layout/footer.jsp" />
+   </definition>
+
+   <definition name="admin/*/*" extends="admin-layout2">
+       <put-attribute name="header" value="/WEB-INF/views/common/layout/admin-header.jsp" />
+       <put-attribute name="body" value="/WEB-INF/views/admin/{1}/{2}.jsp" />
+   </definition>
+
+
+
+   <!-- //admin  -->
+
+   <!-- login -->
+   <definition name="login/*" extends="common-layout">
+       <put-attribute name="body" value="/WEB-INF/views/login/{1}.jsp" />
+   </definition>
+   <definition name="login/*/*" extends="common-layout">
+       <put-attribute name="body" value="/WEB-INF/views/login/{1}/{2}.jsp" />
+   </definition>
+   <definition name="login/*/*/*" extends="common-layout">
+       <put-attribute name="body" value="/WEB-INF/views/login/{1}/{2}/{3}.jsp" />
+   </definition>
+
+</tiles-definitions>

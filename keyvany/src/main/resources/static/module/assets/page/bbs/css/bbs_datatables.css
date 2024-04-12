@@ -1,0 +1,60 @@
+/*
+모바일 datatable 버튼 재정렬
+*/
+@media screen and (max-width: 767px) {
+  .dt-buttons {
+    float: right;
+    text-align: center;
+    --margin-right : 10px;
+	display : inline !important;
+  }
+  .dt-buttons .btn {
+    float: none;
+  } 
+}
+@media screen and (max-width: 414px) {
+	.btn-xs, .btn-group-xs > .btn{
+		--padding: 3px 5px;
+	}
+	.panel-body{
+		padding: 3px 5px;
+	}
+	#workSpace Div{
+		word-break:break-all;
+	}
+}
+
+/* 글자 밀림 방지 */
+.dataTable > thead > tr > th,
+.dataTable > tbody > tr > th,
+.dataTable > tfoot > tr > th,
+.dataTable > thead > tr > td,
+.dataTable > tbody > tr > td,
+.dataTable > tfoot > tr > td {
+  vertical-align: middle;
+  word-break:break-all;
+}
+
+.paging_simple .paginate_button:hover, .paging_simple .paginate_button:focus{
+	background-color : transparent;
+}
+.dataTables_paginate .paginate_button:hover, .dataTables_paginate .paginate_button:focus{
+	background-color : transparent;
+}
+
+.text-skip { 
+	overflow : hidden;
+	text-overflow : ellipsis;
+} 
+ 
+.table-layout-fixed { 
+	table-layout : fixed;
+}
+
+ .myclass {
+    text-align: right;
+}
+ 
+/*
+data table 페이징 버튼 css 컨트롤
+*/

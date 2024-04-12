@@ -1,0 +1,86 @@
+{
+	"datatable": {
+		"col": {
+			"reportingDate" : "보고일",
+			"plan" : "계획",
+			"execution" : "실시",
+			"rateOfExecution" : "대비",
+			"thisWeekWork" : "금주 업무내용",
+			"nextWeekWork" : "차주 업무내용",
+			"thisMonthWork" : "금월 업무내용",
+			"nextMonthWork" : "익월 업무내용",
+			"note" : "비고",
+			"attach" : "첨부",
+			"submit" : "상태"
+		},
+		"cCol" : {
+			"project" : "프로젝트",
+			"rateOfProcess" : "공정율",
+			"type" : "구분",
+			"thisWeek" : "금주",
+			"nextWeek" : "차주",
+			"thisWeekWork" : "금주 업무내용",
+			"nextWeekWork" : "차주 업무내용",
+			"thisMonth" : "금월",
+			"nextMonth" : "익월",
+			"thisMonthWork" : "금월 업무내용",
+			"nextMonthWork" : "익월 업무내용",
+			"note" : "비고",
+			"file" : "첨부"
+		},
+
+		"option" : { 
+			"filter" : "보고일"
+		}
+
+    },
+
+	"label" : {
+		"rateOfProcess" : "공정율",
+		"reportBaseDate" : "보고기준일",
+		"thisWeekPlan" : "금주계획",
+		"thisWeekExecution" : "금주실시",
+		"nextWeekPlan" : "차주계획",
+		"thisWeek" : "금주 업무내용",
+		"nextWeek" : "차주 업무내용",
+		"thisMonthPlan" : "금월계획",
+		"thisMonthExecution" : "금월실시",
+		"nextMonthPlan" : "익월계획",
+		"thisMonth" : "금월 업무내용",
+		"nextMonth" : "익월 업무내용",
+		"note" : "비고",
+		"attachFile" : "첨부파일",
+		"fileList" : "파일목록",
+		"sendState_0" : "작성중",
+		"sendState_1" : "제출",
+		"isWirte" : "작성여부",
+		"all" : "전체",
+		"write" : "작성",
+		"notWrite" : "미작성"
+	},
+	"cLabel" : {
+		"sDate" : "착공일",
+		"eDate" : "준공예정일",
+		"manager" : "관리자",
+		"plan" : "계획",
+		"execution" : "실행",
+		"rateOfExecution" : "대비"
+	},
+	"title" : {
+		"weekReportEditWrite" : "업무보고 등록/수정"
+	},
+	"btn" : {
+		"excelDownload" : "엑셀 다운로드",
+		"submit" : "제출",
+		"sendCancel" : "제출취소"
+	},
+	"placeholder" : {
+
+	},
+	"msg" : {
+		"submitYn" : "제출하시겠습니까?",
+		"submitCancel" : "제출 취소 처리하시겠습니까?",
+		"submitOk" : "처리되었습니다.",
+		"noWeekCode" : "업무보고 작성 요일이 설정되어 있지 않습니다. <br>코드 관리에서 등록 후 작성 가능합니다."
+	}
+}

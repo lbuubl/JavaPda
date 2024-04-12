@@ -1,0 +1,156 @@
+/*
+모바일 datatable 버튼 재정렬
+*/
+ 
+@media screen and (max-width: 1630px) { 
+ #resizeDiv .dt-buttons {
+    float: none;
+    text-align: center;
+    margin-right : 10px;
+	display : inline !important;
+  }
+ #resizeDiv .dt-buttons .btn {
+    float: none;
+  } 
+}
+@media screen and (max-width: 767px) {
+  #resizeDiv .dt-buttons {
+    float: none;
+    text-align: center;
+    margin-right : 10px;
+	display : inline !important;
+  }
+  #resizeDiv .dt-buttons .btn {
+    float: none;
+  } 
+}
+
+
+@media screen and (max-width: 414px) {
+	.content .btn-xs, .content .btn-group-xs > .btn{
+		--padding: 3px 5px;
+	}
+	.content .panel-body{
+		padding: 3px 5px;
+	}
+	#workSpace Div{
+		word-break:break-all;
+	}
+}
+
+.content .choice span {
+	border : 2px solid #797979;
+}
+
+.content .content-group {
+	margin-bottom : 20px !important;
+}
+  
+
+.fancytree-ext-table tbody tr td:first-child {
+	text-align : left;
+} 
+
+#dataList {
+	word-break:break-all;
+}
+
+.btn-hide ,
+.custom-hide {
+	display: none !important;
+}
+ 
+
+@media screen and (max-width: 1200px) { 
+	.content .custom-icon {
+		margin-right : 0px;
+	} 
+	.content .btn-span {
+		display:none;
+	} 
+}
+@media screen and (max-width: 1024px) { 
+	.content .btn-span {
+		display:inline;
+	} 
+	.content .custom-icon {
+		margin-right : 7px;
+	}
+} 
+
+@media screen and (max-width: 814px) {
+	.content .btn-custom,
+	.content .btn-xs, 
+	.content .btn-group-xs > .btn{
+		padding: 3px 5px;
+	}  
+}
+
+@media screen and (max-width: 414px) {
+	.content .btn-custom,
+	.content .btn-xs, 
+	.content .btn-group-xs > .btn{
+		padding: 3px 5px;
+	} 
+
+	.content .btn-span {
+		display:none;
+	} 
+	.content .panel-body{
+		padding: 3px 5px;
+	}
+	 
+	.content .custom-icon {
+		margin-right : 0px;
+	}
+}
+
+
+
+ 
+/* 글자 밀림 방지 */
+.content .dataTable > thead > tr > th,
+.content .dataTable > tbody > tr > th,
+.content .dataTable > tfoot > tr > th,
+.content .dataTable > thead > tr > td,
+.content .dataTable > tbody > tr > td,
+.content .dataTable > tfoot > tr > td {
+  vertical-align: middle;
+  word-break:break-all;
+}
+
+.content .paging_simple .paginate_button:hover
+, .content .paging_simple .paginate_button:focus{
+	background-color : transparent;
+}
+.content .dataTables_paginate .paginate_button:hover
+, .content .dataTables_paginate .paginate_button:focus{
+	background-color : transparent;
+}
+
+.content .text-skip { 
+	overflow : hidden;
+	text-overflow : ellipsis;
+} 
+ 
+.content .table-layout-fixed { 
+	table-layout : fixed;
+}
+ 
+/* dual list Move/Remove all 버튼 히든처리 */
+ .btn.removeall ,
+ .btn.moveall {
+	display : none; 
+}
+
+.content button.btn.remove , 
+.content button.btn.move {
+	border : 1px solid #ddd !important; 
+	width: 100%;
+}
+
+.box1.col-md-6 ,
+.box2.col-md-6 { 
+	border-top : 1px solid #ddd !important;
+	padding-top : 10px;
+}

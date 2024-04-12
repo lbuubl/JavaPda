@@ -1,0 +1,35 @@
+{
+	"label":{
+		"evaltype": "평가유형",
+		"cUser": "등록자",
+		"cDate": "최초등록일",
+		"uUser": "수정자",
+		"uDate": "최종수정일",
+		"checkClass": "점검분류",
+		"checkListCnt": "점검항목수",
+		"checkList": "점검항목",
+		"processingPeriod": "처리기간",
+		"select": "선택",
+		"successiveWork": "후속작업",
+		"evalMethod_1": "기간",
+		"evalMethod_2": "처리상태",
+		"evalMethod_3": "발생여부",
+		"evalMethod_4": "이행%",
+		"evalClass" : "점검분류",
+		"evalMethod" : "평가방법",
+		"immediately" : "즉시",
+		"day" : "일"
+	},
+	"btn":{
+		"successiveWorkSelSave" : "후속작업선택저장"
+	},
+	"msg":{
+		"selectEvaltypePlz": "평가유형을 선택하세요.",
+		"selectEvalClassPlz": "점검분류를 선택하세요.",
+		"input_0_now": "0을 입력하면 즉시",
+		"sameEvalType" : "동일한 평가유형이 있습니다.",
+		"sameEvalClass" : "동일한 점검분류가 있습니다.",
+		"sameEvalItem" : "동일한 점검항목이 있습니다.",
+		"sameEvalAction" : "동일한 후속작업이 있습니다."
+	}
+}

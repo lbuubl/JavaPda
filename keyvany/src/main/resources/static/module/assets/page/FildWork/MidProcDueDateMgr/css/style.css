@@ -1,0 +1,208 @@
+.ul_alarm {
+	background-color: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 0 0 2px 0;
+    vertical-align: middle;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.ul_alarm li {
+	float:left;
+	list-style: none;
+	margin: 2px 0 0 2px;
+	border: 1px solid #ddd; 
+    border-radius: 2px;
+    padding: 5px 5px;
+}
+
+.ul_alarm{
+	min-height:70px;
+}
+
+#content_form .table-responsive .dataTable > thead > tr > th {
+    border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+}
+
+#content_form .table-responsive > .table-bordered > tbody > tr:last-child > td{
+	border-bottom: 1px solid #ddd;
+}
+
+#modal_midProclEdit .bootstrap-tagsinput, 
+#modal_midProclEdit textarea[name="notice"],
+#modal_relatedWorkEdit .bootstrap-tagsinput,
+#modal_relatedWorkEdit textarea[name="etc"]{
+	min-height:70px;
+}
+
+
+.list_relatedWorkTable {
+	--width:100%; 
+	--height:56px;
+	--width:450px;
+}
+
+.list_relatedWorkTable td{
+	border: 1px solid #ddd;
+	padding:10px 10px 10px 10px
+}
+
+.list_relatedWorkTable td:first-child{
+	border-left:0;
+}
+
+.list_relatedWorkTable td:last-child{
+	border-right:0;
+}
+
+.list_relatedWorkTable tr:last-child td,
+.list_relatedWorkTable tr td:first-child
+{
+	border-bottom:0;
+}
+
+/*헤더 css 시작*/	
+#dataList_header{
+	display:none;
+	position: relative;
+	--background: #f2f9ff;	    
+	--background-color: #39567e;
+	background-color: #FFFFFF;
+	--color: white;
+}
+#fixDiv{
+	position: fixed;
+	--height: 111px;
+	z-index: 2;
+	overflow: hidden;
+	display:none;
+}
+/*헤더 css 종료*/	
+
+#uploadEvent_midProc_filelist,
+#uploadEvent_relatedWork_filelist{
+	max-height:100px;
+}
+
+#uploadEvent_midProc_filelist .plupload_droptext::before,
+#uploadEvent_relatedWork_filelist .plupload_droptext::before{
+    font-size: 30px;
+    margin-left: -30px;
+	padding-top: 20px;
+}
+
+#uploadEvent_midProc_filelist .plupload_droptext::after,
+#uploadEvent_relatedWork_filelist .plupload_droptext::after{
+	--margin: -140px 0 0 -150px;
+    height: 100px;
+	padding-top:100px;
+}
+
+#frmMidProcEdit .plupload_filelist,
+#frmMidProcEdit .plupload_droptext,
+#frmRelatedWorkEdit .plupload_filelist,
+#frmRelatedWorkEdit .plupload_droptext
+{
+	max-height:100px;
+}
+
+#modal_midProclEdit .table_relatedlWork td,
+#modal_midProclEdit .table_relatedlWork th{
+	padding-top:4px !important;
+	padding-bottom:4px !important;
+}
+
+
+
+/* 모달 사이즈 관련 */
+@media screen and (min-width: 1280px){
+	#modal_midProclEdit .modal-lg,
+	#modal_relatedWorkEdit .modal-lg{
+		width:1200px
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1279px) {	
+	#modal_midProclEdit .modal-lg,
+	#modal_relatedWorkEdit .modal-lg{
+		width:900px
+	}
+}
+
+@media screen and (min-width: 768px){	
+	#modal_midProclEdit .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+		margin-top:0 !important;
+	}
+}
+
+@media screen and (max-width: 768px){	
+	#frmRelatedWorkEdit .div_StartActionDt, 
+	#frmRelatedWorkEdit .div_EndActionDt {
+		margin-top:10px !important;
+	}
+}
+
+@media screen and (max-width: 1024px) {	
+	#modal_midProclEdit .Filelist_UI,
+	#modal_relatedWorkEdit .Filelist_UI{
+		margin-bottom:20px;
+	}
+}
+
+@media (max-width: 1024px){
+
+	#modal_midProclEdit .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"], 
+	#modal_relatedWorkEdit .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"]
+	{
+		margin-top: 10px;
+	}
+}
+
+table.list_relatedWorkTable td {
+    padding: 0;
+}
+
+.btn_deleteAlarm, .btn_editAlarm{
+	padding:3px;
+}
+
+@media screen and (max-width: 768px){
+	#resizeDiv.table-responsive {
+		width: 100%;
+		margin-bottom: 0;
+		overflow-y: auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid #ddd;
+	}
+}
+
+#frmAlarm .div-msgType input[type="checkbox"]{
+	margin-top:2px !important;
+}
+
+#frmAlarm .div-msgType .checkbox-inline{
+	padding-top:0;
+}
+
+.list_relatedWorkTable > tbody > tr > td,
+#table_midProcList > thead > tr > th,
+#dataList_header > thead > tr > th{
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.dataTable thead .sorting:before, .dataTable thead .sorting:after, .dataTable thead .sorting_asc:after, .dataTable thead .sorting_desc:after, .dataTable thead .sorting_asc_disabled:after, .dataTable thead .sorting_desc_disabled:after {
+    right: 3px;
+
+}
+
+.dataTable thead .sorting, .dataTable thead .sorting_asc, .dataTable thead .sorting_desc, .dataTable thead .sorting_asc_disabled, .dataTable thead .sorting_desc_disabled {
+    padding-right: 10px;
+}
+
+#frmRelatedWorkEdit .Filelist_UI,
+#frmMidProcEdit .Filelist_UI {
+    margin-bottom: 10px;
+}

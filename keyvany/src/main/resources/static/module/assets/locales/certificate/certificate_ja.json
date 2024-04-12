@@ -1,0 +1,220 @@
+{
+	"workspace":{
+		"info1"			:""
+		,"info2"		:"10MB"
+		,"info3"		:"以下のイメージファイルのみ登録することができます。"
+		,"title"		:"イメージ添付したり"
+		,"label":{ 
+			"title"		:"タイトル"
+			,"docNo"	:"文書番号"
+			,"writer"	:"作成者"
+			,"date"		:"作成日"
+			,"cont"		:"内容"
+			,"fileList"	:"ファイルリスト"
+			,"fileUploader"	:"ファイルオプロド"
+			,"tags"		:"タグ"
+			,"approvalLine":"決裁ライン"
+			,"openRole"	:"閲覧権限"
+			,"approvalLineDefault"	:"決裁ラインを指定してください。"
+			,"addApprovalLine"	:"決裁ライン追加"
+			,"afterBefor"	:"現在選択された決裁ラインの前に追加しますか?"
+			,"after"	:"後に"
+			,"befor"	:"の前に"
+			,"HQ"		:"本社"
+			,"Filed"	:"現場"
+			,"setAppViewAuth"	:"閲覧券指定"
+			,"choice_setAppViewAuth_Grp"	:"ヨルラムチョ指定"
+			,"choice_setAppViewAuth":"閲覧者指定"
+			,"setAppViewAuthGroup"	:"閲覧権のリスト"
+			,"Recives"	:"受信者指定"
+			,"RecivesTitle"	:"受信者"
+			,"setReceiveSetting"	:"受信者指定"
+			,"All"		:"選択グループ全体使用者"
+			,"Choice"	:"選択した使用者"
+			,"ChoiceType"	:"受信者の選択タイプ"
+			,"Editor_Title"	:"タイトル"
+			,"Editor_docNo"	:"文書番号"
+			,"Editor_date"	:"作成日"
+			,"Editor_Project"	:"プロジェクト名"
+			,"SUN"		:"仕事"
+			,"MON"		:"月"
+			,"TUE"		:"腹"
+			,"WED"		:"数"
+			,"THU"		:"首"
+			,"FRI"		:"金"
+			,"SAT"		:"土"
+		}  
+	}
+    
+	,"button":{ 
+		"cancel":"キャンセル"
+		,"confirm"		:"確認"
+		,"submit"		:"転送"
+		,"new"			:"新しい文書作成"
+		,"setApprovalLine"	:"決裁ライン指定の"
+		,"Recives"		:"受信指定"
+		,"OK"			:"確認"
+	}
+
+	,"panel":{
+		"list"			:"リスト"
+		,"write"		:"登録"
+		,"edit"			:"編集"
+		,"view"			:"ボギー"
+		,"comment"		:"意見"
+		,"fileList"		:"ファイルリスト"
+		,"formList"		:"様式のリスト"
+	}
+    
+
+	,"app":{
+		"button":{
+			"back"		:"後ろに"
+			,"save"		:"臨時貯蔵"
+			,"submit"	:"保存フサンシン"
+			,"delete"	:"削除"
+			,"approve"	:"決裁"
+			,"approveAll"	:"専決"
+			,"reject"	:"伴侶"
+			,"sending"	:"発信"
+			,"receive"	:"受信"
+			,"receivecancel":"受信伴侶"
+			,"circulation"	:"回覧"
+			,"adminsave"	:"管理者の貯蔵"
+			,"close"	:"閉じる"
+			,"openRole"	:"閲覧権限"
+			,"appL"		:"順次決裁"
+			,"appNL"	:"ビスンギョルジェ"
+			,"appAL"	:"協力決裁"
+			,"appCL"	:"参照決裁"
+			,"appVL"	:"回覧決裁"
+			,"appD"		:"指定削除"
+			,"addAppLine"	:"ライン追加"
+			,"choice_setAppViewAuth_Grp"	:"ヨルラムチョ指定"
+			,"choice_setAppViewAuth"	:"閲覧者指定"
+			,"authDel"	:"権限の除去"
+			,"Receives"	:"受信指定"
+		}
+		,"label":{
+			"All"		:"選択グループ全体使用者"
+		}
+	}
+
+	,"datatable":{ 
+		"option":{
+			"filter"	:"検索語"
+			,"show"		:"を見ること:"
+			,"total"	:"全体:"
+			,"previous"	:"移転"
+			,"next"		:"次"
+		}
+		,"col":{
+			"title"	:"タイトル"
+			,"date"		:"作成日"
+			,"writer"	:"作成者"
+			,"num"		:"番号"
+			,"docNo"	:"文書番号"
+			,"formNm"	:"ヤンシクミョン"
+			,"regDate"	:"登録日"
+			,"No"		:"番号"
+			,"userNm"	:"名前"
+			,"userPart"	:"分野"
+			,"appL"		:"決裁者"
+			,"appAL"	:"協力者"
+			,"appCL"	:"参照者"
+			,"appVL"	:"フェラムジャ"
+			,"addD"		:"追加"
+			,"approvalType"	:"決裁者タイプ"
+			,"approvalTypeAdd"	:"追加"
+		}
+	}
+
+	,"msg":{
+		"success":"保存完了"
+		,"delete"		:"削除完了"
+		,"error"		:"誤りの発生"
+		,"noData"		:"該当データがありません"
+		,"delYn"		:"本当に削除しますか"
+		,"insertContent"	:"内容を入力してください"
+		,"insertTitle"		:"タイトルを入力してください"
+		,"sessionError"		:"セッションが終了しました。 \n再び接続してください。"
+		,"selectFile"		:"ファイルを選択してください!"
+		,"extType"		:"次の形式のファイルのみアップロードが可能です。"
+		,"reSelectFile"		:"アップロードするファイルを選択し直してください。"
+		,"setAppLinebackTitle"	:"ウィンドウを閉じますか? "
+		,"setAppLinebackMsg"	:"変更されたデータは反映されません。"
+		,"tChangeUser"		:"決裁者を変更しますか?"
+		,"cChangeUser"		:"は(は)すでに指定された決裁者がいます。 \nを変更しますか?"
+		,"ttDuplicateusers"	:"重複して決裁者を指定しますか?"
+		,"ctDuplicateusers"	:"は(は)すでに決裁ラインに含まれています。 \n再び決裁ラインに追加しますか?"
+		,"addAppLinebackMsg"	:"ウィンドウを閉じますか?"
+		,"addAppLinebackTitle"	:"変更されたデータは反映されません。"
+		,"addAppReturnMgs1"	:"決裁者は回覧より後に指定することができません。\nの決裁者指定が無視されました。"
+		,"addAppReturnMgs2"	:"参照者は決裁者よりも後ろに指定することができません。\nの決裁者指定が無視されました。"
+		,"addAppReturnMgs3"	:"協力者は決裁者よりも後ろに指定することができません。\nの決裁者指定が無視されました。"
+		,"addAppReturnMgs4"	:"回覧者は決裁者よりも前に指定することができません。\nの決裁者指定が無視されました。"
+		,"setAppViewAuthSave"	:"閲覧者を変更(選択)しました。"
+		,"addAppLineOKMsg"	:"決裁ラインを指定(変更)しました。"
+		,"addAppLineFailCLMsg"	:"最後の決裁者の後ろに参照者が来られないです。"
+		,"addAppLineFailALMsg"	:"最後の決裁者の後ろに協力者が来られないです。"
+		,"addAppLineFailVLMsg"	:"最後の決裁者がフェラムジャ後に来ることはできません。"
+		,"addAppLineFailLMsg"	:"決裁者は少なくとも1人以上指定をしなければなりません。"
+		,"addAppLineFailTLMsg"	:"最後の決裁者は順次決裁者にならなければなりません。"
+		,"addAppLineOKTitle"	:"決裁ラインの指定を再び確認してください。"
+		,"setAppReceiveGrpSave"	:"受信者の指定(変更)しました。"
+		,"required"		:"銀(は)必須入力ランです。"
+		,"Editor_back"		:"後ろにボタンが押されました。"
+		,"Editor_delete"	:"削除ボタンが押されました。"
+		,"Editor_save"		:"一時保存ボタンが押されました。"
+		,"Editor_submit"	:"保存して上申ボタンが押されました。"
+		,"Editor_approve"	:"決裁ボタンが押されました。"
+		,"Editor_approveAll"	:"チョンギョルギョルボタンが押されました。"
+		,"Editor_reject"	:"伴侶ボタンが押されました。"
+		,"Editor_sending"	:"発信ボタンが押されました。"
+		,"Editor_receive"	:"受信ボタンが押されました。"
+		,"Editor_receivecancel"	:"受信伴侶ボタンが押されました。"
+		,"Editor_circulation"	:"回覧ボタンが押されました。"
+		,"Editor_adminsave"	:"管理者保存ボタンが押されました。"
+		,"info" :{
+			"Editor_save"		: "一時保存がされた。"
+			,"Editor_submit"	: "決裁が上申されました。"
+			,"Editor_approve"	: "決裁処理をしました。"
+			,"Editor_approveAll"	: "専決処理をしました。"
+			,"Editor_reject"	: "伴侶処理をしました。"
+			,"Editor_sending"	: "文書を発信しました。"
+			,"Editor_receive"	: "文書を受信して上申しました。"
+			,"Editor_receivecancel"	: "文書の受信を拒否しました。"
+			,"Editor_circulation"	: "文書回覧処理をしました。"
+			,"Editor_adminsave"	: "ドキュメントの変更をしました。"
+		}
+	}
+
+	,"validation":{
+		"success"		:"成功"
+		,"agree"		:"政策違反"
+		,"required"		:"誤りの発生"
+	}
+
+	,"setting":{
+		"label":{
+			"setting"	:"設定"
+			,"menuNms"	:"電子決裁"
+			,"blank"	:"未定(空欄)"
+			,"appL"		:"決裁"
+			,"appNL"	:"秘訣"
+			,"appAL"	:"協力"
+			,"appCL"	:"参照"
+			,"appVL"	:"回覧"
+			,"all"		:"全体"
+		}
+
+		,"select":{
+			"board"		:"掲示板"
+			,"notice"	:"お知らせ"
+		}
+		,"button":{
+			"close"		:"閉じる"
+			,"save"		:"保存"
+		} 
+	} 
+}

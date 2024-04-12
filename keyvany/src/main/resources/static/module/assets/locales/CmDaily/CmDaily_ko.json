@@ -1,0 +1,40 @@
+{ 
+	"label" : {
+		"CmDailyList" : "책임 업무일지 목록",
+		"CmDailyPartList":"분야별 업무일지 목록",
+		"ReportDt" : "보고일",
+		"plan" : "계획",
+		"run" : "실시",
+		"weather" : "날씨",
+		"work" : "주요업무", 
+		"appState" : "결재상태",
+		"sumYn" : "취합수",
+		"partNm" : "분야",
+		"writeNm" : "작성자",
+		"APP_STATE_0": "결재작성중",
+		"APP_STATE_1": "결재진행중",
+		"APP_STATE_2": "반려",
+		"APP_STATE_3": "전결",
+		"APP_STATE_4": "완료",
+		"APP_STATE_5": "수신",
+		"APP_STATE_6": "수신반려",
+		"APP_STATE_99": "작성중",
+		"CmDailyModal" :"업무일지작성",
+		"report_dt":"보 고 일"
+	},
+
+	"msg" : { 
+		"insertProjectNm" : "프로젝트명을 입력해주세요",
+		"fail" : "실패",
+		"success" : "성공",
+		"gUpdate" : "수정하시겠습니까?",
+		"selectObs" : "조직을 선택해주세요",
+		"selectAuthGroup" : "권한그룹을 선택해주세요" ,
+		"FileSize":"이미지 용량은 1mb 이하로 선택해주세요"
+	},
+	"btn":{
+		"appSavebtn":"결재문서",
+		"manChoice":"취합 인원선택",
+		"WorkSum":"업무내용취합"
+	}
+}

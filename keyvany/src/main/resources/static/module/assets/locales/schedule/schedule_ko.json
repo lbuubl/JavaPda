@@ -1,0 +1,145 @@
+{
+	"label" : {
+		"title" : {
+			"majorSchedule" : "주요일정",
+			"scheduleAddEdit" : "일정 등록/수정",
+			"scheduleDetail" : "일정 상세",
+			"repeatScheduleDel" : "반복일정 삭제",
+			"repeatScheduleEdit" : "반복일정 수정",
+			"search" : "검색",
+			"selectSchedule" : "일정선택",
+			"publicObject" : "공용설비예약"
+		},
+		"scheduleEdit" : {
+			"scheduleType" : "종류",
+			"scheduleTitle" : "제목",
+			"time" : "시간",
+			"contents" : "내용",
+			"location" : "장소",
+			"publicObject" : "예약",
+			"attend" : "참가자",
+			"publicCheck" : "공개",
+			"defalutPublic" : "기본공개",
+			"openTypeSave" : "공개여부저장",
+			"alarm" : "알림",
+			"allDay" : "종일",
+			"repeat" : "반복",
+			"extension" : "세부정보 보기",
+			"reduce" : "숨기기",
+			"pubCategory" : "분류",
+			"pubName" : "설비명",
+			"repeatSchedule" : "반복일정",
+			"thisEventDelMsg" : "반복되는 다른 모든 일정은 그대로 유지됩니다.",
+			"afterEventsDelMsg" : "해당 일정 및 향후 모든 일정이 삭제됩니다.",
+			"allEventsDelMsg" : "반복되는 모든 일정을 삭제합니다.",
+			"thisEventEditMsg" : "반복되는 다른 모든 일정은 그대로 유지됩니다.",
+			"afterEventsEditMsg" : "해당 일정 및 향후 모든 일정이 수정됩니다.",
+			"allEventsEditMsg" : "반복되는 모든 일정을 수정합니다.",
+			"repeatDelNotice" : "반복되는 일정에서 이번일정만 삭제, 전체 일정 삭제, 이번 일정과 향후 일정 삭제 중에서 선택하세요.",
+			"repeatEditNotice" : "반복되는 일정에서 이번일정만 수정, 전체 일정 수정, 이번 일정과 향후 일정 수정 중에서 선택하세요."
+		},
+		"config" : {
+			"addScheduleType_Auth" : "일정종류추가 권한",
+			"all" : "전체",
+			"admin" : "관리자"
+		},
+		"openType" : {
+			"A" : "공개",
+			"Z" : "비공개"
+		},
+		"registerer" : "등록자",
+		"participant": "참여자",
+		"search" : {
+			"keyword" : "검색어",
+			"searchUser" : "인원검색",
+			"scheduleType" : "일정종류",
+			"all" : "전체",
+			"scheduleGubun" : {
+				"label" : "일정구분",
+				"sharedSchedule" : "공유받은일정",
+				"mySchedule" : "나의등록일정",
+				"attendSchedule" : "나의참가일정"
+			},
+			"sourceType" : {
+				"label" : "일정원천",
+				"added" : "직접등록",
+				"workMgr" : "업무관리",
+				"meetingMgr" : "회의관리"
+			}
+		},
+		"alarmType": {
+			"none":"없음",
+			"minutes_ago":"분전",
+			"hours_ago":"시간전",
+			"days_ago":"일전",
+			"weeks_ago":"주전"
+		},
+		"placeHolder" : {
+			"newKindName" : "일정종류"
+		},
+		"repeat" : {
+			"frequency" : "반복빈도",
+			"cycle" : "반복주기",
+			"repeatDay" : "반복일",
+			"day" : "일",
+			"week" : "주",
+			"month" : "개월",
+			"year" : "년",
+			"endDate" : "종료일자",
+			"daily" : "매일",
+			"weekly" : "매주",
+			"monthly" : "매월",
+			"yearly" : "매년",
+			"mon" : "월",
+			"tue" : "화",
+			"wed" : "수",
+			"thur" : "목",
+			"fri" : "금",
+			"sat" : "토",
+			"sun" : "일",
+			"monday" : "월요일",
+			"tuesday" : "화요일",
+			"wednesday" : "수요일",
+			"thursday" : "목요일",
+			"friday" : "금요일",
+			"saturday" : "토요일",
+			"sunday" : "일요일",
+			"th" : "번째",
+			"sdate" : "시작일",
+			"edate" : "종료일",
+			"summary" : "요약"
+		}
+	},
+	"button" : {
+		"addScheduleType" : "추가",
+		"addMember" : "추가",
+		"booking" : "예약",
+		"thisEvent" : "이번 일정만",
+		"afterEvents" : "향후 일정 모두",
+		"allEvents" : "반복 일정 모두"
+	},
+	"msg" : {
+		"cantDeleteCUser" : "일정 생성자는 삭제 할 수 없습니다.",
+		"required_NewKindNm" : "일정 종류명을 입력하세요.",
+		"required_newKindColor" : "일정 색을 입력하세요.",
+		"emptyScheduleKindCd" : "코드관리에 등록된 일정종류가 없습니다.\n코드관리에서 등록 후 사용하세요.",
+		"noScheduleKind" : "일정종류가 없습니다.",
+		"pubObjReservOverlap" : "공용설비 예약중 이미 등록된 일정이 있습니다.",
+		"overlap_publicObjReserv" : "반복일정 생성중 아래와 같이 중복되는 공용설비 예약이 있어 일정이 일부 생성되지 않았습니다.",
+		"saveOkPublic" : "공개로 저장되었습니다.",
+		"saveOkPrivate" : "비공개로 저장되었습니다.",
+		"defaultOpenType" : "기본으로 설정되는 공개여부 입니다.",
+		"cantDeleteScheduleKind" : "사용되고 일정이 있어서 삭제할 수 없습니다."
+	},
+	"confirm" : {
+		"deleteScheduleOk" : "일정을 삭제하시겠습니까?",
+		"deleteScheduleKindOk" : "일정종류를 삭제하시겠습니까?"
+	},
+	"validation" : {
+		"chkEndTime" : "종료일은 시작일보다 작을수 없습니다."
+	},
+	"selectScheduleModule" : {
+		"scheduleNm" : "일정명",
+		"no" : "No"
+	}
+}

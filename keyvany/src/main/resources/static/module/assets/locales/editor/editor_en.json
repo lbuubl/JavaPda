@@ -1,0 +1,208 @@
+{
+	"workspace" : {
+		"info1" : "Only image files less than "
+		,"info2" : "10MB"
+		,"info3" : " can be registered."
+		,"title" : "Attach Image"
+		,"label" : { 
+			"title" : "title"
+			,"docNo" : "Document number"
+			,"writer" : "writer"
+			,"date" : "Created date"
+			,"cont" : "contents"
+			,"fileList" : "List of files"
+			,"fileUploader" : "fileUploader"
+			,"tags" : "tags"
+			,"approvalLine" : "appLine"
+			,"openRole"	: "viewing authority"
+			,"approvalLineDefault" : "Please specify the decision line."
+			,"addApprovalLine" : "Add Approval Line"
+			,"afterBefor" : "Do you want to add it to the selection line before the decision line?"
+			,"after" : "after"
+			,"befor" : "befor"
+			,"HQ" : "HQ"
+			,"Filed" : "Filed"
+			,"setAppViewAuth" : " Set View Auth Users"
+			,"choice_setAppViewAuth_Grp" : "Set View Group"
+			,"choice_setAppViewAuth" : "Set View User"
+			,"setAppViewAuthGroup" : "Set View Auth Groups"
+			,"Recives"	: "Specify recipients"
+			,"RecivesTitle"	: "Receiver"
+			,"setReceiveSetting"	: "Setting Receivers"
+			,"All"		: "Users across selected groups"
+			,"Choice"	: "Selected users"
+			,"ChoiceType"	: "Type of recipient's selection"
+			,"Editor_Title"	: "Title"
+			,"Editor_docNo"	: "DocNo"
+			,"Editor_date"	: "WriteDate"
+			,"Editor_Project"	: "ProjectName"
+			,"SUN"		: "SUN"
+			,"MON"		: "MON"
+			,"TUE"		: "TUE"
+			,"WED"		: "WED"
+			,"THU"		: "THU"
+			,"FRI"		: "FRI"
+			,"SAT"		: "SAT"
+		}
+	}
+	
+	,"button" : { 
+		"cancel" : "cancel"
+		,"confirm" : "OK"
+		,"submit" : "submit"
+		,"new" : "create"
+		,"setApprovalLine" : "setAppLine"
+		,"Recives"		: "Specify incoming"
+		,"OK"			: "OK"
+	}
+
+	,"panel" : {
+		"list" : "list"
+		,"write" : "write"
+		,"edit" : "edit"
+		,"view" : "view"
+		,"comment" : "comment"
+		,"fileList" : "file list"
+		,"formList" : "form list"
+	}
+    
+
+	,"app" :{
+		"button" : {
+			"back"		: "back"
+			,"save"		: "temp save"
+			,"submit"	: "submit"
+			,"delete"	: "delete"
+			,"approve"	: "approve"
+			,"approveAll"	: "approveall"
+			,"reject"	: "reject"
+			,"sending"	: "sending"
+			,"receive"	: "receive"
+			,"receivecancel": "receive cancel"
+			,"circulation"	: "circulation"
+			,"adminsave"	: "admin save"
+			,"close"	: "Close"
+			,"openRole"	: "designation"
+			,"appL"		: "assign"
+			,"appNL"	: "NS-assign"
+			,"appAL"	: "helper"
+			,"appCL"	: "refer"
+			,"appVL"	: "circul"
+			,"appD"		: "remove"
+			,"addAppLine"	: "addLine"
+			,"choice_setAppViewAuth_Grp" : "Set View Group"
+			,"choice_setAppViewAuth" : "Set View User"
+			,"authDel"	: "Auth Remove"
+			,"Receives"	: "Specify incoming"
+		}
+		,"label" : {
+			"All"		: "Selected group-wide users"
+		}
+	}
+
+	,"datatable" : { 
+		"option" : {
+			"filter" : "filter"
+			,"show" : "show"
+			,"total" : "total"
+			,"previous" : "previous"
+			,"next" : "next"
+		}
+		,"col" : {
+			 "title" : "title"
+			,"date" : "date"
+			,"writer" : "writer"
+			,"num" : "num"
+			,"docNo" : "docNo"
+			,"formNm" : "formNm"
+			,"regDate" : "regDate"
+			,"No" : "No"
+			,"userNm" : "Name"
+			,"userPart" : "Part"
+			,"appL"		: "assign"
+			,"appAL"	: "helper"
+			,"appCL"	: "refer"
+			,"appVL"	: "circul"
+			,"addD"		: "add"
+			,"approvalType" : "Approval Type"
+			,"approvalTypeAdd" : "Add"
+		}
+	}
+
+	,"msg" : {
+		"success" : "Save completed"
+		,"delete" : "Delete complete"
+		,"error"  : "An error occurred"
+		,"noData" : "There is no such data"
+		,"delYn"  : "is Delete?"
+		,"insertContent" : "Do you really want to delete this?"
+		,"insertTitle" : "Please enter title"
+		,"sessionError" : "The session has ended. \nPlease connect again."
+		,"selectFile"	: "Please select a file!"
+		,"extType"	: "Only files with the following extensions can be uploaded."
+		,"reSelectFile"	: "Please select the file to upload again."
+		,"setAppLinebackTitle" : "Are you sure?"
+		,"setAppLinebackMsg" : "Your changed data will not be reflected."
+		,"tChangeUser"	: "Do you want to change the authorizer?"
+		,"cChangeUser"  : ", there is already a designated authorizer. Do you want to make changes?"
+		,"ttDuplicateusers"	: "Would you like to designate an authorizer in duplicate?"
+		,"ctDuplicateusers"  : " has already been included in the decision line. \nWould you like to designate an authorizer in duplicate?"		
+		,"addAppLinebackMsg" : "Are you sure?"
+		,"addAppLinebackTitle" : "Your changed data will not be reflected."
+		,"addAppReturnMgs1"	: "A binder can not be specified after the viewers.\nThe designation of the authorizer was ignored."
+		,"addAppReturnMgs2"	: "References can not be specified after the authorizer.\nThe designation of the authorizer was ignored."
+		,"addAppReturnMgs3"	: "Collaborators can not be specified later than the authorizer.\nThe designation of the authorizer was ignored."
+		,"addAppReturnMgs4"	: "The viewer can not specify it before the approver.\nThe designation of the authorizer was ignored."
+		,"setAppViewAuthSave"	: "I changed (selected) the viewing right holder."
+		,"addAppLineOKMsg"	: "I have designated (changed) the decision line."
+		,"addAppLineFailCLMsg"	: "Reference can not come after the last authorizer."
+		,"addAppLineFailALMsg"	: "Collaborators can not come after the last authorizer."
+		,"addAppLineFailVLMsg"	: "The last authorizer can not come behind the viewer."
+		,"addAppLineFailLMsg"	: "An approver must specify at least one person."
+		,"addAppLineFailTLMsg"	: "The last authorizer, you need sequential authorizer."
+		,"addAppLineOKTitle"	: "Please double check the designation of the decision line."
+		,"setAppReceiveGrpSave"	: "I have designated (changed) the recipient."
+		,"required"		: " is a required field."
+		,"Editor_back"		: "The [Back] button was pressed."
+		,"Editor_delete"	: "The [Delete] button was pressed."
+		,"Editor_save"		: "The [Save] button was pressed."
+		,"Editor_submit"	: "The [Submit] button was pressed."
+		,"Editor_approve"	: "The [Approve] button was pressed."
+		,"Editor_approveAll"	: "The [ApproveAll] button was pressed."
+		,"Editor_reject"	: "The [Reject] button was pressed."
+		,"Editor_sending"	: "The [Sending] button was pressed."
+		,"Editor_receive"	: "The [Receive] button was pressed."
+		,"Editor_receivecancel"	: "The [Receivecancel] button was pressed."
+		,"Editor_circulation"	: "The [Circulation] button was pressed."
+		,"Editor_adminsave"	: "The [Adminsave] button was pressed."
+	}
+
+	,"validation" : {
+		"success" : "success"
+		,"agree" : "Policy violation"
+		,"required" : "An error occurred"
+	}
+
+	,"setting" : {
+		"label" :{
+			"setting" : "Configuration"
+			,"menuNms" : "Electronic decision"
+			,"blank"  : "blank"
+			,"appL"		: "ASGN"
+			,"appNL"	: "NSGN"
+			,"appAL"	: "HLPR"
+			,"appCL"	: "REFR"
+			,"appVL"	: "CRUL"
+			,"all"		: "Everyone"
+		}
+
+		,"select" : {
+			"board" : "Bulletin board"
+			,"notice" : "Notice"
+		}
+		,"button" : {
+			"close" : "close"
+			,"save" : "save"
+		} 
+	} 
+}

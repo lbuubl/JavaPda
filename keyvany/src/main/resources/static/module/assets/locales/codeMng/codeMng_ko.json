@@ -1,0 +1,43 @@
+{	
+	"panel" : {
+		"mst" : "마스터 코드",
+		"detail" : "세부 코드"  
+	}, 
+	"label" : { 
+		"code" : "코드",
+		"codeNm" : "코드명",
+		"cdProperty" : "코드속성",
+		"memo" : "메모",
+		"relatedTable" : "관련테이블"  , 
+		"propertyHelp1" : "1. 추가 속성은 콤마(,)로 구분해주세요",
+		"propertyHelp2" : "2. 값 체크를 할 속성은 @@을 붙여주세요 (ex. 플랜,플랜2@@ )",
+		"useAt" : "사용여부"
+	},
+	"msg" : { 
+		"form" : {
+			"selectMCode" : "마스터 코드를 선택해주세요",
+			"selectDCode" : "세부 코드를 선택해주세요",
+			"property" : "속성 값은 최대 {{maxLength}}개 까지 입력이 가능합니다",
+			"updateYn" : "정말 수정하시겠습니까?",
+			"deleteYn" : "정말 삭제하시겠습니까?" 
+		}
+		,"modal" : {
+			"noData" : "데이터가 없습니다",
+			"success" : "성공",
+			"validate" : "필수값을 입력해주세요",
+			"exceptionUseCode" : "이미 등록된 코드입니다",
+			"sessionError" : "세션 값이 변경되었습니다\n페이지를 새로고침 해 주세요",
+			"multiInsertError" : "입력중 오류가 발생했습니다.\n관리자에게 문의해주세요. ",
+			"multiInsertSuccess" : "성공 : {{successCnt}}\n실패 : {{failCnt}}\n실패코드 목록\n{{failList}}"			
+		} 
+	} 
+	,"validation" : {
+		"code" : "코드 값을 입력해주세요",
+		"codeNm" : "코드명을 입력해주세요",
+		"value" : "값을 입력해주세요"
+	}
+	,"btn" : {
+		"sort" : "정렬",
+		"multiInsert" : "다중입력"
+	}
+}

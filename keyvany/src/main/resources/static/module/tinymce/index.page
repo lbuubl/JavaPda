@@ -1,0 +1,827 @@
+	<!--#include virtual="/Common/aspHeader.Do"-->
+	<!--#include virtual="/Common/DBHelper.Do"-->
+	<!--#include virtual="/Common/function.Do"-->
+<%
+
+Set DBHelper = new clsDBHelper     'DBHelper 생성
+
+%>
+
+	<!--#include virtual="/module/HTMLHeader.page"-->
+	<!--#include virtual="/module/Middle_HTML.page"-->
+
+	
+	<script src="/module/tinymce/js/tinymce/tinymce.min.js"></script>
+
+	<script  src="/module/tinymce/js/tinymce/uploader_plupload.js"></script>
+	<script  src="/module/assets/js/plugins/uploaders/plupload/plupload.full.min.js"></script>
+	<script  src="/module/assets/js/plugins/uploaders/plupload/plupload.queue.min.js"></script>
+	<script  src="/Module/assets/js/pages/components_modals.js"></script>
+
+	<script>
+
+		//var i=0;
+		var nodeItem=null;
+		var cbm=null;
+		var mainContents=null;
+		var editerOnload=false;
+		$(document).on('focusin', function(e) {
+		  if ($(e.target).closest(".mce-window").length) {
+			e.stopImmediatePropagation();
+		  }
+		});
+
+		$(document).ready(function(){
+			//i++;
+			//alert(i);
+			$("#save").click(function(){
+				var ed = tinyMCE.activeEditor;
+				//alert(ed.getContent());
+				$("#text1").text(ed.getContent());
+				var $H;
+				$H=$(ed.getContent());
+				//var imgSrc = $H.filter('img');
+				//console.log($(ed.getContent()).children("img"));
+				//imgSrc = $H.children("img");
+
+				//console.log($(ed.getContent()).find( "img" ));
+				imgSrc = $H.find( "img" );
+
+				alert(imgSrc.length);
+				imgSrc.each(function src(i){
+					alert(imgSrc[i].src);
+				});
+			});
+			$("#reset").click(function(){
+				var cookies;
+				var cookiesName="";
+			    var expireDate = new Date();
+			    //어제 날짜를 쿠키 소멸 날짜로 설정한다.
+			    expireDate.setDate( expireDate.getDate() - 1 );
+				if(document.cookie !=""){
+					cookies = document.cookie.split("; ");
+					for (i=0; i<cookies.length ;i++ )
+					{
+						cookiesName = cookiesName+((cookies[i].split("="))[0])+";";
+					 document.cookie = cookiesName + "=" + "; expires=" + expireDate.toGMTString() + "; path=/";
+					}
+				}
+				//alert(cookies.length);
+				$("#text1").text(cookies);
+				//document.frm0.reset();
+			  //document.cookie = "ASPSESSIONIDCQABADSC= " + "; expires=" + expireDate.toGMTString() + "; path=/";
+
+			});
+			$("#countImg").click(function(){
+				var ed = tinyMCE.activeEditor;
+				var TDD = tinymce.dom.DomQuery;
+				//ed.getContent();
+				//tinyMCE.activeEditor.getContent()
+
+				//var $TDD = tinymce.get('elm1').getContent().dom.DomQuery;
+				//var $TDD = tinymce.get('elm1').getContent();
+
+				//alert($("#elm1").html());
+				//alert(tinymce.get('elm1').getContent());
+				//alert($TDD('img').length);
+
+				//tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('#a_s_2_1'));
+				//tinymce.activeEditor.selection.setContent('<b>이대영</b>');
+				//tinymce.activeEditor.dom.select('#a_s_2_1').html('<b>이대영</b>');
+				//tinymce.DOM.setHTML('#a_s_2_1', '<b>이대영</b>');
+				//tinymce.activeEditor.dom.setHTML(tinymce.activeEditor.dom.select('#a_s_2_1'), '<b>이대영</b>');
+				//alert(tinymce.dom.DomQuery("#a_s_2_1").html());
+				//tinymce.dom.DomQuery("#a_s_2_1").html("<b>이대영</b>").Writer({});
+				//tinymce.dom.DomQuery.show();
+				//tinymce.activeEditor.dom.select('#a_s_2_1');
+				//tinymce.activeEditor.selection.getNode().nodeName;
+				//tinymce.activeEditor.selection.getSel("#a_s_2_1");
+				//tinymce.dom.Selection.getSel();
+				//tinyMCE.execCommand('mceSelectNode',false,'a_s_2_1');
+				ed.focus();
+				//ed.selection.select(ed.dom.select('#a_s_2_1')[0]);
+				//ed.selection.collapse(0);
+				//tinymce.dom.DomQuery.find("#a_s_2_1");
+				//var bm = tinyMCE.activeEditor.selection.getBookmark();
+				//tinyMCE.activeEditor.selection.moveToBookmark(cbm);
+				//tinyMCE.get("a_s_2_1").execCommand('mceInsertContent',false,'<b>이대영</b>');
+				//tinymce.get("a_s_2_1").execCommand('mceInsertContent',false,"이대영");
+				//console.log(tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('.cid_a_s_2_1')));
+				//console.log(tinymce.activeEditor.selection.select('.cid_a_s_2_1'));
+				//console.log(tinymce.activeEditor.dom.select('.cid_a_s_2_1'));
+				tinymce.dom.DomQuery(ed.dom.select('#a_s_2_1')).html('이대영');
+				//tinymce.activeEditor.selection.setContent('이대영');
+				//TDD("#a_s_2_1").html("이대영");
+				//tinyMCE.execCommand('mceReplaceContent',false,'<b>이대영</b>');
+				//$("#right1").html("<b>이대영</b>");
+				//tinyMCE.triggerSave();
+				alert(tinymce.dom.DomQuery(tinymce.activeEditor.dom.select('#a_s_2_1')).html());
+				$("#text1").text(ed.getContent());
+			});
+/*
+			$("#ajaxDIV").load("international_test_ajax1.html", function(){
+				//페이지 로드 완료후 다국어 반영
+				$(this).localize();
+				editorLoad();
+			});
+*/
+			i18next.on('loaded', function(loaded) {
+			//	alert(i18next.language);
+				//editorLoad();
+				if (!editerOnload)
+				{
+					//onChangeLangEvent2();
+				}
+
+			});
+
+		   $(".language-switch li a").on("click", function(){
+			//createDataTable(i18next.language);
+			//alert(i18next.language);
+			//tinymce.init({
+			//	  selector: "div.tinymce",
+			//	  language:i18next.language
+			//});
+			// tinymce.i18n=i18next.language;
+			// alert( tinymce.language);
+		   });
+
+			//다국어 처리
+			/*
+			i18next.loadNamespaces(["editor"], function(err, t){
+				jqueryI18next.init(i18next, $);		//jquery 사용위해 선언
+				$('.body').localize();				//다국어 반영
+			});
+			*/
+			//onChangeLangEvent();
+			i18C("editor");
+			//editorLoad();
+			//$(".tinymce").show();
+			//$("#eml1").show();
+		});
+
+		function i18C(obj){
+			i18next.loadNamespaces([obj], function(err, t){
+				//console.log("=language="+i18next.language+", "+obj);
+				jqueryI18next.init(i18next, $);		//jquery 사용위해 선언
+				$('.body').localize();				//다국어 반영
+				//alert(i18next.language+", "+obj);
+			});
+		}
+
+		/*
+		function editorLoad(){
+
+			var strLng=i18next.language;//"ko";
+			if (strLng != undefined)
+			{
+			//	strLng="en";
+
+
+				var lng=strLng.substr(0, 2);//"ko";
+				tinymce.init({
+					language: lng,
+					//selector: "div.tinymce",
+					selector: "#elm1",
+					theme: "modern",
+
+					content_css: "/module/tinymce/tests/manual/css/development.css",
+					add_unload_trigger: false,
+					insert_toolbar: 'quickimage quicktable',
+					menubar: "view tools",
+					extended_valid_elements : "span[!class]",
+					statusbar: true,
+					resize: true,
+					//inline: true,
+					paste_data_images: true,
+					relative_urls: false,
+					toolbar: "undo redo | styleselect | ",
+					font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n',
+					setup: function(ed) {
+						ed.addContextToolbar('img', 'alignleft aligncenter alignright alignjustify | image remove');
+						ed.addButton('mybutton', {
+								type: 'button',
+								title: 'Local Image Insert',
+								icon: 'image',
+								id: 'mybutton',
+
+								onclick: function() {
+									//window.open("/Module/tinymce/popup/image_upload.page","tinymcePop","width=400,height=350");
+									$('#modal_default').modal('show');
+								}
+							});
+					},
+					init_instance_callback: function (editor) {
+						editor.on('click', function (e) {
+							nodeItem = e.target;
+							cbm=tinyMCE.activeEditor.selection.getBookmark();
+							tinyMCE.execCommand('mceSetAttribute',false,{name:'id',value:'right1'});
+							//alert(nodeItem.id);
+						});
+						editor.on('blue', function(e) {
+							mainContents=tinymce.get('elm1').getContent();
+						});
+					}
+				});
+				editerOnload=true;
+			}
+
+		}
+
+		//상단메뉴선언
+		menu: {
+		    file: {title: 'File', items: 'newdocument'},
+		    edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
+		    insert: {title: 'Insert', items: 'link media | template hr'},
+		    view: {title: 'View', items: 'visualaid'},
+		    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+		    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+		    tools: {title: 'Tools', items: 'spellchecker code'}
+		  }
+		*/
+
+		function editorLoad2(){
+		// 이미지경로 절대상대 설명 : https://www.tinymce.com/docs/demo/url-conversion/
+		// 툴바종류 : https://www.tinymce.com/docs/advanced/editor-control-identifiers/#toolbarcontrols
+		toolbar="undo redo | print | fontselect | fontsizeselect | forecolor backcolor | mybutton charmap table | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | preview code ";
+		menubar="file edit insert view table tools";
+		eplugins= [ 'advlist  lists charmap print preview hr pagebreak ', 'visualblocks visualchars  fullscreen nonbreaking', 'table contextmenu directionality textcolor paste colorpicker textpattern imagetools code'];
+
+			var strLng=i18next.language;//"ko";
+			if (strLng != undefined)
+			{
+
+		//		var lng=strLng.substr(0, 2);//"ko";
+				var lng="ko";
+				var editor=tinymce.init({
+						language: lng,
+						//selector: "div.tinymce",
+						selector: "#elm1",
+						theme: "modern",
+						toolbar:toolbar,
+						menubar: menubar,
+						plugins: eplugins ,
+					imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
+					content_css: "/module/tinymce/tests/manual/css/development.css",
+					add_unload_trigger: false,
+		//			insert_toolbar: 'quickimage quicktable',
+
+					extended_valid_elements : "span[!class]",
+					statusbar: true,
+					resize: true,
+					//inline: true,
+					paste_data_images: true,
+					relative_urls: false,
+
+
+					font_formats: '나눔고딕=Nanum Gothic;'+'Andale Mono=andale mono,times;'+ 'Arial=arial,helvetica,sans-serif;'+ 'Arial Black=arial black,avant garde;'+ 'Book Antiqua=book antiqua,palatino;'+ 'Comic Sans MS=comic sans ms,sans-serif;'+ 'Courier New=courier new,courier;'+ 'Georgia=georgia,palatino;'+ 'Helvetica=helvetica;'+ 'Impact=impact,chicago;'+ 'Symbol=symbol;'+ 'Tahoma=tahoma,arial,helvetica,sans-serif;'+ 'Terminal=terminal,monaco;'+ 'Times New Roman=times new roman,times;'+ 'Trebuchet MS=trebuchet ms,geneva;'+ 'Verdana=verdana,geneva;'+ 'Webdings=webdings;'+ 'Wingdings=wingdings,zapf dingbats',
+
+					fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+
+					setup: function(ed) {
+						ed.addContextToolbar('img', 'alignleft aligncenter alignright alignjustify | image remove');
+						ed.addButton('mybutton', {
+
+								type: 'button',
+								title: 'Local Image Insert',
+								icon: 'image',
+								id: 'mybutton',
+
+								onclick: function() {
+
+									$('#modalEditorImageInsert').modal('show', {backdrop: 'static'});
+									$(".file-Choice").next().html(i18next.t("common:F.NoChoiceFile"));
+									$(".file-Choice").next().next().html(i18next.t("common:F.ChoiceFile"));
+									$("#uniform-upto").localize();
+								}
+							});
+					},
+					init_instance_callback: function (editor) {
+						editor.on('click', function (e) {
+							nodeItem = e.target;
+							cbm=tinyMCE.activeEditor.selection.getBookmark();
+							tinyMCE.execCommand('mceSetAttribute',false,{name:'id',value:'right1'});
+							//alert(nodeItem.id);
+						});
+						editor.on('blue', function(e) {
+							mainContents=tinymce.get('elm1').getContent();
+						});
+
+					}
+				});
+
+				if (!editerOnload)
+				{
+					mainContents=$(tinymce.activeEditor.getBody()).html();
+					//mainContents=tinymce.activeEditor.getBody();
+				}
+				editerOnload=true;
+				try
+				{
+					tinyMCE.activeEditor.setContent(mainContents);
+					//alert(mainContents);
+				}
+				catch (e)
+				{
+					//alert("1");
+				}
+
+				editor.get('mytextbox').on('click', function(e) {
+					alert('Hello world!');
+				});
+
+
+			}
+
+		}
+
+		function drawRect(rect, color) {
+			var $elm = tinymce.$('#' + color);
+
+			if (!$elm.length) {
+				$elm = tinymce.$('<div id="' + color + '" class="rect hidden">').css('position', 'absolute').css('outline', '1px solid ' + color).appendTo(document.body);
+			}
+
+			if (!rect) {
+				return;
+			}
+
+			$elm.css({
+				left: rect.x,
+				top: rect.y,
+				width: rect.w,
+				height: rect.h
+			});
+		}
+
+		function toggleRects() {
+			tinymce.$('div.rect').toggleClass('hidden');
+		}
+
+		function onChangeLangEvent(){
+			//alert(i18next.language);
+			//tinyMCE.activeEditor.remove();
+			//if (!editerOnload)
+			//{
+				//onChangeLangEvent2();
+
+				var ed;
+				try{
+					ed = tinyMCE.activeEditor;
+					//mainContents=ed.getContent();
+					/*
+					console.log(tinymce.get('elm1'));
+					console.log(tinymce.get('elm1').getContent());
+					console.log(tinymce.get());
+					console.log(tinymce.get().getContent());
+					return false;
+					*/
+					tinyMCE.get('content id').getContent()
+					mainContents=$(tinymce.activeEditor.getBody()).html();
+					//mainContents=tinymce.activeEditor.getBody();
+					//mainContents=tinymce.get('elm1').getContent();
+					//alert(mainContents+"");
+					//alert("3");
+
+					tinyMCE.activeEditor.remove();
+					//editorLoad();
+
+				}
+				catch(e){
+					//editorLoad();
+					//alert("30");
+				}
+				editorLoad2();
+				//tinymce.get('elm1').setContent(mainContents);
+			//$(".tinymce").show();
+			//}
+		}
+
+		function onChangeLangEvent2(){
+			//alert(i18next.language);
+			//tinyMCE.activeEditor.remove();
+			//alert("1000");
+			var ed;
+			try{
+				ed = tinyMCE.activeEditor;
+				mainContents=ed.getContent();
+
+				tinyMCE.activeEditor.remove();
+				//editorLoad();
+
+			}
+			catch(e){
+				//editorLoad();
+				//alert("0");
+			}
+			//alert(mainContents+"");
+			editorLoad();
+			//tinymce.get('elm1').setContent(mainContents);
+			//$(".tinymce").show();
+		}
+
+		function delay(gap){ /* gap is in millisecs */
+		  var then,now;
+		  then=new Date().getTime();
+		  now=then;
+		  while((now-then)<gap){
+			now=new Date().getTime();  // 현재시간을 읽어 함수를 불러들인 시간과의 차를 이용하여 처리
+		  }
+		}
+	</script>
+	<style>
+		.rect {
+			z-index: 9999999999;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.tinymce {
+			border: 1px solid gray;width:95%;height:450px;
+		}
+		#id{
+			display:none;
+		}
+	</style>
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header page-header-default">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">menu </span> -sample</h4>
+						</div>
+
+						<div class="heading-elements">
+							<div class="heading-btn-group">
+								<a href="#" class="btn btn-link btn-float has-text"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
+								<a href="#" class="btn btn-link btn-float has-text"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
+								<a href="#" class="btn btn-link btn-float has-text"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+							<li class="active">Editor</li>
+						</ul>
+
+						<ul class="breadcrumb-elements">
+							<li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="icon-gear position-left"></i>
+									Settings
+									<span class="caret"></span>
+								</a>
+
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+									<li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+									<li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+									<li class="divider"></li>
+									<li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Main charts -->
+					<div class="row">
+						<form method="post" action="/module/tinymce/service.do" id="frm0" name="frm0">
+							<div id="elm1" name="elm1" rows="15" cols="80" style="width: 95%" class="tinymce">
+
+								<p class="HStyle0" style="text-align: center; line-height: 130%;"></p>
+								<table style="border: currentColor; border-image: none; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">
+								  <tbody>
+									<tr>
+									  <td valign="middle" style="padding: 1.4pt 5.1pt; border: currentColor; width: 643px; height: 922px;"><p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 20pt; font-weight: bold;">검&nbsp; 측&nbsp; 요&nbsp; 청&nbsp; 서</span></p>
+										<p class="HStyle0" style="line-height: 130%;">&nbsp;</p>
+										<p class="HStyle0" style="line-height: 130%;">
+
+										<table style="border: currentColor; border-image: none; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 호&nbsp; :</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">20&nbsp;&nbsp; .&nbsp;&nbsp; .&nbsp;&nbsp; .</span></p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 신&nbsp; :</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">책임감리원</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다음과 같은 세부공종에 대하여 검측요청하오니 검사후 승인하여 주시기 바랍니다.</span></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p>
+										<p class="HStyle0" style="line-height: 130%;">
+
+										<table style="border: currentColor; border-image: none; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="border-width: 1.1pt 0.4pt 0.4pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 147px; height: 32px;"><p class="HStyle0" style="text-align: center;">위치 및 공종</p></td>
+											  <td valign="middle" style="border-width: 1.1pt 1.1pt 0.4pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 492px; height: 32px;"><p class="HStyle0">&nbsp;</p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="border-width: 0.4pt 0.4pt 0.4pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 147px; height: 32px;"><p class="HStyle0" style="text-align: center;">검 측&nbsp; 부 위</p></td>
+											  <td valign="middle" style="border-width: 0.4pt 1.1pt 0.4pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 492px; height: 32px;" id="mytextbox">&nbsp;</td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="border-width: 0.4pt 0.4pt 0.4pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 147px; height: 32px;"><p class="HStyle0" style="text-align: center;">검측요구일시</p></td>
+											  <td valign="middle" style="border-width: 0.4pt 1.1pt 0.4pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 492px; height: 32px;"><p class="HStyle0">&nbsp;</p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="border-width: 0.4pt 0.4pt 1.1pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 147px; height: 32px;"><p class="HStyle0" style="text-align: center;">검 측&nbsp; 사 항</p></td>
+											  <td valign="middle" style="border-width: 0.4pt 1.1pt 1.1pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 492px; height: 32px;"><p class="HStyle0">&nbsp;</p></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">붙&nbsp; 임 : 시공자의 시공점검표 점검결과, 시험성과 시공자의 야장 및 도면</span></p>
+										<p class="HStyle0" style="text-align: right; line-height: 130%;">
+
+										<table border="1" align="right" cellpadding="0" cellspacing="0" style="border: currentColor; border-image: none; border-collapse: collapse;">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="padding: 0pt 22.7pt 0pt 0pt; border: currentColor; width: 138px; height: 22px;"><p class="HStyle0" style="text-align: right; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">공사명</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 175px; height: 22px;" colspan="2"><p class="HStyle0" style="text-align: left; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 138px; height: 26px;"><p class="HStyle0" style="text-align: right; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">현장대리인</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 88px; height: 26px;"><p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 88px; height: 26px;"><p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="text-align: right; line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;">&nbsp;</p>
+										<p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="font-weight: bold;">-----------------------------------------------------------------------------</span></p>
+										<p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 20pt; font-weight: bold;">검&nbsp; 측&nbsp; 결&nbsp; 과&nbsp; 통&nbsp; 보</span></p>
+										<p class="HStyle0" style="line-height: 130%;">&nbsp;</p>
+										<p class="HStyle0" style="line-height: 130%;">
+
+										<table style="border: currentColor; border-image: none; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 호&nbsp; :</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">20&nbsp;&nbsp; .&nbsp;&nbsp; .&nbsp;&nbsp; .</span></p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 13px;"><p class="HStyle0" style="line-height: 100%;">&nbsp;</p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 94px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 신&nbsp; :</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 12px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 420px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">현장대리인</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 117px; height: 28px;"><p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;검측요청서 번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 에 대한 검측결과를 다음과 같이 통보합니다.</span></p>
+										<p class="HStyle0" style="line-height: 130%;">&nbsp;</p>
+										<p class="HStyle0" style="line-height: 130%;">
+
+										<table style="border: currentColor; border-image: none; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="border-width: 1.1pt 0.4pt 0.4pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 151px; height: 43px;"><p class="HStyle0" style="text-align: center;"><span style="line-height: 160%; font-size: 11pt;">검&nbsp;&nbsp; 측&nbsp;&nbsp; 자</span></p></td>
+											  <td valign="middle" style="border-width: 1.1pt medium 0.4pt 0.4pt; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentColor rgb(0, 0, 0) rgb(0, 0, 0); padding: 1.4pt; width: 115px; height: 43px;"><p class="HStyle0" style="text-align: center; line-height: 2%;"><span style="line-height: 2%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="border-width: 1.1pt 0.4pt 0.4pt medium; border-style: solid solid solid none; border-color: rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0) currentColor; padding: 1.4pt; width: 115px; height: 43px;"><p class="HStyle0" style="text-align: center; line-height: 2%;"><span style="line-height: 2%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="border-width: 1.1pt 0.4pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 93px; height: 43px;"><p class="HStyle0" style="text-align: center;"><span style="line-height: 160%; font-size: 11pt;">검 측 일 시</span></p></td>
+											  <td valign="middle" style="border-width: 1.1pt 1.1pt 0.4pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 165px; height: 43px;"><p class="HStyle0"><span style="line-height: 160%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="border-width: 0.4pt 0.4pt 1.1pt 1.1pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 151px; height: 74px;"><p class="HStyle0" style="text-align: center; line-height: 100%;"><span style="line-height: 100%; font-size: 11pt;">검 측&nbsp; 결 과</span></p></td>
+											  <td valign="middle" style="border-width: 0.4pt 1.1pt 1.1pt 0.4pt; border-style: solid; border-color: rgb(0, 0, 0); padding: 1.4pt; width: 488px; height: 74px;" colspan="4"><p class="HStyle0"><span style="line-height: 160%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">붙&nbsp; 임 : 감리원의 체크리스트 검측 결과</span></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p>
+										<p class="HStyle0" style="text-align: right; line-height: 130%;">
+
+										<table border="1" align="right" cellpadding="0" cellspacing="0" style="border: currentColor; border-image: none; border-collapse: collapse;">
+										  <tbody>
+											<tr>
+											  <td valign="middle" style="padding: 0pt 22.7pt 0pt 0pt; border: currentColor; width: 138px; height: 22px;"><p class="HStyle0" style="text-align: right; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">공사명</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 175px; height: 22px;" colspan="2"><p class="HStyle0" style="text-align: right; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											</tr>
+											<tr>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 138px; height: 26px;"><p class="HStyle0" style="text-align: right; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">책임감리원</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 88px; height: 26px;"><p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p></td>
+											  <td valign="middle" style="padding: 0pt; border: currentColor; width: 88px; height: 26px;" id="a_s_2_1"><div  class="cid_a_s_2_1" ><p class="HStyle0" style="text-align: center; line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;"  >&nbsp;</span></p></div></td>
+											</tr>
+										  </tbody>
+										</table>
+										</p>
+										<p class="HStyle0" style="text-align: right; line-height: 130%;"></p>
+										<p class="HStyle0" style="line-height: 130%;"><span style="line-height: 130%; font-size: 11pt;">&nbsp;</span></p>
+										<p class="HStyle0" style="line-height: 130%;">※ 재검측시에는 붉은 글씨로 “(재)”를 우측 상단에 기록함.</p>
+										<p class="HStyle0" style="line-height: 150%;">※ 2부 작성하여 시공자, 감리원 각 1부 보관.</p></td>
+									</tr>
+								  </tbody>
+								</table>
+								<p class="HStyle0" style="text-align: center; line-height: 130%;"></p>
+
+							</div>
+						</form>
+						<form class="form-horizontal">
+
+							moduleConfig_Seqno:<input type="text" name="mc" id="mc" value="<%=Module_config_SeqNo%>">
+							썸네일사이즈:<input type="text" name="Size" id="Size" value="50*40@120*80">
+							Session.SessionID: <input type="text" value="<%=Session.SessionID%>">
+
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<div class="heading-elements">
+										<ul class="icons-list">
+											<li><a data-action="collapse"></a></li>
+											<li><a data-action="reload"></a></li>
+											<li><a data-action="close"></a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="uploader-events content-group"><p>Your browser doesn't support native upload.</p></div>
+
+									<div class="well well-white pre-scrollable" id="log" style="display:none;"></div>
+								</div>
+							</div>
+						</form>
+
+						<input type="button" name="save" id="save"  value="Submit" />
+						<input type="button" name="reset" id="reset" value="Reset" />
+						<input type="button" name="countImg" id="countImg" value="imgCnt" />
+						<textarea name="text1" id="text1" rows="20" cols="80" style="width:100%;height:300px;"></textarea>
+
+					</div>
+					<!-- /main charts -->
+
+
+
+					<!-- Footer -->
+					<!-- <div class="footer text-muted">
+						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+					</div> -->
+					<!-- /footer -->
+					<div id="modalEditorImageInsert" class="modal fade">
+						<div class="modal-dialog">
+							<style type="text/css">
+								#pop_wrap{width:383px;font-family:'돋움',Dotum,Helvetica,sans-serif;font-size:12px; margin: 10; padding: 10; background-color:white;}
+								.ed_h1{color:#333;font-size:14px;letter-spacing:-1px}
+								.ed_button{width: 70px; height: 25px; font-weight: bold; cursor: pointer;}
+
+								#pop_header{height:26px;padding:14px 0 0 20px;border-bottom:1px solid #ededeb;background:#f4f4f3}
+								.ed_pop_container{padding:11px 20px 0}
+								#pop_footer{margin:21px 20px 0;padding:10px 0 16px;border-top:1px solid #e5e5e5;text-align:center}
+								.ed_btn_area{word-spacing:2px}
+								.ed_pop_container2{padding:46px 60px 20px}
+								.pop_container2 .ed_dsc{margin-top:10px;color:#666;line-height:18px}
+								.ed_pop_container2 .ed_dsc strong{color:#13b72a}
+								.upload{margin:0 4px 0 0;_margin:0;padding:6px 0 4px 6px;border:solid 1px #d5d5d5; color:"#a1a1a1"; font-size:"12px"; border-right-color:#efefef; border-bottom-color:#efefef; length:"300px";}
+							</style>
+							<div id="pop_wrap">
+								<!-- header -->
+								<div id="pop_header">
+									<h1 class="ed_h1"><span data-i18n="approval:workspace.title">이미지 첨부하기</span</h1>
+								</div>
+								<!-- //header -->
+
+								<!-- container -->
+								<div id="pop_container2" class="ed_pop_container2">
+									<form id="editor_upimage" name="editor_upimage" action="PostUpload.do" method="post" enctype="multipart/form-data">
+									<div id="pop_content2">
+										<input type="file" accept=".jpg" class="upload" id="uploadInputBox" name="uploadInputBox" onChange="fileCheck();"/>
+										<input type="hidden" name="mimetypes" id="mimetypes">
+										<p class="ed_dsc" id="info"><span data-i18n="approval:workspace.info1"></span><strong><span data-i18n="approval:workspace.info2">10MB</span></strong><span data-i18n="approval:workspace.info3">이하의 이미지 파일만 등록할 수 있습니다.</span><br>(JPG, GIF, PNG, BMP)</p>
+									</div>
+									</form>
+								</div>
+								<!-- //container -->
+
+								<!-- footer -->
+								<div id="pop_footer">
+									<div class="ed_btn_area">
+										<button type="button" onClick="submit_to();" class="ed_button"><span data-i18n="approval:button.submit">확인</span></button>
+										&nbsp;
+										<button type="button" onClick="pop_close();" class="ed_button"><span data-i18n="approval:button.cancel">취소</span></button>
+									</div>
+								</div>
+							</div>
+							<script >
+								function submit_to()
+								{
+
+
+									var frm = document.editor_upimage;
+
+									if(frm.uploadInputBox.value =="")
+									{
+										alert("파일을 추가해주세요.");
+										return false;
+									}
+
+									var formData = new FormData($("#editor_upimage")[0]);
+
+									$.ajax({
+										url:"/module/tinymce/popup/PostUpload.do",
+										contentType:false,
+										type:"POST",
+										mimeType:"multipart/form-data",
+										dataType:"text",
+										data:formData,
+										cache:false,
+										async:false,
+										processData:false,
+										success:function(data){
+											//alert(data);
+											tinymce.activeEditor.execCommand("mceInsertContent",'false',"<img src='"+data+"'>");
+											$('#modalEditorImageInsert').modal('hide');
+											$("#uploadInputBox").val("");
+											return;
+										},
+										error:function(data){
+											alert("err//"+data.message);
+											$('#modalEditorImageInsert').modal('hide');
+										}
+
+									});
+									//frm.submit();
+								}
+
+								function pop_close(){
+
+									$('#modalEditorImageInsert').modal('hide');
+								}
+
+								function fileCheck() {
+								  var frm = document.editor_upimage;
+								  var file = frm.uploadInputBox.value;
+								  var FileFilter = /\.(jpg|gif|tif|bmp|png)$/i;
+								  var extArray = new Array(".jpg", ".gif", ".tif", ".bmp", ".png");
+								  var bSubmitCheck = false;
+
+								  if( !file ){
+									alert( "파일을 선택하여 주세요!");
+									return false;
+								  }
+								  //alert(document.editor_upimage.uploadInputBox.files[0].type);
+
+								  if( file.match(FileFilter))
+								  {
+									bSubmitCheck = true;
+								  }
+
+
+								  if (!bSubmitCheck) {
+									 alert("다음 파일만 업로드가 가능합니다.\n\n"  + (extArray.join("  ")) + "\n\n 업로드할 파일을 "
+									 + " 다시 선택하여 주세요.");
+									frm.uploadInputBox.value="";
+									 return false;
+								   }
+
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+<!--#include virtual="/module/bottom.page"-->

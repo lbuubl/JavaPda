@@ -1,0 +1,283 @@
+	@media (max-width: 768px) {
+			.heading-elements:not(.not-collapsible),
+				  .breadcrumb-elements:not(.not-collapsible) {
+				    position:absolute;
+				    display:block;
+				    top:14%;
+			}
+		}
+
+		.obstree{
+			display:none;
+			border:2px solid  #009700;
+			position: fixed;
+			top:60px;
+			left:0px;
+			z-index: 9998;
+			width: 100%;
+			padding:2px;
+			background: white;
+			transition: background-color 0.3s linear;
+			overflow-y: auto;
+			max-height:650px;
+		}
+
+		#treeChoiceOK{
+			display:none;
+			position: fixed;
+			top:60px;
+			right:20px;
+			z-index: 9999;
+		}
+
+		#userinfoFooter {
+		    padding: 10px;
+		    border-top: 1px solid #ede;
+		}
+
+		#modal-body {
+		    position: relative;
+		    padding-bottom: 0px;
+		}
+
+
+		#userinfoform label{
+			margin-bottom:0px;
+		}
+		.user_info_title{
+			  cursor:pointer;
+		}
+		#signboxW{
+			display:none;
+		}
+
+		#write_modal .form-group {
+		    margin-bottom: 10px;
+		}
+		#edit_modal .form-group {
+		    margin-bottom: 10px;
+		}
+
+		@media (max-width: 1024px){
+			#write_modal  .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+			    margin-top: 10px;
+			}
+			#edit_modal  .form-group div[class*="col-md-"]:not(.control-label) + div[class*="col-md-"] {
+			    margin-top: 10px;
+			}
+		}
+		.po, .st, .uc, .sLicense {
+			  padding: 8px 15px;
+			  outline: 0;
+			  overflow: hidden;
+			  text-overflow:ellipsis;
+			  cursor:pointer;
+			  border-bottom:1px solid #ede;
+		}
+
+		.collapseP:after {
+		    content: '\e9c1';
+		    font-family: 'icomoon';
+		    font-size: 16px;
+		    min-width: 16px;
+		    text-align: center;
+		    display: inline-block;
+		    line-height: 1;
+		    vertical-align: middle;
+		    -webkit-font-smoothing: antialiased;
+		}
+
+		.heading-elements{
+			right:10px;
+			width:16px;
+		}
+		.heading-elements:not(.visible-elements) .icons-list{
+			margin-left: 0px; 
+		}
+		.navbar-component{
+			margin-bottom:10px;
+		}
+		.dtlinfo{
+			display:none;
+		}
+
+		#user_box {
+			padding-left:10px;
+			margin-right:2px;
+		}
+
+		#user_box .panel_box{
+			min-width:200px;
+			width:100%;
+			padding-right:5px;
+		}
+		.panel_box .panel{
+			margin-bottom:10px;
+		}
+		.panel_box i{
+			    margin-right: 10px;
+			    color: rgba(179, 113, 148, 0.74);
+		}
+		#user_box  .panel-body{
+			padding:10px;
+		}
+	
+
+		#user_box > div{
+			float:left;
+		
+		}
+		.user_in_box h6{
+			margin-top:1px;
+			margin-bottom:0px;
+		}
+		.user_in_box div:first-child{
+			float:left;
+			margin:0px;
+		}
+		.user_in_box div:not(:first-child){
+			float:left;
+			min-width:150px;
+			overflow: hidden;
+		}
+		.user_in_box div:not(.p_line){
+			width:100%;
+		}
+		.p_line:not(:first-child){
+			height:25px;
+			margin-left:10px;
+		}
+		.user_in_box div ul{
+			margin:0px;
+			padding:0px;
+		}
+
+		.user_in_box div ul li{
+			padding-top:4px;
+			border-bottom:1px solid #ddd;
+		}
+		.user_in_box div ul li:not(.dropdown-menu li){
+			list-style:none;
+			padding-bottom:5px;
+		}
+		.user_in_box table{
+			border-spacing:0px;
+		}
+		.user_in_box td{
+		}
+
+		.img-rounded{
+			margin-bottom:15px;
+		}
+		
+		@media (max-width: 600px) { /*60px이하*/
+			#paginBox .btn-xs, .btn-group-xs > .btn{
+				    padding: 3px 8px;
+			}
+
+			#user_box {
+				padding-right:30px;
+				
+			}
+			#paginBox{
+			    position: fixed;
+			    z-index: 1;
+			    right: 20px;
+			    top: 200px;
+			    width:30px;
+			}
+			.pagination > li {
+			    display: block;
+			}
+			.pagination-sm > li > a, .pagination-sm > li > span {
+			   min-width: 36px; 
+			}
+			.pagination > li:first-child > a{
+			    border-top: 1px solid #ddd;
+			}
+			.pagination > li > a{
+			    border-top: 0px;
+         		    border-left: 1px solid #ddd;
+			    border-bottom: 1px solid #ddd;
+			}
+			#navbar-filter .dropdown-menu{
+				min-width:80px;
+			}
+			#navbar-filter .dropdown{
+				float:left;
+			}
+			#navbar-filter .nav > li > a {
+			    padding: 9px 10px;
+			}
+			#mobile_seach .form-group{
+			   margin-bottom:10px;
+			}
+
+		}
+		@media (min-width: 600px) {
+			#user_box .panel_box{
+				width:50%;
+			}
+		}
+		@media (min-width: 800px) {
+			#user_box .panel_box{
+				width:33.33%;
+			}
+		}
+		@media (min-width: 1000px) {
+			#user_box .panel_box{
+				width:25.00%;
+			}
+		}
+		@media (min-width: 1200px) {
+			#user_box .panel_box{
+				width:20.00%;
+			}
+		}
+
+	
+	#signatureparent {
+		/*pen color*/
+		color:#2c2c2c; 
+		background-color:darkgrey;
+		/*max-width:600px;*/
+		padding:5px;
+		width:310px;
+	}
+	
+	/*This is the div within which the signature canvas is fitted*/
+	#signature {
+		/*pad background color */
+		background-color:#fff;
+		width:300px;
+		height:225px;
+	}
+	#tools{
+		padding:5px;
+	}
+	/* Drawing the 'gripper' for touch-enabled devices */ 
+	html.touch #content {
+		float:left;
+		width:100%;
+	}
+
+	.grp_nms{
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    display: block;
+	    overflow: hidden
+	}
+
+	#user_box .panel-heading {
+		padding: 5px 10px;
+	}
+
+	#searchCnt{
+		float:left;
+	}
+
+	#searchCnt table{
+		height:42px;
+		margin-left:20px;
+		font-weight:700;
+	}

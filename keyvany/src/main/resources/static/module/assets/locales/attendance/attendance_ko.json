@@ -1,0 +1,42 @@
+{
+	"label" : {
+		"reason" : "사유"
+		,"late" : "지각사유"
+		,"early" : "조퇴사유"
+		,"overtime" : "야근사유" 
+		,"title" : "근태관리"
+		,"sDate" : "시작일"
+		,"eDate" : "종료일"
+		,"inTime" : "출근시간"
+		,"outTime" : "퇴근시간"
+		,"inDescript" : "출근메모"
+		,"outDescript" : "퇴근메모"
+		
+		,"note" : "범례"
+		,"name" : "이름"
+	}
+	,"title" : {
+		"come" : "정상출근"
+		,"late" : "지각"
+		,"getOff" : "정상퇴근"
+		,"early" : "조기퇴근"
+		,"overtime" : "야근" 
+		,"note" : "범례"
+		,"name" : "이름"
+		
+	}
+	,"btn" : {
+		"in" : "출근하시겠습니까?",
+		"out" : "퇴근하시겠습니까?",
+		"save" : "저장",
+		"close" : "닫기",
+		"yes" : "예",
+		"no" : "아니오" 
+	}
+	,"msg" : {
+		"success" : "성공"
+		,"fail" : "실패"
+		,"overnight" : "철야작업을 하셨습니까?"
+	
+	} 
+}

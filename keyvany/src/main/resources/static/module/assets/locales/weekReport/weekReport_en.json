@@ -1,0 +1,94 @@
+{
+	"datatable": {
+		"col": {
+			"reportingDate" : "base date",
+			"plan" : "Plan",
+			"execution" : "Exec..",
+			"rateOfExecution" : "Rate(%)",
+			"thisWeekWork" : "This weeks work",
+			"nextWeekWork" : "Next weeks work",
+			"thisMonthWork" : "This Month work",
+			"nextMonthWork" : "Next Month work",
+			"note" : "Note",
+			"attach" : "Attach",
+			"submit" : "State"
+		},
+
+		"cCol" : {
+			"project" : "Project",
+			"rateOfProcess" : "Rate of process",
+			"type" : "Type",
+			"thisWeek" : "This week",
+			"nextWeek" : "Next week",
+			"thisWeekWork" : "This weeks work",
+			"nextWeekWork" : "Next weeks work",
+			"thisMonth" : "This Month",
+			"nextMonth" : "Next Month",
+			"thisMonthWork" : "This Month work",
+			"nextMonthWork" : "Next Month work",
+			"note" : "Note",
+			"file" : "File"
+		},
+
+		"option" : { 
+			"filter" : "Date"
+		}
+
+    },
+
+	"label" : {
+		"rateOfProcess" : "Rate of process",
+		"reportBaseDate" : "Report base date",
+		"thisWeekPlan" : "This week plan",
+		"thisWeekExecution" : "This week execution",
+		"nextWeekPlan" : "Next week plan",
+		"thisWeek" : "This week contents",
+		"nextWeek" : "Next week contents",
+		"thisMonthPlan" : "This Month plan",
+		"thisMonthExecution" : "This Month execution",
+		"nextMonthPlan" : "Next Month plan",
+		"thisMonth" : "This Month contents",
+		"nextMonth" : "Next Month contents",
+		"note" : "Note",
+		"attachFile" : "Attach file",
+		"fileList" : "File list",
+		"sendState_0" : "Writing",
+		"sendState_1" : "Submited",
+		"isWirte" : "filter",
+		"all" : "All",
+		"write" : "Write",
+		"notWrite" : "Not write"
+	},
+
+	"cLabel" : {
+		"sDate" : "Start",
+		"eDate" : "End",
+		"manager" : "Manager",
+		"plan" : "Plan",
+		"execution" : "Execution",
+		"rateOfExecution" : "Rate of execution"
+	},
+
+	"title" : {
+		"weekReportEditWrite" : "UeekReport edit/write"
+	},
+
+	"btn" : {
+		"excelDownload" : "Excel download",
+		"submit" : "Submit",
+		"sendCancel" : "Cancel submissions"
+	},
+
+	"placeholder" : {
+
+	},
+
+	"msg" : {
+		"submitYn" : "Do you want to submit?",
+		"submitCancel" : "Do you want to cancel the submission?",
+		"submitOk" : "Processed.",
+		"noWeekCode" : "The day of week report is not set. <br> It is possible to create after registration in code management."
+	}
+
+
+}

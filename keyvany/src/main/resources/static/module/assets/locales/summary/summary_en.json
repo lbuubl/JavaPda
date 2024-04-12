@@ -1,0 +1,19 @@
+{
+	"label" : {
+		"viewType" : "View type"
+		,"editor" : "Editor"
+		,"file" : "File"
+		,"fixedDate" : "Fixed date"
+		,"fieldNm" : "Field name"
+		,"detailInfo" : "Info"
+	}
+
+	,"msg" : {
+		"success" : "Success!"
+		,"error" : "Fail!"
+		,"delYn" : "Do you want delete?"
+		,"fileChoose" : "File is not found!\n select file please"
+		,"insertContent" : "Insert to contents!"
+	}
+
+}

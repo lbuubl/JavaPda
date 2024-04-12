@@ -1,0 +1,95 @@
+{
+	"datatable": {
+		"col" : {
+			 "title" : "제목"
+			,"date" : "작성일"
+			,"writer" : "작성자"
+		}
+		,"option" : { 
+			"filter" : "검색어"
+			,"show" : "보기:"
+			,"total" : "총:"
+			,"previous" : "이전"
+			,"next" : "다음"
+		}
+
+	    } ,
+	"workspace" : {
+		"label" : { 
+			"title" : "제목"
+			,"writer" : "작성자"
+			,"date" : "작성일"
+			,"cont" : "내용"
+			,"fileList" : "파일목록"
+			,"fileUploader" : "파일업로더"
+			,"popupYn" : "팝업 여부"  
+			,"popupDate" : "공지 기간"
+			,"tags" : "태그" 
+			,"projectList" : "공지 프로젝트"
+			,"issueYn" : "이슈여부"
+		}  
+	}
+    
+	,"panel" : {
+		"list" : "목록"
+		,"write" : "등록"
+		,"edit" : "편집"
+		,"view" : "상세내역"
+		,"comment" : "댓글"
+		,"fileList" : "파일목록"
+		,"sortLatest" : "최신순 정렬"
+		
+
+	}
+
+	,"button" : { 
+		"back" : "목록"
+		,"yes" : "확인"
+		,"cancel" : "취소"
+		,"delete" : "삭제"
+		,"reply" : "답글"
+		,"edit" : "수정"
+		,"submit" : "저장"
+		,"new" : "글쓰기" 
+		,"add" : "등록" 
+	}
+	,"placeholder" : {
+		"title" : "제목" 
+		,"comment" : "댓글"
+	}
+
+	,"msg" : {
+		"success" : "저장완료"
+		,"delete" : "삭제완료"
+		,"error"  : "오류발생"
+		,"noData" : "해당 데이터가 없습니다"
+		,"delYn"  : "정말 삭제하시겠습니까?"
+		,"insertContent" : "내용을 입력해 주세요"
+		,"insertTitle" : "제목을 입력해 주세요"
+		,"sessionError" : "세션이 종료되었습니다. \n다시 접속해주세요."
+		,"setting" : "환경설정이 필요합니다.\n관리자에게 문의해주세요."
+	}
+
+	,"validation" : {
+		"success" : "성공"
+		,"agree" : "정책 위반"
+		,"required" : "오류 발생"
+	}
+
+	,"setting" : {
+		"label" :{
+			"bbsType" : "BBS타입"
+			,"setting" : "설정"
+			,"newCommentOption" : "최근 등록 댓글 옵션"
+		}
+
+		,"select" : {
+			"board" : "게시판"
+			,"notice" : "공지"
+		}
+		,"button" : {
+			"close" : "닫기"
+			,"save" : "저장"
+		} 
+	} 
+} 
