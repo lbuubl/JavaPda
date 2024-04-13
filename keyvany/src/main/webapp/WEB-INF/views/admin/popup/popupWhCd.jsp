@@ -1,0 +1,125 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
+      <div class="modal fade" id="modal-wh">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Default Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body">
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">공장_숨김처리</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="form-control" id="shFacCd" name="shFacCd" placeholder="">
+                  </div>
+                </div>
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">창고</label>
+                </div>
+                <div class="col-sm-05">
+                  <input type="input" class="form-control" id="shWhCd" name="shWhCd" placeholder="">
+                </div>
+                <div class="col-sm-01">
+                     <button type="button" class="btn btn-default" id="schPopupWh" onclick="fnSchPopupWh()"  data-toggle="modal" >창고검색</button>
+                </div>
+              </div>
+                  <!-- Main content -->
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">창고리스트</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <div id="jsGrid_wh"></div>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                  </section>
+                  <!-- /.content -->
+              </div>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+    <script>
+
+    function fnSchPopupWh(){
+        $("#jsGrid_wh").jsGrid("loadData");
+    }
+    function fnInitWhModalPopup(){
+        $("#jsGrid_wh").jsGrid({
+            height: "auto",
+            width: "100%",
+            heading: true,
+            inserting: false,
+            editing: false,
+            sorting: true,
+            paging: true,
+            selecting: true,
+            autoload : true,
+            noDataContent: "Not found",
+            fields: [
+                { title: "창고코드",  name: "wh_cd", type: "text", width: 150, height: 30 },
+                { title: "창고명", name: "wh_nm", type: "text", width: '80%', height: 30 },
+            ] ,
+            rowClass: function(item, itemIndex) {
+                //행별로 id값을 지정
+                return "client-" + itemIndex;
+             },
+            rowClick: function(args) {
+                console.log('rowClick==========', args)
+                var getData = args.item;
+                var keys = Object.keys(getData);
+                var text = [];
+                $.each(keys, function(idx, value) {
+                  //text.push(value + " : " + getData[value])
+                  //console.log('text==========', text)
+                });
+            }, controller: {
+                loadData: function(filter) {
+                    var d = $.Deferred();
+                    let params = {
+                        shFacCd :  '1010'//$('#shFacCd').val()
+                        , shWhCd :  $('#shWhCd').val()
+                    }
+                    console.log('params=------',params)
+                    $.ajax({
+                        url : "${pageContext.request.contextPath}/cms/common/usp_zt_99_popup_wh_cd",
+                        type : "POST",
+                        processData: false,
+                        contentType : "application/json; charset=utf-8",
+                        dataType: "json",
+                        data :JSON.stringify(params),
+                        success : function(data) {
+                            console.log('data====', data.data)
+                            let getData = data.data;
+                              d.resolve(getData);//<-aaData key에 json데이터 설정해서 넘긴 경우
+                        },
+                        error : function() {
+                            alert("처리중 오류가 발생했습니다.");
+                        }
+                    });
+                   return d.promise();
+                }
+             }
+          })
+    }
+
+    </script>

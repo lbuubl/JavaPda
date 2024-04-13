@@ -1,154 +1,175 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-
-
   <c:if test="${mobileYn}"> <!-- if와 동일 -->
     <script src="/resources/static/js/cordova.js"></script>
     <script src="/resources/static/js/cordova_plugins.js"></script>
   </c:if> <!-- else 종료 -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6" id="contentTitle">
+            <h1>재고이동 </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right" id="bodyOl">
+              <li class="breadcrumb-item"><a href="#" >Home </a></li>
+              <li class="breadcrumb-item " id="level1">재고관리</li>
+              <li class="breadcrumb-item active" id="level2">재고이동</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- form start -->
+    <form class="form-horizontal" id="form" name="form">
+
       <div class="card">
-        <!-- Horizontal Form -->
         <div class="card card-info">
-          <!-- form start -->
-          <form class="form-horizontal" id="form" name="form">
+            <div class="card-header">
+                <h5 class="m-0">현재창고</h5>
+            </div>
             <div class="card-body">
               <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">이름</label>
-                <div class="col-sm-10">
-                  <input type="input" class="form-control" id="id" id="id" value="lbuubl" placeholder="">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">공장</label>
+                </div>
+                <div class="col-sm-08">
+                  <input type="input" class="form-control" id="barcode" name="barcode" placeholder="">
                 </div>
               </div>
+
               <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">사용</label>
-                <div class="col-sm-10">
-                  <input type="input" class="form-control" id="inputPassword3" placeholder="">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">창고</label>
+                </div>
+                <div class="col-sm-08">
+                  <!-- <input type="input" class="form-control" id="cust_cd" name="cust_cd"  placeholder=""> -->
+                  <input type="input" class="form-control" id="cust_nm" name="cust_nm"  placeholder="">
+                </div>
+
+                <div class="col-sm-01">
+                    <!-- <button type="button" class="btn btn-default" onclick="fnFacModalPopup()" data-toggle="modal" data-target="#modal-wh">창고검색</button> -->
+                     <button type="button" class="btn btn-default" id="modalWhShow" data-toggle="modal" >창고검색</button>
+                </div>
+
+              </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="card">
+        <div class="card card-info">
+            <div class="card-header">
+                <h5 class="m-0">이동창고</h5>
+            </div>
+            <div class="card-body">
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">공장</label>
+                </div>
+                <div class="col-sm-08">
+                  <input type="input" class="form-control" id="barcode" name="barcode" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">창고</label>
+                </div>
+                <div class="col-sm-08">
+                  <!-- <input type="input" class="form-control" id="cust_cd" name="cust_cd"  placeholder=""> -->
+                  <input type="input" class="form-control" id="cust_nm" name="cust_nm"  placeholder="">
+                </div>
+	              <div class="col-sm-01">
+	                  <!-- <button type="button" class="btn btn-default" onclick="fnFacModalPopup()" data-toggle="modal" data-target="#modal-wh">창고검색</button> -->
+	                   <button type="button" class="btn btn-default" id="modalWhShow" data-toggle="modal" >창고검색</button>
+	              </div>
+              </div>
+
+            </div>
+         </div>
+      </div>
+
+      <div class="card">
+        <div class="card card-info">
+            <div class="card-body">
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">바코드</label>
+                </div>
+                <div class="col-sm-08">
+                  <input type="input" class="form-control" id="barcode" name="barcode" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">품목명</label>
+                </div>
+                <div class="col-sm-08">
+                  <input type="input" class="form-control" id="itmNm" name="itmNm"  placeholder="">
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">규격</label>
+                </div>
+                <div class="col-sm-01">
+                    <input type="input" class="form-control" id="spac" name="spac" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-02">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">수량</label>
+                </div>
+                <div class="col-sm-01">
+                    <input type="input" class="form-control" id="qty" name="qty" placeholder="">
                 </div>
               </div>
 
                 <div class="form-group row">
-                  <label>Date:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                  <div class="col-sm-02">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">일자</label>
+                  </div>
+                  <div class="col-sm-05">
+                      <div class="input-group date" id="frDt" name ="frDt" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#frDt"/>
+                        <div class="input-group-append" data-target="#frDt" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
                     </div>
+                  </div>
                 </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-              <button type="button" class="btn btn-info" id="sign"  onclick="fnSign()" >jsGrid load</button>
-              <button type="button" class="btn btn-info" id="sign"  onclick="fnSign()" >모발팝업</button>
-              <button type="button" class="btn btn-default float-right" onclick="fnCancel()" >바코드스캔</button>
-              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">Modal</button>
-              <button type="button" class="btn btn-default" onclick="fnFacModalPopup()" data-toggle="modal" data-target="#modal-fac">Modal Fac</button>
-
+              <button type="button" class="btn btn-info" id="sign"  onclick="fnSign()" >삭제</button>
+              <button type="button" class="btn btn-info" id="sign"  onclick="fnSave()" >저장</button>
+              <button type="button" class="btn btn-default float-right" onclick="fnCancel()" >출하</button>
             </div>
             <!-- /.card-footer -->
-          </form>
-        </div>
-        <!-- /.card-header -->
+
+
+          <!-- /.card-header -->
         <div class="card-body">
           <div id="jsGrid1"></div>
         </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-
-      <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
+          <!-- /.card-body -->
         </div>
-        <!-- /.modal-dialog -->
       </div>
-
-      <div class="modal fade" id="modal-fac">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-			        <div class="card-body">
-	              <div class="form-group row">
-	                <label for="inputEmail3" class="col-sm-2 col-form-label">이름</label>
-	                <div class="col-sm-10">
-	                  <input type="input" class="form-control" id="id_2" value="lbuubl" placeholder="">
-	                </div>
-	              </div>
-	              <div class="form-group row">
-	                <label for="inputPassword3" class="col-sm-2 col-form-label">사용</label>
-	                <div class="col-sm-10">
-	                  <input type="input" class="form-control" id="inputPassword3_1" placeholder="">
-	                </div>
-	              </div>
-
-	                <div class="form-group row">
-	                  <label>Date:</label>
-	                    <div class="input-group date" id="reservationdate_1" data-target-input="nearest">
-	                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-	                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-	                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-	                        </div>
-	                    </div>
-	                </div>
-
-							    <!-- Main content -->
-							    <section class="content">
-							      <div class="card">
-							        <div class="card-header">
-							          <h3 class="card-title">jsGrid</h3>
-							        </div>
-							        <!-- /.card-header -->
-							        <div class="card-body">
-							          <div id="jsGrid_fac"></div>
-							        </div>
-							        <!-- /.card-body -->
-							      </div>
-							      <!-- /.card -->
-							    </section>
-							    <!-- /.content -->
-			        </div>
-
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-    <script>
-
-    let cnt = 1;
-
+    </form>
+    <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
+  </div>
+  <script type="text/javascript">
     //바코스 스켄 설정
     function fnBarcodeScanner(){
-
-        alert(1)
         cordova.plugins.barcodeScanner.scan(
             function (result) {
                 alert("We got a barcode\n" +
@@ -176,9 +197,20 @@
       }
 
     $(function () {
+
+        // 모달 버튼에 이벤트를 건다.
+        $('#modalWhShow').on('click', function(){
+          $('#modal-wh').modal('show');
+
+          //초기화
+          $('#shWhCd').val('')
+          fnInitWhModalPopup()
+        });
+
         //Date picker
-        $('#reservationdate').datetimepicker({
-        	 format: 'YYYY-MM-DD'
+        $('#frDt').datetimepicker({
+           format: 'YYYY-MM-DD'
+           ,  defaultDate:new Date()
         });
 
         $("#jsGrid1").jsGrid({
@@ -193,9 +225,11 @@
             autoload : true,
             noDataContent: "Not found",
             fields: [
-                { title: "사번",  name: "emp_no", type: "text", width: 150, height: 30 },
-                { title: "테스트1", name: "kor_nm", type: "text", width: 100, height: 30 },
-                {title: "테스트2",   name: "emp_cus_cd", type: "text", width: 200 , height: 30},
+                { title: "요청일",  name: "req_dt", type: "text", width: 150, height: 30 },
+                { title: "진행", name: "wok_sec", type: "text", width: 100, height: 30 },
+                {title: "거래처명",   name: "cust_nm", type: "text", width: 200 , height: 30},
+                {title: "운송",   name: "tran_bc", type: "text", width: 200 , height: 30},
+                {title: "요청번호",   name: "req_no", type: "text", width: 200 , height: 30},
             ] ,
             rowClass: function(item, itemIndex) {
                 //행별로 id값을 지정
@@ -213,13 +247,23 @@
             }, controller: {
                 loadData: function(filter) {
                     var d = $.Deferred();
+                    let params = {
+                      shFacCd: '1020'
+                      , shFrDt: $("#frDt").find("input").val()
+                      , shToDt:  "2123-01-01"   //일자
+                      , shCustCd: $('#cust_cd').val()
+                      , shCustNm: $('#cust_nm').val()
+                      , shSuchCd:  '' //$('#such_cd').val()
+                      , shSuchTrans: '' //f_such_trans
+                      , shEmp: '693'//
+                    }
                     $.ajax({
-                        url : "${pageContext.request.contextPath}/cms/common/usp_zt_00_login_pda",
+                        url : "${pageContext.request.contextPath}/cms/os/usp_zt_40_out_itm_sch_re1",
                         type : "POST",
                         processData: false,
                         contentType : "application/json; charset=utf-8",
                         dataType: "json",
-                        data :JSON.stringify({ id : "lbuubl"}),
+                        data :JSON.stringify(params),
                         success : function(data) {
                             console.log('data====', data.data)
                             let getData = data.data;
@@ -234,9 +278,9 @@
              }
           })
         const ldsc = [
-        	 { emp_no: "222222", kor_nm: '25',emp_cus_cd:'testsets'}
-        	 ,{ emp_no: "111111111", kor_nm: '25',emp_cus_cd:'testsets'}
-        	 ]
+           { emp_no: "222222", kor_nm: '25',emp_cus_cd:'testsets'}
+           ,{ emp_no: "111111111", kor_nm: '25',emp_cus_cd:'testsets'}
+           ]
 
         console.log('ldsc====', ldsc)
         $("#jsGrid1").jsGrid("loadData", {data : ldsc})
@@ -248,7 +292,15 @@
         console.log('ldsc====', ldsc)
       });
 
+    //창고 조회
     function fnSign(){
+
+
+        var ddt = $("#frDt").find("input").val();
+
+
+        console.log('========', $('#frDt'))
+        alert(ddt  )
         $("#jsGrid1").jsGrid("loadData");
     }
 
@@ -308,6 +360,6 @@
     }
 
     function fnCancel(){
-    	  fnBarcodeScanner()
+        fnBarcodeScanner()
     }
     </script>

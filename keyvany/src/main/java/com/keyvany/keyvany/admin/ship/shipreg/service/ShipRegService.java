@@ -7,4 +7,5 @@ public interface ShipRegService {
 
     /*wheel 리스트 조회*/
     public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception;
+    public List<Map<String, Object>> usp_zt_40_out_itm_sch_re1(Map<String, Object> serachMap) throws Exception;
 }

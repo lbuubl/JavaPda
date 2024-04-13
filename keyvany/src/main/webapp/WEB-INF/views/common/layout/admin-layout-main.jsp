@@ -35,7 +35,7 @@
   <script type="text/javascript" src="/resources/static/js/jquery.bxslider.min.js"></script>
   <script type="text/javascript" src="/resources/static/js/jquery.validate.min.js"></script>
   <script type="text/javascript" src="/resources/static/js/common.js"></script>
-  <script type="text/javascript" src="/resources/static/js/cms.js"></script>
+  <script type="text/javascript" src="/resources/static/js/cms.js?v0.1"></script>
 
 <script  type="text/javascript"  src="/resources/plugins/select2/js/select2.full.min.js"></script>
 <!-- jQuery -->

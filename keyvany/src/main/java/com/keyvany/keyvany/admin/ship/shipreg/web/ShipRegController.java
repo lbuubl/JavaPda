@@ -9,19 +9,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.keyvany.keyvany.admin.ship.shipreg.service.ShipRegService;
+import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.pagination.Pagination;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
+import com.keyvany.keyvany.common.util.Message;
 import com.keyvany.keyvany.common.util.RequestUtil;
+import com.keyvany.keyvany.common.util.RestResponse;
 
-@RestController
+@Controller
 @RequestMapping("/cms/ship")
 public class ShipRegController {
+
+	RestResponse<Object> restResponse = new RestResponse<>();
 
 	@Autowired
     private ShipRegService svc;
@@ -83,4 +93,36 @@ public class ShipRegController {
 
         return "admin/ship/shipRegList";
     }
+
+    /*공지사항 리스트 조회*/
+    @MenuAnnotation("출고등록 리스트 조회")
+    @PostMapping("/usp_zt_40_out_itm_sch_re1")
+    public  ResponseEntity<RestResponse>  usp_zt_40_out_itm_sch_re1(HttpServletRequest request,User user
+    		,  @RequestBody  HashMap<String, Object> param)  {
+        List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
+		try {
+			retList = svc.usp_zt_40_out_itm_sch_re1(param);
+			restResponse = RestResponse.builder()
+                   .code(HttpStatus.OK.value())
+                   .httpStatus(HttpStatus.OK)
+                   .message(Message.READ_STUDENTS.label())
+                   .data(retList)
+                   .build();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.NOT_FOUND.value())
+	                .httpStatus(HttpStatus.NOT_FOUND)
+	                .message(e.getMessage())
+	                .build();
+		} //공지사항 리스트 조회
+
+			// 응답 결과로 restResponse를 전달한다.
+		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
+    }
+
+
 }

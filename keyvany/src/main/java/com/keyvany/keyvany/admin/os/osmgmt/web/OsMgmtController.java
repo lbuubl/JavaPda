@@ -9,22 +9,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.keyvany.keyvany.admin.os.osmgmt.service.OsMgmtService;
+import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.pagination.Pagination;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
+import com.keyvany.keyvany.common.util.Message;
 import com.keyvany.keyvany.common.util.RequestUtil;
+import com.keyvany.keyvany.common.util.RestResponse;
 
-@RestController
+@Controller
 @RequestMapping(value = "/cms/os")
 public class OsMgmtController {
 
 	@Autowired
     private OsMgmtService svc;
+
+    RestResponse<Object> restResponse = new RestResponse<>();
 
 	//모바일 구분
 	@Autowired
@@ -33,7 +43,7 @@ public class OsMgmtController {
     /*wheel 리스트 조회*/
     @MenuAnnotation("~ 리스트 조회")
     @GetMapping("/osmgmt.htm")
-    public String wheelList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    public String osmgmt(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
         Map<String, Object> serachMap = new HashMap<String, Object>();
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
 
@@ -72,4 +82,5 @@ public class OsMgmtController {
         model.addAttribute("mobileYn", reqUtil.isMobile(userAgent));
         return "admin/os/osMgmtList";
     }
+
 }

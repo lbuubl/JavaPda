@@ -7,6 +7,24 @@
     <script src="/resources/static/js/cordova.js"></script>
     <script src="/resources/static/js/cordova_plugins.js"></script>
   </c:if> <!-- else 종료 -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6" id="contentTitle">
+            <h1>재고실사 </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right" id="bodyOl">
+              <li class="breadcrumb-item"><a href="#" >Home </a></li>
+              <li class="breadcrumb-item active " id="level1">재고관리</li>
+              <li class="breadcrumb-item active" id="level2">재고실사</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
       <div class="card">
         <!-- Horizontal Form -->
         <div class="card card-info">

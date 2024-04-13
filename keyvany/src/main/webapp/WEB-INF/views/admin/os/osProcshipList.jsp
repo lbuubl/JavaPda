@@ -143,7 +143,6 @@
       <!-- /.modal -->
     <script>
 
-    let cnt = 1;
 
     //바코스 스켄 설정
     function fnBarcodeScanner(){

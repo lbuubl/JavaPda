@@ -7,8 +7,14 @@
   <select id="usp_zt_00_login_pda" statementType="CALLABLE" resultType="hashmap">
     {
         call usp_zt_00_login_pda ('',#{id},'1234')
-
     }
   </select>
+
+  <select id="usp_zt_99_popup_wh_cd" statementType="CALLABLE" resultType="hashmap">
+    {
+        call usp_zt_99_popup_wh_cd (#{shFacCd},#{shWhCd})
+    }
+  </select>
+
 
 </mapper>

@@ -31,7 +31,7 @@ import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.RequestUtil;
 import com.keyvany.keyvany.common.util.SessionUtils;
 
-@RestController
+@Controller
 @RequestMapping("/cms/stock")
 public class StockMovController {
 
@@ -41,13 +41,10 @@ public class StockMovController {
 	@Autowired
 	private RequestUtil reqUtil;
 
-    @Autowired
-    private FileUtil fileUtil;
-
     /*wheel 리스트 조회*/
     @MenuAnnotation("stockmov 리스트 조회")
     @GetMapping("/stockmov.htm")
-    public String wheelList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    public String stockmov(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
         Map<String, Object> serachMap = new HashMap<String, Object>();
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
 

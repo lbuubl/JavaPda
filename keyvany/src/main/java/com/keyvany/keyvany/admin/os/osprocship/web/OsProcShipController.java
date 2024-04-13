@@ -33,7 +33,7 @@ public class OsProcShipController {
     /*wheel 리스트 조회*/
     @MenuAnnotation("~ 리스트 조회")
     @GetMapping("/osprocship.htm")
-    public String wheelList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    public String osprocshiposprocshiposprocship(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
         Map<String, Object> serachMap = new HashMap<String, Object>();
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
 

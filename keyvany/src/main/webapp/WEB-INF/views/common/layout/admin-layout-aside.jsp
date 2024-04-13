@@ -41,7 +41,7 @@
             <ul class="nav nav-treeview">
           <li class="nav-header">PDA</li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="/cms/ship/shipreg.htm" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                                     출고 등록
@@ -57,24 +57,24 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>재고이동</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>재고실사</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>재고확인</p>
-                </a>
-              </li>
+	              <li class="nav-item">
+	                <a href="/cms/stock/stockmov.htm" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>재고이동</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="/cms/stock/stockcheck.htm" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>재고실사</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="/cms/stock/stockcheck.htm" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>재고확인</p>
+	                </a>
+	              </li>
             </ul>
           </li>
 
@@ -87,22 +87,22 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>외주가공출고</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>외주가공입고</p>
-                </a>
-              </li>
+	              <li class="nav-item">
+	                <a href="/cms/os/osprocin.htm" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>외주가공출고</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="/cms/os/osprocin.htm" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>외주가공입고</p>
+	                </a>
+	              </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="/cms/rcv/rcvrawmtis.htm" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                                     원소재 입고

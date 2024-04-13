@@ -27,6 +27,7 @@
       var gg_code=""
      var isImagePostLoad=false;//에디터에서 이미지추가 스크립트 로드여부
      var MultiLngDomain =location.host;
+     alert(MultiLngDomain)
   </script>
 
       <link href="/resources/module/assets/css/WHITE/icons/icomoon/styles.css" rel="stylesheet" type="text/css">

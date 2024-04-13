@@ -9,19 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.keyvany.keyvany.admin.rcv.rcvrawmtis.service.impl.RcvRawMtisDAO;
 import com.keyvany.keyvany.common.pagination.Pagination;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.RequestUtil;
+import com.keyvany.keyvany.common.util.RestResponse;
 
-@RestController
+@Controller
 @RequestMapping("/cms/rcv")
 public class RcvRawMtisController {
+
+	RestResponse<Object> restResponse = new RestResponse<>();
 
     //@Resource(name="adminProductService")
 	@Autowired

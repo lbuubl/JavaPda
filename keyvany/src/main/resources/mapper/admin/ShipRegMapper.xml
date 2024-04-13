@@ -67,4 +67,20 @@
                ) A
          WHERE A.ROWNUM BETWEEN (IFNULL(#{limit}, 10) * IFNULL(#{page}, 1)) - (IFNULL(#{limit}, 10) - 1) AND (IFNULL(#{limit}, 10) * IFNULL(#{page}, 1))
     </select>
+
+
+  <select id="usp_zt_40_out_itm_sch_re1" statementType="CALLABLE" resultType="hashmap">
+    {
+        call usp_zt_40_out_itm_sch_re1 (
+                    #{shFacCd}
+                      , #{shFrDt}
+                      , #{shToDt}
+                      , #{shCustCd}
+                      , #{shCustNm}
+                      , #{shSuchCd}
+                      , #{shSuchTrans}
+                      , #{shEmp})
+    }
+  </select>
+
 </mapper>
