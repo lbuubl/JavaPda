@@ -196,7 +196,7 @@
 	                    , shEmp: '693'//
                     }
                     $.ajax({
-                        url : "${pageContext.request.contextPath}/cms/os/usp_zt_40_out_itm_sch_re1",
+                        url : "${pageContext.request.contextPath}/cms/ship/usp_zt_40_out_itm_sch_re1",
                         type : "POST",
                         processData: false,
                         contentType : "application/json; charset=utf-8",
