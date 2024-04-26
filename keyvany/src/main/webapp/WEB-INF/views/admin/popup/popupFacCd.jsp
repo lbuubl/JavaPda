@@ -30,25 +30,26 @@
                      <button type="button" class="btn btn-default" id="schPopupWh" onclick="fnSchPopupWh()"  data-toggle="modal" >창고검색</button>
                 </div>
               </div>
-            </div>
-            <!-- Main content -->
-            <section class="content" style="height: 500px;">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">창고리스트</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <div id="jsGrid_wh"></div>
-                </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
-            </section>
-            <!-- /.content -->
+
+                  <!-- Main content -->
+                  <section class="content" style="height: 500px;">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">창고리스트</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <div id="jsGrid_wh"></div>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                  </section>
+                  <!-- /.content -->
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" id="modelClose" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
@@ -75,8 +76,8 @@
             pageSize: 10,
             noDataContent: "Not found",
             fields: [
-                { title: "창고코드",  name: "whCd", type: "text", width: 150, height: 70 },
-                { title: "창고명", name: "whNm", type: "text", width: '80%', height: 100 },
+                { title: "창고코드",  name: "wh_cd", type: "text", width: 150, height: 70 },
+                { title: "창고명", name: "wh_nm", type: "text", width: '80%', height: 100 },
             ] ,
             rowClass: function(item, itemIndex) {
                 //행별로 id값을 지정
@@ -85,21 +86,10 @@
             rowClick: function(args) {
                 console.log('rowClick==========', args, args.item)
                 //데이터값 설정
-                const custCd = args.item.custCd
-                const custNm = args.item.custNm
-                const whCd = args.item.whCd
-                const whNm = args.item.whNm
-
-                alert(whNm)
-                $('#whCd').val(whCd)
-                $('#whNm').val(whNm)
-                $('#custCd').val(custCd)
-                $('#custNm').val(custNm)
-
-
-                //닫기
-                $('#modelClose').click();
-
+                const wh_cd = args.item.wh_cd
+                const wh_nm = args.item.wh_nm
+                $('#wh_cd').val(wh_cd)
+                $('#wh_nm').val(wh_nm)
             }, controller: {
                 loadData: function(filter) {
                     var d = $.Deferred();
@@ -109,7 +99,7 @@
                     }
                     console.log('params=------',params)
                     $.ajax({
-                        url : "${pageContext.request.contextPath}/cms/common/getSelectCusInfo",
+                        url : "${pageContext.request.contextPath}/cms/common/usp_zt_99_popup_wh_cd",
                         type : "POST",
                         processData: false,
                         contentType : "application/json; charset=utf-8",

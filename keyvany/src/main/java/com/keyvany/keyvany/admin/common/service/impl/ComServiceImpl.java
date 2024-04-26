@@ -25,4 +25,18 @@ public class ComServiceImpl implements ComService {
     public List<Map<String, Object>> usp_zt_99_popup_wh_cd(Map<String, Object> serachMap) throws Exception {
         return dao.usp_zt_99_popup_wh_cd(serachMap);
     }
+
+    /**
+     * (공통) 거래처 가져올때 사용
+     * @param serachMap
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Map<String, Object>> getSelectCusInfo(Map<String, Object> serachMap) throws Exception {
+        return dao.getSelectCusInfo(serachMap);
+    }
+
+
+
 }

@@ -29,7 +29,7 @@ var callAjax = function(methodType,asyncType,urlPath,dataReceiveType,sendContent
  * description : 공통 Ajax
  *
  ***********************************************************************/
-var jsonAjax = function(methodType,asyncType,urlPath,dataReceiveType,sendContentType,sendData,errorFunc,successFunc){
+var jsonAjax = function(methodType,asyncType,urlPath,sendData, successFunc,errorFunc){
     try{
         $.ajax({
             type : methodType,
@@ -39,8 +39,7 @@ var jsonAjax = function(methodType,asyncType,urlPath,dataReceiveType,sendContent
             headers: {"X-CSRF-TOKEN": $("input[name='_csrf']").val()},
             cache : false,
             contentType : "application/json; charset=utf-8",
-            dataType : dataReceiveType,
-            data : (sendData != "") ? ((sendContentType == "json" || sendContentType == "application/json") ? JSON.parse(sendData) : sendData) : "",
+            data : JSON.stringify(sendData),
             error : errorFunc,
             success : successFunc
         });
@@ -78,7 +77,7 @@ var gn_validation = function(e){
     return flag;
 };
 
-let gn_toDay = function(val){
+let gn_toDayF = function(val){
   var today = new Date();
   var year = today.getFullYear();
   var month = ('0' + (today.getMonth() + 1)).slice(-2);
@@ -86,5 +85,33 @@ let gn_toDay = function(val){
   var dateString = year + '-' + month  + '-' + day;
   return dateString
 }
+
+//바코스 스켄 설정
+var gl_fnBarcodeScanner = function(){
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            alert("We got a barcode\n" +
+                  "Result: " + result.text + "\n" +
+                  "Format: " + result.format + "\n" +
+                  "Cancelled: " + result.cancelled);
+        },
+        function (error) {
+            alert("Scanning failed: " + error);
+        },
+        {
+            preferFrontCamera : false, // iOS and Android
+            showFlipCameraButton : true, // iOS and Android
+            showTorchButton : true, // iOS and Android
+            torchOn: false, // Android, launch with the torch switched on (if available)
+            saveHistory: true, // Android, save scan history (default false)
+            prompt : "Place a barcode inside the scan area", // Android
+            resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+            formats : "QR_CODE,PDF_417,CODE_128", // default: all but PDF_417 and RSS_EXPANDED
+            orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+            disableAnimations : true, // iOS
+            disableSuccessBeep: false // iOS and Android
+        }
+     );
+  }
 
 

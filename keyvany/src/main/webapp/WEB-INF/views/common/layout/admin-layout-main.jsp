@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -47,9 +49,21 @@
   <!-- Tempusdominus Bootstrap 4 -->
 <script  type="text/javascript"  src="/resources/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
   <!--//기존정보  -->
+<style type="text/css">
+.form-control {
+    width: 130%;
+}
+</style>
 </head>
+
   <body class="hold-transition sidebar-mini">
+
+
     <div id="viewport" class="wrapper">
+    		<c:if test="${mobileYn}"> <!-- if와 동일 -->
+	    <script src="/resources/static/js/cordova.js"></script>
+	    <script src="/resources/static/js/cordova_plugins.js"></script>
+	  </c:if> <!-- else 종료 -->
 	      <tiles:insertAttribute name="gnb"/> <!-- gnb -->
         <tiles:insertAttribute name="aside"/> <!-- aside -->
 			  <!-- Content Wrapper. Contains page content -->

@@ -1,6 +1,7 @@
 package com.keyvany.keyvany.admin.ship.shipreg.service.impl;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,16 +18,20 @@ public class ShipRegServiceImpl implements ShipRegService {
     @Autowired
     ShipRegDAO dao;
 
-    /*wheel 리스트 조회*/
+    /*원소재 바코드 조회*/
     @Override
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception {
-        return dao.selectWheelList(serachMap);
+    public List<Map<String, Object>> getLotMasterInfoInCheck(Map<String, Object> serachMap) throws Exception {
+        return dao.getLotMasterInfoInCheck(serachMap);
     }
 
-    /*wheel 리스트 조회*/
-    @Override
-    public List<Map<String, Object>> usp_zt_40_out_itm_sch_re1(Map<String, Object> serachMap) throws Exception {
-        return dao.usp_zt_40_out_itm_sch_re1(serachMap);
-    }
 
+    /*배기 리스트 저장*/
+    @Override
+    public void setShipSaveMoveNo( HashMap<String, Object>  saveMap) throws Exception {
+    	List<Map<String, Object>>saveList =  (List<Map<String, Object>>) saveMap.get("data");
+    	for (Map<String, Object> hashMap : saveList) {
+    		int it  = dao.setShipSaveMoveNo(hashMap);
+        	System.out.println("===================="+it);
+		}
+    }
 }

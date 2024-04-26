@@ -17,4 +17,18 @@
   </select>
 
 
+
+  <select id="getSelectCusInfo" resultType="hashmap" parameterType="java.util.Map">
+  /*** ComDAO.getSelectCusInfo  거래처 가져올때 사용 ***/
+    select b.wh_cd as 'whCd', b.wh_nm as 'whNm', a.cust_cd as 'custCd', a.cust_nm as 'custNm'
+    From bcv100 as a
+    left join bcw100 as b on a.cust_cd = b.cust_cd
+    where 1=1
+    and a.sal_yn = '1'
+     and a.use_yn = '1'
+     and b.wh_cd is not null
+		  <if test="whCd != null and whCd != ''">
+		    and  b.wh_cd =  #{whCd}
+		  </if>
+  </select>
 </mapper>

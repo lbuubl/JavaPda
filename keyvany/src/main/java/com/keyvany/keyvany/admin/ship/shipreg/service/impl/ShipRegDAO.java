@@ -10,12 +10,14 @@ import com.keyvany.keyvany.common.dao.AbstractDAO;
 @Repository
 public class ShipRegDAO extends AbstractDAO {
 
-    /*wheel 리스트 조회*/
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception {
-        return (List<Map<String,Object>>) selectList("ShipRegDAO.selectWheelList", serachMap);
+    /*원소재 바코드 조회 */
+    public List<Map<String, Object>> getLotMasterInfoInCheck(Map<String, Object> serachMap) throws Exception {
+        return (List<Map<String,Object>>) selectList("ShipRegDAO.getLotMasterInfoInCheck", serachMap);
     }
 
-    public List<Map<String, Object>> usp_zt_40_out_itm_sch_re1(Map<String, Object> serachMap) throws Exception {
-        return (List<Map<String,Object>>) selectList("ShipRegDAO.usp_zt_40_out_itm_sch_re1", serachMap);
+
+    /*원소재 등록*/
+    public int setShipSaveMoveNo(Map<String, Object> saveMap) {
+        return (Integer) insert("ShipRegDAO.setShipSaveMoveNo", saveMap);
     }
 }

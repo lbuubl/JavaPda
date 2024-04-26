@@ -21,7 +21,7 @@ var page = {
                 return false;
             });
         });
-        
+
         var header = $("#header");
         var headerMask = $("#header_mask").on("click", function() {
             headerMask.stop(true,true).animate({ opacity:0 }, 200, function() {
@@ -36,4 +36,31 @@ var page = {
             return false;
         });
     }
+}
+
+
+var gl_whCd = function(){
+	return 'E100';
+}
+
+var gl_facCd = function(){
+	return '1010';
+}
+
+
+var gf_alert = function(msg){
+	alert(msg)
+	return true;
+}
+
+var gf_confirm = function(msg){
+	return confirm(msg);
+}
+
+var gf_toDay = function(){
+	let today = new Date();
+	let year = today.getFullYear();
+	let month = ('0' + (today.getMonth() + 1)).slice(-2);
+	let day = ('0' + today.getDate()).slice(-2);
+	return year + '-' + month  + '-' + day;
 }
