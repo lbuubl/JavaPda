@@ -38,5 +38,14 @@ public class ComServiceImpl implements ComService {
     }
 
 
-
+    /**
+     * (공통) 공장 가져올때 사용
+     * @param serachMap
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Map<String, Object>> getFacInfo(Map<String, Object> serachMap) throws Exception {
+        return dao.getFacInfo(serachMap);
+    }
 }

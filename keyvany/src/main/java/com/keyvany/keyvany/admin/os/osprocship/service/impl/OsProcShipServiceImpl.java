@@ -17,9 +17,4 @@ public class OsProcShipServiceImpl implements OsProcShipService {
     @Autowired
     OsProcShipDAO dao;
 
-    /*wheel 리스트 조회*/
-    @Override
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception {
-        return dao.selectWheelList(serachMap);
-    }
 }

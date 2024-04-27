@@ -124,5 +124,34 @@ public class ComController {
     }
 
 
+    /*(공통) 공장 리스트 조회*/
+    @MenuAnnotation("공장조회")
+    @PostMapping("/getFacInfo")
+    public  ResponseEntity<RestResponse>  getFacInfo(HttpServletRequest request,User user
+    		,  @RequestBody  HashMap<String, Object> param)  {
+        List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
+		try {
+			retList = service.getFacInfo(param);
+			restResponse = RestResponse.builder()
+                   .code(HttpStatus.OK.value())
+                   .httpStatus(HttpStatus.OK)
+                   .message(Message.READ_STUDENTS.label())
+                   .data(retList)
+                   .build();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.NOT_FOUND.value())
+	                .httpStatus(HttpStatus.NOT_FOUND)
+	                .message(e.getMessage())
+	                .build();
+		} //공지사항 리스트 조회
+
+			// 응답 결과로 restResponse를 전달한다.
+		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
+    }
 
 }

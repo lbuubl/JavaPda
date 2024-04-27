@@ -84,13 +84,12 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">바코드</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" value="M15062520101001001">
+                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" value="M15062520101001002">
                 </div>
                 <div class="col-sm-08">
                      <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
-
 
               <div class="form-group row">
               	<div class="col-sm-02">
@@ -222,54 +221,8 @@
                 //text.push(value + " : " + getData[value])
                 //console.log('text==========', text)
               });
-          }, controller: {
-
-              /***
-              loadData: function(filter) {
-                  var d = $.Deferred();
-                  let params = {
-                    shFacCd: '1020'
-                    , shFrDt: $("#frDt").find("input").val()
-                    , shToDt:  "2123-01-01"   //일자
-                    , shCustCd: $('#cust_cd').val()
-                    , shCustNm: $('#cust_nm').val()
-                    , shSuchCd:  '' //$('#such_cd').val()
-                    , shSuchTrans: '' //f_such_trans
-                    , shEmp: '693'//
-                  }
-                  $.ajax({
-                      url : "${pageContext.request.contextPath}/cms/ship/usp_zt_40_out_itm_sch_re1",
-                      type : "POST",
-                      processData: false,
-                      contentType : "application/json; charset=utf-8",
-                      dataType: "json",
-                      data :JSON.stringify(params),
-                      success : function(data) {
-                          console.log('data====', data.data)
-                          let getData = data.data;
-                            d.resolve(getData);//<-aaData key에 json데이터 설정해서 넘긴 경우
-                      },
-                      error : function() {
-                          alert("처리중 오류가 발생했습니다.");
-                      }
-                  });
-
-                 return d.promise();
-              }
-              **/
-           }
+          }
         })
-      const ldsc = [
-         { emp_no: "222222", kor_nm: '25',emp_cus_cd:'testsets'}
-         ,{ emp_no: "111111111", kor_nm: '25',emp_cus_cd:'testsets'}
-         ]
-      $("#jsGrid1").jsGrid("loadData", {data : ldsc})
-      /*
-      $("#jsGrid1").jsGrid("insertItem", ldsc[0]).done(function() {
-          console.log("insertion completed");
-      });
-      */
-      console.log('ldsc====', ldsc)
     });
 
   	//바코드 조회 검색
@@ -289,9 +242,6 @@
                 console.log('data====', data.data)
                 let getData = data.data;
                 if(getData.length > 0 ){
-
-                	//$('#jsGrid1').
-
                     let qtyStr_tmp = getData[0]["pda_qty"]
                     alert(qtyStr_tmp)
                     let qtyStr= parseInt(qtyStr_tmp)
@@ -369,12 +319,10 @@
 	        		, mov_bc: 'LE100100'
 	        		, ent_bc: 'LE920800'
 	        		, src_ty: 'PD100110'
+	    	      , remark : 'PDA_원소재입고'
 	          }
 	        jsonSavaArray.push(params)
 				})
-
-
-    	console.log('jsonSavaArray ======',jsonSavaArray )
 
       	$.ajax({
               url : "${pageContext.request.contextPath}/cms/ship/setShipSaveMoveNo",

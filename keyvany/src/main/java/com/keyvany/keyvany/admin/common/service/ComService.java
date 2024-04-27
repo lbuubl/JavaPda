@@ -12,4 +12,8 @@ public interface ComService {
 
     /*(공통) 거래처 가져올때 사용 조회 */
     public List<Map<String, Object>> getSelectCusInfo(Map<String, Object> serachMap) throws Exception;
+
+    /*(공통) 공장 가져올때 사용 조회 */
+    public List<Map<String, Object>> getFacInfo(Map<String, Object> serachMap) throws Exception;
+
 }

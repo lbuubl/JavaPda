@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
       <div class="modal fade" id="modal-wh">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
@@ -61,7 +62,7 @@
     function fnSchPopupWh(){
         $("#jsGrid_wh").jsGrid("loadData");
     }
-    function fnInitWhModalPopup(){
+    function fnInitFacWhModalPopup(whCdId, whNmId, facCdId, facNmId,){
         $("#jsGrid_wh").jsGrid({
             width: "100%",
             heading: true,
@@ -88,12 +89,14 @@
                 const custNm = args.item.custNm
                 const whCd = args.item.whCd
                 const whNm = args.item.whNm
-                $('#whCd').val(whCd)
-                $('#whNm').val(whNm)
-                $('#custCd').val(custCd)
-                $('#custNm').val(custNm)
+
+                $(whCdId).val(whCd)
+                $(whNmId).val(whNm)
+                $(custCdId).val(custCd)
+                $(custNmId).val(custNm)
                 //닫기
                 $('#modelClose').click();
+
             }, controller: {
                 loadData: function(filter) {
                     var d = $.Deferred();
@@ -125,7 +128,7 @@
     }
 
 
-    function fnInitOntherWhModalPopup(whCdId, whNmId){
+    function fnOntherInitWhModalPopup(){
         $("#jsGrid_wh").jsGrid({
             width: "100%",
             heading: true,
@@ -146,21 +149,30 @@
                 return "client-" + itemIndex;
              },
             rowClick: function(args) {
-                console.log('fnInitOntherWhModalPopup==========', args, args.item)
+                console.log('rowClick==========', args, args.item)
                 //데이터값 설정
+                const custCd = args.item.custCd
+                const custNm = args.item.custNm
                 const whCd = args.item.whCd
                 const whNm = args.item.whNm
-                $(whCdId).val(whCd)
-                $(whNmId).val(whNm)
+
+                alert(whNm)
+                $('#whCd').val(whCd)
+                $('#whNm').val(whNm)
+                $('#custCd').val(custCd)
+                $('#custNm').val(custNm)
+
+                //닫기
                 $('#modelClose').click();
+
             }, controller: {
                 loadData: function(filter) {
                     var d = $.Deferred();
                     let params = {
-                        shFacCd :  $('#shFacCd').val()
+                        shFacCd :  '1010'//$('#shFacCd').val()
                         , shWhCd :  $('#shWhCd').val()
                     }
-                    console.log('fnInitOntherWhModalPopup=------',params)
+                    console.log('params=------',params)
                     $.ajax({
                         url : "${pageContext.request.contextPath}/cms/common/getSelectCusInfo",
                         type : "POST",
@@ -182,7 +194,6 @@
              }
           })
     }
-
 
 
     </script>

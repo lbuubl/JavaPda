@@ -114,4 +114,48 @@ var gl_fnBarcodeScanner = function(){
      );
   }
 
+var gf_facAjax = function( pFacNm, callbackFunc){
+	let getData;
+	let params = {
+      facCd : ''
+      , facNm:  pFacNm
+  }
+  console.log('fnInitFacModalPopup params=------',params)
+  $.ajax({
+      url : "/cms/common/getFacInfo",
+      type : "POST",
+      processData: false,
+      contentType : "application/json; charset=utf-8",
+      dataType: "json",
+      data :JSON.stringify(params),
+      success : function(data) {
+         getData = data.data;
+         callbackFunc(true, getData)
+      },
+      error : function() {
+         callbackFunc(false, getData)
+      }
+  });
+
+}
+
+// TODO : 공통 바코드 조회 ajax
+var gf_barcodeSearch = function( pUrl, params, callbackFunc){
+$.ajax({
+      url : pUrl,
+      type : "POST",
+      processData: false,
+      contentType : "application/json; charset=utf-8",
+      dataType: "json",
+      data :JSON.stringify(params),
+      success : function(data) {
+      	callbackFunc(data)
+      },
+      error : function() {
+          alert("처리중 오류가 발생했습니다.");
+      }
+  });
+
+}
+
 

@@ -64,7 +64,7 @@
 	                </a>
 	              </li>
 	              <li class="nav-item">
-	                <a href="/cms/stock/stockcheck.htm" class="nav-link">
+	                <a href="/cms/stock/stockcount.htm" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>재고실사</p>
 	                </a>
@@ -94,7 +94,7 @@
 	                </a>
 	              </li>
 	              <li class="nav-item">
-	                <a href="/cms/os/osprocin.htm" class="nav-link">
+	                <a href="/cms/os/osprocship.htm" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>외주가공입고</p>
 	                </a>

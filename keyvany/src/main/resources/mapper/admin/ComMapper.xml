@@ -31,4 +31,25 @@
 		    and  b.wh_cd =  #{whCd}
 		  </if>
   </select>
+
+
+  <select id="getFacInfo" resultType="hashmap" parameterType="java.util.Map">
+  /*** ComDAO.getFacInfo  공장 가져올때 사용 ***/
+       select fac_cd as fac_cd
+       			, fac_nm as fac_nm
+         from bcc300
+				where 1 = 1
+
+		  <if test="facCd != null and facCd != ''">
+		    and  fac_cd =  #{whCd}
+		  </if>
+		  <if test="facNm != null and facNm != ''">
+		    and  fac_nm LIKE '%' +  #{facNm} +  '%'
+		  </if>
+
+  </select>
+
+
+
+
 </mapper>

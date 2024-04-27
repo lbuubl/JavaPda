@@ -17,9 +17,11 @@ public class StockCountServiceImpl implements StockCountService {
 
     @Autowired
     StockCountDAO dao;
-    /*wheel 리스트 조회*/
     @Override
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception {
-        return dao.selectWheelList(serachMap);
+    public void setSaveSilsaNo(Map<String, Object> serachMap) throws Exception {
+        int dsInt = dao.setSaveSilsaNo(serachMap);
     }
 }
+
+
+

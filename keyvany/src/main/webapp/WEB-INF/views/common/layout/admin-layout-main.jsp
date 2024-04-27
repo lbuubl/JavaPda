@@ -31,6 +31,12 @@
   <link rel="stylesheet" href="/resources/plugins/toastr/toastr.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/resources/dist/css/adminlte.min.css">
+
+<!-- Select2 -->
+  <link rel="stylesheet" href="/resources/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/resources/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+
   <!--기존정보  -->
   <script type="text/javascript" src="/resources/static/js/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="/resources/static/js/jquery.placeholder.enhanced-1.5.js"></script>
