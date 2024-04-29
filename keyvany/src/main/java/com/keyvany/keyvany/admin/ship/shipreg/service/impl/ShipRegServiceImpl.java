@@ -18,14 +18,14 @@ public class ShipRegServiceImpl implements ShipRegService {
     @Autowired
     ShipRegDAO dao;
 
-    /*원소재 바코드 조회*/
+    /*출하관리 바코드 조회*/
     @Override
-    public List<Map<String, Object>> getLotMasterInfoInCheck(Map<String, Object> serachMap) throws Exception {
-        return dao.getLotMasterInfoInCheck(serachMap);
+    public List<Map<String, Object>> getLotMasterInfoCheck(Map<String, Object> serachMap) throws Exception {
+        return dao.getLotMasterInfoCheck(serachMap);
     }
 
 
-    /*배기 리스트 저장*/
+    /*출하관리 저장*/
     @Override
     public void setShipSaveMoveNo( HashMap<String, Object>  saveMap) throws Exception {
     	List<Map<String, Object>>saveList =  (List<Map<String, Object>>) saveMap.get("data");
@@ -33,5 +33,10 @@ public class ShipRegServiceImpl implements ShipRegService {
     		int it  = dao.setShipSaveMoveNo(hashMap);
         	System.out.println("===================="+it);
 		}
+    }
+    /*출하관리 거래처  바코드 조회*/
+    @Override
+    public List<Map<String, Object>> getWhCust(Map<String, Object> serachMap) throws Exception {
+        return dao.getWhCust(serachMap);
     }
 }

@@ -44,7 +44,7 @@
             <a href="/cms/ship/shipreg.htm" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                                    출고 등록
+                                    출하관리
               </p>
             </a>
           </li>

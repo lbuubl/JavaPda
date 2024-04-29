@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6" id="contentTitle">
-            <h1>출고등록 </h1>
+            <h1>출하관리 </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right" id="bodyOl">
               <li class="breadcrumb-item"><a href="#" >Home </a></li>
-              <li class="breadcrumb-item active" id="level1">출고등록</li>
+              <li class="breadcrumb-item active" id="level1">출하관리</li>
             </ol>
           </div>
         </div>
@@ -39,6 +39,9 @@
                 </div>
                 <div class="col-sm-08">
                   <input type="input"  class="form-control" id="custBarcode" name="custBarcode" placeholder="">
+                </div>
+                <div class="col-sm-08">
+                     <button type="button" class="btn btn-default" id="custBarcodeSearch" >거래처바코드검색</button>
                 </div>
               </div>
 
@@ -163,15 +166,18 @@
       <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
 
       </div>
-  <script type="text/javascript">
+<script type="text/javascript">
   $(function () {
 
-	  $('#barcodeSearch').on('click', function(){
-  		fnBarcodeSearch()
-    });
+	    $('#custBarcodeSearch').on('click', function(){
+	      fnCustBarcodeSearch()
+	    });
 
-    // 모달 버튼에 이벤트를 건다.
+	    $('#barcodeSearch').on('click', function(){
+  		  fnBarcodeSearch()
+      });
 
+      // 모달 버튼에 이벤트를 건다.
       $('#modalWhShow').on('click', function(){
         $('#modal-wh').modal('show');
 
@@ -225,14 +231,35 @@
         })
     });
 
+    //거래처 바코드 조회 검색
+    function fnCustBarcodeSearch(){
+      let params = {
+    		  custBarcode: $('#custBarcode').val()
+      }
+      gf_barcodeSearch('/cms/ship/getwhcust', params, function(result){
+        console.log('fnBarcodeSearch=====', result)
+        const getData = result.data;
+        if(getData.length > 0 ){
+            $('#custBarcode').val(getData[0]["wh_cd"])
+            $('#whCd').val(getData[0]["wh_cd"])
+            $('#whNm').val(getData[0]["wh_nm"])
+            $('#custCd').val(getData[0]["cust_cd"])
+            $('#custNm').val(getData[0]["cust_nm"])
+        }else{
+          gf_alert('창고 바코드값이 없습니다')
+          return false;
+        }
+
+      })
+    }
+
   	//바코드 조회 검색
     function fnBarcodeSearch(){
         let params = {
            barcode: $('#barcode').val()
         }
-
     	$.ajax({
-            url : "${pageContext.request.contextPath}/cms/ship/getLotMasterInfoInCheck",
+            url : "${pageContext.request.contextPath}/cms/ship/get-lot-master-info-check",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -249,19 +276,15 @@
                     	gf_alert('바코드값이 없습니다')
                     	return false;
                    }
-
                 		$('#itm_id').val(getData[0]["itm_id"])
                 		$('#itm_nm').val(getData[0]["itm_nm"])
                 		$('#qty').val(qtyStr_tmp)
                 		$('#spec').val(getData[0]["spec"])
-
                 		fnGridInsert(getData[0])
-
                 }else{
                 	gf_alert('바코드값이 없습니다')
                 	return false;
                 }
-
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");
@@ -289,8 +312,6 @@
     //그리드 전체 삭제
     function fnAllDelete(){
         if (gf_confirm("전체 삭제 하시겠습니까??")){
-            //$("#jsGrid1").jsGrid("loadData");
-            //$("#jsGrid1").children().remove();
             $("#jsGrid1").jsGrid("option", "data", []);
         }
     }
@@ -360,10 +381,4 @@
           });
       }
 		}
-
-    //창고 조회
-    function fnSign(){
-        var ddt = $("#frDt").find("input").val();
-        $("#jsGrid1").jsGrid("loadData");
-    }
-    </script>
+</script>

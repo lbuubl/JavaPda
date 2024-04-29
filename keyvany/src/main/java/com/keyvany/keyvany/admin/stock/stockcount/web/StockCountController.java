@@ -23,7 +23,7 @@ public class StockCountController {
 	@Autowired
 	private RequestUtil reqUtil;
 
-    /*wheel 리스트 조회*/
+    /*재고실사 리스트 조회*/
     @MenuAnnotation("stockcount 리스트 조회")
     @GetMapping("/stockcount.htm")
     public String wheelList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {

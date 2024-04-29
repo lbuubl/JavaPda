@@ -61,7 +61,7 @@ public class AdminLoginSuccessHandler extends SavedRequestAwareAuthenticationSuc
                 e.printStackTrace();
             }
 
-			response.sendRedirect("/cms/product/wheelList"); // 로그인 하기 전의 페이지가 없었다면 이주소로 이동
+			response.sendRedirect("/cms/manage/main"); // 로그인 하기 전의 페이지가 없었다면 이주소로 이동
 		} else {
 			super.onAuthenticationSuccess(request, response, authentication); // 로그인 하기 전의 접속한 주소로 다시 돌아갑니다.
 		}

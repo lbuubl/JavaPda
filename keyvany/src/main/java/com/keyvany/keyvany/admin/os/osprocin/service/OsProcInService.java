@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface OsProcInService {
 
-    /*wheel 리스트 조회*/
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception;
+    /*외주가공입고 바코드 조회*/
+    public List<Map<String, Object>> getLotMasterInfoCheck(Map<String, Object> serachMap) throws Exception;
 
 }

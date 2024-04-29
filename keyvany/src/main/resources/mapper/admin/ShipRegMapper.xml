@@ -4,21 +4,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ShipRegDAO">
 
-  <select id="getLotMasterInfoInCheck" resultType="hashmap" parameterType="java.util.Map">
-  /*** ShipRegDAO.getLotMasterInfoInCheck  원소재입고 바코드 조회 ***/
-		select barcode, itm_id, pda_qty as pda_qty, pda_fac, pda_wh, io_ty, src_no, src_sq, lot_no,
-					(select itm_nm from dma100 a where a.itm_id = b.itm_id) as itm_nm,
-					(select spec from dma100 a where a.itm_id = b.itm_id) as spec,
-					(select fac_nm from bcc300 a where a.fac_cd = b.pda_fac) as fac_nm,
-					(select wh_nm from bcw100 a where a.wh_cd = b.pda_wh) as wh_nm,
-					'' as be_pda_no, '0' as barcount
-		 from pda100 b
-		where barcode = #{barcode}
-		  and src_ty = 'PD100100'
+  <select id="getLotMasterInfoCheck" resultType="hashmap" parameterType="java.util.Map">
+  /*** ShipRegDAO.getLotMasterInfoCheck  출하관리 바코드 조회 ***/
+  <![CDATA[
+      select b.barcode, b.itm_id, b.mov_qty as pda_qty, b.pda_fac, b.pda_wh, b.io_ty, b.src_no, b.src_sq, b.lot_no,
+            (select itm_nm from dma100 a where a.itm_id = b.itm_id) as itm_nm,
+            (select spec from dma100 a where a.itm_id = b.itm_id) as spec,
+            (select fac_nm from bcc300 a where a.fac_cd = b.pda_fac) as fac_nm,
+            (select wh_nm from bcw100 a where a.wh_cd = b.pda_wh) as wh_nm,
+            isnull(min(t.pda_no),'') as be_pda_no, count(t.itm_id) as barcount
+      from pda100 b
+      left join pda100 t on b.itm_id = t.itm_id and t.mov_qty > 0 and t.src_ty <> 'PD100100' and substring(b.pda_no,2,6) >  substring(t.pda_no,2,6)
+                  and b.pda_fac = t.pda_fac and b.pda_wh = t.pda_wh
+      where b.barcode = #{barcode}
+        and b.src_ty  <> 'PD100100'
+        and b.mov_qty > 0
+      group by  b.barcode, b.itm_id, b.mov_qty , b.pda_fac, b.pda_wh, b.io_ty, b.src_no, b.src_sq, b.lot_no, b.itm_id
+  ]]>
   </select>
 
   <insert id="setShipSaveMoveNo" parameterType="java.util.Map">
-
+/*** ShipRegDAO.setShipSaveMoveNo  출하관리 저장 ***/
 			INSERT INTO PDA200
 			(
 				mov_no, mov_sq, mov_dt, mov_bc, pda_no
@@ -69,11 +75,16 @@
 
         , #{remark}
       )
-
-
   </insert>
 
-
-
-
+  <select id="getWhCust" resultType="hashmap" parameterType="java.util.Map">
+  /*** ShipRegDAO.getWhCust  출하관리 거래처 바코드 조회 ***/
+	  select b.wh_cd, b.wh_nm, a.cust_cd, a.cust_nm
+	      From bcv100 as a
+	      left join bcw100 as b on a.cust_cd = b.cust_cd
+	     where 1=1  and  wh_cd =  #{custBarcode}
+	       and  a.sal_yn = '1'  /**매출 **/
+	       and a.use_yn = '1' /**사용**/
+	       and b.wh_cd is not null
+  </select>
 </mapper>

@@ -262,7 +262,7 @@
     let params = {
        barcode: $('#barcode').val()
     }
-	  gf_barcodeSearch('/cms/ship/getLotMasterInfoInCheck', params, function(result){
+	  gf_barcodeSearch('/cms/stock/getLotMasterInfoStockInCheck', params, function(result){
 		  console.log('fnBarcodeSearch=====', result)
 		  const getData = result.data;
 			if(getData.length > 0 ){

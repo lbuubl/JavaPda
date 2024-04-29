@@ -88,6 +88,8 @@
                 const custNm = args.item.custNm
                 const whCd = args.item.whCd
                 const whNm = args.item.whNm
+
+                $('#custBarcode').val(whCd)
                 $('#whCd').val(whCd)
                 $('#whNm').val(whNm)
                 $('#custCd').val(custCd)

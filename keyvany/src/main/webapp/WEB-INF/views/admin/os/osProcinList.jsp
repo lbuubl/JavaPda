@@ -249,7 +249,7 @@
     let params = {
        barcode: $('#barcode').val()
     }
-	  gf_barcodeSearch('/cms/ship/getLotMasterInfoInCheck', params, function(result){
+	  gf_barcodeSearch('/cms/os/getLotMasterInfoCheck', params, function(result){
 		  const getData = result.data;
 			if(getData.length > 0 ){
 	      let qtyStr_tmp = getData[0]["pda_qty"]

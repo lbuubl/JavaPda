@@ -1,10 +1,14 @@
 package com.keyvany.keyvany.admin.rcv.rcvrawmtis.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public interface RcvRawMtisService {
 
-    /*wheel 리스트 조회*/
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception;
+    /*원소재 바코드 조회*/
+    public List<Map<String, Object>> getLotMasterInfoInCheck(Map<String, Object> serachMap) throws Exception;
+
+    /*원소재 바코드 등록*/
+    public void setRcvRawSaveMoveNo( HashMap<String, Object> saveList) throws Exception;
 }

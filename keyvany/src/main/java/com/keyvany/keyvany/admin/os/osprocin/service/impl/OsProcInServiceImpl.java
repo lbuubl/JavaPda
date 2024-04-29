@@ -16,10 +16,9 @@ public class OsProcInServiceImpl implements OsProcInService {
 
     @Autowired
     OsProcInDAO dao;
-
-    /*wheel 리스트 조회*/
+    /*외주가공입고 바코드 조회*/
     @Override
-    public List<Map<String, Object>> selectWheelList(Map<String, Object> serachMap) throws Exception {
-        return dao.selectWheelList(serachMap);
+    public List<Map<String, Object>> getLotMasterInfoCheck(Map<String, Object> serachMap) throws Exception {
+        return dao.getLotMasterInfoCheck(serachMap);
     }
 }
