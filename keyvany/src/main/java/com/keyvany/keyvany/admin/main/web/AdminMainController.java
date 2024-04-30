@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
+import com.keyvany.keyvany.common.util.SessionUtils;
 
 
 @Controller
@@ -22,6 +24,8 @@ public class AdminMainController {
     @MenuAnnotation("메인관리 조회")
     @GetMapping("/cms/manage/main")
     public String manage1(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    	User user = SessionUtils.getSessionInfo(request);
+        model.addAttribute("user", user);
         return "admin/main/index";
     }
 }

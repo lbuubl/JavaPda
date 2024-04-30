@@ -6,7 +6,7 @@
 
   <select id="usp_zt_00_login_pda" statementType="CALLABLE" resultType="hashmap">
     {
-        call usp_zt_00_login_pda ('',#{id},'1234')
+        call usp_zt_00_login_pda ('hanil',#{username},#{password})
     }
   </select>
 
@@ -15,8 +15,6 @@
         call usp_zt_99_popup_wh_cd (#{shFacCd},#{shWhCd})
     }
   </select>
-
-
 
   <select id="getSelectCusInfo" resultType="hashmap" parameterType="java.util.Map">
   /*** ComDAO.getSelectCusInfo  거래처 가져올때 사용 ***/

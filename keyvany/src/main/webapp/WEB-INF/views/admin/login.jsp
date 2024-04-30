@@ -35,7 +35,6 @@
             $( "#frmPaging" ).submit();
         });
 
-
         $("#frmPaging").validate( {
             rules: {
                 username: {

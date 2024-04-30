@@ -3,7 +3,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__wobble" src="/resources/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
    <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -13,7 +13,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/cms/manage/main" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -37,22 +37,8 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  로그아웃
-                  <span class="float-right text-sm text-danger"></span>
-                </h3>
-              </div>
-            </div>
-          </a>
-        </div>
+      <li class="nav-item">
+          <a class="nav-link" href="${pageContext.request.contextPath}/cms/logout">LogOut</a>
       </li>
 		</ul>
 

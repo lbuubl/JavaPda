@@ -105,7 +105,7 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
+                  생산등록현황
                 </h3>
               </div><!-- /.card-header -->
               <div class="card-body">

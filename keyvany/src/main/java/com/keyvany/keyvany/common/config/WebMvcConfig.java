@@ -64,15 +64,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
          * registry.addInterceptor(new UserInfoInterceptorAdapter())
          * .excludePathPatterns("/static/**","/resources/**");
          */
-
-
     	/*
         // 사용자쪽 메뉴리스트를 위한 인터셉터 추가
         registry.addInterceptor(projectListInterceptorAdapter())
         .addPathPatterns("/**")
         .excludePathPatterns("/static/**","/resources/**","/cms/**");
-
-
         //관리자쪽 인터셉터
         registry.addInterceptor(userInfoInterceptorAdapter())
         .addPathPatterns("/cms/**")

@@ -33,6 +33,9 @@ public class User implements UserDetails {
     private String whCdOut;
     private String id;
     private String facCd;
+    private String facNm;
+    private String whCd;
+    private String whNm;
 
 
     private List<Role> authorities;
