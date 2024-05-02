@@ -8,7 +8,7 @@ public interface ComService {
     /*로그인 조회*/
     public List<Map<String, Object>> usp_zt_00_login_pda(Map<String, Object> serachMap) throws Exception;
     /*창고 조회*/
-    public List<Map<String, Object>> usp_zt_99_popup_wh_cd(Map<String, Object> serachMap) throws Exception;
+    public List<Map<String, Object>> getWhInfo(Map<String, Object> serachMap) throws Exception;
 
     /*(공통) 거래처 가져올때 사용 조회 */
     public List<Map<String, Object>> getSelectCusInfo(Map<String, Object> serachMap) throws Exception;

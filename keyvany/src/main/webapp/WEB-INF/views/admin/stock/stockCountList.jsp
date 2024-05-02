@@ -44,7 +44,7 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">공장</label>
                 </div>
                 <div class="col-sm-08">
-                  <select class="form-control select2bs4" id="nFacCd" >
+                  <select class="form-control select2bs4" id="nFacCd" onchange="fnFacCdChange()" >
                   </select>
                 </div>
               </div>
@@ -58,7 +58,7 @@
                   <input type="input" class="form-control" id="nWhNm" name="nWhNm" readonly="readonly"  placeholder="">
                 </div>
                 <div class="col-sm-01">
-                     <button type="button" class="btn btn-default" id="modalWhShow"  >창고검색</button>
+                     <button type="button" class="btn btn-default" id="modalWhShow"  >검색</button>
                 </div>
 
               </div>
@@ -155,7 +155,7 @@
     <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
   </div>
 <script type="text/javascript">
-  $(function () {
+$(function () {
 
 	  //(공통) 바코드 이벤트 핸들러
 	  $('#barcode').focus(function(event){
@@ -190,15 +190,6 @@
       $('#shWhCd').val('')
       $('#shFacCd').val( $('#nFacCd').val())
       fnInitOntherWhModalPopup('#nWhCd', '#nWhNm')
-    });
-
-    // 창고모달 버튼에 이벤트를 건다.
-    $('#modalAfterWhShow').on('click', function(){
-      $('#modal-wh').modal('show');
-      //초기화
-      $('#shWhCd').val('')
-      $('#shFacCd').val( $('#mFacCd').val())
-      fnInitOntherWhModalPopup('#mWhCd', '#mWhNm')
     });
 
     //Date picker
@@ -404,6 +395,14 @@
         });
     }
   }
+
+/**
+ * 창고변경 이벤트
+ */
+function fnFacCdChange() {
+  $('#nWhCd').val('')
+  $('#nWhNm').val('')
+}
 
 </script>
 <!--  공장 핸들바  -->

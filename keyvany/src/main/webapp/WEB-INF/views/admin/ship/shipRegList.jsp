@@ -171,7 +171,7 @@
     <!-- /.content -->
 
     <!-- /.card -->
-    <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp" %>
+    <%@ include file="/WEB-INF/views/admin/popup/popupCustWhCd.jsp" %>
 </div>
 <script type="text/javascript">
   // 모바일 /pc 구분
@@ -246,7 +246,7 @@
 
       //초기화
       $('#shWhCd').val('')
-      fnInitWhModalPopup()
+      fnInitCustWhModalPopup()
     });
 
     /**

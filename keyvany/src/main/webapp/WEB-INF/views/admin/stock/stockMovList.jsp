@@ -1,10 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<!-- 핸드바  -->
-<%--<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>--%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/handlebars.js?v0.1"></script>
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -51,7 +47,7 @@
                   <input type="input" class="form-control" id="nWhNm" name="nWhNm"  readonly="readOnly"  placeholder="">
                 </div>
                 <div class="col-sm-01">
-                     <button type="button" class="btn btn-default" id="modalWhShow"  >창고검색</button>
+                     <button type="button" class="btn btn-default" id="modalWhShow"  >검색</button>
                 </div>
               </div>
             </div>

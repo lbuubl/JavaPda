@@ -62,6 +62,8 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <script type="text/javascript"
             src="/resources/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/handlebar/handlebars-v4.1.2.js"></script>
+
     <!--//기존정보  -->
     <style type="text/css">
       .form-control {

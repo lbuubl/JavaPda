@@ -37,13 +37,29 @@
        			, fac_nm as fac_nm
          from bcc300
 				where 1 = 1
-
 		  <if test="facCd != null and facCd != ''">
-		    and  fac_cd =  #{whCd}
+		    and  fac_cd =  #{facCd}
 		  </if>
 		  <if test="facNm != null and facNm != ''">
 		    and  fac_nm LIKE '%' +  #{facNm} +  '%'
 		  </if>
+
+  </select>
+
+  <select id="getWhInfo" resultType="hashmap" parameterType="java.util.Map">
+    /*** ComDAO.getWhInfo  창고 가져올때 사용 ***/
+    select wh_cd as 'whCd', wh_nm as 'whNm'
+    from bcw100
+    where 1 = 1
+    <if test="facCd != null and facCd != ''">
+      and  fac_cd =  #{facCd}
+    </if>
+    <if test="facNm != null and facNm != ''">
+      and  fac_nm LIKE '%' +  #{facNm} +  '%'
+    </if>
+    <if test="whNm != null and whNm != ''">
+      and  wh_nm LIKE '%' +  #{whNm} +  '%'
+    </if>
 
   </select>
 
