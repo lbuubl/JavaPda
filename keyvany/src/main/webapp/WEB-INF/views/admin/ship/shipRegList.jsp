@@ -1,13 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-
 <style type="text/css">
 .form-control .selected  {
     width: 100%;
 }
 </style>
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -84,9 +82,11 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">바코드</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="">
+                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder=""
+<%--                         value="M15062520101001001"--%>
+                  >
                 </div>
-                <div class="col-sm-08 hide">
+                <div class="col-sm-08 hide ">
                      <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
@@ -156,67 +156,68 @@
 		      </div>
 		      <!-- /.card -->
 		    </section>
-		    <!-- /.content -->
+   <!-- /.content -->
 
-      <!-- /.card -->
-      <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
+ <!-- /.card -->
+ <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
 
       </div>
 <script type="text/javascript">
+  // 모바일 /pc 구분
+  const mobileYn = $('#mobileYn').val()
   $(function () {
+    $('#custBarcodeSearch').on('click', function(){
+      fnCustBarcodeSearch()
+    });
 
-	  $('#custBarcodeSearch').on('click', function(){
-	    fnCustBarcodeSearch()
-	  });
-
-	  //거래처  키 다운 이벤트 핸들러 바코드
-	  $('#custBarcode').focus(function(event){
-		  console.log('keydown----',event)
-		  gl_fnBarcodeScanner(function(status, result){
-			  /*
-	        alert("We got a barcode\n" +
-	        		  "Result: " + result.text + "\n" +
-	               "Format: " + result.format + "\n" +
-	               "Cancelled: " + result.cancelled);
-        */
-			  //alert(JSON.stringify(result))
-		    //바코드 상태값
-		    if(status===0){
-
-		    	//최소했는지 확인
-		    	if(result.cancelled===true){
-            if(result.text!=''){
-              $('#custBarcode').val(result.text);
-              fnCustBarcodeSearch()
-            }else{
-              gf_alert('CODE_128 형식이 아닙니다. 다시 바코드를 다시 스캔해주세요.')
+    //거래처  키 다운 이벤트 핸들러 바코드
+    if(mobileYn){
+      $('#custBarcode').focus(function(event){
+        console.log('keydown----',event)
+        gl_fnBarcodeScanner(function(status, result){
+          /*
+            alert("We got a barcode\n" +
+                  "Result: " + result.text + "\n" +
+                   "Format: " + result.format + "\n" +
+                   "Cancelled: " + result.cancelled);
+          */
+          //alert(JSON.stringify(result))
+          //바코드 상태값
+          if(status===0){
+            //최소했는지 확인
+            if(result.cancelled===true){
+              if(result.text!=''){
+                $('#custBarcode').val(result.text);
+                fnCustBarcodeSearch()
+              }else{
+                gf_alert('CODE_128 형식이 아닙니다. 다시 바코드를 다시 스캔해주세요.')
+              }
             }
-			    }
+          }else{
+            gf_alert('바코드를 다시 스캔해주세요.')
+          }
+        })
+      });
 
-			  }else{
-				  gf_alert('바코드를 다시 스캔해주세요.')
-			  }
-		  })
-	  });
+      // 출고등록 키 다운 이벤트 핸들러 바코드
+      $('#barcode').focus(function(event){
+        console.log('barcode keydown----',event)
+        gl_fnBarcodeScanner(function(status, result){
+          //바코드 상태값
+          if(status===0){
+            if(result.text!=''){
+              $('#barcode').val(result.text);
+              fnBarcodeSearch()
+            }
+          }else{
+            gf_alert('바코드를 다시 스캔해주세요.')
+          }
+        })
+      });
+    }
 
-   // 출고등록 키 다운 이벤트 핸들러 바코드
-   $('#barcode').focus(function(event){
-     console.log('barcode keydown----',event)
-     gl_fnBarcodeScanner(function(status, result){
-       //바코드 상태값
-       if(status===0){
-         if(result.text!=''){
-           $('#barcode').val(result.text);
-           fnBarcodeSearch()
-         }
-       }else{
-         gf_alert('바코드를 다시 스캔해주세요.')
-       }
-     })
-   });
-
-	  $('#barcodeSearch').on('click', function(){
-		  fnBarcodeSearch()
+    $('#barcodeSearch').on('click', function(){
+      fnBarcodeSearch()
     });
 
     // 모달 버튼에 이벤트를 건다.
@@ -247,10 +248,10 @@
         autoload : true,
         noDataContent: "Not found",
         fields: [
-      	  { title: "바코드",  name: "barcode", type: "text", width: 200, height: 50 },
-      	  { title: "품명",  name: "itm_nm", type: "text", width: 100, height: 50 },
-      	  { title: "수량",  name: "pda_qty", type: "text", width: 70, height: 50 },
-      	  { title: "규격",  name: "spec", type: "text", width: 150, height: 50 ,  visible: false },
+          { title: "바코드",  name: "barcode", type: "text", width: 200, height: 50 },
+          { title: "품명",  name: "itm_nm", type: "text", width: 100, height: 50 },
+          { title: "수량",  name: "pda_qty", type: "text", width: 70, height: 50 },
+          { title: "규격",  name: "spec", type: "text", width: 150, height: 50 ,  visible: false },
           { title: "품목id",  name: "itm_id", type: "text", width: 150, height: 50 ,  visible: false },
           { title: "입력유형", name: "src_no", type: "text", width: 100, height: 50 ,  visible: false },
           {title: "입력유형순번",   name: "src_sq", type: "text", width: 200 , height: 50 ,  visible: false},
@@ -277,7 +278,7 @@
     //거래처 바코드 조회 검색
     function fnCustBarcodeSearch(){
       let params = {
-    		  custBarcode: $('#custBarcode').val()
+        custBarcode: $('#custBarcode').val()
       }
       gf_barcodeSearch('/cms/ship/getwhcust', params, function(result){
         console.log('fnBarcodeSearch=====', result)
@@ -296,12 +297,12 @@
       })
     }
 
-  	//바코드 조회 검색
+    //바코드 조회 검색
     function fnBarcodeSearch(){
         let params = {
            barcode: $('#barcode').val()
         }
-    	$.ajax({
+        $.ajax({
             url : "${pageContext.request.contextPath}/cms/ship/get-lot-master-info-check",
             type : "POST",
             processData: false,
@@ -312,18 +313,21 @@
                 console.log('data====', data.data)
                 let getData = data.data;
                 if(getData.length > 0 ){
+                  if(gf_gridBarcodeChk(getData[0]["barcode"])){
                     let qtyStr_tmp = getData[0]["pda_qty"]
-                    alert(qtyStr_tmp)
                     let qtyStr= parseInt(qtyStr_tmp)
                     if(qtyStr === 0){
-                    	gf_alert('바코드값이 없습니다')
-                    	return false;
-                   }
-                		$('#itm_id').val(getData[0]["itm_id"])
-                		$('#itm_nm').val(getData[0]["itm_nm"])
-                		$('#qty').val(qtyStr_tmp)
-                		$('#spec').val(getData[0]["spec"])
-                		fnGridInsert(getData[0])
+                      gf_alert('바코드값이 없습니다')
+                      return false;
+                    }
+                    $('#itm_id').val(getData[0]["itm_id"])
+                    $('#itm_nm').val(getData[0]["itm_nm"])
+                    $('#qty').val(qtyStr_tmp)
+                    $('#spec').val(getData[0]["spec"])
+                    fnGridInsert(getData[0])
+                  }else{
+                    gf_alert('바코드 정보가 있습니다.')
+                  }
                 }else{
                 	gf_alert('바코드값이 없습니다')
                 	return false;
@@ -335,9 +339,9 @@
         });
     }
 
-  	/***
-  		그리드 insert 설정
-  	*/
+    /***
+     그리드 insert 설정
+     */
     function fnGridInsert(data){
         var insert_item = {};
         //데이터를 추가를 위해서 json object 생성
@@ -424,4 +428,22 @@
           });
       }
 		}
+
+  /**
+   * 그리드에 중복 체크 로직
+   * @param barcode
+   * @returns {boolean}
+   */
+    function gf_gridBarcodeChk(barcode){
+      let flag = true;
+      let allRowsInGrid = $('#jsGrid1').jsGrid("option", "data");
+      $.each(allRowsInGrid, function(i, bodyData){
+        if(flag){
+          if(bodyData.barcode===barcode){
+            flag = false;
+          }
+        }
+      });
+      return flag ;
+    }
 </script>

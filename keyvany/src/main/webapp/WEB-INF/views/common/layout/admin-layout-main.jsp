@@ -37,18 +37,14 @@
   <link rel="stylesheet" href="/resources/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
 
-  <!--기존정보  -->
-  <script type="text/javascript" src="/resources/static/js/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript" src="/resources/static/js/jquery.placeholder.enhanced-1.5.js"></script>
-  <script type="text/javascript" src="/resources/static/js/jquery.bxslider.min.js"></script>
-  <script type="text/javascript" src="/resources/static/js/jquery.validate.min.js"></script>
-  <script type="text/javascript" src="/resources/static/js/common.js"></script>
-  <script type="text/javascript" src="/resources/static/js/cms.js?v0.1"></script>
-    <script type="text/javascript" src="/resources/static/js/handlebars.js?v0.1"></script>
-
-
-
-
+<!--기존정보  -->
+<script type="text/javascript" src="/resources/static/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/resources/static/js/jquery.placeholder.enhanced-1.5.js"></script>
+<script type="text/javascript" src="/resources/static/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/resources/static/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/resources/static/js/common.js"></script>
+<script type="text/javascript" src="/resources/static/js/cms.js?v0.1"></script>
+<script type="text/javascript" src="/resources/static/js/handlebars.js?v0.1"></script>
 <script  type="text/javascript"  src="/resources/plugins/select2/js/select2.full.min.js"></script>
 <!-- jQuery -->
 <script src="/resources/plugins/jquery/jquery.min.js"></script>
@@ -80,9 +76,8 @@
 </style>
 </head>
   <body class="hold-transition sidebar-mini">
-
-
     <div id="viewport" class="wrapper">
+     <input type="hidden" name="mobileYn" id="mobileYn" value="${mobileYn}" >
     		<c:if test="${mobileYn}"> <!-- if와 동일 -->
 	    <script src="/resources/static/js/cordova.js"></script>
 	    <script src="/resources/static/js/cordova_plugins.js"></script>

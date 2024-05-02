@@ -3,8 +3,7 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- 핸드바  -->
 <%--<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>--%>
-
-<script type="text/javascript" src="/resources/static/js/handlebars.js?v0.1"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/handlebars.js?v0.1"></script>
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -54,7 +53,6 @@
                 <div class="col-sm-01">
                      <button type="button" class="btn btn-default" id="modalWhShow"  >창고검색</button>
                 </div>
-
               </div>
             </div>
          </div>
@@ -168,6 +166,7 @@
     <%@ include file="/WEB-INF/views/admin/popup/popupWhCd.jsp"%>
   </div>
 <script type="text/javascript">
+
   $(function () {
 		$('#barcodeSearch').on('click', function(){
 	  	fnBarcodeSearch()
@@ -200,10 +199,16 @@
 	 	// 공장 json 정보
 	 	gf_facAjax('', function(a, facData){
 		  const source = $("#fac-template").html();
-		  //핸들바 템플릿 컴파일
+            console.log('facData====',facData)
+
+            //핸들바 템플릿 컴파일
 		  const template = Handlebars.compile(source);
+
 		  //핸들바 템플릿에 데이터를 바인딩해서 HTML 생성
 		  const html1 = template({'bodyHtml':facData});
+
+            console.log('html1====',html1)
+
 		  //현재 공장 생성된 HTML을 DOM에 주입
 		  $('#nFacCd').html(html1)
 		  //이동 공장  생성된 HTML을 DOM에 주입
