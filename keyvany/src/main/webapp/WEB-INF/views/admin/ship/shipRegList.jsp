@@ -310,31 +310,34 @@
             dataType: "json",
             data :JSON.stringify(params),
             success : function(data) {
-                console.log('data====', data.data)
-                let getData = data.data;
-                if(getData.length > 0 ){
-                  if(gf_gridBarcodeChk(getData[0]["barcode"])){
-                    let qtyStr_tmp = getData[0]["pda_qty"]
-                    let qtyStr= parseInt(qtyStr_tmp)
-                    if(qtyStr === 0){
-                      gf_alert('바코드값이 없습니다')
-                      return false;
-                    }
-                    $('#itm_id').val(getData[0]["itm_id"])
-                    $('#itm_nm').val(getData[0]["itm_nm"])
-                    $('#qty').val(qtyStr_tmp)
-                    $('#spec').val(getData[0]["spec"])
-                    fnGridInsert(getData[0])
-                  }else{
-                    gf_alert('바코드 정보가 있습니다.')
+              console.log('data====', data.data)
+              let getData = data.data;
+              if(getData.length > 0 ){
+                if(gf_gridBarcodeChk(getData[0]["barcode"])){
+                  let qtyStr_tmp = getData[0]["pda_qty"]
+                  let qtyStr= parseInt(qtyStr_tmp)
+                  if(qtyStr === 0){
+                    gf_alert('바코드값이 없습니다')
+                    return false;
                   }
+                  $('#itm_id').val(getData[0]["itm_id"])
+                  $('#itm_nm').val(getData[0]["itm_nm"])
+                  $('#qty').val(qtyStr_tmp)
+                  $('#spec').val(getData[0]["spec"])
+                  fnGridInsert(getData[0])
                 }else{
-                	gf_alert('바코드값이 없습니다')
-                	return false;
+                  gf_alert('바코드 정보가 있습니다.')
                 }
+              }else{
+                gf_alert('바코드값이 없습니다')
+                return false;
+              }
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");
+            }
+            ,complete: function() {
+                $('#barcode').val('')
             }
         });
     }
