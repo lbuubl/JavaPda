@@ -24,6 +24,7 @@ import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.Message;
 import com.keyvany.keyvany.common.util.RequestUtil;
 import com.keyvany.keyvany.common.util.RestResponse;
+import com.keyvany.keyvany.common.util.SessionUtils;
 
 @Controller
 @RequestMapping("/cms/os")
@@ -42,6 +43,8 @@ public class OsProcInController {
     @GetMapping("/osprocin.htm")
     public String osprocin(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
+		User user = SessionUtils.getSessionInfo(request);
+        model.addAttribute("user", user);
         model.addAttribute("mobileYn", reqUtil.isMobile(userAgent));
         return "admin/os/osProcinList";
     }

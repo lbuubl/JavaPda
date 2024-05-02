@@ -62,7 +62,7 @@
   <!--//기존정보  -->
 <style type="text/css">
 .form-control {
-    width: 130%;
+    width: 100%;
 }
 
 .hide {
@@ -74,7 +74,7 @@
 }
 .col-sm-02{
   text-align: left;
-  width: 15%;
+  width: 20%;
 }
 
 </style>

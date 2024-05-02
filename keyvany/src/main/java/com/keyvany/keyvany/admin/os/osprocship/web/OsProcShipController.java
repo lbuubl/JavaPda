@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.RequestUtil;
+import com.keyvany.keyvany.common.util.SessionUtils;
 
 @Controller
 @RequestMapping("/cms/os")
@@ -29,6 +31,8 @@ public class OsProcShipController {
     @GetMapping("/osprocship.htm")
     public String osprocshiposprocshiposprocship(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
+		User user = SessionUtils.getSessionInfo(request);
+        model.addAttribute("user", user);
         model.addAttribute("mobileYn", reqUtil.isMobile(userAgent));
         return "admin/os/osProcshipList";
     }

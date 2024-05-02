@@ -62,7 +62,7 @@
                   <input type="input" class="form-control"  style="width: 100%;" id="whNm" name="whNm" readonly="readonly"  placeholder="">
                 </div>
                 <div class="col-sm-08">
-                     <button type="button" class="btn btn-default" id="modalWhShow" data-toggle="modal" >창고검색</button>
+                     <button type="button" class="btn btn-default" id="modalWhShow" data-toggle="modal" >검색</button>
                 </div>
               </div>
 
@@ -182,12 +182,17 @@
 			  //alert(JSON.stringify(result))
 		    //바코드 상태값
 		    if(status===0){
-		    	if(result.text!=''){
-		        $('#custBarcode').val(result.text);
-		        fnCustBarcodeSearch()
-		      }else{
-		    	    gf_alert('CODE_128 형식이 아닙니다. 다시 바코드를 다시 스캔해주세요.')
-			      }
+
+		    	//최소했는지 확인
+		    	if(result.cancelled===true){
+            if(result.text!=''){
+              $('#custBarcode').val(result.text);
+              fnCustBarcodeSearch()
+            }else{
+              gf_alert('CODE_128 형식이 아닙니다. 다시 바코드를 다시 스캔해주세요.')
+            }
+			    }
+
 			  }else{
 				  gf_alert('바코드를 다시 스캔해주세요.')
 			  }

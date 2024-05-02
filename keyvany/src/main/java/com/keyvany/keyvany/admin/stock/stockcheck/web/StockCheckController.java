@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.keyvany.keyvany.admin.stock.stockcheck.service.StockCheckService;
+import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.RequestUtil;
+import com.keyvany.keyvany.common.util.SessionUtils;
 
 @Controller
 @RequestMapping("/cms/stock")
@@ -28,6 +30,8 @@ public class StockCheckController {
     @GetMapping("/stockcheck.htm")
     public String wheelList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		String userAgent = request.getHeader("User-Agent").toLowerCase();
+		User user = SessionUtils.getSessionInfo(request);
+        model.addAttribute("user", user);
         model.addAttribute("mobileYn", reqUtil.isMobile(userAgent));
         return "admin/stock/stockCheckList";
     }
