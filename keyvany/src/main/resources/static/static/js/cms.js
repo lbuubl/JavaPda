@@ -119,8 +119,8 @@ var gl_fnBarcodeScanner = function(callbackFunc){
   }
 
 var gf_facAjax = function( pFacNm, callbackFunc){
-	let getData;
-	let params = {
+  let getData;
+  let params = {
       facCd : ''
       , facNm:  pFacNm
   }
@@ -159,7 +159,24 @@ $.ajax({
           alert("처리중 오류가 발생했습니다.");
       }
   });
+}
 
+/***********************************************************************
+ * 그리드에 중복 체크 로직
+ * @param barcode
+ * @returns {boolean}
+ **********************************************************************/
+var gf_gridBarcodeChk = function(gridId , barcode){
+  let flag = true;
+  let allRowsInGrid = $('#'+gridId).jsGrid("option", "data");
+  $.each(allRowsInGrid, function(i, bodyData){
+    if(flag){
+      if(bodyData.barcode===barcode){
+      flag = false;
+      }
+    }
+  });
+  return flag ;
 }
 
 

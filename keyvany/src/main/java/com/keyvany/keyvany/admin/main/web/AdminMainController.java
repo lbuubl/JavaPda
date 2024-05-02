@@ -15,17 +15,19 @@ import com.keyvany.keyvany.common.util.SessionUtils;
 @Controller
 public class AdminMainController {
 
-	@GetMapping({"/cms"})
-    public String index(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        return "admin/index";
-    }
+  @GetMapping({"/cms"})
+  public String index(HttpServletRequest request, HttpServletResponse response, Model model)
+      throws Exception {
+    return "admin/index";
+  }
 
-    /*메인관리 조회*/
-    @MenuAnnotation("메인관리 조회")
-    @GetMapping("/cms/manage/main")
-    public String manage1(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-    	User user = SessionUtils.getSessionInfo(request);
-        model.addAttribute("user", user);
-        return "admin/main/index";
-    }
+  /*메인관리 조회*/
+  @MenuAnnotation("메인관리 조회")
+  @GetMapping("/cms/manage/main")
+  public String manage1(HttpServletRequest request, HttpServletResponse response, Model model)
+      throws Exception {
+    User user = SessionUtils.getSessionInfo(request);
+    model.addAttribute("user", user);
+    return "admin/main/index";
+  }
 }

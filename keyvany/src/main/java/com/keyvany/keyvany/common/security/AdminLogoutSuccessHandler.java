@@ -28,16 +28,9 @@ public class AdminLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler imp
     CommonService commonService;
     
   @Override
-  public void onLogoutSuccess(
-    HttpServletRequest request, 
-    HttpServletResponse response, 
-    Authentication authentication) 
+  public void onLogoutSuccess(HttpServletRequest request,HttpServletResponse response, Authentication authentication)
     throws IOException, ServletException {
-      
-
-      
       Map<String, Object> parmasLogMap = new HashMap<String, Object>();
-
       User user = new User();
       user = SessionUtils.getSessionInfo(request);
       
@@ -49,7 +42,7 @@ public class AdminLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler imp
        parmasLogMap.put("uniqueId", user.getUniqueId());       //등록자 순번
        parmasLogMap.put("rqesterIp", ip);      //로그 ip
       try {
-          int logInt = commonService.insertAdminlog(parmasLogMap);
+          //int logInt = commonService.insertAdminlog(parmasLogMap);
       } catch (Exception e) {
           // TODO Auto-generated catch block
           e.printStackTrace();

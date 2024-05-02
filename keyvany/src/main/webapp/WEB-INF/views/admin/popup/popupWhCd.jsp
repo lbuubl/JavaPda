@@ -100,7 +100,7 @@
                 loadData: function(filter) {
                     var d = $.Deferred();
                     let params = {
-                        shFacCd :  '1010'//$('#shFacCd').val()
+                        shFacCd :  $('#glFacCd').val()
                         , shWhCd :  $('#shWhCd').val()
                     }
                     console.log('params=------',params)

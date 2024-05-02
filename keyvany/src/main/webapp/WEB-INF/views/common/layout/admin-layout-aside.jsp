@@ -18,7 +18,13 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">${user.korNm}
+          <a href="#" class="d-block">
+              ${user.facNm}
+              <br>
+              ${user.whNm}
+              <br>
+              ${user.korNm}
+
           </a>
         </div>
       </div>

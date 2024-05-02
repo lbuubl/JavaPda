@@ -8,22 +8,22 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 
 
+public class UserInfoInterceptorAdapter {
 
-public class UserInfoInterceptorAdapter   {
-
-	private static final Logger logger = LoggerFactory.getLogger(UserInfoInterceptorAdapter.class);
-
-
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+  private static final Logger logger = LoggerFactory.getLogger(UserInfoInterceptorAdapter.class);
 
 
-	   return true;
-    }
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+      throws Exception {
 
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object object, Exception arg3) throws Exception {
-    	logger.debug("=============afterCompletion======================================");
-    	logger.debug("Interceptor > afterCompletion" );
+    return true;
+  }
 
-    	// System.out.println("==================================여기서 메뉴가져오기 ================");
-    }
+  public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
+      Object object, Exception arg3) throws Exception {
+    logger.debug("=============afterCompletion======================================");
+    logger.debug("Interceptor > afterCompletion");
+
+    // System.out.println("==================================여기서 메뉴가져오기 ================");
+  }
 }
