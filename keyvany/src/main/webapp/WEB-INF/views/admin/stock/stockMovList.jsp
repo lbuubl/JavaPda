@@ -2,7 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- 핸드바  -->
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<%--<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>--%>
+
+<script type="text/javascript" src="/resources/static/js/handlebars.js?v0.1"></script>
 
     <!-- Content Header (Page header) -->
     <section class="content-header">

@@ -44,7 +44,7 @@
   <script type="text/javascript" src="/resources/static/js/jquery.validate.min.js"></script>
   <script type="text/javascript" src="/resources/static/js/common.js"></script>
   <script type="text/javascript" src="/resources/static/js/cms.js?v0.1"></script>
-
+    <script type="text/javascript" src="/resources/static/js/handlebars.js?v0.1"></script>
 
 
 
