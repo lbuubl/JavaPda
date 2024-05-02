@@ -87,16 +87,20 @@ let gn_toDayF = function(val){
 }
 
 //바코스 스켄 설정
-var gl_fnBarcodeScanner = function(){
+var gl_fnBarcodeScanner = function(callbackFunc){
     cordova.plugins.barcodeScanner.scan(
         function (result) {
+          /*
             alert("We got a barcode\n" +
                   "Result: " + result.text + "\n" +
                   "Format: " + result.format + "\n" +
                   "Cancelled: " + result.cancelled);
+            */
+            callbackFunc(0, result)
         },
         function (error) {
-            alert("Scanning failed: " + error);
+            //alert("Scanning failed: " + error);
+            callbackFunc(-1, error)
         },
         {
             preferFrontCamera : false, // iOS and Android
@@ -104,10 +108,10 @@ var gl_fnBarcodeScanner = function(){
             showTorchButton : true, // iOS and Android
             torchOn: false, // Android, launch with the torch switched on (if available)
             saveHistory: true, // Android, save scan history (default false)
-            prompt : "Place a barcode inside the scan area", // Android
+            prompt : "바코드를 화면에 맞추세요", // Android
             resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-            formats : "QR_CODE,PDF_417,CODE_128", // default: all but PDF_417 and RSS_EXPANDED
-            orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+            formats : "CODE_128", // default: all but PDF_417 and RSS_EXPANDED
+            orientation : "Portrait", // Android only (portrait|landscape), default unset so it rotates with the device
             disableAnimations : true, // iOS
             disableSuccessBeep: false // iOS and Android
         }

@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
               <div class="card-body">
-                <div class="form-group row">
+                <div class="form-group row hide">
                   <label for="inputEmail3" class="col-sm-2 col-form-label">공장_숨김처리</label>
                   <div class="col-sm-10">
                     <input type="input" class="form-control" id="shFacCd" style="width: 100%;"  name="shFacCd" placeholder="">
@@ -46,7 +46,7 @@
             </section>
             <!-- /.content -->
             </div>
-            <div class="modal-footer justify-content-between">
+            <div class="modal-footer justify-content-between hide">
               <button type="button" id="modelClose" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>

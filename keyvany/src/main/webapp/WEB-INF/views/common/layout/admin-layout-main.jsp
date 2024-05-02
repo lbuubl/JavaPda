@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kaak</title>
+  <title>HANIL</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -56,6 +56,7 @@
 <script src="/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- InputMask -->
 <script src="/resources/plugins/moment/moment.min.js"></script>
+<script type="text/javascript" src="/resources/static/js/moment-locale-ko.js?v0.1"></script>
   <!-- Tempusdominus Bootstrap 4 -->
 <script  type="text/javascript"  src="/resources/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
   <!--//기존정보  -->
@@ -63,6 +64,19 @@
 .form-control {
     width: 130%;
 }
+
+.hide {
+  display: none;
+}
+
+.card-info{
+  margin-bottom: 0px;
+}
+.col-sm-02{
+  text-align: left;
+  width: 15%;
+}
+
 </style>
 </head>
   <body class="hold-transition sidebar-mini">

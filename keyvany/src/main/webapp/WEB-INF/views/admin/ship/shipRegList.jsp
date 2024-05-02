@@ -6,8 +6,8 @@
 .form-control .selected  {
     width: 100%;
 }
-
 </style>
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -25,7 +25,6 @@
       </div><!-- /.container-fluid -->
     </section>
 
-
         <!-- Horizontal Form -->
         <div class="card card-info">
             <div class="card-header">
@@ -38,10 +37,10 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label" >바코드</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input"  class="form-control" id="custBarcode" name="custBarcode" placeholder="">
+                  <input type="input"  class="form-control" id="custBarcode" name="custBarcode"  placeholder="">
                 </div>
-                <div class="col-sm-08">
-                     <button type="button" class="btn btn-default" id="custBarcodeSearch" >거래처바코드검색</button>
+                <div class="col-sm-08 hide" >
+                     <button type="button" class="btn btn-default" id="custBarcodeSearch" >바코드검색</button>
                 </div>
               </div>
 
@@ -50,8 +49,8 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">거래처</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="hidden" class="form-control" id="custCd" name="custCd"  placeholder="">
-                  <input type="input" class="form-control"  id="custNm" name="custNm"  placeholder="">
+                  <input type="hidden" class="form-control" id="custCd" name="custCd" readonly="readonly"  placeholder="">
+                  <input type="input" class="form-control"  id="custNm" name="custNm" readonly="readonly"  placeholder="">
                 </div>
               </div>
               <div class="form-group row">
@@ -60,7 +59,7 @@
                 </div>
                 <div class="col-sm-08">
                   <input type="hidden"  class="form-control" id="whCd" name="whCd"   placeholder="">
-                  <input type="input" class="form-control"  style="width: 100%;" id="whNm" name="whNm"  placeholder="">
+                  <input type="input" class="form-control"  style="width: 100%;" id="whNm" name="whNm" readonly="readonly"  placeholder="">
                 </div>
                 <div class="col-sm-08">
                      <button type="button" class="btn btn-default" id="modalWhShow" data-toggle="modal" >창고검색</button>
@@ -69,8 +68,6 @@
 
             </div>
           </div>
-
-
 
       <div class="card">
         <!-- Horizontal Form -->
@@ -87,9 +84,9 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">바코드</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" value="M15062520101001002">
+                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="">
                 </div>
-                <div class="col-sm-08">
+                <div class="col-sm-08 hide">
                      <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
@@ -99,18 +96,17 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">품목</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="hidden" class="form-control" id="itm_id" name="itm_id"  placeholder="">
-                  <input type="input" class="form-control"  id="itm_nm" name="itm_nm"  placeholder="">
+                  <input type="hidden" class="form-control" id="itm_id" name="itm_id"  readonly="readOnly"  placeholder="">
+                  <input type="input" class="form-control"  id="itm_nm" name="itm_nm"  readonly="readOnly" placeholder="">
                 </div>
               </div>
-
 
               <div class="form-group row">
               	<div class="col-sm-02">
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">규격</label>
                 </div>
                 <div class="col-sm-08">
-                    <input type="input" class="form-control" id="spec" name="spec" placeholder="">
+                  <input type="input" class="form-control" id="spec" name="spec" readonly="readonly" placeholder="">
                 </div>
               </div>
 
@@ -119,7 +115,7 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">수량</label>
                 </div>
                 <div class="col-sm-08">
-                    <input type="input" class="form-control" id="qty" name="qty" placeholder="">
+                    <input type="input" class="form-control" id="qty" name="qty" readonly="readonly" placeholder="">
                 </div>
               </div>
 
@@ -169,66 +165,108 @@
 <script type="text/javascript">
   $(function () {
 
-	    $('#custBarcodeSearch').on('click', function(){
-	      fnCustBarcodeSearch()
-	    });
+	  $('#custBarcodeSearch').on('click', function(){
+	    fnCustBarcodeSearch()
+	  });
 
-	    $('#barcodeSearch').on('click', function(){
-  		  fnBarcodeSearch()
-      });
+	  //거래처  키 다운 이벤트 핸들러 바코드
+	  $('#custBarcode').focus(function(event){
+		  console.log('keydown----',event)
+		  gl_fnBarcodeScanner(function(status, result){
+			  /*
+	        alert("We got a barcode\n" +
+	        		  "Result: " + result.text + "\n" +
+	               "Format: " + result.format + "\n" +
+	               "Cancelled: " + result.cancelled);
+        */
+			  //alert(JSON.stringify(result))
+		    //바코드 상태값
+		    if(status===0){
+		    	if(result.text!=''){
+		        $('#custBarcode').val(result.text);
+		        fnCustBarcodeSearch()
+		      }else{
+		    	    gf_alert('CODE_128 형식이 아닙니다. 다시 바코드를 다시 스캔해주세요.')
+			      }
+			  }else{
+				  gf_alert('바코드를 다시 스캔해주세요.')
+			  }
+		  })
+	  });
 
-      // 모달 버튼에 이벤트를 건다.
-      $('#modalWhShow').on('click', function(){
-        $('#modal-wh').modal('show');
+   // 출고등록 키 다운 이벤트 핸들러 바코드
+   $('#barcode').focus(function(event){
+     console.log('barcode keydown----',event)
+     gl_fnBarcodeScanner(function(status, result){
+       //바코드 상태값
+       if(status===0){
+         if(result.text!=''){
+           $('#barcode').val(result.text);
+           fnBarcodeSearch()
+         }
+       }else{
+         gf_alert('바코드를 다시 스캔해주세요.')
+       }
+     })
+   });
 
-        //초기화
-        $('#shWhCd').val('')
-        fnInitWhModalPopup()
-      });
+	  $('#barcodeSearch').on('click', function(){
+		  fnBarcodeSearch()
+    });
 
-      //Date picker
-      $('#frDt').datetimepicker({
-         format: 'YYYY-MM-DD'
-         ,  defaultDate:new Date()
-      });
+    // 모달 버튼에 이벤트를 건다.
+    $('#modalWhShow').on('click', function(){
+      $('#modal-wh').modal('show');
 
-      $("#jsGrid1").jsGrid({
-          height: "auto",
-          width: "100%",
-          heading: true,
-          inserting: false,
-          editing: false,
-          sorting: true,
-          paging: true,
-          selecting: true,
-          autoload : true,
-          noDataContent: "Not found",
-          fields: [
-        	  { title: "바코드",  name: "barcode", type: "text", width: 200, height: 50 },
-        	  { title: "품명",  name: "itm_nm", type: "text", width: 100, height: 50 },
-        	  { title: "수량",  name: "pda_qty", type: "text", width: 70, height: 50 },
-        	  { title: "규격",  name: "spec", type: "text", width: 150, height: 50 ,  visible: false },
-            { title: "품목id",  name: "itm_id", type: "text", width: 150, height: 50 ,  visible: false },
-            { title: "입력유형", name: "src_no", type: "text", width: 100, height: 50 ,  visible: false },
-            {title: "입력유형순번",   name: "src_sq", type: "text", width: 200 , height: 50 ,  visible: false},
-            {title: "lot번호",   name: "lot_no", type: "text", width: 200 , height: 50 ,  visible: false},
-            { type: "control", modeSwitchButton: false, editButton: false },
-          ] ,
-          rowClass: function(item, itemIndex) {
-              //행별로 id값을 지정
-              return "client-" + itemIndex;
-           },
-          rowClick: function(args) {
-              console.log('rowClick==========', args)
-              var getData = args.item;
-              var keys = Object.keys(getData);
-              var text = [];
-              $.each(keys, function(idx, value) {
-                //text.push(value + " : " + getData[value])
-                //console.log('text==========', text)
-              });
-          }
-        })
+      //초기화
+      $('#shWhCd').val('')
+      fnInitWhModalPopup()
+    });
+
+    //Date picker
+    $('#frDt').datetimepicker({
+       format: 'YYYY-MM-DD'
+       , locale: 'ko'
+       ,defaultDate:new Date()
+    });
+
+    $("#jsGrid1").jsGrid({
+        height: "auto",
+        width: "100%",
+        heading: true,
+        inserting: false,
+        editing: false,
+        sorting: true,
+        paging: true,
+        selecting: true,
+        autoload : true,
+        noDataContent: "Not found",
+        fields: [
+      	  { title: "바코드",  name: "barcode", type: "text", width: 200, height: 50 },
+      	  { title: "품명",  name: "itm_nm", type: "text", width: 100, height: 50 },
+      	  { title: "수량",  name: "pda_qty", type: "text", width: 70, height: 50 },
+      	  { title: "규격",  name: "spec", type: "text", width: 150, height: 50 ,  visible: false },
+          { title: "품목id",  name: "itm_id", type: "text", width: 150, height: 50 ,  visible: false },
+          { title: "입력유형", name: "src_no", type: "text", width: 100, height: 50 ,  visible: false },
+          {title: "입력유형순번",   name: "src_sq", type: "text", width: 200 , height: 50 ,  visible: false},
+          {title: "lot번호",   name: "lot_no", type: "text", width: 200 , height: 50 ,  visible: false},
+          { type: "control", modeSwitchButton: false, editButton: false },
+        ] ,
+        rowClass: function(item, itemIndex) {
+            //행별로 id값을 지정
+            return "client-" + itemIndex;
+         },
+        rowClick: function(args) {
+            console.log('rowClick==========', args)
+            var getData = args.item;
+            var keys = Object.keys(getData);
+            var text = [];
+            $.each(keys, function(idx, value) {
+              //text.push(value + " : " + getData[value])
+              //console.log('text==========', text)
+            });
+        }
+      })
     });
 
     //거래처 바코드 조회 검색

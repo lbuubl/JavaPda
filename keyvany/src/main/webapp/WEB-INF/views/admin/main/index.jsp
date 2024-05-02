@@ -133,7 +133,7 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/cms/rcv/rcvrawmtis.htm?page=rcvrawmtis" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -146,7 +146,7 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/cms/ship/shipreg.htm?page=shipreg" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -159,7 +159,7 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/cms/stock/stockmov.htm?item=stock&page=stockmov" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -172,7 +172,7 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/cms/os/osprocin.htm?item=os&page=osprocship" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

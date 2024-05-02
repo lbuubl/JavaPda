@@ -91,15 +91,15 @@
             </a>
             <ul class="nav nav-treeview">
 	              <li class="nav-item">
-	                <a href="/cms/os/osprocin.htm?item=os&page=osprocship" id="osprocship" class="nav-link">
+	                <a href="/cms/os/osprocin.htm?item=os&page=osprocin" id="osprocin" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
-	                  <p>외주가공출고</p>
+	                  <p>외주가공입고</p>
 	                </a>
 	              </li>
 	              <li class="nav-item">
 	                <a href="/cms/os/osprocship.htm?item=os&page=osprocship" id="osprocship" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
-	                  <p>외주가공입고</p>
+	                  <p>외주가공출고</p>
 	                </a>
 	              </li>
             </ul>

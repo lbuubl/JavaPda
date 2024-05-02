@@ -46,8 +46,8 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">창고</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input" class="form-control" id="nWhCd" name="nWhCd"  placeholder="">
-                  <input type="input" class="form-control" id="nWhNm" name="nWhNm"  placeholder="">
+                  <input type="input" class="form-control hide " id="nWhCd" name="nWhCd"  placeholder="">
+                  <input type="input" class="form-control" id="nWhNm" name="nWhNm"  readonly="readOnly"  placeholder="">
                 </div>
                 <div class="col-sm-01">
                      <button type="button" class="btn btn-default" id="modalWhShow"  >창고검색</button>
@@ -77,8 +77,8 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">창고</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input" class="form-control" id="mWhCd" name="mWhCd"  placeholder="">
-                  <input type="input" class="form-control" id="mWhNm" name="mWhNm"  placeholder="">
+                  <input type="input" class="form-control hide" id="mWhCd" name="mWhCd"  placeholder="">
+                  <input type="input" class="form-control" id="mWhNm" name="mWhNm" readonly="readOnly"    placeholder="">
                 </div>
 	              <div class="col-sm-01">
 	                   <button type="button" class="btn btn-default" id="modalAfterWhShow" data-toggle="modal" >창고검색</button>
@@ -99,10 +99,10 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">바코드</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" value="M15062520101001002">
+                  <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" >
                 </div>
                 <div class="col-sm-08">
-                     <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
+                     <button type="button" class="btn btn-default hide" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
 
@@ -111,8 +111,8 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">품목</label>
                 </div>
                 <div class="col-sm-08">
-                  <input type="hidden" class="form-control" id="itm_id" name="itm_id"  placeholder="">
-                  <input type="input" class="form-control"  id="itm_nm" name="itm_nm"  placeholder="">
+                  <input type="hidden" class="form-control" id="itm_id" name="itm_id" readonly="readOnly"  placeholder="">
+                  <input type="input" class="form-control"  id="itm_nm" name="itm_nm" readonly="readOnly"  placeholder="">
                 </div>
               </div>
 
@@ -121,7 +121,7 @@
                 	<label for="inputEmail3" class="col-sm-2 col-form-label">규격</label>
                 </div>
                 <div class="col-sm-08">
-                    <input type="input" class="form-control" id="spec" name="spec" placeholder="">
+                    <input type="input" class="form-control" id="spec" name="spec" readonly="readOnly" placeholder="">
                 </div>
               </div>
 
@@ -130,7 +130,7 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">수량</label>
                 </div>
                 <div class="col-sm-01">
-                    <input type="input" class="form-control" id="qty" name="qty" placeholder="">
+                    <input type="input" class="form-control" id="qty" name="qty" readonly="readOnly" placeholder="">
                 </div>
               </div>
 
