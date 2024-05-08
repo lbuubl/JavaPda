@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.keyvany.keyvany.admin.common.service.ComService;
+import com.keyvany.keyvany.admin.main.service.AdminMainService;
 import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.Message;
 import com.keyvany.keyvany.common.util.RestResponse;
+import com.keyvany.keyvany.common.util.SessionUtils;
 
 @RestController
 @RequestMapping("/cms/common")
@@ -27,6 +29,10 @@ public class ComController {
 
   @Autowired
   private ComService service;
+
+  @Autowired
+  private AdminMainService mainSvc;
+
 
   RestResponse<Object> restResponse = new RestResponse<>();
 
@@ -153,5 +159,4 @@ public class ComController {
     // 응답 결과로 restResponse를 전달한다.
     return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
   }
-
 }

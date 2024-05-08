@@ -1,77 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!-- ChartJS -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
   <script type="text/javascript" src="/resources/plugins/chart.js/Chart.min.js"></script>
-
-<script type="text/javascript">
-
-/* Chart.js Charts */
-// Sales chart
-var salesChartCanvas = document.getElementById('revenue-chart-canvas').getContext('2d')
-// $('#revenue-chart').get(0).getContext('2d');
-
-var salesChartData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Digital Goods',
-      backgroundColor: 'rgba(60,141,188,0.9)',
-      borderColor: 'rgba(60,141,188,0.8)',
-      pointRadius: false,
-      pointColor: '#3b8bba',
-      pointStrokeColor: 'rgba(60,141,188,1)',
-      pointHighlightFill: '#fff',
-      pointHighlightStroke: 'rgba(60,141,188,1)',
-      data: [28, 48, 40, 19, 86, 27, 90]
-    },
-    {
-      label: 'Electronics',
-      backgroundColor: 'rgba(210, 214, 222, 1)',
-      borderColor: 'rgba(210, 214, 222, 1)',
-      pointRadius: false,
-      pointColor: 'rgba(210, 214, 222, 1)',
-      pointStrokeColor: '#c1c7d1',
-      pointHighlightFill: '#fff',
-      pointHighlightStroke: 'rgba(220,220,220,1)',
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
-}
-
-var salesChartOptions = {
-  maintainAspectRatio: false,
-  responsive: true,
-  legend: {
-    display: false
-  },
-  scales: {
-    xAxes: [{
-      gridLines: {
-        display: false
-      }
-    }],
-    yAxes: [{
-      gridLines: {
-        display: false
-      }
-    }]
-  }
-}
-
-// This will get the first returned node in the jQuery collection.
-// eslint-disable-next-line no-unused-vars
-var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
-  type: 'line',
-  data: salesChartData,
-  options: salesChartOptions
-})
-
-
-</script>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -92,7 +26,6 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
     </div>
     <!-- /.content-header -->
 
-
 		<!-- Main content -->
 		<section class="content">
 		  <div class="container-fluid">
@@ -109,11 +42,8 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
                 </h3>
               </div><!-- /.card-header -->
               <div class="card-body">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                   </div>
+                <!-- Morris chart - Sales -->
+                <canvas id="myChart" height="300" style="height: 300px;"></canvas>
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -182,3 +112,95 @@ var salesChart = new Chart(salesChartCanvas, { // lgtm[js/unused-local-variable]
 		  </div>
 		</section>
 </div>
+<script type="text/javascript">
+
+const params ={test :'tttt', test2 :'tttt'}
+  $.ajax({
+      url : "${pageContext.request.contextPath}/cms/manage/getmainchart",
+      type : "POST",
+      processData: false,
+      contentType : "application/json; charset=utf-8",
+      dataType: "json",
+      data :JSON.stringify(params),
+      success : function(result) {
+          console.log('getmainchart====', result.data)
+					//라벨
+					let allLabels = []
+					let allOkInTot = []
+					let allBadInTot= []
+
+					$.each(result.data , function (a,b){
+					  allLabels.push(b.wc_cd)
+					  if(b.ok_in_tot==='undefined'){
+					    allOkInTot.push(0)
+					  }else{
+					    allOkInTot.push(b.ok_in_tot)
+					  }
+
+						if(b.bad_in_tot==='undefined'){
+							allBadInTot.push(0)
+						}else{
+							allBadInTot.push(b.bad_in_tot)
+						}
+					})
+			    var areaChartData = {
+			      labels  : allLabels,
+			      datasets: [
+			        {
+			          label               : '양품실적계' ,
+			          backgroundColor     : 'rgba(60,141,188,0.9)',
+			          borderColor         : 'rgba(60,141,188,0.8)',
+			          pointRadius          : false,
+			          pointColor          : '#3b8bba',
+			          pointStrokeColor    : 'rgba(60,141,188,1)',
+			          pointHighlightFill  : '#fff',
+			          pointHighlightStroke: 'rgba(60,141,188,1)',
+			          data                : allOkInTot //[28, 48, 40, 19, 86, 27, 90]
+			        },
+			        {
+			          label               : '불량실적계',
+			          backgroundColor     : 'rgba(210, 214, 222, 1)',
+			          borderColor         : 'rgba(210, 214, 222, 1)',
+			          pointRadius         : false,
+			          pointColor          : 'rgba(210, 214, 222, 1)',
+			          pointStrokeColor    : '#c1c7d1',
+			          pointHighlightFill  : '#fff',
+			          pointHighlightStroke: 'rgba(220,220,220,1)',
+			          data                : allBadInTot //[65, 59, 80, 81, 56, 55, 40]
+			        },
+			      ]
+			    }
+
+
+
+					    //-------------
+					    //- BAR CHART -
+					    //-------------
+					    var barChartCanvas = $('#myChart').get(0).getContext('2d')
+					    var barChartData = $.extend(true, {}, areaChartData)
+					    var temp0 = areaChartData.datasets[0]
+					    var temp1 = areaChartData.datasets[1]
+					    barChartData.datasets[0] = temp1
+					    barChartData.datasets[1] = temp0
+
+					    var barChartOptions = {
+					      responsive              : true,
+					      maintainAspectRatio     : false,
+					      datasetFill             : false
+					    }
+
+					    new Chart(barChartCanvas, {
+					      type: 'bar',
+					      data: barChartData,
+					      options: barChartOptions
+					    })
+
+
+      },
+      error : function() {
+          alert("처리중 오류가 발생했습니다.");
+      }
+  });
+
+
+</script>

@@ -4,149 +4,58 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MainDAO">
 
-    <!-- 메인 테이블 -->
-    <resultMap id="mainMap" type="java.util.Map">
-        <result property="mainId" column="main_id"/>
-        <result property="mainNm" column="main_nm"/>
-        <result property="videoSrc" column="video_src"/>
-        <result property="mainDsc" column="main_dsc"/>
-        <result property="mainImgId" column="main_img_id"/>
-        <result property="mainImgNm" column="main_img_nm"/>
-        <result property="mainImgPath" column="main_img_path"/>
-        <result property="connUrl" column="conn_url"/>
-        <result property="creatDttm" column="creat_dttm"/>
-        <result property="crtrId" column="crtr_id"/>
-        <result property="updtDttm" column="updt_dttm"/>
-        <result property="updusrId" column="updusr_id"/>
-        <result property="totalCnt" column="total_cnt"/>
-        <result property="rownum" column="rownum"/>
-    </resultMap>
+  <!-- 메인 차트 리스트 조회 -->
+  <select id="getMainChart" resultType="hashmap" parameterType="java.util.Map">
+  /*** MainDAO.getMainChart  메인 차트 리스트  ***/
+  select vv.wc_cd
+    , sum(vv.ready_qty) as ready_qty
+    , sum(vv.wrk_in_tot) as wrk_in_tot
+    , sum(vv.ok_in_tot) as ok_in_tot
+    , sum(vv.bad_in_tot) as bad_in_tot
+  from (
+      select   a.fac_cd, a.wc_cd,
+          --실적대기량
+          dbo.fnRoutingReadyQty('0', a.wo_id) as ready_qty,
+          z.wrk_in_tot,   /***공정투입계**/
+          z.ok_in_tot,    /***양품실적계**/
+          z.bad_in_tot    /***불량실적계**/
+      from  ppb150 a
+          join ppb100 m on m.wo_no = a.wo_no
+          left join dma100 b on b.itm_id = m.itm_id
+          left join dma110 s on s.itm_id = m.itm_id
+          left join scu100 u on u.reg_id = a.mid
+          left join (
+              select z.wo_no, z.wo_sq, z.div_sq,
+                  sum(z.wrk_in_qty) as wrk_in_tot,
+                  sum(z.ok_in_qty)  as ok_in_tot,
+                  sum(z.bad_in_qty) as bad_in_tot,
+                  sum(z.ok_rep_qty) as ok_rep_tot,
+                  sum(z.ok_brk_qty) as ok_brk_tot,
+                  sum(case when k.m2  = '1' then z.ok_out_qty  end) as ok_out_2_tot,
+                  sum(case when k.m3  = '1' then z.ok_out_qty  end) as ok_out_3_tot,
+                  sum(case when k.m5  = '1' then z.ok_out_qty  end) as ok_out_5_tot,
+                  sum(case when v.m11 = '1' then z.bad_out_qty end) as bad_out_11_tot,
+                  sum(case when v.m12 = '1' then z.bad_out_qty end) as bad_out_12_tot
+              from  ppc100 z
+                  left join bca200v k on k.base_cd = z.ok_out_bc
+                  left join bca200v v on v.base_cd = z.bad_out_bc
+              group by z.wo_no, z.wo_sq, z.div_sq
+          ) z
+          on  z.wo_no = a.wo_no
+          and   z.wo_sq = a.wo_sq
+          and   z.div_sq = a.div_sq
+      where 1=1
+       /***and  a.fr_dt >= convert(varchar(10), getdate()-1 , 121)**/
+       and  a.fr_dt >= '2023-05-08'
+      <if test="facCd != null and facCd != ''">
+        and  a.fac_cd = #{facCd}
+      </if>
+      <if test="wcCd != null and wcCd != ''">
+        and  a.wc_cd = #{wcCd}
+      </if>
 
-    <!-- 메인 리스트 조회 -->
-    <select id="selectMainList" resultMap="mainMap" parameterType="java.util.Map">
-        SELECT /*MainDAO.selectMainList*/
-               MAIN_ID                                                            /*메인아이디*/
-             , MAIN_NM                                                            /*메인명*/
-             , CONN_URL                                                           /*연결url*/
-             , MAIN_DSC                                                           /*메인설명*/
-             , MAIN_IMG_ID                                                        /*메인이미지아이디*/
-             , (
-                    SELECT TF.FILE_NM AS MAIN_IMG_NM
-                      FROM tb_file TF
-                     WHERE MAIN_IMG_ID = TF.FILE_ID
-               ) AS MAIN_IMG_NM                                                   /*메인이미지명*/
-             , (
-                    SELECT CONCAT(TF.PATH, TF.RE_FILE_NM, '.', TF.FILE_TYPE) AS MAIN_IMG_PATH
-                      FROM tb_file TF
-                     WHERE MAIN_IMG_ID = TF.FILE_ID
-               ) AS MAIN_IMG_PATH                                                 /*메인이미지경로*/
-          FROM tb_main
-         WHERE DEL_YN = 'N'
-           AND VIDEO_SRC IS NULL
-      ORDER BY CREAT_DTTM
-    </select>
+    ) vv
+    group by vv.wc_cd
 
-    <!-- 유튜브 정보 조회 -->
-    <select id="selectVideoList" resultMap="mainMap" parameterType="java.util.Map">
-        SELECT /*MainDAO.selectVideoList*/
-               MAIN_ID                                                            /*메인아이디*/
-             , VIDEO_SRC                                                          /*동영상소스*/
-          FROM tb_main
-         WHERE VIDEO_SRC IS NOT NULL
-    </select>
-
-    <!-- 메인 정보 등록 -->
-    <insert id="insertMain" parameterType="java.util.Map">
-        INSERT INTO tb_main /*MainDAO.insertMain*/
-               (
-                     MAIN_ID
-                   , MAIN_NM
-                   , CONN_URL
-                   , MAIN_DSC
-                   , DEL_YN
-                   <if test="mainImgId != null and mainImgId != ''">
-                       , MAIN_IMG_ID
-                   </if>
-                   , CREAT_DTTM
-                   , CRTR_ID
-                   , UPDT_DTTM
-                   , UPDUSR_ID
-               )
-        VALUES
-               (
-                     (SELECT IFNULL(MAX(MAIN_ID) + 1, 1) FROM tb_main A)
-                   , #{mainNm}
-                   , #{connUrl}
-                   , #{mainDsc}
-                   , 'N'
-                   <if test="mainImgId != null and mainImgId != ''">
-                       , #{mainImgId}
-                   </if>
-                   , now()
-                   , #{crtrId}
-                   , now()
-                   , #{crtrId}
-                )
-    </insert>
-
-    <!-- 유튜브 정보 등록 -->
-    <insert id="insertVideo" parameterType="java.util.Map">
-        <selectKey keyProperty="mainId" resultType="int" order="BEFORE">
-            SELECT IFNULL(MAX(MAIN_ID) + 1, 1) FROM tb_main A
-        </selectKey>
-        INSERT INTO tb_main /*MainDAO.insertVideo*/
-               (
-                     MAIN_ID
-                   , VIDEO_SRC
-                   , DEL_YN
-                   , CREAT_DTTM
-                   , CRTR_ID
-                   , UPDT_DTTM
-                   , UPDUSR_ID
-               )
-        VALUES
-               (
-                     #{mainId}
-                   , #{videoSrc}
-                   , 'N'
-                   , now()
-                   , #{crtrId}
-                   , now()
-                   , #{crtrId}
-                )
-    </insert>
-
-    <!-- 메인 정보 수정 -->
-    <update id="updateMain" parameterType="java.util.Map">
-        UPDATE tb_main /*MainDAO.updateMain*/
-           SET MAIN_NM     = #{mainNm}
-             , CONN_URL    = #{connUrl}
-             , MAIN_DSC    = #{mainDsc}
-             , DEL_YN      = 'N'
-             <if test="mainImgId != null and mainImgId != ''">
-                 , MAIN_IMG_ID = #{mainImgId}
-             </if>
-             , UPDT_DTTM   = now()
-             , UPDUSR_ID   = #{crtrId}
-         WHERE MAIN_ID     = #{mainId}
-    </update>
-
-    <!-- 메인 정보 수정 -->
-    <update id="updateVideo" parameterType="java.util.Map">
-        UPDATE tb_main /*MainDAO.updateVideo*/
-           SET VIDEO_SRC   = #{videoSrc}
-             , DEL_YN      = 'N'
-             , UPDT_DTTM   = now()
-             , UPDUSR_ID   = #{crtrId}
-         WHERE MAIN_ID     = #{mainId}
-    </update>
-
-    <!-- 메인 정보 삭제 -->
-    <update id="updateMainDel" parameterType="java.util.Map">
-        UPDATE tb_main /*MainDAO.updateMainDel*/
-           SET DEL_YN      = 'Y'
-             , UPDT_DTTM   = now()
-             , UPDUSR_ID   = #{crtrId}
-         WHERE MAIN_ID     = #{mainId}
-    </update>
+  </select>
 </mapper>
