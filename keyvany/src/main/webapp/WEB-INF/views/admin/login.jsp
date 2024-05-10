@@ -96,8 +96,8 @@ function htmlEntities(str) {
 
             <form id="frmPaging" name="frmPaging"  class="cmxform" action="/cms/loginAction" method="post">
 	            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-		          <input type="text" name="username" id="username" maxlength="20" title="아이디" placeholder="아이디" value="lbuubl" class="input_text id">
-		          <input type="password"  type="password" name="password" id="password"  value="1234" autocomplete="off"  maxlength="20" placeholder="8자리 이상 숫자/영문 조합"  class="input_text pw">
+		          <input type="text" name="username" id="username" maxlength="20" title="아이디" placeholder="아이디" class="input_text id">
+		          <input type="password"  type="password" name="password" id="password"  autocomplete="off"  maxlength="20" placeholder="8자리 이상 숫자/영문 조합"  class="input_text pw">
 		          <a href="#" id="loginButton" class="btns btn_login">로그인</a>
 	      </form>
       </div>
