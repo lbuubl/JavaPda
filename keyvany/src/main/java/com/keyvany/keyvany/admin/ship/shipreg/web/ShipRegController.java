@@ -129,6 +129,43 @@ public class ShipRegController {
 		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
     }
 
+    /*출하관리 이동 (중복체크)*/
+    @MenuAnnotation("출하관리 이동 (중복체크)")
+    @PostMapping("/getcheck005inable")
+    public  ResponseEntity<RestResponse>  getCheck005Inable(HttpServletRequest request,  @RequestBody  HashMap<String, Object> param)  {
+    	User user = SessionUtils.getSessionInfo(request);
+      	//공통 작업설정
+    	if(user==null) {
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.UNAUTHORIZED.value())
+	                .httpStatus(HttpStatus.UNAUTHORIZED)
+	                .message("세션이 끊겼습니다. 다시 로그인해주세요!")
+	                .build();
+    	}
+        List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
+		try {
+			retList = svc.getCheck005Inable(param);
+			restResponse = RestResponse.builder()
+                   .code(HttpStatus.OK.value())
+                   .httpStatus(HttpStatus.OK)
+                   .message(Message.READ_STUDENTS.label())
+                   .data(retList)
+                   .build();
+
+		} catch (Exception e) {
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.NOT_FOUND.value())
+	                .httpStatus(HttpStatus.NOT_FOUND)
+	                .message(e.getMessage())
+	                .build();
+		} //
+
+			// 응답 결과로 restResponse를 전달한다.
+		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
+    }
+
     /*출하관리 거래처 정보  바코드 조회*/
     @MenuAnnotation("출하관리 거래처 정보  바코드 조회")
     @PostMapping("/getwhcust")

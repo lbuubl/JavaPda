@@ -36,6 +36,14 @@
     }
   </insert>
 
+
+  <select id="getCheck005Inable" statementType="CALLABLE" resultType="hashmap">
+    {
+        call PDA300_inable (#{barcode})
+    }
+  </select>
+
+
   <insert id="setShipSaveMoveNo_temp" statementType="CALLABLE">
   /*** ShipRegDAO.setShipSaveMoveNo  출하관리 저장 ***/
         call PDA300_TO_insert (

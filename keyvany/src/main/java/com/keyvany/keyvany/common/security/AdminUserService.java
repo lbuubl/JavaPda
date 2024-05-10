@@ -113,10 +113,20 @@ public class AdminUserService implements UserDetailsService {
     user.setKorNm(korNm);
     user.setWhCdOut(whCdOut);
     user.setId(id);
-    user.setFacCd(facCd);
-    user.setFacNm(facNm);
-    user.setWhCd(whCd);
-    user.setWhNm(whNm);
+    if(facCd==null) {
+    	user.setFacCd("1010");
+        user.setFacNm("안산공장 ");
+    }else {
+    	user.setFacCd(facCd);
+        user.setFacNm(facNm);
+    }
+    if(whCd==null) {
+    	user.setWhCd("A400");
+    	user.setWhNm("1공장 완제품 창고");
+    }else {
+    	user.setWhCd(whCd);
+    	user.setWhNm(whNm);
+    }
 
     //권한설정
     Role role = new Role();

@@ -12,6 +12,9 @@ public interface ShipRegService {
     /*출하관리 바코드 등록*/
     public void setShipSaveMoveNo( HashMap<String, Object> saveList) throws Exception;
 
+    /*출하관리 이동 (중복체크)*/
+    public List<Map<String, Object>> getCheck005Inable(Map<String, Object> serachMap) throws Exception;
+
     /*출하관리 바코드 조회*/
     public List<Map<String, Object>> getWhCust(Map<String, Object> serachMap) throws Exception;
 }

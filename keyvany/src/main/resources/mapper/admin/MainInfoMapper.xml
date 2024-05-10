@@ -13,7 +13,7 @@
     , sum(vv.ok_in_tot) as ok_in_tot
     , sum(vv.bad_in_tot) as bad_in_tot
   from (
-      select   a.fac_cd, a.wc_cd,
+      select    a.fac_cd, a.wc_cd,
           --실적대기량
           dbo.fnRoutingReadyQty('0', a.wo_id) as ready_qty,
           z.wrk_in_tot,   /***공정투입계**/
@@ -46,7 +46,7 @@
           and   z.div_sq = a.div_sq
       where 1=1
        /***and  a.fr_dt >= convert(varchar(10), getdate()-1 , 121)**/
-       and  a.fr_dt >= '2023-05-08'
+       and  a.fr_dt = '2024-02-01'
       <if test="facCd != null and facCd != ''">
         and  a.fac_cd = #{facCd}
       </if>

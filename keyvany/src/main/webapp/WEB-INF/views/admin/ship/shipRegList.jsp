@@ -322,6 +322,11 @@
 
   //바코드 조회 검색
   function fnBarcodeSearch() {
+	  if($('#wh_cd').val()===''){
+	    gf_alert('거래처정보조회를 먼저 검색해주세요')
+	    return false;
+	  }
+
     let params = {
       barcode: $('#barcode').val()
     }
@@ -337,6 +342,13 @@
         let getData = data.data;
         if (getData.length > 0) {
           if (gf_gridBarcodeChk('jsGrid1', getData[0]["barcode"])) {
+        	  //1) 바코드 확인 제품창고 입고상태 확인
+            const glWhCd =  $('#glWhCd').val()
+            if(glWhCd != getData[0]["pda_wh"] ){
+            	gf_alert('제품 창고에 입고상태가 아닙니다.')
+            	return false
+            }
+
             let qtyStr_tmp = getData[0]["pda_qty"]
             let qtyStr = parseInt(qtyStr_tmp)
             if (qtyStr === 0) {

@@ -25,6 +25,11 @@ public class ShipRegDAO extends AbstractDAO {
         return (Integer) insert("ShipRegDAO.setShipSaveMoveNoConfim", saveMap);
     }
 
+    /*출하관리 이동 (중복체크) */
+    public List<Map<String, Object>> getCheck005Inable(Map<String, Object> serachMap) throws Exception {
+        return (List<Map<String,Object>>) selectList("ShipRegDAO.getCheck005Inable", serachMap);
+    }
+
     /*출하관리 거래처 바코드 조회 */
     public List<Map<String, Object>> getWhCust(Map<String, Object> serachMap) throws Exception {
         return (List<Map<String,Object>>) selectList("ShipRegDAO.getWhCust", serachMap);
