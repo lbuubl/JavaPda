@@ -15,10 +15,14 @@ public class ShipRegDAO extends AbstractDAO {
         return (List<Map<String,Object>>) selectList("ShipRegDAO.getLotMasterInfoCheck", serachMap);
     }
 
-
     /*출하관리 등록*/
     public int setShipSaveMoveNo(Map<String, Object> saveMap) {
         return (Integer) insert("ShipRegDAO.setShipSaveMoveNo", saveMap);
+    }
+
+    /*출하관리 등록*/
+    public int setShipSaveMoveNoConfim(Map<String, Object> saveMap) {
+        return (Integer) insert("ShipRegDAO.setShipSaveMoveNoConfim", saveMap);
     }
 
     /*출하관리 거래처 바코드 조회 */

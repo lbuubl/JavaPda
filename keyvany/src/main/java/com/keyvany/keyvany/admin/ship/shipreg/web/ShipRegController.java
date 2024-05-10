@@ -54,8 +54,18 @@ public class ShipRegController {
     /*출하관리 바코드 조회*/
     @MenuAnnotation("출하관리 바코드 조회")
     @PostMapping("/get-lot-master-info-check")
-    public  ResponseEntity<RestResponse>  getLotMasterInfoCheck(HttpServletRequest request,User user
-    		,  @RequestBody  HashMap<String, Object> param)  {
+    public  ResponseEntity<RestResponse>  getLotMasterInfoCheck(HttpServletRequest request,  @RequestBody  HashMap<String, Object> param)  {
+    	User user = SessionUtils.getSessionInfo(request);
+    	//공통 작업설정
+    	if(user==null) {
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.UNAUTHORIZED.value())
+	                .httpStatus(HttpStatus.UNAUTHORIZED)
+	                .message("세션이 끊겼습니다. 다시 로그인해주세요!")
+	                .build();
+    	}
+
         List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
 		try {
 			retList = svc.getLotMasterInfoCheck(param);
@@ -67,8 +77,6 @@ public class ShipRegController {
                    .build();
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-
 	    	// NOT FOUND 응답을 restResponse에 저장한다.
 	        restResponse = RestResponse.builder()
 	                .code(HttpStatus.NOT_FOUND.value())
@@ -84,10 +92,20 @@ public class ShipRegController {
     /*출하관리 바코드 조회*/
     @MenuAnnotation("출하관리 저장")
     @PostMapping("/setShipSaveMoveNo")
-    public  ResponseEntity<RestResponse>  setShipSaveMoveNo(HttpServletRequest request,User user
-    		,  @RequestBody   HashMap<String, Object> params)  {
+    public  ResponseEntity<RestResponse>  setShipSaveMoveNo(HttpServletRequest request ,   @RequestBody   HashMap<String, Object> params)  {
+    	User user = SessionUtils.getSessionInfo(request);
+      	//공통 작업설정
+    	if(user==null) {
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.UNAUTHORIZED.value())
+	                .httpStatus(HttpStatus.UNAUTHORIZED)
+	                .message("세션이 끊겼습니다. 다시 로그인해주세요!")
+	                .build();
+    	}
         List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
 		try {
+			params.put("user", user);
 			svc.setShipSaveMoveNo(params);
 			restResponse = RestResponse.builder()
                    .code(HttpStatus.OK.value())
@@ -111,13 +129,20 @@ public class ShipRegController {
 		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
     }
 
-
-
     /*출하관리 거래처 정보  바코드 조회*/
     @MenuAnnotation("출하관리 거래처 정보  바코드 조회")
     @PostMapping("/getwhcust")
-    public  ResponseEntity<RestResponse>  getWhCust(HttpServletRequest request,User user
-    		,  @RequestBody  HashMap<String, Object> param)  {
+    public  ResponseEntity<RestResponse>  getWhCust(HttpServletRequest request,  @RequestBody  HashMap<String, Object> param)  {
+    	User user = SessionUtils.getSessionInfo(request);
+      	//공통 작업설정
+    	if(user==null) {
+	    	// NOT FOUND 응답을 restResponse에 저장한다.
+	        restResponse = RestResponse.builder()
+	                .code(HttpStatus.UNAUTHORIZED.value())
+	                .httpStatus(HttpStatus.UNAUTHORIZED)
+	                .message("세션이 끊겼습니다. 다시 로그인해주세요!")
+	                .build();
+    	}
         List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
 		try {
 			retList = svc.getWhCust(param);

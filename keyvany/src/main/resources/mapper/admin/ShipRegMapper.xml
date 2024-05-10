@@ -23,58 +23,33 @@
   ]]>
   </select>
 
-  <insert id="setShipSaveMoveNo" parameterType="java.util.Map">
-/*** ShipRegDAO.setShipSaveMoveNo  출하관리 저장 ***/
-			INSERT INTO PDA200
-			(
-				mov_no, mov_sq, mov_dt, mov_bc, pda_no
-				, itm_id, pal_qty, in_qty, out_qty, mov_qty
-				, out_fac, out_wh, in_fac, in_wh, ent_bc
-				, mng_no, mst_no, mst_sq, slv_no, slv_sq
-				, src_no , src_sq, src_ty, io_ty, cust_cd
-				, cust_cd2 , cid, cdt, mid, mdt
-				, remark
-			)
-      VALUES
-			(
-       	dbo.fnCodeNo('PDA200', #{dtp} )
-        ,1           /***[하드코딩] 순번 **/
-        , #{dtp}           /*** 입고일자**/
-        , #{mov_bc}       /*** [하드코딩] 입고구분    LE300  800 자재입고 , 일반이동등....**/
-        , #{barcode}      /*** 바코드번호**/
 
-        , #{itm_id}        /*** itm_id**/
-        , #{pal_qty}      /*** 납품수량**/
-        , #{in_qty}       /*** 입고수량**/
-        , #{out_qty}      /*** 출고수량**/
-        , #{mov_qty}      /*** 이동수량**/
+  <insert id="setShipSaveMoveNo" statementType="CALLABLE">
+    {
+      call PDA300_TO_insert(#{dtp} ,#{c_whCd} ,'' ,#{whCd} ,'',#{barcode},#{itm_id}  ,#{in_qty},#{custCd},#{uniqueId})
+    }
+  </insert>
 
-        , #{c_facCd}      /*** 출고공장없음**/
-        , #{c_whCd}        /***출고창고없음**/
-        , #{t_facCd}      /*** [하드코딩] 입고공장 '1010'**/
-        , #{t_whCd}       /*** [하드코딩] 입고창고 'A100'**/
-        , #{ent_bc}       /*** [하드코딩] 입력경로구분  , LE920 800 자재입고 , 발주입고등.....**/
+  <insert id="setShipSaveMoveNoConfim" statementType="CALLABLE">
+    {
+      call PDA300_shno(#{dtp} ,#{whCd} ,#{uniqueId})
+    }
+  </insert>
 
-        , #{lot_no}       /*** [PDA100참조] LOT번호**/
-        , (select po_no from mmb200 where mng_no = #{lot_no} )        /*** [PDA100참조] LOT번호**/
-        , (select po_sq from mmb200 where mng_no = #{lot_no} )        /*** [PDA100참조] LOT번호**/
-        , (select dlv_no from mmb200 where mng_no = #{lot_no} )       /*** -[PDA100참조] LOT번호**/
-        , (select dlv_sq from mmb200 where mng_no = #{lot_no} )       /*** [PDA100참조] LOT번호**/
-
-        , dbo.fnCodeNo('LEA100', #{dtp} )        /***  납품번호        [PDA100참조]**/
-        , '1'         /***  납품순번         [PDA100참조]**/
-        , #{src_ty}     /*** [하드코딩] PDA구분       PD100 100 소재납품 110 소재입고등....**/
-        ,'I'           /*** [하드코딩] 'I'**/
-        ,''
-
-        ,''
-        ,47
-        ,getdate()
-        ,47
-        ,getdate()
-
-        , #{remark}
-      )
+  <insert id="setShipSaveMoveNo_temp" statementType="CALLABLE">
+  /*** ShipRegDAO.setShipSaveMoveNo  출하관리 저장 ***/
+        call PDA300_TO_insert (
+        #{dtp} ,    /*** 입고일자**/
+			  #{c_whCd} ,  /*** 로그인한 사람의 창고**/
+			  '' ,
+			  #{whCd} ,  /*** 화면에서 선택한 창고**/
+			   '',
+			  #{barcode},    /*** 바코드**/
+			  #{itm_id}  ,    /*** 품목 순번**/
+			  #{in_qty},      /*** 수량**/
+			  #{custCd},      /*** 거래처**/
+			  #{uniqueId}    /*** 로그인한 사람의 순번**/
+			          )
   </insert>
 
   <select id="getWhCust" resultType="hashmap" parameterType="java.util.Map">

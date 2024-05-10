@@ -36,11 +36,10 @@
             <div class="col-sm-08">
                 <input type="input" class="form-control" id="custBarcode" name="custBarcode" placeholder="">
             </div>
-            <div class="col-sm-08 hide">
+            <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if> " >
                 <button type="button" class="btn btn-default" id="custBarcodeSearch">바코드검색</button>
             </div>
         </div>
-
         <div class="form-group row">
             <div class="col-sm-02">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">거래처</label>
@@ -85,10 +84,10 @@
                     <div class="col-sm-08">
                         <input type="input" class="form-control" id="barcode" name="barcode"
                                placeholder=""
-                        <%--                         value="M15062520101001001"--%>
                         >
                     </div>
-                    <div class="col-sm-08 hide ">
+
+                    <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if>  ">
                         <button type="button" class="btn btn-default" id="barcodeSearch">바코드검색
                         </button>
                     </div>
@@ -392,7 +391,14 @@
 
   //데이터 저장
   function fnSave() {
-    if (gf_confirm("저장  하시겠습니까??")) {
+    const pWhCd = $('#whCd').val();
+    const pCustCd = $('#custCd').val();
+    if(pWhCd===''){
+      gf_alert('창고는 필수값입니다')
+      return
+    }
+
+    if (gf_confirm("저장 등록하시겠습니까?")) {
       let allRowsInGrid = $('#jsGrid1').jsGrid("option", "data");
       let jsonSavaArray = []
       $.each(allRowsInGrid, function (i, bodyData) {
@@ -405,16 +411,10 @@
           , in_qty: bodyData.pda_qty
           , lot_no: bodyData.lot_no
           , itm_id: bodyData.itm_id
-          , t_whCd: gl_whCd()//  로그인 한사람의 창고 코드
-          , t_facCd: gl_facCd()//  로그인 한사람의 공장 코드
-          , out_qty: 0
-          , mov_qty: 0
-          , c_facCd: ''//기존공백
-          , c_whCd: ''//기존공백
-          , mov_bc: 'LE100100'
-          , ent_bc: 'LE920800'
-          , src_ty: 'PD100110'
-          , remark: 'PDA_원소재입고'
+          , whCd: pWhCd  //  선택한 창고코드
+          , c_whCd: '${user.whCdOut}'  //  로그인 한사람의 창고 코드
+          , custCd: pCustCd
+
         }
         jsonSavaArray.push(params)
       })
@@ -425,26 +425,11 @@
         processData: false,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        data: JSON.stringify({'data': jsonSavaArray}),
+        data: JSON.stringify({'data': jsonSavaArray, 'whCd': pWhCd, 'dtp': gf_toDay()}),
         success: function (data) {
-          console.log('data====', data.data)
-          let getData = data.data;
-          if (getData.length > 0) {
-            let qtyStr_tmp = getData[0]["pda_qty"]
-            let qtyStr = parseInt(qtyStr_tmp)
-            if (qtyStr === 0) {
-              gf_alert('바코드값이 없습니다')
-              return false;
-            }
-            $('#itm_id').val(getData[0]["itm_id"])
-            $('#itm_nm').val(getData[0]["itm_nm"])
-            $('#qty').val(qtyStr_tmp)
-            $('#spec').val(getData[0]["spec"])
-            fnGridInsert(getData[0])
-          } else {
-            gf_alert('바코드값이 없습니다')
-            return false;
-          }
+
+          gf_alert('저장이완료되었습니다.')
+          location.href = "/cms/ship/shipreg.htm";
         },
         error: function () {
           alert("처리중 오류가 발생했습니다.");
