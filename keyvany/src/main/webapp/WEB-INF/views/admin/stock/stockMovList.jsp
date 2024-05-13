@@ -165,6 +165,24 @@
 <script type="text/javascript">
 
   $(function () {
+
+		//(공통) 바코드 이벤트 핸들러
+		$('#barcode').focus(function(event){
+		  console.log('barcode keydown----',event)
+		  gl_fnBarcodeScanner(function(status, result){
+		    //바코드 상태값
+		    if(status===0){
+		      if(result.text!=''){
+		        $('#barcode').val(result.text);
+		        fnBarcodeSearch()
+		      }
+		    }else{
+		      gf_alert('바코드를 다시 스캔해주세요.')
+		    }
+		  })
+		});
+
+
 		$('#barcodeSearch').on('click', function(){
 	  	fnBarcodeSearch()
 	  });
@@ -269,7 +287,7 @@
 	  const chkmWhCd = $('#mWhCd').val();
 	  const chknWhCd = $('#nWhCd').val();
 	  if(chkmWhCd==='' || chknWhCd===''){
-      gf_alert('현재창고, 이동창고를 먼저 선택해주세요')
+      gf_alert('현재창고 , 이동창고를 먼저 선택해주세요')
       $('#barcode').val('')
       $('#itm_nm').focus()
       return false;
