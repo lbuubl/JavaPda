@@ -34,7 +34,7 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">공장</label>
                 </div>
                 <div class="col-sm-08">
-                  <select class="form-control select2bs4" id="nFacCd" >
+                  <select class="form-control select2bs4"  id="nFacCd" >
                   </select>
                 </div>
               </div>
@@ -78,7 +78,7 @@
                   <input type="input" class="form-control" id="mWhNm" name="mWhNm" readonly="readOnly"    placeholder="">
                 </div>
 	              <div class="col-sm-01">
-	                   <button type="button" class="btn btn-default" id="modalAfterWhShow" data-toggle="modal" >창고검색</button>
+	                   <button type="button" class="btn btn-default" id="modalAfterWhShow" data-toggle="modal" >검색</button>
 	              </div>
               </div>
 
@@ -98,8 +98,8 @@
                 <div class="col-sm-08">
                   <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" >
                 </div>
-                <div class="col-sm-08">
-                     <button type="button" class="btn btn-default hide" id="barcodeSearch" >바코드검색</button>
+                <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if> " >
+                     <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
 
@@ -196,20 +196,22 @@
 	 	// 공장 json 정보
 	 	gf_facAjax('', function(a, facData){
 		  const source = $("#fac-template").html();
-            console.log('facData====',facData)
-
-            //핸들바 템플릿 컴파일
+		  //핸들바 템플릿 컴파일
 		  const template = Handlebars.compile(source);
-
 		  //핸들바 템플릿에 데이터를 바인딩해서 HTML 생성
 		  const html1 = template({'bodyHtml':facData});
-
-            console.log('html1====',html1)
-
 		  //현재 공장 생성된 HTML을 DOM에 주입
 		  $('#nFacCd').html(html1)
 		  //이동 공장  생성된 HTML을 DOM에 주입
 		  $('#mFacCd').html(html1)
+
+	    //공장 변경못하게 readonly
+	    //$('#nFacCd').prop("disabled", true)
+	    //$('#mFacCd').prop("disabled", true)
+	    //초기값 세팅
+	    const glFacCd = $('#glFacCd').val();
+	    $('#nFacCd').val(glFacCd);
+	    $('#mFacCd').val(glFacCd);
 	  });
 
 	  $("#jsGrid1").jsGrid({
@@ -263,6 +265,16 @@
 
   //바코드 조회
   function fnBarcodeSearch(){
+
+	  const chkmWhCd = $('#mWhCd').val();
+	  const chknWhCd = $('#nWhCd').val();
+	  if(chkmWhCd==='' || chknWhCd===''){
+      gf_alert('현재창고, 이동창고를 먼저 선택해주세요')
+      $('#barcode').val('')
+      $('#itm_nm').focus()
+      return false;
+	  }
+
     let params = {
        barcode: $('#barcode').val()
     }
@@ -270,17 +282,36 @@
 		  console.log('fnBarcodeSearch=====', result)
 		  const getData = result.data;
 			if(getData.length > 0 ){
-	      let qtyStr_tmp = getData[0]["pda_qty"]
-	      let qtyStr= parseInt(qtyStr_tmp)
-	      if(qtyStr === 0){
-	      	gf_alert('바코드값이 없습니다')
-	      	return false;
-	      }
-      	$('#itm_id').val(getData[0]["itm_id"])
-      	$('#itm_nm').val(getData[0]["itm_nm"])
-      	$('#qty').val(qtyStr_tmp)
-      	$('#spec').val(getData[0]["spec"])
-      	fnGridInsert(getData[0])
+				//1) 같은 바코드가 있는지 확인
+				if (gf_gridBarcodeChk('jsGrid1', getData[0]["barcode"])) {
+
+					//TODO 체크 해야될상황
+	        if(mWhCd==='A400' && mWhCd==='B400'){
+	          const bePdaNo  = getData[0]["be_pda_no"];
+	          if(bePdaNo!=""){
+	        	  if (!gf_confirm("이전로트 (" + bePdaNo + ") 포함"+$('#barcode').val()+ "개의 로트가 있습니다. 작업하시겠습니까?")){
+	        		  return false;
+	        	  }
+	          }
+	        }
+
+
+					//3) 수량이 0이면 제외
+	        let qtyStr_tmp = getData[0]["pda_qty"]
+	        let qtyStr= parseInt(qtyStr_tmp)
+	        if(qtyStr === 0){
+	          gf_alert('바코드값이 없습니다')
+	          return false;
+	        }
+	        $('#itm_id').val(getData[0]["itm_id"])
+	        $('#itm_nm').val(getData[0]["itm_nm"])
+	        $('#qty').val(qtyStr_tmp)
+	        $('#spec').val(getData[0]["spec"])
+	        fnGridInsert(getData[0])
+        } else {
+          gf_alert('바코드 정보가 있습니다.')
+          gf_barcodeClean()
+        }
       }else{
       	gf_alert('바코드값이 없습니다')
       	return false;
@@ -329,49 +360,30 @@
 	            , in_qty :  bodyData.pda_qty
 	        	  , lot_no  :  bodyData.lot_no
 	        	  , itm_id  :  bodyData.itm_id
-							, t_whCd :  gl_whCd()//  로그인 한사람의 창고 코드
-							, t_facCd :	gl_facCd()//  로그인 한사람의 공장 코드
-	            , out_qty :  0
-	            , mov_qty :  0
+							, t_whCd :   $('#mWhCd').val()//  로그인 한사람의 창고 코드
+							, t_facCd :	 $('#mFacCd').val()//  로그인 한사람의 공장 코드
+	            , out_qty :  bodyData.pda_qty
+	            , mov_qty :  bodyData.pda_qty
 	        		, c_facCd:''//기존공백
 	        		, c_whCd:''//기존공백
 	        		, mov_bc: 'LE300200'
 	        		, ent_bc: 'LE920810'
 	        		, src_ty: 'PD100300'
-	            , remark : 'PDA_재고이동'
+	            , remark : 'Android_PDA_재고이동'
 	          }
 	        jsonSavaArray.push(params)
 				})
 
     	$.ajax({
-            url : "${pageContext.request.contextPath}/cms/ship/setShipSaveMoveNo",
+            url : "${pageContext.request.contextPath}/cms/stock/setsavemoveno",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
             dataType: "json",
             data :JSON.stringify({'data' :jsonSavaArray} ),
             success : function(data) {
-                console.log('data====', data.data)
-                let getData = data.data;
-                if(getData.length > 0 ){
-                    let qtyStr_tmp = getData[0]["pda_qty"]
-                    let qtyStr= parseInt(qtyStr_tmp)
-                    if(qtyStr === 0){
-                    	gf_alert('바코드값이 없습니다')
-                    	return false;
-                   }
-                		$('#itm_id').val(getData[0]["itm_id"])
-                		$('#itm_nm').val(getData[0]["itm_nm"])
-                		$('#qty').val(qtyStr_tmp)
-                		$('#spec').val(getData[0]["spec"])
-
-                		fnGridInsert(getData[0])
-
-                }else{
-                	gf_alert('바코드값이 없습니다')
-                	return false;
-                }
-
+                gf_alert('저장이완료되었습니다.')
+                location.href = "/cms/stock/stockmov.htm";
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");

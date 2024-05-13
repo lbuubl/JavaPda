@@ -89,7 +89,7 @@
 <div id="viewport" class="wrapper">
     <input type="hidden" name="mobileYn" id="mobileYn" value="${mobileYn}">
     <input type="hidden" name="glWhCd" id="glWhCd" value="${user.whCd}">
-    <input type="hidden" name="glFacCd" id="glFacCd" value="${mobileYn}">
+    <input type="hidden" name="glFacCd" id="glFacCd" value="${user.facCd}">
     <input type="hidden" name="glWhCd" id="glWhNm" value="${user.whNm}">
     <input type="hidden" name="glFacCd" id="glFacNm" value="${user.facNm}">
     <c:if test="${mobileYn}"> <!-- if와 동일 -->

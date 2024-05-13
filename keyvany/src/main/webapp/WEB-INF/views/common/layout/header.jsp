@@ -30,17 +30,6 @@
      alert(MultiLngDomain)
   </script>
 
-      <link href="/resources/module/assets/css/WHITE/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-      <link href="/resources/module/assets/css/WHITE/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="/resources/module/assets/css/WHITE/core.css" rel="stylesheet" type="text/css">
-      <link href="/resources/module/assets/css/WHITE/components.css" rel="stylesheet" type="text/css">
-      <link href="/resources/module/assets/css/WHITE/colors.css" rel="stylesheet" type="text/css">
-
-<!-- kendo css -->
-<link rel="stylesheet" href="/resources/module/assets/page/progress/css/kendo/styles/kendo.common.min.css" />
-<link rel="stylesheet" href="/resources/module/assets/page/progress/css/kendo/styles/kendo.default.min.css" />
-<!-- //kendo css -->
-
   <link  href="/resources/module/assets/css/WHITE/jstree/themes/default/style.min.css" rel="stylesheet" type="text/css">
   <style>
     .cursor_css{   cursor:pointer;  }

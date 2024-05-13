@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.keyvany.keyvany.admin.rcv.rcvrawmtis.service.impl.RcvRawMtisDAO;
+import com.keyvany.keyvany.admin.rcv.rcvrawmtis.service.RcvRawMtisService;
 import com.keyvany.keyvany.common.domain.User;
-import com.keyvany.keyvany.common.pagination.Pagination;
 import com.keyvany.keyvany.common.util.MenuAnnotation;
 import com.keyvany.keyvany.common.util.Message;
 import com.keyvany.keyvany.common.util.RequestUtil;
@@ -35,7 +34,7 @@ public class RcvRawMtisController {
 
     //@Resource(name="adminProductService")
 	@Autowired
-    private RcvRawMtisDAO svc;
+    private RcvRawMtisService svc;
 
 	@Autowired
 	private RequestUtil reqUtil;
@@ -111,18 +110,15 @@ public class RcvRawMtisController {
 		return new ResponseEntity<>(restResponse, restResponse.getHttpStatus());
     }
 
-
-
-
-
-
     /*원소재 저장*/
     @MenuAnnotation("원소재 저장")
     @PostMapping("/setRcvRawSaveMoveNo")
-    public  ResponseEntity<RestResponse>  setRcvRawSaveMoveNo(HttpServletRequest request,User user
-    		,  @RequestBody   HashMap<String, Object> params)  {
+    public  ResponseEntity<RestResponse>  setRcvRawSaveMoveNo(HttpServletRequest request,  @RequestBody   HashMap<String, Object> params)  {
         List<Map<String, Object>> retList = new ArrayList<Map<String, Object>>();
+        User user = SessionUtils.getSessionInfo(request);
+
 		try {
+			params.put("user", user);
 			svc.setRcvRawSaveMoveNo(params);
 			restResponse = RestResponse.builder()
                    .code(HttpStatus.OK.value())
@@ -133,7 +129,6 @@ public class RcvRawMtisController {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-
 	    	// NOT FOUND 응답을 restResponse에 저장한다.
 	        restResponse = RestResponse.builder()
 	                .code(HttpStatus.NOT_FOUND.value())

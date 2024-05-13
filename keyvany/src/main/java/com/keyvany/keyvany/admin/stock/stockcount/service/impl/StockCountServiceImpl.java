@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.keyvany.keyvany.admin.stock.stockcount.service.StockCountService;
+import com.keyvany.keyvany.common.domain.User;
 
 
 @Service
@@ -17,9 +18,27 @@ public class StockCountServiceImpl implements StockCountService {
 
     @Autowired
     StockCountDAO dao;
+
+    /*재고실사  바코드 조회*/
     @Override
-    public void setSaveSilsaNo(Map<String, Object> serachMap) throws Exception {
-        int dsInt = dao.setSaveSilsaNo(serachMap);
+    public List<Map<String, Object>> getCheck900Data(Map<String, Object> serachMap) throws Exception {
+        return dao.getCheck900Data(serachMap);
+    }
+    @Override
+    public void setSaveSilsaNo(Map<String, Object> saveMap) throws Exception {
+    	try {
+    		List<Map<String, Object>>saveList =  (List<Map<String, Object>>) saveMap.get("data");
+        	User user = (User) saveMap.get("user");
+        	for (Map<String, Object> hashMap : saveList) {
+        		hashMap.put("uniqueId", user.getUniqueId());
+        		int it  = dao.setSaveSilsaNo(hashMap);
+    		}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("setSaveMoveNo======"+e.getMessage());
+			e.getStackTrace();
+		}
+
     }
 }
 

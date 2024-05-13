@@ -13,4 +13,9 @@ public class StockMovDAO extends AbstractDAO {
     public List<Map<String, Object>> getLotMasterInfoStockInCheck(Map<String, Object> serachMap) throws Exception {
         return (List<Map<String,Object>>) selectList("StockMovDAO.getLotMasterInfoStockInCheck", serachMap);
     }
+
+    /*재고이동 저장*/
+    public int setSaveMoveNo(Map<String, Object> saveMap) {
+        return (Integer) insert("StockMovDAO.setSaveMoveNo", saveMap);
+    }
 }

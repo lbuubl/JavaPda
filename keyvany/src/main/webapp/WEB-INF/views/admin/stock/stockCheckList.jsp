@@ -26,8 +26,6 @@
     <!-- form start -->
     <form class="form-horizontal" id="form" name="form">
       <div class="card card-info" style="margin-bottom: 0px;">
-
-
         <div class="card-header">
           <h5 class="m-0">재고확인 정보</h5>
         </div>
@@ -39,7 +37,7 @@
             <div class="col-sm-08">
               <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" >
             </div>
-            <div class="col-sm-08 hide">
+            <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if>">
                  <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
             </div>
           </div>

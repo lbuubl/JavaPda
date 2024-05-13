@@ -40,11 +40,11 @@ var page = {
 
 
 var gl_whCd = function(){
-	return 'E100';
+	return $('#glWhCd').val();
 }
 
 var gl_facCd = function(){
-	return '1010';
+	return $('#glFacCd').val();
 }
 
 

@@ -36,7 +36,7 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label">공장</label>
                 </div>
                 <div class="col-sm-08">
-                  <select class="form-control select2bs4" id="nFacCd" >
+                  <select class="form-control select2bs4" id="nFacCd" onchange="fnFacCdChange()" >
                   </select>
                 </div>
               </div>
@@ -101,8 +101,8 @@
                 <div class="col-sm-08">
                   <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="">
                 </div>
-                <div class="col-sm-08 hide">
-                     <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
+                <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if>">
+                  <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
 
@@ -223,6 +223,11 @@
 		  $('#nFacCd').html(html1)
 		  //이동 공장  생성된 HTML을 DOM에 주입
 		  $('#mFacCd').html(html1)
+
+       //공장 변경못하게 readonly
+       $('#mFacCd').prop("disabled", true)
+       //기본 외주입고 설정
+       $('#mFacCd').val('2000')
 	  });
 
 	  $("#jsGrid1").jsGrid({
@@ -269,17 +274,37 @@
 	  gf_barcodeSearch('/cms/os/getLotMasterInfoCheck', params, function(result){
 		  const getData = result.data;
 			if(getData.length > 0 ){
-	      let qtyStr_tmp = getData[0]["pda_qty"]
-	      let qtyStr= parseInt(qtyStr_tmp)
-	      if(qtyStr === 0){
-	      	gf_alert('바코드값이 없습니다')
-	      	return false;
-	      }
-      	$('#itm_id').val(getData[0]["itm_id"])
-      	$('#itm_nm').val(getData[0]["itm_nm"])
-      	$('#qty').val(qtyStr_tmp)
-      	$('#spec').val(getData[0]["spec"])
-      	fnGridInsert(getData[0])
+        //1) 같은 바코드가 있는지 확인
+        if (gf_gridBarcodeChk('jsGrid1', getData[0]["barcode"])) {
+
+
+
+
+          //TODO 체크 해야될상황
+          if(mWhCd==='A400' && mWhCd==='B400'){
+            const bePdaNo  = getData[0]["be_pda_no"];
+            if(bePdaNo!=""){
+              if (!gf_confirm("이전로트 (" + bePdaNo + ") 포함"+$('#barcode').val()+ "개의 로트가 있습니다. 작업하시겠습니까?")){
+                return false;
+              }
+            }
+          }
+
+		      let qtyStr_tmp = getData[0]["pda_qty"]
+		      let qtyStr= parseInt(qtyStr_tmp)
+		      if(qtyStr === 0){
+		      	gf_alert('바코드값이 없습니다')
+		      	return false;
+		      }
+	      	$('#itm_id').val(getData[0]["itm_id"])
+	      	$('#itm_nm').val(getData[0]["itm_nm"])
+	      	$('#qty').val(qtyStr_tmp)
+	      	$('#spec').val(getData[0]["spec"])
+	      	fnGridInsert(getData[0])
+        } else {
+          gf_alert('바코드 정보가 있습니다.')
+          gf_barcodeClean()
+        }
       }else{
       	gf_alert('바코드값이 없습니다')
       	return false;
@@ -303,6 +328,7 @@
       insert_item.src_sq = data.src_sq;
       insert_item.lot_no = data.lot_no;
       $("#jsGrid1").jsGrid("insertItem", insert_item);
+      gf_barcodeClean()
   }
 
   //그리드 전체 삭제
@@ -336,13 +362,13 @@
 	        		, mov_bc: 'LE300210'
 	        		, ent_bc: 'LE920370'
 	        		, src_ty: 'PD100300'
-	            , remark : 'PDA_외주가공출고'
+	            , remark : 'Android_PDA_외주가공출고'
 	          }
 	        jsonSavaArray.push(params)
 				})
 
     	$.ajax({
-            url : "${pageContext.request.contextPath}/cms/ship/setShipSaveMoveNo",
+            url : "${pageContext.request.contextPath}/cms/stock/setsavemoveno",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -350,26 +376,8 @@
             data :JSON.stringify({'data' :jsonSavaArray} ),
             success : function(data) {
                 console.log('data====', data.data)
-                let getData = data.data;
-                if(getData.length > 0 ){
-                    let qtyStr_tmp = getData[0]["pda_qty"]
-                    let qtyStr= parseInt(qtyStr_tmp)
-                    if(qtyStr === 0){
-                    	gf_alert('바코드값이 없습니다')
-                    	return false;
-                   }
-                		$('#itm_id').val(getData[0]["itm_id"])
-                		$('#itm_nm').val(getData[0]["itm_nm"])
-                		$('#qty').val(qtyStr_tmp)
-                		$('#spec').val(getData[0]["spec"])
-
-                		fnGridInsert(getData[0])
-
-                }else{
-                	gf_alert('바코드값이 없습니다')
-                	return false;
-                }
-
+                gf_alert('저장이완료되었습니다.')
+                location.href = "/cms/os/osprocship.htm?item=os&page=osprocship";
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");
@@ -378,6 +386,38 @@
     }
 	}
 
+  /**
+   * 창고변경 이벤트
+   */
+  function fnFacCdChange() {
+    fnInit()
+    $("#jsGrid1").jsGrid("option", "data", []);
+  }
+
+  /**
+   * 초기설정
+   */
+  function fnInit(){
+    $('#nWhCd').val('')
+    $('#nWhNm').val('')
+    $('#barcode').val('')
+    $('#itm_id').val('')
+    $('#itm_nm').val('')
+    $('#spec').val('')
+    $('#qty').val('')
+  }
+
+
+  /**
+   * 추가 초기설정
+   */
+  function fnAddInit(){
+    $('#barcode').val('')
+    $('#itm_id').val('')
+    $('#itm_nm').val('')
+    $('#spec').val('')
+    $('#qty').val('')
+  }
 </script>
 <!--  공장 핸들바  -->
 <script id="fac-template" type="text/x-handlebars-template">

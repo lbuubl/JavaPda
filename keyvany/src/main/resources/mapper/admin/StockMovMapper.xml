@@ -22,4 +22,91 @@
 			group by  b.barcode, b.itm_id, b.mov_qty , b.pda_fac, b.pda_wh, b.io_ty, b.src_no, b.src_sq, b.lot_no, b.itm_id
   ]]>
   </select>
+
+  <insert id="setSaveMoveNo" parameterType="java.util.Map">
+  /*** StockMovDAO.setSaveMoveNo  출하관리 저장 ***/
+      INSERT INTO PDA200
+      (
+        mov_no, mov_sq, mov_dt, mov_bc, pda_no
+        , itm_id
+
+        , out_fac, out_wh, in_fac, in_wh, ent_bc
+        , mng_no
+
+        , mst_no, mst_sq, slv_no, slv_sq
+        , pal_qty, in_qty, out_qty, mov_qty
+
+        , src_no , src_sq, src_ty, io_ty, cust_cd
+        , cust_cd2 , cid, cdt, mid, mdt
+        , remark
+      )
+      VALUES
+      (
+        dbo.fnCodeNo('PDA200', #{dtp} )
+        ,1           /***[하드코딩] 순번 **/
+        , #{dtp}           /*** 입고일자**/
+        , #{mov_bc}       /*** [하드코딩] 입고구분    LE300  800 자재입고 , 일반이동등....**/
+        , #{barcode}      /*** 바코드번호**/
+
+        , #{itm_id}        /*** itm_id**/
+
+        , #{c_facCd}      /*** 출고공장없음**/
+        , #{c_whCd}        /***출고창고없음**/
+        , #{t_facCd}      /*** [하드코딩] 입고공장 '1010'**/
+        , #{t_whCd}       /*** [하드코딩] 입고창고 'A100'**/
+        , #{ent_bc}       /*** [하드코딩] 입력경로구분  , LE920 800 자재입고 , 발주입고등.....**/
+
+        , #{lot_no}       /*** [PDA100참조] LOT번호**/
+			  <choose>
+			    <when test="src_ty == 'PD100110'">
+			        , (select po_no from mmb200 where mng_no = #{lot_no} )        /*** [PDA100참조] LOT번호**/
+			        , (select po_sq from mmb200 where mng_no = #{lot_no} )        /*** [PDA100참조] LOT번호**/
+			        , (select dlv_no from mmb200 where mng_no = #{lot_no} )       /*** -[PDA100참조] LOT번호**/
+			        , (select dlv_sq from mmb200 where mng_no = #{lot_no} )       /*** [PDA100참조] LOT번호**/
+
+
+			        , #{pal_qty}      /*** 납품수량**/
+			        , #{in_qty}       /*** 입고수량**/
+			        , 0              /*** 출고수량**/
+			        , 0              /*** 이동수량**/
+			    </when>
+			    <when test="src_ty == 'PD100210'">
+              , ''
+              , 0
+			        , (select pw_no from ppc100 where mng_no = #{lot_no} )
+			        , (select pw_sq from ppc100 where mng_no = #{lot_no} )
+
+              , 0      /*** 납품수량**/
+              , 0       /*** 입고수량**/
+              , 0      /*** 출고수량**/
+              , #{mov_qty}      /*** 이동수량**/
+			    </when>
+			    <otherwise>
+			        , ''
+			        , 0
+			        , ''
+			        , 0
+
+              , 0      /*** 납품수량**/
+              , 0       /*** 입고수량**/
+              , 0      /*** 출고수량**/
+              , #{mov_qty}      /*** 이동수량**/
+			     </otherwise>
+			  </choose>
+
+        , dbo.fnCodeNo('LEA100', #{dtp} )        /***  납품번호        [PDA100참조]**/
+        , '1'         /***  납품순번         [PDA100참조]**/
+        , #{src_ty}     /*** [하드코딩] PDA구분       PD100 100 소재납품 110 소재입고등....**/
+        ,'I'           /*** [하드코딩] 'I'**/
+        ,''
+
+        ,''
+        ,#{uniqueId}
+        ,getdate()
+        ,#{uniqueId}
+        ,getdate()
+        , #{remark}
+      )
+  </insert>
+
 </mapper>

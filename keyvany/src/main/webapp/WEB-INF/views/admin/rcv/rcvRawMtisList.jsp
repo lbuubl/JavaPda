@@ -42,7 +42,7 @@
                 <div class="col-sm-08">
                   <input type="input"  class="form-control" id="barcode" name="barcode" placeholder="" >
                 </div>
-                <div class="col-sm-08 hide">
+                <div class="col-sm-08 <c:if test="${mobileYn ne 'false'}">hide</c:if>">
                      <button type="button" class="btn btn-default" id="barcodeSearch" >바코드검색</button>
                 </div>
               </div>
@@ -201,21 +201,46 @@
                 console.log('data====', data.data)
                 let getData = data.data;
                 if(getData.length > 0 ){
-                    let qtyStr_tmp = getData[0]["pda_qty"]
-                    alert(qtyStr_tmp)
-                    let qtyStr= parseInt(qtyStr_tmp)
-                    if(qtyStr === 0){
-                      gf_alert('바코드값이 없습니다')
-                      return false;
-                   }
+
+                  //1) 같은 바코드가 있는지 확인
+                  if (gf_gridBarcodeChk('jsGrid1', getData[0]["barcode"])) {
+                	  let pdaWhDb  ="";
+                	  if(getData[0]["pda_wh"]!=undefined){
+                		  pdaWhDb  =  getData[0]["pda_wh"];
+                    }
+                     const glWhCd  = $('#glWhCd').val()
+                     //2) 같은 창고면 add 안되게 설정
+                     if(pdaWhDb===glWhCd){
+                       gf_alert('이미 이동하려는 창고에 있습니다')
+                       $('#barcode').val('')
+                       $('#itm_nm').focus()
+                       return false;
+                     }
+
+                     if(pdaWhDb!=''){
+                         gf_alert('해당창고에 바코드정보가 없습니다.')
+                         $('#barcode').val('')
+                         $('#itm_nm').focus()
+                         return false;
+                       }
+
+                  	let qtyStr_tmp = getData[0]["pda_qty"]
+                      alert(qtyStr_tmp)
+                      let qtyStr= parseInt(qtyStr_tmp)
+                      if(qtyStr === 0){
+                        gf_alert('바코드값이 없습니다')
+                        return false;
+                     }
 
                     $('#itm_id').val(getData[0]["itm_id"])
                     $('#itm_nm').val(getData[0]["itm_nm"])
                     $('#qty').val(qtyStr_tmp)
                     $('#spec').val(getData[0]["spec"])
-
                     fnGridInsert(getData[0])
-
+                  }else {
+                    gf_alert('바코드 정보가 있습니다.')
+                    gf_barcodeClean()
+                  }
                 }else{
                   gf_alert('바코드값이 없습니다')
                   return false;
@@ -243,6 +268,7 @@
         insert_item.src_sq = data.src_sq;
         insert_item.lot_no = data.lot_no;
         $("#jsGrid1").jsGrid("insertItem", insert_item);
+        gf_barcodeClean()
     }
 
     //그리드 전체 삭제
@@ -263,7 +289,7 @@
           console.log('bodyData ======',bodyData )
           //TODO 로그인 정보
           let params = {
-                dtp: gf_toDay()
+        	    dtp: gf_toDay()
               , barcode : bodyData.barcode
               , pal_qty  : bodyData.pda_qty
               , in_qty :  bodyData.pda_qty
@@ -278,7 +304,7 @@
               , mov_bc: 'LE100100'
               , ent_bc: 'LE920800'
               , src_ty: 'PD100110'
-              , remark : 'PDA_원소재입고'
+              , remark : 'Android_PDA_원소재입고'
             }
           jsonSavaArray.push(params)
         })
@@ -292,26 +318,8 @@
               data :JSON.stringify({'data' :jsonSavaArray} ),
               success : function(data) {
                   console.log('data====', data.data)
-                  let getData = data.data;
-                  if(getData.length > 0 ){
-                      let qtyStr_tmp = getData[0]["pda_qty"]
-                      let qtyStr= parseInt(qtyStr_tmp)
-                      if(qtyStr === 0){
-                        gf_alert('바코드값이 없습니다')
-                        return false;
-                     }
-                      $('#itm_id').val(getData[0]["itm_id"])
-                      $('#itm_nm').val(getData[0]["itm_nm"])
-                      $('#qty').val(qtyStr_tmp)
-                      $('#spec').val(getData[0]["spec"])
-
-                      fnGridInsert(getData[0])
-
-                  }else{
-                    gf_alert('바코드값이 없습니다')
-                    return false;
-                  }
-
+                  gf_alert('저장이완료되었습니다.')
+                  location.href = "/cms/rcv/rcvrawmtis.htm?page=rcvrawmtis";
               },
               error : function() {
                   alert("처리중 오류가 발생했습니다.");

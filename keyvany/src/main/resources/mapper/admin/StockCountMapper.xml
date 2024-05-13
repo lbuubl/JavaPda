@@ -4,9 +4,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="StockCountDAO">
 
+  <select id="getCheck900Data" resultType="hashmap" parameterType="java.util.Map">
+  /*** StockCountDAO.getCheck900Data  제고실사  바코드 조회 ***/
+		select barcode, b.itm_id, b.mov_qty as pda_qty, b.pda_fac, b.pda_wh, b.io_ty, b.src_no, b.src_sq, b.lot_no,
+		(select itm_cd from dma100 a where a.itm_id = b.itm_id) as itm_cd,
+		(select itm_nm from dma100 a where a.itm_id = b.itm_id) as itm_nm,
+		(select spec from dma100 a where a.itm_id = b.itm_id) as spec,
+		(select fac_nm from bcc300 a where a.fac_cd = b.pda_fac) as fac_nm,
+		(select wh_nm from bcw100 a where a.wh_cd = b.pda_wh) as wh_nm,
+		isnull(c.real_qty,0) as real_qty
+		from pda100 b
+		left join LEB900 as c on b.barcode = c.pda_no and c.end_mon = #{planDt} and c.fac_cd =  #{facCd}  and c.wh_cd =  #{whCd}
+		where barcode =  #{barcode}
+		    and pda_fac = #{facCd}
+  </select>
   <select id="setSaveSilsaNo" statementType="CALLABLE" resultType="hashmap">
     {
-        call PDA900_TO_insert (#{end_mon},#{dtp},#{fac_cd},#{wh_cd},#{barcode},#{end_qty},#{real_qty},#{cid})
+        call PDA900_TO_android_insert (#{dtpConDt},#{dtp},#{fac_cd},#{wh_cd},#{barcode},#{end_qty},#{real_qty},#{uniqueId})
     }
   </select>
 </mapper>

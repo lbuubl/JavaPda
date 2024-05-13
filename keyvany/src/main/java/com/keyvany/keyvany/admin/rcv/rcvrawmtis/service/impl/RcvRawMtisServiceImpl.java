@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.keyvany.keyvany.admin.rcv.rcvrawmtis.service.RcvRawMtisService;
+import com.keyvany.keyvany.common.domain.User;
 
 //
 @Service
@@ -29,7 +30,9 @@ public class RcvRawMtisServiceImpl implements RcvRawMtisService {
     @Override
     public void setRcvRawSaveMoveNo( HashMap<String, Object>  saveMap) throws Exception {
     	List<Map<String, Object>>saveList =  (List<Map<String, Object>>) saveMap.get("data");
+    	User user = (User) saveMap.get("user");
     	for (Map<String, Object> hashMap : saveList) {
+    		hashMap.put("uniqueId", user.getUniqueId());
     		int it  = dao.setRcvRawSaveMoveNo(hashMap);
         	System.out.println("===================="+it);
 		}

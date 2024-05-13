@@ -362,6 +362,7 @@
             fnGridInsert(getData[0])
           } else {
             gf_alert('바코드 정보가 있습니다.')
+            gf_barcodeClean()
           }
         } else {
           gf_alert('바코드값이 없습니다')

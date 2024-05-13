@@ -1,6 +1,7 @@
 package com.keyvany.keyvany.admin.stock.stockmov.service.impl;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.keyvany.keyvany.admin.stock.stockmov.service.StockMovService;
+import com.keyvany.keyvany.common.domain.User;
 
 
 @Service
@@ -22,5 +24,24 @@ public class StockMovServiceImpl implements StockMovService {
     @Override
     public List<Map<String, Object>> getLotMasterInfoStockInCheck(Map<String, Object> serachMap) throws Exception {
         return dao.getLotMasterInfoStockInCheck(serachMap);
+    }
+
+    /*재고이동 저장*/
+    @Override
+    public void setSaveMoveNo( HashMap<String, Object>  saveMap) throws Exception {
+    	try {
+    		List<Map<String, Object>>saveList =  (List<Map<String, Object>>) saveMap.get("data");
+        	User user = (User) saveMap.get("user");
+        	for (Map<String, Object> hashMap : saveList) {
+        		hashMap.put("uniqueId", user.getUniqueId());
+        		int it  = dao.setSaveMoveNo(hashMap);
+            	System.out.println("===================="+it);
+    		}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("setSaveMoveNo======"+e.getMessage());
+			e.getStackTrace();
+		}
+
     }
 }

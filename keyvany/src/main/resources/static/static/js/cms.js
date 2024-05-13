@@ -179,4 +179,8 @@ var gf_gridBarcodeChk = function(gridId , barcode){
   return flag ;
 }
 
+var gf_barcodeClean  = function(){
+  $('#barcode').val('')
+}
+
 
