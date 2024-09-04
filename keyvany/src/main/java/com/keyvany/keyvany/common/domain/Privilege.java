@@ -12,4 +12,3 @@ import lombok.ToString;
 public class Privilege {
 	private String name;
 }
-//테스트 체리픽3
