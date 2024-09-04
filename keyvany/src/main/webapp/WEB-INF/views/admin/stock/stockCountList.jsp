@@ -314,7 +314,6 @@ $(function () {
 
       }else{
         gf_alert('바코드값이 없습니다')
-        gf_barcodeClean()
         return false;
       }
 

@@ -8,9 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import com.keyvany.keyvany.common.domain.User;
-import com.keyvany.keyvany.common.util.SessionUtils;
-
 public class ProjectListInterceptorAdapter implements HandlerInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(ProjectListInterceptorAdapter.class);
@@ -21,8 +18,6 @@ public class ProjectListInterceptorAdapter implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
         throws Exception {
-  	  User user = SessionUtils.getSessionInfo(request);
-
     	HttpSession session = request.getSession(false);
   	  if (session == null || session.getAttribute("user") == null) {
   	      if (isAjaxRequest(request)) {

@@ -69,12 +69,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(projectListInterceptorAdapter())
         .addPathPatterns("/**")
         .excludePathPatterns("/static/**","/resources/**","/cms/**");
-        */
         //관리자쪽 인터셉터
         registry.addInterceptor(userInfoInterceptorAdapter())
         .addPathPatterns("/cms/**")
-        .excludePathPatterns("/static/**","/resources/**","/cms/**","/headerIndex","/cms/logout","/cms/login","/cms/loginAction");
-
+        .excludePathPatterns("/static/**","/resources/**","/user/**","/headerIndex","/cms/login","/cms/loginAction");
+        */
 
     }
     // Bean으로 등록하여 인터셉터에서 DB(mybatis)에 접근할수 있도록 허용

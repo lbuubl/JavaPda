@@ -141,7 +141,6 @@
 	      let qtyStr= parseInt(qtyStr_tmp)
 	      if(qtyStr === 0){
 	      	gf_alert('바코드값이 없습니다')
-	        gf_barcodeClean()
 	      	return false;
 	      }
 	      $('#facNm').val(getData[0]["fac_nm"])

@@ -294,7 +294,6 @@
 		      let qtyStr= parseInt(qtyStr_tmp)
 		      if(qtyStr === 0){
 		      	gf_alert('바코드값이 없습니다')
-		        gf_barcodeClean()
 		      	return false;
 		      }
 	      	$('#itm_id').val(getData[0]["itm_id"])
@@ -308,7 +307,6 @@
         }
       }else{
       	gf_alert('바코드값이 없습니다')
-      	gf_barcodeClean()
       	return false;
       }
 

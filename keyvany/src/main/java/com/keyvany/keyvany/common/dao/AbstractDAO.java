@@ -1,6 +1,7 @@
 package com.keyvany.keyvany.common.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -20,6 +21,7 @@ public class AbstractDAO {
             log.debug("\t QueryId  \t:  " + queryId);
         }
     }
+
     public Object insert(String queryId, Object params){
         printQueryId(queryId);
         return sqlSession.insert(queryId, params);

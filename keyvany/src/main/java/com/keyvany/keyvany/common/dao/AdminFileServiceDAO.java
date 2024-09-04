@@ -3,6 +3,9 @@ package com.keyvany.keyvany.common.dao;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.keyvany.keyvany.common.dao.AbstractDAO;
 
 @Component
 public class AdminFileServiceDAO extends AbstractDAO {
