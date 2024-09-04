@@ -147,11 +147,9 @@ public class helper {
     }
 
     public static String remove(String str, char remove) {
-
         if (isEmpty(str) || str.indexOf(remove) == -1) {
             return str;
         }
-
         char[] chars = str.toCharArray();
         int pos = 0;
 
