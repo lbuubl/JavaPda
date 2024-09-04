@@ -178,14 +178,9 @@ public class helper {
                 chars[pos++] = chars[i];
             }
         }
+
         return new String(chars, 0, pos);
     }
-
-
-
-
-
-    
 
     /**
      * <p>
