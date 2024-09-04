@@ -229,6 +229,7 @@
                       let qtyStr= parseInt(qtyStr_tmp)
                       if(qtyStr === 0){
                         gf_alert('바코드값이 없습니다')
+                        gf_barcodeClean()
                         return false;
                      }
 
@@ -243,12 +244,14 @@
                   }
                 }else{
                   gf_alert('바코드값이 없습니다')
+                  gf_barcodeClean()
                   return false;
                 }
 
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");
+                gf_barcodeClean()
             }
         });
     }

@@ -28,6 +28,4 @@ public class Menu {
     private String updtDttm;
     private String updusrId;
     private String delYn;
-    
-    
 }

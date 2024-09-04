@@ -6,13 +6,14 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.keyvany.keyvany.common.domain.User;
 import com.keyvany.keyvany.common.util.SessionUtils;
 
 
-public class UserInfoInterceptorAdapter {
+public class UserInfoInterceptorAdapter implements HandlerInterceptor {
 
   private static final Logger logger = LoggerFactory.getLogger(UserInfoInterceptorAdapter.class);
 
@@ -25,9 +26,9 @@ public class UserInfoInterceptorAdapter {
       throws Exception {
 	  User user = SessionUtils.getSessionInfo(request);
       if (user == null) {    /* 로그인 되어 있는 경우 */
-          response.sendRedirect("/cms/logout");
+  		response.sendRedirect(request.getContextPath()+"/cms/logout");
+          return false;
       }
-
 	  HttpSession session = request.getSession(false);
 	  if (session == null || session.getAttribute("user") == null) {
 	      if (isAjaxRequest(request)) {

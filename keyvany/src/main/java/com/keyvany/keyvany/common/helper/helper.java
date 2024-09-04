@@ -37,7 +37,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 public class helper {
-
     /**************************************************************
      * @Class Name : helper.java
      * @Description : 문자열 데이터 처리 관련 유틸리티
@@ -59,7 +58,6 @@ public class helper {
     /** 빈 문자열 <code>""</code>. **/
     public static final String EMPTY = "";
     public static final String jwt_key = "$2a$10$7qt1M0uZafsARBdLzV4G7e.DPXV1jxFGKxs51p6lw/xanlcgD2s/2";
-
     /**
      * <p>
      * Padding을 할 수 있는 최대 수치
@@ -106,7 +104,6 @@ public class helper {
 
         return returnVal;
     }
-
     /**
      * 문자열이 지정한 길이를 초과했을때 해당 문자열을 삭제하는 메서드
      * 
@@ -149,22 +146,6 @@ public class helper {
         return str == null || str.length() == 0;
     }
 
-    /**
-     * <p>
-     * 기준 문자열에 포함된 모든 대상 문자(char)를 제거한다.
-     * </p>
-     *
-     * <pre>
-     * StringUtil.remove(null, *)       = null
-     * StringUtil.remove("", *)         = ""
-     * StringUtil.remove("queued", 'u') = "qeed"
-     * StringUtil.remove("queued", 'z') = "queued"
-     * </pre>
-     *
-     * @param str    입력받는 기준 문자열
-     * @param remove 입력받는 문자열에서 제거할 대상 문자열
-     * @return 제거대상 문자열이 제거된 입력문자열. 입력문자열이 null인 경우 출력문자열은 null
-     */
     public static String remove(String str, char remove) {
 
         if (isEmpty(str) || str.indexOf(remove) == -1) {
