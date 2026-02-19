@@ -13,7 +13,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/cms/manage/main" class="nav-link">Home</a>
+        <a href="/pda/manage/main" class="nav-link">Home</a>
       </li>
     </ul>
 		<ul class="navbar-nav ml-auto">
@@ -37,7 +37,7 @@
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/cms/logout">LogOut</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/pda/logout">LogOut</a>
       </li>
 		</ul>
   </nav>

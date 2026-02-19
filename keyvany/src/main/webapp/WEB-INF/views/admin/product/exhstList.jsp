@@ -137,7 +137,7 @@
         if(gb != "OU") {
             if (confirm("정말 " + str + "하시겠습니까?")) {
                 $.ajax({
-                    url : "${pageContext.request.contextPath}/cms/product/exhstSave",
+                    url : "${pageContext.request.contextPath}/pda/product/exhstSave",
                     type : "POST",
                     enctype: "multipart/form-data",
                     data : formData,
@@ -165,7 +165,7 @@
         }
         else {
             $.ajax({
-                url : "${pageContext.request.contextPath}/cms/product/exhstSave",
+                url : "${pageContext.request.contextPath}/pda/product/exhstSave",
                 type : "POST",
                 enctype: "multipart/form-data",
                 data : formData,
@@ -194,7 +194,7 @@
                 <div class="wrap">
                     <a href="#" title="메뉴 보기" id="btn_gnb_menu" class="btn_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <!-- <h2>EXHAUST SYSTEMS</h2> -->
-                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/cms/logout">
+                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/pda/logout">
                         <button type="submit" class="btn btn-logout">로그아웃</button>
                     </form>
                 </div>

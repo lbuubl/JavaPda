@@ -131,7 +131,7 @@
     let params = {
        barcode: $('#barcode').val()
     }
-	  gf_barcodeSearch('/cms/stock/getLotMasterInfoStockInCheck', params, function(result){
+	  gf_barcodeSearch('/pda/stock/getLotMasterInfoStockInCheck', params, function(result){
 
 		  const getData = result.data;
 		  console.log('result----',getData)

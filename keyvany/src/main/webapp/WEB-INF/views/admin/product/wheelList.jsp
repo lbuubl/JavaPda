@@ -215,7 +215,7 @@
                 loadData: function(filter) {
                     var d = $.Deferred();
                     $.ajax({
-                        url : "${pageContext.request.contextPath}/cms/common/usp_zt_00_login_pda",
+                        url : "${pageContext.request.contextPath}/pda/common/usp_zt_00_login_pda",
                         type : "POST",
                         processData: false,
                         contentType : "application/json; charset=utf-8",
@@ -287,7 +287,7 @@
                 loadData: function(filter) {
                     var d = $.Deferred();
                     $.ajax({
-                        url : "${pageContext.request.contextPath}/cms/common/usp_zt_00_login_pda",
+                        url : "${pageContext.request.contextPath}/pda/common/usp_zt_00_login_pda",
                         type : "POST",
                         processData: false,
                         contentType : "application/json; charset=utf-8",

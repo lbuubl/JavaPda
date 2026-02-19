@@ -191,7 +191,7 @@
         }
 
       $.ajax({
-            url : "${pageContext.request.contextPath}/cms/rcv/getLotMasterInfoInCheck",
+            url : "${pageContext.request.contextPath}/pda/rcv/getLotMasterInfoInCheck",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -310,7 +310,7 @@
         })
 
         $.ajax({
-              url : "${pageContext.request.contextPath}/cms/rcv/setRcvRawSaveMoveNo",
+              url : "${pageContext.request.contextPath}/pda/rcv/setRcvRawSaveMoveNo",
               type : "POST",
               processData: false,
               contentType : "application/json; charset=utf-8",
@@ -319,7 +319,7 @@
               success : function(data) {
                   console.log('data====', data.data)
                   gf_alert('저장이완료되었습니다.')
-                  location.href = "/cms/rcv/rcvrawmtis.htm?page=rcvrawmtis";
+                  location.href = "/pda/rcv/rcvrawmtis.htm?page=rcvrawmtis";
               },
               error : function() {
                   alert("처리중 오류가 발생했습니다.");

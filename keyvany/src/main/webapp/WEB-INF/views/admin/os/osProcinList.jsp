@@ -272,7 +272,7 @@
     let params = {
        barcode: $('#barcode').val()
     }
-	  gf_barcodeSearch('/cms/os/getLotMasterInfoCheck', params, function(result){
+	  gf_barcodeSearch('/pda/os/getLotMasterInfoCheck', params, function(result){
 		  const getData = result.data;
 			if(getData.length > 0 ){
 
@@ -370,7 +370,7 @@
 				})
 
     	$.ajax({
-    		    url : "${pageContext.request.contextPath}/cms/stock/setsavemoveno",
+    		    url : "${pageContext.request.contextPath}/pda/stock/setsavemoveno",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -379,7 +379,7 @@
             success : function(data) {
                 console.log('data====', data.data)
                 gf_alert('저장이완료되었습니다.')
-                location.href = "/cms/os/osprocin.htm?item=os&page=osprocin";
+                location.href = "/pda/os/osprocin.htm?item=os&page=osprocin";
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");

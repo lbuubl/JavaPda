@@ -25,14 +25,14 @@
                 <div class="wrap">
                     <a href="#" title="메뉴 보기" id="btn_gnb_menu" class="btn_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <!-- <h2>PROJECT</h2> -->
-                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/cms/logout">
+                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/pda/logout">
                         <button type="submit" class="btn btn-logout">로그아웃</button>
                     </form>
                 </div>
             </div>
             <div class="content_wrap">
 
-            <form id="writeForm" name="writeForm" action="/cms/manage/popupStore" method="post" enctype="multipart/form-data" onsubmit="return fn_save(this)">
+            <form id="writeForm" name="writeForm" action="/pda/manage/popupStore" method="post" enctype="multipart/form-data" onsubmit="return fn_save(this)">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                 <div class="write">
                     <h3>기본정보 입력</h3>
@@ -96,12 +96,12 @@
                 </div>
 
                 <div class="btn_c">
-                    <button type="button" class="btn btn-list" onclick="location.href='${pageContext.request.contextPath}/cms/manage/popup'">목록</button>
+                    <button type="button" class="btn btn-list" onclick="location.href='${pageContext.request.contextPath}/pda/manage/popup'">목록</button>
                     <button type="submit" class="btn btn-list">저장</button>
                     <button type="button" class="btn btn-list" onclick="fn_delete()">삭제</button>
                 </div>
             </form>
-            <form action="/cms/manage/popupDelete/${popInfo[0].pop_id}" method="POST" id="deleteFrom">
+            <form action="/pda/manage/popupDelete/${popInfo[0].pop_id}" method="POST" id="deleteFrom">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             </form>
             <div class="content_bottom">
@@ -166,7 +166,7 @@
 			data : data,
 			type : "POST",
 			enctype: "multipart/form-data",
-			url : "/cms/manage/popImageUpload",
+			url : "/pda/manage/popImageUpload",
 			contentType : false,
 			processData : false,
 			success : function(data) {

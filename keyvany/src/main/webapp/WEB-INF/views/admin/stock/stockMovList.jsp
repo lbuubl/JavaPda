@@ -296,7 +296,7 @@
     let params = {
        barcode: $('#barcode').val()
     }
-	  gf_barcodeSearch('/cms/stock/getLotMasterInfoStockInCheck', params, function(result){
+	  gf_barcodeSearch('/pda/stock/getLotMasterInfoStockInCheck', params, function(result){
 		  console.log('fnBarcodeSearch=====', result)
 		  const getData = result.data;
 			if(getData.length > 0 ){
@@ -393,7 +393,7 @@
 				})
 
     	$.ajax({
-            url : "${pageContext.request.contextPath}/cms/stock/setsavemoveno",
+            url : "${pageContext.request.contextPath}/pda/stock/setsavemoveno",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -401,7 +401,7 @@
             data :JSON.stringify({'data' :jsonSavaArray} ),
             success : function(data) {
                 gf_alert('저장이완료되었습니다.')
-                location.href = "/cms/stock/stockmov.htm";
+                location.href = "/pda/stock/stockmov.htm";
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");

@@ -8,14 +8,14 @@
                 <div class="wrap">
                     <a href="#" title="메뉴 보기" id="btn_gnb_menu" class="btn_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <!-- <h2>WHEEL</h2> -->
-                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/cms/logout">
+                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/pda/logout">
                         <button type="submit" class="btn btn-logout">로그아웃</button>
                     </form>
                 </div>
             </div>
             <div class="content_wrap" id="wrapDiv">
                 <!-- <h3>WHEEL</h3> -->
-                <form name="searchForm" method="get" action="${pageContext.request.contextPath}/cms/manage/popup" onsubmit="return fn_search(this);">
+                <form name="searchForm" method="get" action="${pageContext.request.contextPath}/pda/manage/popup" onsubmit="return fn_search(this);">
                     <div class="write">
                         <table>
                             <colgroup>
@@ -65,7 +65,7 @@
                                                 <fmt:parseNumber var = "num" integerOnly = "true" type = "number" value = "${popInfo.rownum}"/>
                                                 ${num}
                                             </td>
-                                            <td class="title"><a href="${pageContext.request.contextPath}/cms/manage/popupCreate/${popInfo.pop_id}">${popInfo.title}</a></td>
+                                            <td class="title"><a href="${pageContext.request.contextPath}/pda/manage/popupCreate/${popInfo.pop_id}">${popInfo.title}</a></td>
                                             <td class="gary">${popInfo.start_dttm} ~ ${popInfo.end_dttm}</td>
                                             <td class="gary">${popInfo.updt_dttm}</td>
                                                 <c:choose>
@@ -95,7 +95,7 @@
                     <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/pagination.jsp"></jsp:include>
                 </c:if>
                 <div class="btn_r">
-                    <button type="submit" class="btn btn-write" onclick="location.href='${pageContext.request.contextPath}/cms/manage/popupCreate'">등록</button>
+                    <button type="submit" class="btn btn-write" onclick="location.href='${pageContext.request.contextPath}/pda/manage/popupCreate'">등록</button>
                 </div>
                 <div class="content_bottom">
                 </div>

@@ -268,7 +268,7 @@ $(function () {
        barcode: $('#barcode').val()
     }
 
-    gf_barcodeSearch('/cms/stock/getcheck900data', params, function(result){
+    gf_barcodeSearch('/pda/stock/getcheck900data', params, function(result){
       const getData = result.data;
       if(getData.length > 0 ){
         //1) 같은 바코드가 있는지 확인
@@ -390,7 +390,7 @@ $(function () {
         })
 
       $.ajax({
-            url : "${pageContext.request.contextPath}/cms/stock/setsavesilsano",
+            url : "${pageContext.request.contextPath}/pda/stock/setsavesilsano",
             type : "POST",
             processData: false,
             contentType : "application/json; charset=utf-8",
@@ -398,7 +398,7 @@ $(function () {
             data :JSON.stringify({'data' :jsonSavaArray} ),
             success : function(data) {
             	gf_alert('저장이완료되었습니다.')
-              location.href = "/cms/stock/stockcount.htm";
+              location.href = "/pda/stock/stockcount.htm";
             },
             error : function() {
                 alert("처리중 오류가 발생했습니다.");

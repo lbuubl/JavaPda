@@ -77,7 +77,7 @@
 
         if (confirm("정말 " + str + "하시겠습니까?")) {
             $.ajax({
-                url : "${pageContext.request.contextPath}/cms/product/wheelSave",
+                url : "${pageContext.request.contextPath}/pda/product/wheelSave",
                 type : "POST",
                 enctype: "multipart/form-data",
                 data : formData,
@@ -93,7 +93,7 @@
                         }
                         //등록, 삭제 시
                         else {
-                            location.href = "${pageContext.request.contextPath}/cms/product/wheelList";
+                            location.href = "${pageContext.request.contextPath}/pda/product/wheelList";
                         }
                     }
                     else {
@@ -117,7 +117,7 @@
                 <div class="wrap">
                     <a href="#" title="메뉴 보기" id="btn_gnb_menu" class="btn_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <!-- <h2>WHEEL</h2> -->
-                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/cms/logout">
+                    <form name="logoutForm" method="post" action="${pageContext.request.contextPath}/pda/logout">
                         <button type="submit" class="btn btn-logout">로그아웃</button>
                     </form>
                 </div>
@@ -192,7 +192,7 @@
                               <button type="button" class="btn btn-write" onclick="fn_save('I');">등록</button>
                           </c:otherwise>
                       </c:choose>
-                      <button type="button" class="btn btn-list" onclick="location.href='${pageContext.request.contextPath}/cms/product/wheelList'">목록</button>
+                      <button type="button" class="btn btn-list" onclick="location.href='${pageContext.request.contextPath}/pda/product/wheelList'">목록</button>
                   </div>
               </form>
               <div class="content_bottom">

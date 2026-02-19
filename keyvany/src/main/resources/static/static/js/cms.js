@@ -126,7 +126,7 @@ var gf_facAjax = function( pFacNm, callbackFunc){
   }
   console.log('fnInitFacModalPopup params=------',params)
   $.ajax({
-      url : "/cms/common/getFacInfo",
+      url : "/pda/common/getFacInfo",
       type : "POST",
       processData: false,
       contentType : "application/json; charset=utf-8",

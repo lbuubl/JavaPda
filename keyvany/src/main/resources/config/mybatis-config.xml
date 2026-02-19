@@ -16,7 +16,7 @@
     </typeAliases>  
     
     <typeHandlers>
-        <typeHandler handler="com.keyvany.keyvany.common.handler.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
+        <typeHandler handler="com.hanin.pda.common.handler.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
     </typeHandlers>
     
     

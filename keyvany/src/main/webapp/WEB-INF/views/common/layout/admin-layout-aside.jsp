@@ -8,7 +8,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/cms/manage/main" class="brand-link">
+    <a href="/pda/manage/main" class="brand-link">
       <!-- <img src="" alt="kaak" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
       <img alt="한일정공" src="/resources/dist/img/hanil_logo2-removebg-preview.png" style="opacity: .8" width="236">
     </a>
@@ -50,7 +50,7 @@
             <ul class="nav nav-treeview">
           <li class="nav-header">PDA</li>
           <li class="nav-item">
-            <a href="/cms/ship/shipreg.htm?page=shipreg" id="shipreg" class="nav-link ">
+            <a href="/pda/ship/shipreg.htm?page=shipreg" id="shipreg" class="nav-link ">
               <i class="nav-icon fas fa-truck"></i>
               <p>
                                     출하관리
@@ -67,19 +67,19 @@
             </a>
             <ul class="nav nav-treeview">
 	              <li class="nav-item">
-	                <a href="/cms/stock/stockmov.htm?item=stock&page=stockmov" id="stockmov" class="nav-link">
+	                <a href="/pda/stock/stockmov.htm?item=stock&page=stockmov" id="stockmov" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>재고이동</p>
 	                </a>
 	              </li>
 	              <li class="nav-item">
-	                <a href="/cms/stock/stockcount.htm?item=stock&page=stockcount"  id="stockcount" class="nav-link">
+	                <a href="/pda/stock/stockcount.htm?item=stock&page=stockcount"  id="stockcount" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>재고실사</p>
 	                </a>
 	              </li>
 	              <li class="nav-item">
-	                <a href="/cms/stock/stockcheck.htm?item=stock&page=stockcheck"  id="stockcheck" class="nav-link">
+	                <a href="/pda/stock/stockcheck.htm?item=stock&page=stockcheck"  id="stockcheck" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>재고확인</p>
 	                </a>
@@ -97,13 +97,13 @@
             </a>
             <ul class="nav nav-treeview">
 	              <li class="nav-item">
-	                <a href="/cms/os/osprocin.htm?item=os&page=osprocin" id="osprocin" class="nav-link">
+	                <a href="/pda/os/osprocin.htm?item=os&page=osprocin" id="osprocin" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>외주가공입고</p>
 	                </a>
 	              </li>
 	              <li class="nav-item">
-	                <a href="/cms/os/osprocship.htm?item=os&page=osprocship" id="osprocship" class="nav-link">
+	                <a href="/pda/os/osprocship.htm?item=os&page=osprocship" id="osprocship" class="nav-link">
 	                  <i class="far fa-circle nav-icon"></i>
 	                  <p>외주가공출고</p>
 	                </a>
@@ -111,7 +111,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/cms/rcv/rcvrawmtis.htm?page=rcvrawmtis" id="rcvrawmtis" class="nav-link">
+            <a href="/pda/rcv/rcvrawmtis.htm?page=rcvrawmtis" id="rcvrawmtis" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                                     원소재 입고

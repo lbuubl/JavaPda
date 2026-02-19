@@ -304,7 +304,7 @@
     let params = {
       custBarcode: $('#custBarcode').val()
     }
-    gf_barcodeSearch('/cms/ship/getwhcust', params, function (result) {
+    gf_barcodeSearch('/pda/ship/getwhcust', params, function (result) {
       console.log('fnBarcodeSearch=====', result)
       const getData = result.data;
       if (getData.length > 0) {
@@ -331,7 +331,7 @@
       barcode: $('#barcode').val()
     }
     $.ajax({
-      url: "${pageContext.request.contextPath}/cms/ship/get-lot-master-info-check",
+      url: "${pageContext.request.contextPath}/pda/ship/get-lot-master-info-check",
       type: "POST",
       processData: false,
       contentType: "application/json; charset=utf-8",
@@ -433,7 +433,7 @@
       })
 
       $.ajax({
-        url: "${pageContext.request.contextPath}/cms/ship/setShipSaveMoveNo",
+        url: "${pageContext.request.contextPath}/pda/ship/setShipSaveMoveNo",
         type: "POST",
         processData: false,
         contentType: "application/json; charset=utf-8",
@@ -442,7 +442,7 @@
         success: function (data) {
 
           gf_alert('저장이완료되었습니다.')
-          location.href = "/cms/ship/shipreg.htm";
+          location.href = "/pda/ship/shipreg.htm";
         },
         error: function () {
           alert("처리중 오류가 발생했습니다.");

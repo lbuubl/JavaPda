@@ -111,7 +111,7 @@
               }
               console.log('fnInitFacModalPopup params=------', params)
               $.ajax({
-                url: "${pageContext.request.contextPath}/cms/common/getFacInfo",
+                url: "${pageContext.request.contextPath}/pda/common/getFacInfo",
                 type: "POST",
                 processData: false,
                 contentType: "application/json; charset=utf-8",

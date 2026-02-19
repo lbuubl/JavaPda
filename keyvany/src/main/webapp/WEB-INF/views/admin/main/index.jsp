@@ -17,7 +17,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/cms/manage/main#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/pda/manage/main#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -63,7 +63,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="/cms/rcv/rcvrawmtis.htm?page=rcvrawmtis" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/pda/rcv/rcvrawmtis.htm?page=rcvrawmtis" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -76,7 +76,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="/cms/ship/shipreg.htm?page=shipreg" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/pda/ship/shipreg.htm?page=shipreg" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -89,7 +89,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="/cms/stock/stockmov.htm?item=stock&page=stockmov" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/pda/stock/stockmov.htm?item=stock&page=stockmov" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -102,7 +102,7 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="/cms/os/osprocin.htm?item=os&page=osprocship" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/pda/os/osprocin.htm?item=os&page=osprocship" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -116,7 +116,7 @@
 
 const params ={test :'tttt', test2 :'tttt'}
   $.ajax({
-      url : "${pageContext.request.contextPath}/cms/manage/getmainchart",
+      url : "${pageContext.request.contextPath}/pda/manage/getmainchart",
       type : "POST",
       processData: false,
       contentType : "application/json; charset=utf-8",

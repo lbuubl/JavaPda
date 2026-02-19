@@ -114,7 +114,7 @@
           }
           console.log('params=------', params)
           $.ajax({
-            url: "${pageContext.request.contextPath}/cms/common/getSelectCusInfo",
+            url: "${pageContext.request.contextPath}/pda/common/getSelectCusInfo",
             type: "POST",
             processData: false,
             contentType: "application/json; charset=utf-8",
@@ -182,7 +182,7 @@
           }
           console.log('params=------', params)
           $.ajax({
-            url: "${pageContext.request.contextPath}/cms/common/getSelectCusInfo",
+            url: "${pageContext.request.contextPath}/pda/common/getSelectCusInfo",
             type: "POST",
             processData: false,
             contentType: "application/json; charset=utf-8",

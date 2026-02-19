@@ -63,7 +63,7 @@
 <!-- /.modal -->
 <script>
   //url 정보
-  const restApiUrl = "${pageContext.request.contextPath}/cms/common/getwhinfo"
+  const restApiUrl = "${pageContext.request.contextPath}/pda/common/getwhinfo"
 
   function fnSchPopupWh() {
     $("#jsGrid_wh").jsGrid("loadData");
