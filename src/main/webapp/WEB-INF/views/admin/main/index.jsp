@@ -6,112 +6,167 @@
 <!-- ChartJS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
   <script type="text/javascript" src="/resources/plugins/chart.js/Chart.min.js"></script>
-  <!-- Content Wrapper. Contains page content -->
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #EEF2FF;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-sub: #64748B;
+    }
+
+    .content-wrapper { background-color: var(--bg); }
+    
+    .pda-header {
+      padding: 20px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .pda-header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    /* 통계 카드 스타일 */
+    .pda-stat-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
+
+    /* 메인 메뉴 그리드 */
+    .pda-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 100px;
+    }
+
+    .pda-menu-item {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 25px 15px;
+      text-align: center;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      text-decoration: none !important;
+      color: var(--text-main) !important;
+      transition: all 0.2s ease;
+    }
+
+    .pda-menu-item:active {
+      transform: scale(0.95);
+      background: #F1F5F9;
+    }
+
+    .pda-icon-box {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 24px;
+    }
+
+    .pda-menu-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* 아이콘 배경색 */
+    .bg-soft-blue { background: #EEF2FF; color: #4F46E5; }
+    .bg-soft-green { background: #ECFDF5; color: #10B981; }
+    .bg-soft-orange { background: #FFF7ED; color: #F59E0B; }
+    .bg-soft-red { background: #FEF2F2; color: #EF4444; }
+
+    /* 플로팅 스캔 버튼 */
+    .scan-fab {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+      z-index: 1000;
+      border: 4px solid white;
+    }
+
+    /* 차트 카드 영역 */
+    .pda-chart-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 15px;
+      margin-bottom: 25px;
+      border: 1px solid #E2E8F0;
+    }
+  </style>
+
+  <!-- Content Wrapper -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pda/manage/main#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+    <div class="pda-header">
+      <h1>hanin<span style="color:var(--primary)">PDA</span></h1>
+      <div style="background: var(--primary-light); color: var(--primary); padding: 5px 12px; border-radius: 12px; font-weight: 600; font-size: 14px;">
+        ${sessionScope.userName != null ? sessionScope.userName : 'lbuubl'}님
+      </div>
     </div>
-    <!-- /.content-header -->
 
-		<!-- Main content -->
-		<section class="content">
-		  <div class="container-fluid">
-
-		    <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  생산등록현황
-                </h3>
-              </div><!-- /.card-header -->
-              <div class="card-body">
-                <!-- Morris chart - Sales -->
-                <canvas id="myChart" height="300" style="height: 300px;"></canvas>
-              </div><!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </section>
+    <section class="content px-3">
+      <!-- 차트 영역 -->
+      <div class="pda-chart-card">
+        <h6 class="fw-bold mb-3"><i class="fas fa-chart-bar me-2 text-primary"></i>생산 실적 현황</h6>
+        <div style="height: 200px;">
+          <canvas id="myChart"></canvas>
         </div>
-        <!-- /.row (main row) -->
+      </div>
 
+      <!-- 메뉴 그리드 -->
+      <div class="pda-menu-grid">
+        <a href="/pda/rcv/rcvrawmtis.htm?page=rcvrawmtis" class="pda-menu-item">
+          <div class="pda-icon-box bg-soft-blue"><i class="fas fa-truck-loading"></i></div>
+          <div class="pda-menu-name">원소재입고</div>
+        </a>
+        <a href="/pda/ship/shipreg.htm?page=shipreg" class="pda-menu-item">
+          <div class="pda-icon-box bg-soft-green"><i class="fas fa-shipping-fast"></i></div>
+          <div class="pda-menu-name">출하관리</div>
+        </a>
+        <a href="/pda/stock/stockmov.htm?item=stock&page=stockmov" class="pda-menu-item">
+          <div class="pda-icon-box bg-soft-orange"><i class="fas fa-boxes"></i></div>
+          <div class="pda-menu-name">재고관리</div>
+        </a>
+        <a href="/pda/os/osprocin.htm?item=os&page=osprocship" class="pda-menu-item">
+          <div class="pda-icon-box bg-soft-red"><i class="fas fa-external-link-alt"></i></div>
+          <div class="pda-menu-name">외주관리</div>
+        </a>
+      </div>
+    </section>
 
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3><sup style="font-size: 20px">원소재입고</sup> </h3>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="/pda/rcv/rcvrawmtis.htm?page=rcvrawmtis" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3><sup style="font-size: 20px">출하관리</sup></h3>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="/pda/ship/shipreg.htm?page=shipreg" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3><sup style="font-size: 20px">재고관리</sup> </h3>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="/pda/stock/stockmov.htm?item=stock&page=stockmov" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3><sup style="font-size: 20px">외주관리</sup> </h3>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="/pda/os/osprocin.htm?item=os&page=osprocship" class="small-box-footer">바로가기 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
+    <!-- 플로팅 스캔 버튼 -->
+    <div class="scan-fab">
+      <i class="fas fa-barcode"></i>
+    </div>
+  </div>
 
-		  </div>
-		</section>
-</div>
 <script type="text/javascript">
 
 const params ={test :'tttt', test2 :'tttt'}
