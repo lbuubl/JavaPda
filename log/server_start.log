@@ -1,0 +1,249 @@
+Starting a Gradle Daemon, 2 busy Daemons could not be reused, use --status for details
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :bootRunMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-02-23 18:57:35.515 INFO  [main] [com.hanin.pda.HaninpdaApplication] - Starting HaninpdaApplication using Java 17.0.18 on DESKTOP-4NDBN17 with PID 15618 (/home/lbuubl/.openclaw/workspace/JavaPda/build/classes/java/main started by lbuubl in /home/lbuubl/.openclaw/workspace/JavaPda)
+2026-02-23 18:57:35.518 INFO  [main] [com.hanin.pda.HaninpdaApplication] - The following 1 profile is active: "local"
+2026-02-23 18:57:36.632 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-23 18:57:36.669 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 23 ms. Found 0 JPA repository interfaces.
+2026-02-23 18:57:36.838 WARN  [main] [o.m.spring.mapper.ClassPathMapperScanner] - No MyBatis mapper was found in '[com.hanin.pda]' package. Please check your configuration.
+2026-02-23 18:57:37.541 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9900 (http)
+2026-02-23 18:57:37.552 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9900"]
+2026-02-23 18:57:37.554 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2026-02-23 18:57:37.554 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-23 18:57:37.994 INFO  [main] [org.apache.jasper.servlet.TldScanner] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-02-23 18:57:38.004 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2026-02-23 18:57:38.004 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 2392 ms
+==============================================================================
+path check=>C:\
+==============================================================================
+2026-02-23 18:57:38.092 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+2026-02-23 18:57:38.297 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-23 18:57:38.349 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-02-23 18:57:37.030 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-23 18:57:37.193 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2026-02-23 18:57:37.537 INFO  [main] [log4jdbc.log4j2] - 1. Connection opened. {executed in 322ms} 
+2026-02-23 18:57:37.538 INFO  [main] [log4jdbc.log4j2] - 1. Connection.new Connection returned 
+2026-02-23 18:57:37.538 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getNetworkTimeout() returned 0
+2026-02-23 18:57:37.539 INFO  [main] [log4jdbc.log4j2] - 1. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.540 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.577 INFO  [main] [log4jdbc.log4j2] - 1. Connection.isValid(1) returned true
+2026-02-23 18:57:37.578 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getTransactionIsolation() returned 2
+2026-02-23 18:57:37.581 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2026-02-23 18:57:37.588 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getMetaData() returned  SQLServerDatabaseMetaData:1
+2026-02-23 18:57:37.592 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getMetaData() returned  SQLServerDatabaseMetaData:1
+2026-02-23 18:57:37.616 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2016Dialect
+2026-02-23 18:57:37.634 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getCatalog() returned HANILERP0909
+2026-02-23 18:57:37.640 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getSchema() returned dbo
+2026-02-23 18:57:37.643 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getSchema() returned dbo
+2026-02-23 18:57:37.647 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getMetaData() returned  SQLServerDatabaseMetaData:1
+2026-02-23 18:57:37.650 INFO  [main] [log4jdbc.log4j2] - 1. Connection.createClob() returned SQLServerClob:1
+2026-02-23 18:57:37.656 INFO  [main] [log4jdbc.log4j2] - 1. Connection.clearWarnings() returned 
+2026-02-23 18:57:37.735 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 2. Connection opened. {executed in 52ms} 
+2026-02-23 18:57:37.736 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 2. Connection.new Connection returned 
+2026-02-23 18:57:37.736 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 2. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.737 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 2. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.785 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 3. Connection opened. {executed in 48ms} 
+2026-02-23 18:57:37.786 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 3. Connection.new Connection returned 
+2026-02-23 18:57:37.786 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 3. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.786 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 3. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.833 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 4. Connection opened. {executed in 46ms} 
+2026-02-23 18:57:37.834 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 4. Connection.new Connection returned 
+2026-02-23 18:57:37.834 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 4. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.834 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 4. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.861 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.878 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 5. Connection opened. {executed in 44ms} 
+2026-02-23 18:57:37.878 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 5. Connection.new Connection returned 
+2026-02-23 18:57:37.879 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 5. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.879 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 5. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.882 INFO  [main] [log4jdbc.log4j2] - 1. PreparedStatement.new PreparedStatement returned 
+2026-02-23 18:57:37.883 INFO  [main] [log4jdbc.log4j2] - 1. Connection.prepareStatement(select sequence_name, sequence_catalog, sequence_schema, convert( bigint, start_value ) as start_value, convert( bigint, minimum_value ) as minimum_value, convert( bigint, maximum_value ) as maximum_value, convert( bigint, increment ) as increment from INFORMATION_SCHEMA.SEQUENCES) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@165aa43a
+2026-02-23 18:57:37.899 INFO  [main] [log4jdbc.log4j2] - 1. select sequence_name, sequence_catalog, sequence_schema, convert( bigint, start_value ) as 
+start_value, convert( bigint, minimum_value ) as minimum_value, convert( bigint, maximum_value 
+) as maximum_value, convert( bigint, increment ) as increment from INFORMATION_SCHEMA.SEQUENCES  {executed in 13 ms}
+2026-02-23 18:57:37.904 INFO  [main] [log4jdbc.log4j2] - 1. ResultSet.new ResultSet returned 
+2026-02-23 18:57:37.904 INFO  [main] [log4jdbc.log4j2] - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@4ca970d5
+2026-02-23 18:57:37.913 INFO  [main] [log4jdbc.log4j2] - 
+|--------------|-----------------|----------------|------------|--------------|--------------|----------|
+|sequence_name |sequence_catalog |sequence_schema |start_value |minimum_value |maximum_value |increment |
+|--------------|-----------------|----------------|------------|--------------|--------------|----------|
+|--------------|-----------------|----------------|------------|--------------|--------------|----------|
+
+2026-02-23 18:57:37.913 INFO  [main] [log4jdbc.log4j2] - 1. ResultSet.next() returned false
+2026-02-23 18:57:37.914 INFO  [main] [log4jdbc.log4j2] - 1. ResultSet.close() returned void
+2026-02-23 18:57:37.915 INFO  [main] [log4jdbc.log4j2] - 1. PreparedStatement.close() returned 
+2026-02-23 18:57:37.920 INFO  [main] [log4jdbc.log4j2] - 1. Connection.getMetaData() returned  SQLServerDatabaseMetaData:1
+2026-02-23 18:57:37.921 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 6. Connection opened. {executed in 42ms} 
+2026-02-23 18:57:37.921 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 6. Connection.new Connection returned 
+2026-02-23 18:57:37.922 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 6. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.922 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 6. Connection.getAutoCommit() returned true
+2026-02-23 18:57:37.964 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 7. Connection opened. {executed in 41ms} 
+2026-02-23 18:57:37.964 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 7. Connection.new Connection returned 
+2026-02-23 18:57:37.964 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 7. Connection.isReadOnly() returned false
+2026-02-23 18:57:37.964 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 7. Connection.getAutoCommit() returned true
+2026-02-23 18:57:38.010 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 8. Connection opened. {executed in 45ms} 
+2026-02-23 18:57:38.011 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 8. Connection.new Connection returned 
+2026-02-23 18:57:38.011 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 8. Connection.isReadOnly() returned false
+2026-02-23 18:57:38.011 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 8. Connection.getAutoCommit() returned true
+2026-02-23 18:57:38.053 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 9. Connection opened. {executed in 42ms} 
+2026-02-23 18:57:38.053 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 9. Connection.new Connection returned 
+2026-02-23 18:57:38.053 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 9. Connection.isReadOnly() returned false
+2026-02-23 18:57:38.054 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 9. Connection.getAutoCommit() returned true
+2026-02-23 18:57:38.092 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 10. Connection opened. {executed in 38ms} 
+2026-02-23 18:57:38.093 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 10. Connection.new Connection returned 
+2026-02-23 18:57:38.093 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 10. Connection.isReadOnly() returned false
+2026-02-23 18:57:38.093 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 10. Connection.getAutoCommit() returned true
+2026-02-23 18:57:39.353 INFO  [main] [log4jdbc.log4j2] - 1. Connection.clearWarnings() returned 
+2026-02-23 18:57:39.353 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-23 18:57:39.364 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-23 18:57:40.032 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.033 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/css/**']
+2026-02-23 18:57:40.034 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.034 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/js/**']
+2026-02-23 18:57:40.034 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/static/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.034 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/static/**']
+2026-02-23 18:57:40.034 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.035 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/img/**']
+2026-02-23 18:57:40.035 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/lib/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.035 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/lib/**']
+2026-02-23 18:57:40.035 WARN  [main] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore Ant [pattern='/resources/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-23 18:57:40.035 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure Ant [pattern='/resources/**']
+2026-02-23 18:57:40.102 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@321b7b9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21eedcde, org.springframework.security.web.context.SecurityContextPersistenceFilter@50734cea, org.springframework.security.web.header.HeaderWriterFilter@5b55c3d6, org.springframework.security.web.csrf.CsrfFilter@6614ecca, org.springframework.security.web.authentication.logout.LogoutFilter@e5864c2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25bc65ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fca282c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cf072ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67396475, org.springframework.security.web.session.SessionManagementFilter@1800c1e3, org.springframework.security.web.access.ExceptionTranslationFilter@111cbcda, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49153009]
+file:C:\
+2026-02-23 18:57:40.416 INFO  [main] [org.apache.tiles.access.TilesAccess] - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2026-02-23 18:57:40.682 WARN  [main] [o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration] - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-23 18:57:40.726 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9900"]
+2026-02-23 18:57:40.732 WARN  [main] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 9900 is already in use
+2026-02-23 18:57:40.733 INFO  [main] [org.apache.tiles.access.TilesAccess] - Removing TilesContext 2026-02-23 19:25:21.120 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 9. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:21.121 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 9. Connection.close() returned 
+2026-02-23 19:25:21.157 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 11. Connection opened. {executed in 36ms} 
+2026-02-23 19:25:21.157 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 11. Connection.new Connection returned 
+2026-02-23 19:25:21.157 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 11. Connection.isReadOnly() returned false
+2026-02-23 19:25:21.158 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 11. Connection.getAutoCommit() returned true
+2026-02-23 19:25:28.670 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 10. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:28.670 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 10. Connection.close() returned 
+2026-02-23 19:25:28.705 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 12. Connection opened. {executed in 35ms} 
+2026-02-23 19:25:28.705 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 12. Connection.new Connection returned 
+2026-02-23 19:25:28.705 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 12. Connection.isReadOnly() returned false
+2026-02-23 19:25:28.706 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 12. Connection.getAutoCommit() returned true
+2026-02-23 19:25:29.337 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 1. Connection closed. {executed in 1ms} 
+2026-02-23 19:25:29.337 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 1. Connection.close() returned 
+2026-02-23 19:25:29.371 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 13. Connection opened. {executed in 34ms} 
+2026-02-23 19:25:29.371 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 13. Connection.new Connection returned 
+2026-02-23 19:25:29.371 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 13. Connection.isReadOnly() returned false
+2026-02-23 19:25:29.371 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 13. Connection.getAutoCommit() returned true
+2026-02-23 19:25:29.376 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 5. Connection closed. {executed in 1ms} 
+2026-02-23 19:25:29.376 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 5. Connection.close() returned 
+2026-02-23 19:25:29.410 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 14. Connection opened. {executed in 34ms} 
+2026-02-23 19:25:29.410 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 14. Connection.new Connection returned 
+2026-02-23 19:25:29.411 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 14. Connection.isReadOnly() returned false
+2026-02-23 19:25:29.411 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 14. Connection.getAutoCommit() returned true
+2026-02-23 19:25:34.170 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 3. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:34.170 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 3. Connection.close() returned 
+2026-02-23 19:25:34.206 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 15. Connection opened. {executed in 36ms} 
+2026-02-23 19:25:34.207 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 15. Connection.new Connection returned 
+2026-02-23 19:25:34.207 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 15. Connection.isReadOnly() returned false
+2026-02-23 19:25:34.207 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 15. Connection.getAutoCommit() returned true
+2026-02-23 19:25:48.255 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 8. Connection closed. {executed in 1ms} 
+2026-02-23 19:25:48.255 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 8. Connection.close() returned 
+2026-02-23 19:25:48.293 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 16. Connection opened. {executed in 38ms} 
+2026-02-23 19:25:48.294 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 16. Connection.new Connection returned 
+2026-02-23 19:25:48.294 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 16. Connection.isReadOnly() returned false
+2026-02-23 19:25:48.294 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 16. Connection.getAutoCommit() returned true
+2026-02-23 19:25:50.379 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 2. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:50.379 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 2. Connection.close() returned 
+2026-02-23 19:25:50.414 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 17. Connection opened. {executed in 35ms} 
+2026-02-23 19:25:50.415 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 17. Connection.new Connection returned 
+2026-02-23 19:25:50.415 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 17. Connection.isReadOnly() returned false
+2026-02-23 19:25:50.415 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 17. Connection.getAutoCommit() returned true
+2026-02-23 19:25:54.090 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 6. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:54.091 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 6. Connection.close() returned 
+2026-02-23 19:25:54.126 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 18. Connection opened. {executed in 36ms} 
+2026-02-23 19:25:54.126 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 18. Connection.new Connection returned 
+2026-02-23 19:25:54.126 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 18. Connection.isReadOnly() returned false
+2026-02-23 19:25:54.126 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 18. Connection.getAutoCommit() returned true
+2026-02-23 19:25:55.575 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 7. Connection closed. {executed in 0ms} 
+2026-02-23 19:25:55.575 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 7. Connection.close() returned 
+2026-02-23 19:25:55.608 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 19. Connection opened. {executed in 33ms} 
+2026-02-23 19:25:55.608 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 19. Connection.new Connection returned 
+2026-02-23 19:25:55.608 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 19. Connection.isReadOnly() returned false
+2026-02-23 19:25:55.609 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 19. Connection.getAutoCommit() returned true
+2026-02-23 19:26:00.268 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 4. Connection closed. {executed in 0ms} 
+2026-02-23 19:26:00.268 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 4. Connection.close() returned 
+2026-02-23 19:26:00.302 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 20. Connection opened. {executed in 34ms} 
+2026-02-23 19:26:00.302 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 20. Connection.new Connection returned 
+2026-02-23 19:26:00.302 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 20. Connection.isReadOnly() returned false
+2026-02-23 19:26:00.302 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 20. Connection.getAutoCommit() returned true
+2026-02-23 19:53:22.514 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 11. Connection closed. {executed in 0ms} 
+2026-02-23 19:53:22.514 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 11. Connection.close() returned 
+2026-02-23 19:53:22.548 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 21. Connection opened. {executed in 34ms} 
+2026-02-23 19:53:22.549 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 21. Connection.new Connection returned 
+2026-02-23 19:53:22.549 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 21. Connection.isReadOnly() returned false
+2026-02-23 19:53:22.549 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 21. Connection.getAutoCommit() returned true
+2026-02-23 19:53:32.818 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 12. Connection closed. {executed in 0ms} 
+2026-02-23 19:53:32.818 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 12. Connection.close() returned 
+2026-02-23 19:53:32.851 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 22. Connection opened. {executed in 33ms} 
+2026-02-23 19:53:32.851 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 22. Connection.new Connection returned 
+2026-02-23 19:53:32.851 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 22. Connection.isReadOnly() returned false
+2026-02-23 19:53:32.851 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 22. Connection.getAutoCommit() returned true
+2026-02-23 19:53:53.777 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 13. Connection closed. {executed in 0ms} 
+2026-02-23 19:53:53.777 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 13. Connection.close() returned 
+2026-02-23 19:53:53.811 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 23. Connection opened. {executed in 34ms} 
+2026-02-23 19:53:53.811 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 23. Connection.new Connection returned 
+2026-02-23 19:53:53.811 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 23. Connection.isReadOnly() returned false
+2026-02-23 19:53:53.812 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 23. Connection.getAutoCommit() returned true
+2026-02-23 19:53:55.120 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 15. Connection closed. {executed in 0ms} 
+2026-02-23 19:53:55.121 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 15. Connection.close() returned 
+2026-02-23 19:53:55.152 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 24. Connection opened. {executed in 32ms} 
+2026-02-23 19:53:55.153 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 24. Connection.new Connection returned 
+2026-02-23 19:53:55.153 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 24. Connection.isReadOnly() returned false
+2026-02-23 19:53:55.153 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 24. Connection.getAutoCommit() returned true
+2026-02-23 19:53:59.635 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 14. Connection closed. {executed in 0ms} 
+2026-02-23 19:53:59.636 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 14. Connection.close() returned 
+2026-02-23 19:53:59.669 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 25. Connection opened. {executed in 33ms} 
+2026-02-23 19:53:59.669 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 25. Connection.new Connection returned 
+2026-02-23 19:53:59.669 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 25. Connection.isReadOnly() returned false
+2026-02-23 19:53:59.669 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 25. Connection.getAutoCommit() returned true
+2026-02-23 19:54:03.104 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 20. Connection closed. {executed in 0ms} 
+2026-02-23 19:54:03.105 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 20. Connection.close() returned 
+2026-02-23 19:54:03.137 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 26. Connection opened. {executed in 33ms} 
+2026-02-23 19:54:03.137 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 26. Connection.new Connection returned 
+2026-02-23 19:54:03.137 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 26. Connection.isReadOnly() returned false
+2026-02-23 19:54:03.137 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 26. Connection.getAutoCommit() returned true
+2026-02-23 19:54:12.502 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 18. Connection closed. {executed in 0ms} 
+2026-02-23 19:54:12.502 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 18. Connection.close() returned 
+2026-02-23 19:54:12.535 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 27. Connection opened. {executed in 33ms} 
+2026-02-23 19:54:12.535 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 27. Connection.new Connection returned 
+2026-02-23 19:54:12.535 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 27. Connection.isReadOnly() returned false
+2026-02-23 19:54:12.535 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 27. Connection.getAutoCommit() returned true
+2026-02-23 19:54:18.927 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 17. Connection closed. {executed in 0ms} 
+2026-02-23 19:54:18.928 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 17. Connection.close() returned 
+2026-02-23 19:54:18.962 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 28. Connection opened. {executed in 34ms} 
+2026-02-23 19:54:18.962 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 28. Connection.new Connection returned 
+2026-02-23 19:54:18.962 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 28. Connection.isReadOnly() returned false
+2026-02-23 19:54:18.962 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 28. Connection.getAutoCommit() returned true
+2026-02-23 19:54:27.508 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 16. Connection closed. {executed in 0ms} 
+2026-02-23 19:54:27.508 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 16. Connection.close() returned 
+2026-02-23 19:54:27.545 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 29. Connection opened. {executed in 36ms} 
+2026-02-23 19:54:27.546 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 29. Connection.new Connection returned 
+2026-02-23 19:54:27.546 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 29. Connection.isReadOnly() returned false
+2026-02-23 19:54:27.546 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 29. Connection.getAutoCommit() returned true
+2026-02-23 19:54:28.620 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 19. Connection closed. {executed in 0ms} 
+2026-02-23 19:54:28.621 INFO  [HikariPool-1 connection closer] [log4jdbc.log4j2] - 19. Connection.close() returned 
+2026-02-23 19:54:28.655 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 30. Connection opened. {executed in 34ms} 
+2026-02-23 19:54:28.656 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 30. Connection.new Connection returned 
+2026-02-23 19:54:28.656 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 30. Connection.isReadOnly() returned false
+2026-02-23 19:54:28.656 INFO  [HikariPool-1 connection adder] [log4jdbc.log4j2] - 30. Connection.getAutoCommit() returned true
